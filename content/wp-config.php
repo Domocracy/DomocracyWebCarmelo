@@ -19,13 +19,16 @@
 define('DB_NAME', '902378_wpdomocracy');
 
 /** MySQL database username */
-define('DB_USER', '902378_domocracy');
+define('DB_USER', 'root');
+/*define('DB_USER', '902378_domocracy');*/
 
 /** MySQL database password */
-define('DB_PASSWORD', 'w4ssupDoc');
+/*define('DB_PASSWORD', 'w4ssupDoc');*/
+define('DB_PASSWORD', '');
 
 /** MySQL hostname */
-define('DB_HOST', 'mysql51-129.wc2.dfw1.stabletransit.com');
+define('DB_HOST', 'localhost');
+/* define('DB_HOST', 'mysql51-129.wc2.dfw1.stabletransit.com');*/
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
