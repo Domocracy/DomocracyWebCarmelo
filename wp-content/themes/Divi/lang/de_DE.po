@@ -1,0 +1,2071 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Divi 1.0\n"
+"POT-Creation-Date: 2014-05-21 17:40+0400\n"
+"PO-Revision-Date: 2014-05-21 17:40+0400\n"
+"Last-Translator: \n"
+"Language-Team: Ann\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-KeywordsList: _x;_n;_e;__;esc_html__;esc_html_e;esc_attr__;"
+"esc_attr_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../comments.php:4
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+"Dieser Artikel ist passwortgeschützt. Geben Sie Ihr Passwort ein um die "
+"Kommentare anzuzeigen."
+
+#: ../comments.php:13
+msgid "0 Comments"
+msgstr "Keine Kommentare"
+
+#: ../comments.php:13 ../functions.php:222
+msgid "1 Comment"
+msgstr "1 Kommentar"
+
+#: ../comments.php:13
+msgid "Comments"
+msgstr "Kommentare"
+
+#: ../comments.php:18 ../comments.php:31
+msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
+msgstr "<span class=\"meta-nav\">&larr;</span> &Auml;ltere Kommentare"
+
+#: ../comments.php:19 ../comments.php:32
+msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Neuere Kommentare <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../comments.php:38
+msgid "Trackbacks/Pingbacks"
+msgstr "Trackbacks/Pingbacks"
+
+#: ../comments.php:56
+msgid "Submit Comment"
+msgstr "Kommentar absenden"
+
+#: ../comments.php:56
+msgid "Submit a Comment"
+msgstr "Kommentar absenden"
+
+#: ../comments.php:56
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "Kommentar absenden zu %s"
+
+#: ../footer.php:35
+#, php-format
+msgid "Designed by %1$s | Powered by %2$s"
+msgstr "Designed by %1$s | Powered by %2$s"
+
+#: ../functions.php:30
+msgid "Primary Menu"
+msgstr ""
+
+#: ../functions.php:31
+msgid "Secondary Menu"
+msgstr ""
+
+#: ../functions.php:32
+msgid "Footer Menu"
+msgstr ""
+
+#: ../functions.php:69
+msgid "on"
+msgstr "am"
+
+#: ../functions.php:126
+#, fuzzy
+msgid ""
+"Please, check the fields below to make sure you entered the correct "
+"information."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../functions.php:127
+msgid "Fill"
+msgstr ""
+
+#: ../functions.php:128
+msgid "field"
+msgstr ""
+
+#: ../functions.php:129
+msgid "Invalid email"
+msgstr ""
+
+#: ../functions.php:130
+msgid "Captcha"
+msgstr ""
+
+#: ../functions.php:157
+#, fuzzy
+msgid "Select Page"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../functions.php:201
+#, php-format
+msgid "Posts by %s"
+msgstr "Gepostet von %s"
+
+#: ../functions.php:218
+msgid "% Comments"
+msgstr "% Kommentare"
+
+#: ../functions.php:220
+msgid "No Comments"
+msgstr "Keine Kommentare"
+
+#: ../functions.php:235
+msgid "by"
+msgstr "von"
+
+#: ../functions.php:251 ../functions.php:252 ../functions.php:253
+#: ../functions.php:254
+msgid "ET Settings"
+msgstr ""
+
+#: ../functions.php:260
+msgid "Projects"
+msgstr ""
+
+#: ../functions.php:261
+msgid "Project"
+msgstr ""
+
+#: ../functions.php:262 ../functions.php:344
+msgid "Add New"
+msgstr ""
+
+#: ../functions.php:263
+msgid "Add New Project"
+msgstr ""
+
+#: ../functions.php:264
+#, fuzzy
+msgid "Edit Project"
+msgstr "(Bearbeiten)"
+
+#: ../functions.php:265
+msgid "New Project"
+msgstr ""
+
+#: ../functions.php:266
+msgid "All Projects"
+msgstr ""
+
+#: ../functions.php:267
+#, fuzzy
+msgid "View Project"
+msgstr ""
+"Dieser Artikel ist passwortgeschützt. Geben Sie Ihr Passwort ein um die "
+"Kommentare anzuzeigen."
+
+#: ../functions.php:268
+#, fuzzy
+msgid "Search Projects"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../functions.php:269 ../functions.php:351
+msgid "Nothing found"
+msgstr "Nicht gefunden"
+
+#: ../functions.php:270 ../functions.php:352
+#, fuzzy
+msgid "Nothing found in Trash"
+msgstr "Nicht gefunden"
+
+#: ../functions.php:297 ../functions.php:307 ../epanel/options_divi.php:276
+msgid "Categories"
+msgstr ""
+
+#: ../functions.php:298
+msgid "Category"
+msgstr ""
+
+#: ../functions.php:299
+#, fuzzy
+msgid "Search Categories"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../functions.php:300
+msgid "All Categories"
+msgstr ""
+
+#: ../functions.php:301
+msgid "Parent Category"
+msgstr ""
+
+#: ../functions.php:302
+msgid "Parent Category:"
+msgstr ""
+
+#: ../functions.php:303
+#, fuzzy
+msgid "Edit Category"
+msgstr "(Bearbeiten)"
+
+#: ../functions.php:304
+msgid "Update Category"
+msgstr ""
+
+#: ../functions.php:305
+msgid "Add New Category"
+msgstr ""
+
+#: ../functions.php:306
+msgid "New Category Name"
+msgstr ""
+
+#: ../functions.php:319 ../functions.php:329
+msgid "Tags"
+msgstr ""
+
+#: ../functions.php:320
+msgid "Tag"
+msgstr ""
+
+#: ../functions.php:321
+#, fuzzy
+msgid "Search Tags"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../functions.php:322
+msgid "All Tags"
+msgstr ""
+
+#: ../functions.php:323
+msgid "Parent Tag"
+msgstr ""
+
+#: ../functions.php:324
+msgid "Parent Tag:"
+msgstr ""
+
+#: ../functions.php:325
+#, fuzzy
+msgid "Edit Tag"
+msgstr "(Bearbeiten)"
+
+#: ../functions.php:326
+msgid "Update Tag"
+msgstr ""
+
+#: ../functions.php:327
+msgid "Add New Tag"
+msgstr ""
+
+#: ../functions.php:328
+msgid "New Tag Name"
+msgstr ""
+
+#: ../functions.php:342
+msgid "Layouts"
+msgstr ""
+
+#: ../functions.php:343
+msgid "Layout"
+msgstr ""
+
+#: ../functions.php:345
+msgid "Add New Layout"
+msgstr ""
+
+#: ../functions.php:346
+#, fuzzy
+msgid "Edit Layout"
+msgstr "(Bearbeiten)"
+
+#: ../functions.php:347
+msgid "New Layout"
+msgstr ""
+
+#: ../functions.php:348
+msgid "All Layouts"
+msgstr ""
+
+#: ../functions.php:349
+#, fuzzy
+msgid "View Layout"
+msgstr ""
+"Dieser Artikel ist passwortgeschützt. Geben Sie Ihr Passwort ein um die "
+"Kommentare anzuzeigen."
+
+#: ../functions.php:350
+#, fuzzy
+msgid "Search Layouts"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../functions.php:374
+msgid "Skills"
+msgstr ""
+
+#: ../functions.php:377
+msgid "Posted on"
+msgstr "Gepostet am"
+
+#: ../functions.php:392 ../epanel/options_divi.php:88
+msgid "Right Sidebar"
+msgstr ""
+
+#: ../functions.php:393 ../epanel/options_divi.php:89
+msgid "Left Sidebar"
+msgstr ""
+
+#: ../functions.php:394 ../epanel/options_divi.php:90
+msgid "Full Width"
+msgstr ""
+
+#: ../functions.php:398 ../functions.php:755 ../functions.php:787
+msgid "Light"
+msgstr ""
+
+#: ../functions.php:399 ../functions.php:754 ../functions.php:786
+msgid "Dark"
+msgstr ""
+
+#: ../functions.php:412
+#, fuzzy
+msgid "Page Layout"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../functions.php:436
+#, fuzzy
+msgid "Use Background Color"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../functions.php:440
+msgid "Background Color"
+msgstr ""
+
+#: ../functions.php:441
+msgid "Hex Value"
+msgstr ""
+
+#: ../functions.php:445
+msgid "Text Color"
+msgstr ""
+
+#: ../functions.php:524
+msgid "Theme Settings"
+msgstr ""
+
+#: ../functions.php:529
+msgid "Fonts"
+msgstr ""
+
+#: ../functions.php:534
+msgid "Schemes"
+msgstr ""
+
+#: ../functions.php:536
+#, fuzzy
+msgid ""
+"Note: Color settings set above should be applied to the Default color scheme."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../functions.php:547
+msgid "Link Color"
+msgstr ""
+
+#: ../functions.php:560
+msgid "Main Font Color"
+msgstr ""
+
+#: ../functions.php:573
+msgid "Accent Color"
+msgstr ""
+
+#: ../functions.php:586
+msgid "Footer Background Color"
+msgstr ""
+
+#: ../functions.php:599
+msgid "Menu Links Color"
+msgstr ""
+
+#: ../functions.php:612
+msgid "Active Menu Link Color"
+msgstr ""
+
+#: ../functions.php:624
+msgid "Boxed Layout"
+msgstr ""
+
+#: ../functions.php:637
+#, fuzzy
+msgid "Vertical Navigation"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../functions.php:650
+msgid "Show Social Icons in Header"
+msgstr ""
+
+#: ../functions.php:664
+msgid "Show Social Icons in Footer"
+msgstr ""
+
+#: ../functions.php:678
+#, fuzzy
+msgid "Show Search Icon"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../functions.php:692
+msgid "Header Style"
+msgstr ""
+
+#: ../functions.php:696 ../functions.php:833
+msgid "Default"
+msgstr ""
+
+#: ../functions.php:697
+msgid "Centered"
+msgstr ""
+
+#: ../functions.php:709
+msgid "Phone Number"
+msgstr ""
+
+#: ../functions.php:722
+msgid "Email"
+msgstr ""
+
+#: ../functions.php:736
+#, fuzzy
+msgid "Primary Navigation Background"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../functions.php:750
+#, fuzzy
+msgid "Primary Navigation Text Color"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../functions.php:768
+#, fuzzy
+msgid "Secondary Navigation Background"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../functions.php:782
+#, fuzzy
+msgid "Secondary Navigation Text Color"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../functions.php:799
+msgid "Header Font"
+msgstr ""
+
+#: ../functions.php:813
+msgid "Body Font"
+msgstr ""
+
+#: ../functions.php:828
+msgid "Color Schemes"
+msgstr ""
+
+#: ../functions.php:834
+msgid "Green"
+msgstr ""
+
+#: ../functions.php:835
+msgid "Orange"
+msgstr ""
+
+#: ../functions.php:836
+msgid "Pink"
+msgstr ""
+
+#: ../functions.php:837
+msgid "Red"
+msgstr ""
+
+#: ../functions.php:922
+msgid "0 comments"
+msgstr "Keine Kommentare"
+
+#: ../functions.php:922
+msgid "1 comment"
+msgstr "1 Kommentar"
+
+#: ../functions.php:922
+msgid "comments"
+msgstr "Kommentare"
+
+#: ../functions.php:1201
+#, fuzzy, php-format
+msgid "%1$s Items"
+msgstr "Designed by %1$s | Powered by %2$s"
+
+#: ../functions.php:1378
+msgid "Connecting..."
+msgstr ""
+
+#: ../functions.php:1379
+msgid "Connection failed"
+msgstr ""
+
+#: ../functions.php:1380
+msgid "Removing connection..."
+msgstr ""
+
+#: ../functions.php:1381
+msgid "Done"
+msgstr ""
+
+#: ../functions.php:1410
+#, fuzzy, php-format
+msgid ""
+"Step 1: <a href=\"%1$s\" target=\"_blank\">Generate authorization code</a>"
+msgstr "Designed by %1$s | Powered by %2$s"
+
+#: ../functions.php:1411
+#, fuzzy
+msgid ""
+"Step 2: Paste in the authorization code and click \"Make a connection\" "
+"button: "
+msgstr "Designed by %1$s | Powered by %2$s"
+
+#: ../functions.php:1412
+msgid "Make a connection"
+msgstr ""
+
+#: ../functions.php:1415
+#, fuzzy
+msgid "Aweber is set up properly. You can remove connection here if you wish."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../functions.php:1416
+msgid "Remove the connection"
+msgstr ""
+
+#: ../functions.php:1424
+msgid "Nonce failed."
+msgstr ""
+
+#: ../functions.php:1430
+msgid "Authorization code is empty."
+msgstr ""
+
+#: ../functions.php:1441
+#, fuzzy
+msgid ""
+"Authorization code is invalid. Try regenerating it and paste in the new code."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../functions.php:1472
+msgid "Nonce failed"
+msgstr ""
+
+#: ../functions.php:1567
+msgid "Read more"
+msgstr ""
+
+#: ../functions.php:2115 ../includes/social_icons.php:6
+msgid "Facebook"
+msgstr ""
+
+#: ../functions.php:2123 ../includes/social_icons.php:13
+msgid "Twitter"
+msgstr ""
+
+#: ../functions.php:2131
+msgid "Google+"
+msgstr ""
+
+#: ../functions.php:2139
+msgid "LinkedIn"
+msgstr ""
+
+#: ../functions.php:2358
+msgid "Tab"
+msgstr ""
+
+#: ../functions.php:2557
+msgid "Follow"
+msgstr ""
+
+#: ../functions.php:2641
+msgid "Days"
+msgstr ""
+
+#: ../functions.php:2642
+msgid "Hours"
+msgstr ""
+
+#: ../functions.php:2643
+msgid "Hrs"
+msgstr ""
+
+#: ../functions.php:2644
+msgid "Minutes"
+msgstr ""
+
+#: ../functions.php:2645
+msgid "Min"
+msgstr ""
+
+#: ../functions.php:2646
+msgid "Seconds"
+msgstr ""
+
+#: ../functions.php:2647
+msgid "Sec"
+msgstr ""
+
+#: ../functions.php:2800
+#, fuzzy, php-format
+msgid "by <strong>%1$s</strong>"
+msgstr "Designed by %1$s | Powered by %2$s"
+
+#: ../functions.php:2954
+#, fuzzy
+msgid ""
+"<h2 class=\"et_pb_subscribed\">Subscribed - look for the confirmation email!"
+"</h2>"
+msgstr "<span class=\"meta-nav\">&larr;</span> &Auml;ltere Kommentare"
+
+#: ../functions.php:3018
+msgid "Subscribe"
+msgstr ""
+
+#: ../functions.php:3034
+msgid "First Name"
+msgstr ""
+
+#: ../functions.php:3035
+msgid "Last Name"
+msgstr ""
+
+#: ../functions.php:3036 ../functions.php:4137
+msgid "Email Address"
+msgstr ""
+
+#: ../functions.php:3092 ../functions.php:4136
+msgid "Name"
+msgstr ""
+
+#: ../functions.php:3167
+msgid "Username"
+msgstr ""
+
+#: ../functions.php:3168
+#, fuzzy
+msgid "Password"
+msgstr ""
+"Dieser Artikel ist passwortgeschützt. Geben Sie Ihr Passwort ein um die "
+"Kommentare anzuzeigen."
+
+#: ../functions.php:3188
+#, fuzzy
+msgid "Forgot your password?"
+msgstr ""
+"Dieser Artikel ist passwortgeschützt. Geben Sie Ihr Passwort ein um die "
+"Kommentare anzuzeigen."
+
+#: ../functions.php:3195 ../epanel/shortcodes/shortcodes.php:292
+msgid "Login"
+msgstr ""
+
+#: ../functions.php:3368
+#, fuzzy, php-format
+msgid "by %s |"
+msgstr "Gepostet von %s"
+
+#: ../functions.php:3373
+#, fuzzy, php-format
+msgid "%s |"
+msgstr "Gepostet von %s"
+
+#: ../functions.php:3388
+msgid "read more..."
+msgstr ""
+
+#: ../functions.php:3799
+msgid "All"
+msgstr ""
+
+#: ../functions.php:4076
+#, fuzzy
+msgid "Make sure you entered the captcha."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../functions.php:4079
+#, fuzzy
+msgid "You entered the wrong number in captcha."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../functions.php:4086
+#, fuzzy
+msgid "Make sure you fill all fields."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../functions.php:4091
+msgid "Invalid Email."
+msgstr ""
+
+#: ../functions.php:4126
+#, fuzzy, php-format
+msgid "New Message From %1$s%2$s"
+msgstr "Designed by %1$s | Powered by %2$s"
+
+#: ../functions.php:4128
+#, fuzzy, php-format
+msgid " - %s"
+msgstr "Gepostet von %s"
+
+#: ../functions.php:4131
+msgid "Thanks for contacting us"
+msgstr ""
+
+#: ../functions.php:4138
+msgid "Message"
+msgstr ""
+
+#: ../functions.php:4191
+#, fuzzy
+msgid "Submit"
+msgstr "Kommentar absenden"
+
+#: ../functions.php:4377 ../header.php:143 ../epanel/custom_functions.php:465
+msgid "Home"
+msgstr "Startseite"
+
+#: ../page-template-blank.php:49 ../page.php:46 ../single-project.php:51
+#: ../single.php:89
+msgid "Pages:"
+msgstr "Seiten:"
+
+#: ../single-project.php:60
+#, fuzzy
+msgid "&larr;"
+msgstr "<span class=\"meta-nav\">&larr;</span> &Auml;ltere Kommentare"
+
+#: ../single-project.php:61
+#, fuzzy
+msgid "&rarr;"
+msgstr "Neuere Kommentare <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../epanel/core_functions.php:26 ../epanel/core_functions.php:395
+msgid "Saving..."
+msgstr ""
+
+#: ../epanel/core_functions.php:27
+msgid "Options Saved."
+msgstr ""
+
+#: ../epanel/core_functions.php:73
+msgid "Options"
+msgstr ""
+
+#: ../epanel/core_functions.php:73
+msgid "Theme Options"
+msgstr ""
+
+#: ../epanel/core_functions.php:90
+msgid "settings saved."
+msgstr ""
+
+#: ../epanel/core_functions.php:93
+msgid "settings reset."
+msgstr ""
+
+#: ../epanel/core_functions.php:111 ../epanel/options_divi.php:281
+#: ../epanel/options_divi.php:432
+msgid "General Settings"
+msgstr ""
+
+#: ../epanel/core_functions.php:114
+#, fuzzy
+msgid "Navigation"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/core_functions.php:117
+msgid "Layout Settings"
+msgstr ""
+
+#: ../epanel/core_functions.php:120
+msgid "Ad Management"
+msgstr ""
+
+#: ../epanel/core_functions.php:123
+msgid "Colorization"
+msgstr ""
+
+#: ../epanel/core_functions.php:126
+msgid "SEO"
+msgstr ""
+
+#: ../epanel/core_functions.php:129
+msgid "Integration"
+msgstr ""
+
+#: ../epanel/core_functions.php:132
+msgid "Support Docs"
+msgstr ""
+
+#: ../epanel/core_functions.php:203 ../epanel/core_functions.php:383
+msgid "Reset"
+msgstr ""
+
+#: ../epanel/core_functions.php:204
+msgid "Upload Image"
+msgstr ""
+
+#: ../epanel/core_functions.php:231
+#, fuzzy
+msgid "You don't have pages"
+msgstr "Seiten:"
+
+#: ../epanel/core_functions.php:368
+msgid "Save changes"
+msgstr ""
+
+#: ../epanel/core_functions.php:379
+#, fuzzy
+msgid ""
+"This will return all of the settings throughout the options page to their "
+"default values. <strong>Are you sure you want to do this?</strong>"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/custom_functions.php:192
+msgid "&hellip;"
+msgstr ""
+
+#: ../epanel/custom_functions.php:706
+msgid "Archives"
+msgstr ""
+
+#: ../epanel/custom_functions.php:708
+#, fuzzy, php-format
+msgid "Search results for \"%s\""
+msgstr "Nicht gefunden"
+
+#: ../epanel/custom_functions.php:710
+#, fuzzy
+msgid "404 Not Found"
+msgstr "Nicht gefunden"
+
+#: ../epanel/custom_functions.php:781
+#, fuzzy, php-format
+msgid "Currently viewing archives from %1$s"
+msgstr "Designed by %1$s | Powered by %2$s"
+
+#: ../epanel/custom_functions.php:1014
+msgid "Image doesn't exist"
+msgstr ""
+
+#: ../epanel/custom_functions.php:1210
+#, fuzzy, php-format
+msgid ""
+"<div class=\"updated\"><p>This is a fresh installation of %1$s theme. Don't "
+"forget to go to <a href=\"%2$s\">ePanel</a> to set it up. This message will "
+"disappear once you have clicked the Save button within the <a href=\"%2$s"
+"\">theme's options page</a>.</p></div>"
+msgstr "Designed by %1$s | Powered by %2$s"
+
+#: ../epanel/custom_functions.php:1222
+#, fuzzy, php-format
+msgid ""
+"There is a new version of %1$s available. <a href=\"%2$s\" class=\"thickbox"
+"\" title=\"%1$s\">View version %3$s details</a>. <em>Before you can update "
+"your Elegant Themes, you must first install the <a href=\"https://www."
+"elegantthemes.com/members-area/documentation.html#updater\" target=\"_blank"
+"\">Elegant Updater Plugin</a> to authenticate your subscription.</em>"
+msgstr "Designed by %1$s | Powered by %2$s"
+
+#: ../epanel/custom_functions.php:1226
+#, fuzzy
+msgid ""
+"Before you can update your Elegant Themes, you must first install the <a "
+"href=\"https://www.elegantthemes.com/members-area/documentation.html#updater"
+"\" target=\"_blank\">Elegant Updater Plugin</a> to authenticate your "
+"subscription."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:38
+msgid "General"
+msgstr ""
+
+#: ../epanel/options_divi.php:45
+msgid "Logo"
+msgstr ""
+
+#: ../epanel/options_divi.php:49
+#, fuzzy
+msgid ""
+"If you would like to use your own custom logo image click the Upload Image "
+"button."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:52
+msgid "Favicon"
+msgstr ""
+
+#: ../epanel/options_divi.php:56
+#, fuzzy
+msgid ""
+"If you would like to use your own custom favicon image click the Upload "
+"Image button."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:59
+#, fuzzy
+msgid "Fixed Navigation Bar"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:63
+#, fuzzy
+msgid ""
+"By default the navigation bar stays on top of the screen at all times. We "
+"suggest to disable this option, if you need to use a logo taller than the "
+"default one."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:68
+#, fuzzy
+msgid "Grab the first post image"
+msgstr ""
+"Dieser Artikel ist passwortgeschützt. Geben Sie Ihr Passwort ein um die "
+"Kommentare anzuzeigen."
+
+#: ../epanel/options_divi.php:72
+#, fuzzy
+msgid ""
+"By default thumbnail images are created using custom fields. However, if you "
+"would rather use the images that are already in your post for your thumbnail "
+"(and bypass using custom fields) you can activate this option. Once "
+"activcated thumbnail images will be generated automatically using the first "
+"image in your post. The image must be hosted on your own server."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:75
+msgid "Blog Style Mode"
+msgstr ""
+
+#: ../epanel/options_divi.php:79
+#, fuzzy
+msgid ""
+"By default the theme truncates your posts on index/homepages automatically "
+"to create post previews. If you would rather show your posts in full on "
+"index pages like a traditional blog then you can activate this feature."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:84
+#, fuzzy
+msgid "Shop Page Layout"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:93
+#, fuzzy
+msgid "Here you can choose Shop page layout."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:97
+msgid "MailChimp API Key"
+msgstr ""
+
+#: ../epanel/options_divi.php:102
+#, fuzzy, php-format
+msgid ""
+"Enter your MailChimp API key. You can create an api key <a target=\"_blank\" "
+"href=\"%1$s\">here</a>"
+msgstr "Designed by %1$s | Powered by %2$s"
+
+#: ../epanel/options_divi.php:105
+msgid "Aweber Authorization"
+msgstr ""
+
+#: ../epanel/options_divi.php:107
+#, fuzzy
+msgid "Authorize your Aweber account here."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:181
+#, fuzzy
+msgid "Number of Posts displayed on Category page"
+msgstr "Gepostet von %s"
+
+#: ../epanel/options_divi.php:185
+#, fuzzy
+msgid ""
+"Here you can designate how many recent articles are displayed on the "
+"Category page. This option works independently from the Settings > Reading "
+"options in wp-admin."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:189
+#, fuzzy
+msgid "Number of Posts displayed on Archive pages"
+msgstr "Seiten:"
+
+#: ../epanel/options_divi.php:193
+#, fuzzy
+msgid ""
+"Here you can designate how many recent articles are displayed on the Archive "
+"pages. This option works independently from the Settings > Reading options "
+"in wp-admin."
+msgstr "Seiten:"
+
+#: ../epanel/options_divi.php:197
+#, fuzzy
+msgid "Number of Posts displayed on Search pages"
+msgstr "Seiten:"
+
+#: ../epanel/options_divi.php:201
+#, fuzzy
+msgid ""
+"Here you can designate how many recent articles are displayed on the Search "
+"results pages. This option works independently from the Settings > Reading "
+"options in wp-admin."
+msgstr "Seiten:"
+
+#: ../epanel/options_divi.php:205
+#, fuzzy
+msgid "Number of Posts displayed on Tag pages"
+msgstr "Seiten:"
+
+#: ../epanel/options_divi.php:209
+#, fuzzy
+msgid ""
+"Here you can designate how many recent articles are displayed on the Tag "
+"pages. This option works independently from the Settings > Reading options "
+"in wp-admin."
+msgstr "Seiten:"
+
+#: ../epanel/options_divi.php:213
+msgid "Date format"
+msgstr ""
+
+#: ../epanel/options_divi.php:217
+#, fuzzy
+msgid ""
+"This option allows you to change how your dates are displayed. For more "
+"information please refer to the WordPress codex here:<a href='http://codex."
+"wordpress.org/Formatting_Date_and_Time' target='_blank'>Formatting Date and "
+"Time</a>"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:223
+#, fuzzy
+msgid "Use excerpts when defined"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:227
+#, fuzzy
+msgid "This will enable the use of excerpts in posts or pages."
+msgstr "Seiten:"
+
+#: ../epanel/options_divi.php:230
+msgid "Responsive shortcodes"
+msgstr ""
+
+#: ../epanel/options_divi.php:234
+msgid "Enable this option to make shortcodes respond to various screen sizes"
+msgstr ""
+
+#: ../epanel/options_divi.php:239
+msgid "Google Fonts subsets"
+msgstr ""
+
+#: ../epanel/options_divi.php:243
+msgid "This will enable Google Fonts for Non-English languages."
+msgstr ""
+
+#: ../epanel/options_divi.php:248
+msgid "Custom CSS"
+msgstr ""
+
+#: ../epanel/options_divi.php:252
+#, fuzzy
+msgid "Here you can add custom css to override or extend default styles."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:271
+#, fuzzy
+msgid "Pages"
+msgstr "Seiten:"
+
+#: ../epanel/options_divi.php:289
+#, fuzzy
+msgid "Exclude pages from the navigation bar"
+msgstr "Seiten:"
+
+#: ../epanel/options_divi.php:293
+#, fuzzy
+msgid ""
+"Here you can choose to remove certain pages from the navigation menu. All "
+"pages marked with an X will not appear in your navigation bar. "
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:297 ../epanel/options_divi.php:352
+msgid "Show dropdown menus"
+msgstr ""
+
+#: ../epanel/options_divi.php:301
+#, fuzzy
+msgid ""
+"If you would like to remove the dropdown menus from the pages navigation bar "
+"disable this feature."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:304
+#, fuzzy
+msgid "Display Home link"
+msgstr "Startseite"
+
+#: ../epanel/options_divi.php:308
+#, fuzzy
+msgid ""
+"By default the theme creates a Home link that, when clicked, leads back to "
+"your blog's homepage. If, however, you are using a static homepage and have "
+"already created a page called Home to use, this will result in a duplicate "
+"link. In this case you should disable this feature to remove the link."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:313
+#, fuzzy
+msgid "Sort Pages Links"
+msgstr "Seiten:"
+
+#: ../epanel/options_divi.php:317
+#, fuzzy
+msgid "Here you can choose to sort your pages links."
+msgstr "Seiten:"
+
+#: ../epanel/options_divi.php:320
+#, fuzzy
+msgid "Order Pages Links by Ascending/Descending"
+msgstr "Seiten:"
+
+#: ../epanel/options_divi.php:324
+#, fuzzy
+msgid ""
+"Here you can choose to reverse the order that your pages links are "
+"displayed. You can choose between ascending and descending."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:327 ../epanel/options_divi.php:368
+msgid "Number of dropdown tiers shown"
+msgstr ""
+
+#: ../epanel/options_divi.php:331 ../epanel/options_divi.php:372
+#, fuzzy
+msgid ""
+"This options allows you to control how many teirs your pages dropdown menu "
+"has. Increasing the number allows for additional menu items to be shown."
+msgstr "Seiten:"
+
+#: ../epanel/options_divi.php:344
+#, fuzzy
+msgid "Exclude categories from the navigation bar"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:348
+#, fuzzy
+msgid ""
+"Here you can choose to remove certain categories from the navigation menu. "
+"All categories marked with an X will not appear in your navigation bar. "
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:356
+#, fuzzy
+msgid ""
+"If you would like to remove the dropdown menus from the categories "
+"navigation bar disable this feature."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:359
+msgid "Hide empty categories"
+msgstr ""
+
+#: ../epanel/options_divi.php:363
+#, fuzzy
+msgid ""
+"If you would like categories to be displayed in your navigationbar that "
+"don't have any posts in them then disable this option. By default empty "
+"categories are hidden"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:378
+msgid "Sort Categories Links by Name/ID/Slug/Count/Term Group"
+msgstr ""
+
+#: ../epanel/options_divi.php:382
+#, fuzzy
+msgid ""
+"By default pages are sorted by name. However if you would rather have them "
+"sorted by ID you can adjust this setting."
+msgstr "Seiten:"
+
+#: ../epanel/options_divi.php:385
+msgid "Order Category Links by Ascending/Descending"
+msgstr ""
+
+#: ../epanel/options_divi.php:389
+#, fuzzy
+msgid ""
+"Here you can choose to reverse the order that your categories links are "
+"displayed. You can choose between ascending and descending."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:398
+msgid "Disable top tier dropdown menu links"
+msgstr ""
+
+#: ../epanel/options_divi.php:402
+#, fuzzy
+msgid ""
+"In some cases users will want to create parent categories or links as "
+"placeholders to hold a list of child links or categories. In this case it is "
+"not desirable to have the parent links lead anywhere, but instead merely "
+"serve an organizational function. Enabling this options will remove the "
+"links from all parent pages/categories so that they don't lead anywhere when "
+"clicked."
+msgstr "Seiten:"
+
+#: ../epanel/options_divi.php:422
+#, fuzzy
+msgid "Single Post Layout"
+msgstr ""
+"Dieser Artikel ist passwortgeschützt. Geben Sie Ihr Passwort ein um die "
+"Kommentare anzuzeigen."
+
+#: ../epanel/options_divi.php:427
+#, fuzzy
+msgid "Single Page Layout"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:440
+msgid "Choose which items to display in the postinfo section"
+msgstr ""
+
+#: ../epanel/options_divi.php:444
+#, fuzzy
+msgid ""
+"Here you can choose which items appear in the postinfo section on single "
+"post pages. This is the area, usually below the post title, which displays "
+"basic information about your post. The highlighted itmes shown below will "
+"appear. "
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:448
+#, fuzzy
+msgid "Show comments on posts"
+msgstr "Gepostet von %s"
+
+#: ../epanel/options_divi.php:452
+#, fuzzy
+msgid ""
+"You can disable this option if you want to remove the comments and comment "
+"form from single post pages. "
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:455
+#, fuzzy
+msgid "Place Thumbs on Posts"
+msgstr "Gepostet von %s"
+
+#: ../epanel/options_divi.php:459
+#, fuzzy
+msgid ""
+"By default thumbnails are placed at the beginning of your post on single "
+"post pages. If you would like to remove this initial thumbnail image to "
+"avoid repetition simply disable this option. "
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:470
+#, fuzzy
+msgid "Place Thumbs on Pages"
+msgstr "Seiten:"
+
+#: ../epanel/options_divi.php:474
+#, fuzzy
+msgid ""
+"By default thumbnails are not placed on pages (they are only used on posts). "
+"However, if you want to use thumbnails on posts you can! Just enable this "
+"option. "
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:477
+#, fuzzy
+msgid "Show comments on pages"
+msgstr "Seiten:"
+
+#: ../epanel/options_divi.php:481
+#, fuzzy
+msgid ""
+"By default comments are not placed on pages, however, if you would like to "
+"allow people to comment on your pages simply enable this option. "
+msgstr "Seiten:"
+
+#: ../epanel/options_divi.php:492
+#, fuzzy
+msgid "Post info section"
+msgstr ""
+"Dieser Artikel ist passwortgeschützt. Geben Sie Ihr Passwort ein um die "
+"Kommentare anzuzeigen."
+
+#: ../epanel/options_divi.php:496
+#, fuzzy
+msgid ""
+"Here you can choose which items appear in the postinfo section on pages. "
+"This is the area, usually below the post title, which displays basic "
+"information about your post. The highlighted itmes shown below will appear. "
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:501
+#, fuzzy
+msgid "Show Thumbs on Index pages"
+msgstr "Seiten:"
+
+#: ../epanel/options_divi.php:505
+#, fuzzy
+msgid "Enable this option to show thumbnails on Index Pages."
+msgstr "Seiten:"
+
+#: ../epanel/options_divi.php:524
+msgid "Homepage SEO"
+msgstr ""
+
+#: ../epanel/options_divi.php:529
+#, fuzzy
+msgid "Single Post Page SEO"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:534
+#, fuzzy
+msgid "Index Page SEO"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:542
+msgid " Enable custom title "
+msgstr ""
+
+#: ../epanel/options_divi.php:546
+#, fuzzy
+msgid ""
+"By default the theme uses a combination of your blog name and your blog "
+"description, as defined when you created your blog, to create your homepage "
+"titles. However if you want to create a custom title then simply enable this "
+"option and fill in the custom title field below. "
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:549
+#, fuzzy
+msgid " Enable meta description"
+msgstr "<span class=\"meta-nav\">&larr;</span> &Auml;ltere Kommentare"
+
+#: ../epanel/options_divi.php:553
+#, fuzzy
+msgid ""
+"By default the theme uses your blog description, as defined when you created "
+"your blog, to fill in the meta description field. If you would like to use a "
+"different description then enable this option and fill in the custom "
+"description field below. "
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:556
+#, fuzzy
+msgid " Enable meta keywords"
+msgstr "<span class=\"meta-nav\">&larr;</span> &Auml;ltere Kommentare"
+
+#: ../epanel/options_divi.php:560
+#, fuzzy
+msgid ""
+"By default the theme does not add keywords to your header. Most search "
+"engines don't use keywords to rank your site anymore, but some people define "
+"them anyway just in case. If you want to add meta keywords to your header "
+"then enable this option and fill in the custom keywords field below. "
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:563 ../epanel/options_divi.php:696
+msgid " Enable canonical URL's"
+msgstr ""
+
+#: ../epanel/options_divi.php:567
+#, fuzzy
+msgid ""
+"Canonicalization helps to prevent the indexing of duplicate content by "
+"search engines, and as a result, may help avoid duplicate content penalties "
+"and pagerank degradation. Some pages may have different URLs all leading to "
+"the same place. For example domain.com, domain.com/index.html, and www."
+"domain.com are all different URLs leading to your homepage. From a search "
+"engine's perspective these duplicate URLs, which also occur often due to "
+"custom permalinks, may be treaded individually instead of as a single "
+"destination. Defining a canonical URL tells the search engine which URL you "
+"would like to use officially. The theme bases its canonical URLs off your "
+"permalinks and the domain name defined in the settings tab of wp-admin."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:572
+msgid "Homepage custom title (if enabled)"
+msgstr ""
+
+#: ../epanel/options_divi.php:576
+#, fuzzy
+msgid ""
+"If you have enabled custom titles you can add your custom title here. "
+"Whatever you type here will be placed between the < title >< /title > tags "
+"in header.php"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:580
+#, fuzzy
+msgid "Homepage meta description (if enabled)"
+msgstr "<span class=\"meta-nav\">&larr;</span> &Auml;ltere Kommentare"
+
+#: ../epanel/options_divi.php:584
+#, fuzzy
+msgid ""
+"If you have enabled meta descriptions you can add your custom description "
+"here."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:588
+#, fuzzy
+msgid "Homepage meta keywords (if enabled)"
+msgstr "<span class=\"meta-nav\">&larr;</span> &Auml;ltere Kommentare"
+
+#: ../epanel/options_divi.php:592
+#, fuzzy
+msgid ""
+"If you have enabled meta keywords you can add your custom keywords here. "
+"Keywords should be separated by comas. For example: wordpress,themes,"
+"templates,elegant"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:596 ../epanel/options_divi.php:674
+msgid "If custom titles are disabled, choose autogeneration method"
+msgstr ""
+
+#: ../epanel/options_divi.php:601
+#, fuzzy
+msgid ""
+"If you are not using cutsom post titles you can still have control over how "
+"your titles are generated. Here you can choose which order you would like "
+"your post title and blog name to be displayed, or you can remove the blog "
+"name from the title completely."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:604 ../epanel/options_divi.php:682
+#: ../epanel/options_divi.php:720
+#, fuzzy
+msgid "Define a character to separate BlogName and Post title"
+msgstr ""
+"Dieser Artikel ist passwortgeschützt. Geben Sie Ihr Passwort ein um die "
+"Kommentare anzuzeigen."
+
+#: ../epanel/options_divi.php:608 ../epanel/options_divi.php:686
+#, fuzzy
+msgid ""
+"Here you can change which character separates your blog title and post name "
+"when using autogenerated post titles. Common values are | or -"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:618
+msgid "Enable custom titles"
+msgstr ""
+
+#: ../epanel/options_divi.php:622
+#, fuzzy
+msgid ""
+"By default the theme creates post titles based on the title of your post and "
+"your blog name. If you would like to make your meta title different than "
+"your actual post title you can define a custom title for each post using "
+"custom fields. This option must be enabled for custom titles to work, and "
+"you must choose a custom field name for your title below."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:625
+msgid "Enable custom description"
+msgstr ""
+
+#: ../epanel/options_divi.php:629
+#, fuzzy
+msgid ""
+"If you would like to add a meta description to your post you can do so using "
+"custom fields. This option must be enabled for descriptions to be displayed "
+"on post pages. You can add your meta description using custom fields based "
+"off the custom field name you define below."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:634
+msgid "Enable custom keywords"
+msgstr ""
+
+#: ../epanel/options_divi.php:638
+#, fuzzy
+msgid ""
+"If you would like to add meta keywords to your post you can do so using "
+"custom fields. This option must be enabled for keywords to be displayed on "
+"post pages. You can add your meta keywords using custom fields based off the "
+"custom field name you define below."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:641
+msgid "Enable canonical URL's"
+msgstr ""
+
+#: ../epanel/options_divi.php:645 ../epanel/options_divi.php:700
+#, fuzzy
+msgid ""
+"Canonicalization helps to prevent the indexing of duplicate content by "
+"search engines, and as a result, may help avoid duplicate content penalties "
+"and pagerank degradation. Some pages may have different URL's all leading to "
+"the same place. For example domain.com, domain.com/index.html, and www."
+"domain.com are all different URLs leading to your homepage. From a search "
+"engine's perspective these duplicate URLs, which also occur often due to "
+"custom permalinks, may be treaded individually instead of as a single "
+"destination. Defining a canonical URL tells the search engine which URL you "
+"would like to use officially. The theme bases its canonical URLs off your "
+"permalinks and the domain name defined in the settings tab of wp-admin."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:650
+msgid "Custom field Name to be used for title"
+msgstr ""
+
+#: ../epanel/options_divi.php:654
+#, fuzzy
+msgid ""
+"When you define your title using custom fields you should use this value for "
+"the custom field Name. The Value of your custom field should be the custom "
+"title you would like to use."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:658
+msgid "Custom field Name to be used for description"
+msgstr ""
+
+#: ../epanel/options_divi.php:662
+#, fuzzy
+msgid ""
+"When you define your meta description using custom fields you should use "
+"this value for the custom field Name. The Value of your custom field should "
+"be the custom description you would like to use."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:666
+msgid "Custom field Name to be used for keywords"
+msgstr ""
+
+#: ../epanel/options_divi.php:670
+#, fuzzy
+msgid ""
+"When you define your keywords using custom fields you should use this value "
+"for the custom field Name. The Value of your custom field should be the meta "
+"keywords you would like to use, separated by comas."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:679
+#, fuzzy
+msgid ""
+"If you are not using cutsom post titles you can still have control over hw "
+"your titles are generated. Here you can choose which order you would like "
+"your post title and blog name to be displayed, or you can remove the blog "
+"name from the title completely."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:703
+#, fuzzy
+msgid "Enable meta descriptions"
+msgstr "<span class=\"meta-nav\">&larr;</span> &Auml;ltere Kommentare"
+
+#: ../epanel/options_divi.php:707
+#, fuzzy
+msgid ""
+"Check this box if you want to display meta descriptions on category/archive "
+"pages. The description is based off the category description you choose when "
+"creating/edit your category in wp-admin."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:712
+msgid "Choose title autogeneration method"
+msgstr ""
+
+#: ../epanel/options_divi.php:717
+#, fuzzy
+msgid ""
+"Here you can choose how your titles on index pages are generated. You can "
+"change which order your blog name and index title are displayed, or you can "
+"remove the blog name from the title completely."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:724
+#, fuzzy
+msgid ""
+"Here you can change which character separates your blog title and index page "
+"name when using autogenerated post titles. Common values are | or -"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:745
+msgid "Code Integration"
+msgstr ""
+
+#: ../epanel/options_divi.php:753
+msgid "Enable header code"
+msgstr ""
+
+#: ../epanel/options_divi.php:757
+#, fuzzy
+msgid ""
+"Disabling this option will remove the header code below from your blog. This "
+"allows you to remove the code while saving it for later use."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:760
+msgid "Enable body code"
+msgstr ""
+
+#: ../epanel/options_divi.php:764
+#, fuzzy
+msgid ""
+"Disabling this option will remove the body code below from your blog. This "
+"allows you to remove the code while saving it for later use."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:769
+msgid "Enable single top code"
+msgstr ""
+
+#: ../epanel/options_divi.php:773
+#, fuzzy
+msgid ""
+"Disabling this option will remove the single top code below from your blog. "
+"This allows you to remove the code while saving it for later use."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:776
+msgid "Enable single bottom code"
+msgstr ""
+
+#: ../epanel/options_divi.php:780
+#, fuzzy
+msgid ""
+"Disabling this option will remove the single bottom code below from your "
+"blog. This allows you to remove the code while saving it for later use."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:785
+#, fuzzy
+msgid "Add code to the < head > of your blog"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:789
+#, fuzzy
+msgid ""
+"Any code you place here will appear in the head section of every page of "
+"your blog. This is useful when you need to add javascript or css to all "
+"pages."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:792
+msgid ""
+"Add code to the < body > (good for tracking codes such as google analytics)"
+msgstr ""
+
+#: ../epanel/options_divi.php:796
+#, fuzzy
+msgid ""
+"Any code you place here will appear in body section of all pages of your "
+"blog. This is usefull if you need to input a tracking pixel for a state "
+"counter such as Google Analytics."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:799
+#, fuzzy
+msgid "Add code to the top of your posts"
+msgstr "Gepostet von %s"
+
+#: ../epanel/options_divi.php:803 ../epanel/options_divi.php:810
+#, fuzzy
+msgid ""
+"Any code you place here will be placed at the top of all single posts. This "
+"is useful if you are looking to integrating things such as social "
+"bookmarking links."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:806
+#, fuzzy
+msgid "Add code to the bottom of your posts, before the comments"
+msgstr "Gepostet von %s"
+
+#: ../epanel/options_divi.php:828
+msgid "Documentation"
+msgstr ""
+
+#: ../epanel/options_divi.php:854
+msgid "Manage Un-widgetized Advertisements"
+msgstr ""
+
+#: ../epanel/options_divi.php:862
+#, fuzzy
+msgid "Enable Single Post 468x60 banner"
+msgstr ""
+"Dieser Artikel ist passwortgeschützt. Geben Sie Ihr Passwort ein um die "
+"Kommentare anzuzeigen."
+
+#: ../epanel/options_divi.php:866
+#, fuzzy
+msgid ""
+"Enabling this option will display a 468x60 banner ad on the bottom of your "
+"post pages below the single post content. If enabled you must fill in the "
+"banner image and destination url below."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:871
+msgid "Input 468x60 advertisement banner image"
+msgstr ""
+
+#: ../epanel/options_divi.php:875
+#, fuzzy
+msgid "Here you can provide 468x60 banner image url"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:879
+msgid "Input 468x60 advertisement destination url"
+msgstr ""
+
+#: ../epanel/options_divi.php:883
+#, fuzzy
+msgid "Here you can provide 468x60 banner destination url"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/options_divi.php:887
+msgid "Input 468x60 adsense code"
+msgstr ""
+
+#: ../epanel/options_divi.php:891
+#, fuzzy
+msgid "Place your adsense code here."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/shortcodes/shortcodes.php:15
+msgid "Previous"
+msgstr "Vorherig"
+
+#: ../epanel/shortcodes/shortcodes.php:15
+msgid "Next"
+msgstr "Nächste"
+
+#: ../epanel/shortcodes/shortcodes.php:287
+msgid "Member Login"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:290
+msgid "Username: "
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:291
+#, fuzzy
+msgid "Password: "
+msgstr ""
+"Dieser Artikel ist passwortgeschützt. Geben Sie Ihr Passwort ein um die "
+"Kommentare anzuzeigen."
+
+#: ../epanel/shortcodes/shortcodes.php:328
+msgid "Add a Tooltip Text"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:350
+msgid "Click here to learn more"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:960
+msgid "Caption"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:961
+msgid "Caption goes here"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:962
+msgid "Caption title goes here"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:966
+msgid "State"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:968
+msgid "Select between expanded and closed state"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:973
+#: ../epanel/shortcodes/shortcodes.php:989
+#: ../epanel/shortcodes/shortcodes.php:1018
+#: ../epanel/shortcodes/shortcodes.php:1098
+msgid "Content"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:974
+#: ../epanel/shortcodes/shortcodes.php:990
+#: ../epanel/shortcodes/shortcodes.php:1076
+#: ../epanel/shortcodes/shortcodes.php:1099
+msgid "Content goes here"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:975
+#: ../epanel/shortcodes/shortcodes.php:991
+#: ../epanel/shortcodes/shortcodes.php:1020
+msgid "Content text or html"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:982
+#: ../epanel/shortcodes/shortcodes.php:1004
+msgid "Type"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:984
+msgid "Type of the box"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:998
+msgid "Link"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1000
+msgid "URL"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1006
+msgid "Choose button type"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1011
+msgid "Color"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1013
+msgid "Choose button color"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1019
+msgid "Link text"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1024
+msgid "Icon"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1026
+msgid "Used for icon button type"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1031
+msgid "Open link in new window"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1033
+msgid "Select yes if the link should be opened in a new window"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1041
+msgid "Slider Type"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1043
+msgid "Select Slider Type here"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1048
+msgid "Effect"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1050
+msgid "Select Animation Effect"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1055
+msgid "Auto"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1057
+#, fuzzy
+msgid "Choose yes if you want for automatic slider animation"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/shortcodes/shortcodes.php:1062
+msgid "Auto Speed"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1064
+msgid "Automattic slider speed (works only if Auto is set to yes)"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1068
+msgid "Tab Text"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1075
+msgid "Tab Content"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1077
+#, fuzzy
+msgid "Paste image url here, if you chose \"images\" slider type"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/shortcodes/shortcodes.php:1085
+msgid "Image Url"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1087
+msgid "Author Image URL"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1091
+#, fuzzy
+msgid "Use resizing"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../epanel/shortcodes/shortcodes.php:1168
+msgid "+ Add One More Tab"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1318
+msgid "Image Height"
+msgstr ""
+
+#: ../epanel/shortcodes/shortcodes.php:1319
+msgid "Image Width"
+msgstr ""
+
+#: ../et-pagebuilder/et-pagebuilder.php:33
+#: ../et-pagebuilder/et-pagebuilder.php:72
+#, fuzzy
+msgid "Export Page Builder Layouts"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../et-pagebuilder/et-pagebuilder.php:67
+#, fuzzy
+msgid ""
+"You do not have sufficient permissions to export the content of this site."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../et-pagebuilder/et-pagebuilder.php:73
+#, fuzzy
+msgid ""
+"When you click the button below WordPress will create an XML file for you to "
+"save to your computer."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../et-pagebuilder/et-pagebuilder.php:74
+#, fuzzy
+msgid ""
+"This format, which we call WordPress eXtended RSS or WXR, will contain all "
+"layouts you created using the Page Builder."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../et-pagebuilder/et-pagebuilder.php:75
+#, fuzzy
+msgid ""
+"Once you&#8217;ve saved the download file, you can use the Import function "
+"in another WordPress installation to import all layouts from this site."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../et-pagebuilder/et-pagebuilder.php:81
+msgid "Download Export File"
+msgstr ""
+
+#: ../et-pagebuilder/et-pagebuilder.php:97
+#: ../et-pagebuilder/et-pagebuilder.php:99
+#, fuzzy
+msgid "Use Default Editor"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../et-pagebuilder/et-pagebuilder.php:97
+#: ../et-pagebuilder/et-pagebuilder.php:98
+#, fuzzy
+msgid "Use Page Builder"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../et-pagebuilder/et-pagebuilder.php:194
+msgid "Replace the existing content with loaded layout"
+msgstr ""
+
+#: ../et-pagebuilder/et-pagebuilder.php:212
+msgid "Saved Layouts:"
+msgstr ""
+
+#: ../et-pagebuilder/et-pagebuilder.php:242
+msgid "Predefined Layouts:"
+msgstr ""
+
+#: ../et-pagebuilder/et-pagebuilder.php:341
+msgid "The section should have at least one row."
+msgstr ""
+
+#: ../et-pagebuilder/et-pagebuilder.php:342
+msgid "Fullwidth module can't be used outside of the Fullwidth Section."
+msgstr ""
+
+#: ../et-pagebuilder/et-pagebuilder.php:343
+msgid "3 column row can't be used in this column."
+msgstr ""
+
+#: ../et-pagebuilder/et-pagebuilder.php:344
+msgid "Preview"
+msgstr ""
+
+#: ../et-pagebuilder/et-pagebuilder.php:345
+msgid "Module"
+msgstr ""
+
+#: ../et-pagebuilder/et-pagebuilder.php:359
+#, fuzzy
+msgid "Page Builder"
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../includes/navigation.php:2
+msgid "&laquo; Older Entries"
+msgstr "&laquo; &Auml;ltere Eintr&auml;ge"
+
+#: ../includes/navigation.php:3
+msgid "Next Entries &raquo;"
+msgstr "Neuere Eintr&auml;ge &raquo;"
+
+#: ../includes/no-results.php:3
+msgid "No Results Found"
+msgstr "Nicht gefunden"
+
+#: ../includes/no-results.php:4
+msgid ""
+"The page you requested could not be found. Try refining your search, or use "
+"the navigation above to locate the post."
+msgstr "Keine Seite gefunden. Etwas anderes Suchen?"
+
+#: ../includes/social_icons.php:20
+msgid "Google"
+msgstr ""
+
+#: ../includes/social_icons.php:32
+msgid "RSS"
+msgstr ""
+
+#: ../includes/functions/comments.php:15
+#, fuzzy, php-format
+msgid "on %1$s at %2$s"
+msgstr "Designed by %1$s | Powered by %2$s"
+
+#: ../includes/functions/comments.php:18
+msgid "(Edit)"
+msgstr "(Bearbeiten)"
+
+#: ../includes/functions/comments.php:21
+msgid "Reply"
+msgstr "Kommentar absenden"
+
+#: ../includes/functions/comments.php:30
+#, fuzzy
+msgid "Your comment is awaiting moderation."
+msgstr "1 Kommentar"
+
+#: ../includes/functions/installation.php:1
+msgid "Read Divi Documentation"
+msgstr ""
