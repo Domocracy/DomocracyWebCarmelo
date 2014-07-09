@@ -43,8 +43,8 @@ define('DB_COLLATE', '');
  * @since 2.6.0
  */
  /*Se incluyen los define para trabajar en localhost*/
-//define('WP_HOME','localhost');
-//define('WP_SITEURL','localhost');
+//define('WP_HOME','http://localhost');
+//define('WP_SITEURL','http://localhost');
  
 define('AUTH_KEY',         'put your unique phrase here');
 define('SECURE_AUTH_KEY',  'put your unique phrase here');
