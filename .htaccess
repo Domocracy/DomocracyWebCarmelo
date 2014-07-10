@@ -10,3 +10,7 @@ RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
+
+AddType video/mp4 .mp4 
+AddType video/ogg .ogv
+AddType video/webm .webm
