@@ -1,0 +1,644 @@
+html, body, div, span, applet, object, iframe,h1, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	font: 13px/1.5 Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
+	background: #eee;
+	border-top: 5px solid #6fef1b;
+	color: #333;
+	font-size: 11px;
+	margin-bottom: 10px;
+}
+
+a:focus
+{
+	outline: 1px dotted invert;
+}
+
+span.onTime {
+	color: green;
+}
+
+span.late {
+	color: #CC0000;
+}
+
+span.due, span.attn {
+	color: #ff3300;
+}
+
+span.complete {
+	color: blue;
+}
+
+span.error {
+	float: left;
+	color: red;
+	display: block;
+	padding: 10px;
+	margin: 0px;
+	font-size: 110%;
+	font-weight: bold;
+}
+
+label font.required, .required{
+    color: red;
+    font-weight: bold;
+}
+
+div.sort_by {
+	text-align: right;
+	width: 98%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 80%;
+}
+
+hr
+{
+	border-color: #ccc;
+	border-style: solid;
+	border-width: 1px 0 0;
+	clear: both;
+	height: 0;
+}
+
+/* Headings */
+
+h1
+{
+	font-size: 25px;
+}
+
+h3
+{
+	font-size: 21px;
+}
+
+h4
+{
+	font-size: 19px;
+}
+
+h5
+{
+	font-size: 17px;
+}
+
+h6
+{
+	font-size: 15px;
+}
+
+/* Spacing */
+
+ol
+{
+	list-style: decimal;
+}
+
+li
+{
+	margin-left: 30px;
+}
+
+p,
+dl,
+hr,
+h1,
+h3,
+h4,
+h5,
+h6,
+ol,
+ul,
+pre,
+table,
+address,
+fieldset
+{
+	margin-bottom: 20px;
+}
+
+h2 {
+	margin: 0;
+	padding-bottom: 15px;
+	font-size: 26px;
+	font-weight: normal;
+}
+
+.jorp {
+	color: #6fef1b;
+}
+
+a {
+	color: #000;
+	font-weight:bold;
+	text-decoration: none;
+}
+
+a:hover {
+	color:#333;
+}
+
+#errors {
+	display: none;
+}
+
+#wrapper {
+	width: 92%;
+	margin: auto;
+	overflow: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	border-left: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+	background: #FFFFFF;
+}
+
+#topBar {
+	float: left;
+	height: 35px;
+	width: 100%;
+	background: #42a302;	
+	text-align: right;
+}
+
+#bottomBar {
+	float: left;
+	height: 20px;
+	width: 100%;
+	background: #42a302;
+	text-align: right;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 9px;
+	margin-top: 15px;
+	padding-top: 5px;
+}
+
+#topBarLinks ul { 
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	padding-top: 8px;
+	padding-right: 15px;
+}
+
+#topBarLinks ul li { 
+	display: inline; 
+	font-family: arial, helvetica, sans;
+	font-size: 12px;
+	margin: 0;
+}
+
+#topBarLinks ul li a { 
+	text-decoration: none; 
+	color: #ffffff;
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: 0;
+}
+
+#topBarLinks ul li a:hover {
+	background-color: #6fef1b;
+}
+
+#bannerBar {
+	float: left;
+	height: 120px;
+	width: 100%;
+	background-image: url(images/bannerBar.png);
+	background-repeat: repeat-x;
+}
+
+#logo {
+	margin-left: 30px;
+	margin-top: 35px;
+	height: 60px;
+	width: 500px;
+	background-image: url(images/logo.png);
+	background-repeat: no-repeat;
+}
+
+#contentContainer {
+	width: 100%;
+	float: left;
+	background: #FFFFFF;
+	font: 12px arial, helvetica, sans;
+	padding-top: 10px;
+}
+
+.leftContainer {
+	float: left;
+	width: 70%;
+	padding-right: 10px;
+}
+
+.rightContainer {
+	float: right;
+	width: 27%;
+	padding-left: 10px;
+}
+
+ul.recipients {
+	list-style: none;
+}
+
+ul.recipients li {
+	display: block;
+	overflow: hidden;
+}
+
+#alert {
+	display: none;
+	width: 90%;
+	margin: auto;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	padding: 6px;
+	color: #6fef1b;
+	font-size: 16pt;
+	text-align: center;
+}
+
+.header {
+	font-size:1em;
+	font-weight:normal;
+	text-transform:uppercase;
+	color:#fff;
+	background:#2f7600 url(images/titlebar.png) 97% 50% repeat-x;
+	margin:0px 0px 0px 0px;
+	padding:6px 12px;
+}
+
+.header:hover {
+	background:#2f7600 url(images/titlebar-hover.png) 97% 50% repeat-x;
+}
+
+.headerMain {
+	border-top: 1px solid #e0e0e0;
+	border-left: 0px;
+	border-right: 0px;
+	background-image: url(images/headerBg.png);
+	background-repeat: repeat-x;
+	height: 24px;
+	color: #2f7600;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding-left: 5px;
+	padding-bottom: 5px;
+	clear: both;
+}
+
+.contentMain {
+	line-height: 24px;
+	font-family: arial, helvetica, sans;
+	font-size: 12px;
+	color: #666666;
+	padding: 4px;
+	border-right: 0px;
+	border-left: 0px;
+}
+
+.content {
+	background: #e7e7e7;
+	line-height: 24px;
+	font-family: arial, helvetica, sans;
+	font-size: 12px;
+	color: #333333;
+	padding: 4px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.project_top, .client_top, .user_top {
+	width: 95%;
+	background: #3d3d3d;
+	color: #6fef1b;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 5px;
+	margin-bottom: 3px;
+	border-bottom: 1px dotted #6fef1b;
+	overflow: auto;
+}
+
+.project_top:hover, .client_top:hover, .user_top:hover {
+	background: #2b2b2b;
+}
+
+.project_bottom, .client_bottom, .user_bottom {
+	padding: 5px;
+	width: 95%;
+	display: none;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+	text-align: right;
+}
+
+.taskTable {
+	margin-bottom: 25px;
+	border: none;
+}
+
+.taskTable .project_desc, taskTable .task_desc {
+	padding: 3px;
+	font-size: 11px;
+}
+
+.taskTable .buttons {
+	border-bottom: 1px solid #e0e0e0;
+	border-top: 1px solid #e0e0e0;
+}
+
+.taskTable .taskNum, .taskTable .devNum, .taskTable .taskName, .taskTable .taskComp {
+	border-right: 1px solid #e0e0e0;
+	text-transform: capitalize;
+}
+
+.taskTable .taskNumHeader, .taskTable .devNumHeader, .taskTable .taskNameHeader, .taskTable .taskCompHeader, .taskTable .editTaskHeader {
+	border-bottom: 1px solid #e0e0e0;
+	text-transform: uppercase;
+	font-size: 11px;
+}
+
+.taskTable .ftpAddressHeader, .taskTable .ftpNameHeader, .taskTable .ftpPassHeader {
+	border-bottom: 1px solid #e0e0e0;
+	text-transform: uppercase;
+	font-size: 11px;
+}
+
+.taskTable .ftpAddress, .taskTable .ftpName, .taskTable .ftpPass {
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.taskTable .taskNotes {
+	padding: 5px;
+}
+
+.clientTable {
+	margin-bottom: 25px;
+}
+
+.clientTable .email_addr {
+	padding: 3px;
+	font-size: 11px;
+}
+
+.clientTable .ph_num {
+	padding: 3px;
+	font-size: 11px;
+}
+
+.clientTable .projectNumHeader, .clientTable .projectNameHeader {
+	border-bottom: 1px solid #e0e0e0;
+	text-transform: uppercase;
+	font-size: 11px;
+	width: 50%;
+}
+
+.clientTable .projectNum {
+	border-right: 1px solid #e0e0e0;
+	text-transform: capitalize;
+}
+
+.clientTable .projectName {
+	text-transform: capitalize;
+}
+
+.userTable {
+	margin-bottom: 25px;
+}
+
+.userTable .email_addr {
+	padding: 3px;
+	font-size: 11px;
+}
+
+.userTable .ph_num {
+	padding: 3px;
+	font-size: 11px;
+}
+
+.userTable .userNumHeader, .userTable .roleHeader, .userTable .editUserHeader {
+	border-bottom: 1px solid #e0e0e0;
+	text-transform: uppercase;
+	font-size: 11px;
+}
+
+.userTable .userNum {
+	border-right: 1px solid #e0e0e0;
+	text-transform: capitalize;
+}
+
+.userTable .role {
+	text-transform: capitalize;
+}
+
+.projectTitle, .taskTitle {
+	text-transform: uppercase;
+}
+
+.name {
+	font-weight: bold;
+	color: #2f7600;
+}
+
+.hours, .deadline {
+	font-weight: bold;
+	color: #444444;
+}
+
+.login {
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+ul.loggedIn li {
+	list-style-type: none;
+	padding-left: 30px;
+	background: url(images/user.png) no-repeat 0px 0px;
+}
+
+div.time {
+	float: left;
+	padding: 3px;
+	padding-left: 30px;
+	background: url(images/clock.png) no-repeat 0px 10px;
+	width: 24%;
+	min-height: 50px;
+	font-size: 11px;
+}
+
+div.date {
+	float: right;
+	padding: 3px;
+	padding-left: 30px;
+	background: url(images/calendar.png) no-repeat 0px 10px;
+	width: 30%;
+	min-height: 50px;
+	font-size: 11px;
+}
+
+div.desc {
+	float: left;
+	padding: 3px;
+	width: 30%;
+	font-size: 11px;
+}
+
+input, textarea, select {
+	border: 1px solid #444444;
+	font-family: arial, helvetica, sans;
+	font-size: 12px;
+	color: #000000;
+	width: 100%;
+}
+
+label {
+	width: 100%;
+	display: block;
+}
+
+input.complete {
+	margin: 0;
+	padding: 0;
+	width: 1.5em;
+	height: 1.5em;
+}
+
+input.send {
+	border: 1px solid #444444;
+	background: #a44344;
+	color: #FFFFFF;
+	background: url(images/titlebar.png);
+}
+
+input.editProjectButton {
+	background: url(images/edit.png) no-repeat;
+	padding: 0;
+	margin: 0;
+	width: 121px;
+	height: 35px;
+	border-style: none;
+	margin-right: 25px;
+}
+
+input.editProjectIcon {
+	background: url(images/edit_icon.png) no-repeat;
+	padding: 0;
+	margin: 0;
+	width: 14px;
+	height: 14px;
+	border-style: none;
+	margin-right: 3px;
+}
+
+input.deleteProjectIcon {
+	background: url(images/delete_icon.png) no-repeat;
+	padding: 0;
+	margin: 0;
+	width: 14px;
+	height: 14px;
+	border-style: none;
+	margin-right: 5px;
+}
+
+input.addTaskIcon {
+	background: url(images/add_icon.png) no-repeat;
+	padding: 0;
+	margin: 0;
+	width: 14px;
+	height: 14px;
+	border-style: none;
+	margin-right: 5px;
+}
+
+input.deleteButton {
+	background: url(images/delete.png) no-repeat;
+	padding: 0;
+	margin: 0;
+	width: 121px;
+	height: 35px;
+	border-style: none;
+	margin-right: 25px;
+}
+
+input.deleteTaskSmall {
+	background: url(images/delete_small.png) no-repeat;
+	padding: 0;
+	margin: 0;
+	width: 75px;
+	height: 22px;
+	border-style: none;
+}
+
+input.addTaskButton {
+	background: url(images/add_task.png) no-repeat;
+	padding: 0;
+	margin: 0;
+	width: 121px;
+	height: 35px;
+	border-style: none;
+}
+
+input.editTaskSmall {
+	background: url(images/edit_small.png) no-repeat;
+	padding: 0;
+	margin: 0;
+	width: 75px;
+	height: 22px;
+	border-style: none;
+}
+
+input.editUser {
+	background: url(images/topBar.png);
+	color: #FFFFFF;	
+	border: 1px solid #999999;
+	font-size: 12px;
+	text-transform: uppercase;
+	width: 100px;
+}
+
+input.editTask {
+	background: url(images/topBar.png);
+	color: #FFFFFF;
+	border: 1px solid #999999;
+	font-size: 12px;
+	text-transform: uppercase;
+	width: 80px;
+}
+	
+.contentFooter {
+	float: left;
+	vertical-align: baseline;
+	border-bottom: 1px solid #e0e0e0;
+	background-image: url(images/contentFooterBg.png);
+	background-repeat: repeat-x;
+	height: 22px;
+	padding-left: 5px;
+	margin-bottom: 0px;
+}

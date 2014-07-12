@@ -1,0 +1,1 @@
+<div id="bottomBar">&#169; <?php echo date("Y"); ?> <a href="http://jorp.sourceforge.net">Jorp</a> - Created by <a href="http://short-stack.net">Whitney Powell</a></div></div> <!--end wrapper-->
