@@ -153,7 +153,33 @@
 						endif;
 					?>
 					</nav>
-
+					<!-- copy nav in order to add social media -->
+					<nav id="top-menu-nav">
+							<img src="http://www.domocracy.es/wp-content/uploads/2014/12/google-_domocracy_icon.png" />
+							<img src="http://www.domocracy.es/wp-content/uploads/2014/12/facebook_domocracy_icon-.png" />
+							<img src="http://www.domocracy.es/wp-content/uploads/2014/12/alerts_domocracy_icon.png" />
+							<img src="http://www.domocracy.es/wp-content/uploads/2014/12/twitter_domocracy_icon.png" />
+							<img src="http://www.domocracy.es/wp-content/uploads/2014/12/youtube_domocracy_icon.png" />
+							<img src="http://www.domocracy.es/wp-content/uploads/2014/12/linkedin_domocracy_icon.png" />
+						<?php
+						$menuClass = 'nav';
+						if ( 'on' == et_get_option( 'divi_disable_toptier' ) ) $menuClass .= ' et_disable_top_tier';
+						$primaryNav = '';
+						//$primaryNav = wp_nav_menu( array( 'theme_location' => 'primary-menu', 'container' => '', 'fallback_cb' => '', 'menu_class' => $menuClass, 'menu_id' => 'top-menu', 'echo' => false ) );
+						if ( '' == $primaryNav ) :
+					?>
+						<ul id="top-menu" class="<?php echo esc_attr( $menuClass ); ?>">
+											
+							
+							
+						</ul>
+					<?php
+						else :
+							echo( $primaryNav );
+						endif;
+					?>
+					</nav> <!-- social media -->
+					
 					<?php
 					if ( ! $et_top_info_defined ) {
 						et_show_cart_total( array(
