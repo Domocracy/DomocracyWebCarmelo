@@ -155,12 +155,12 @@
 					</nav>
 					<!-- copy nav in order to add social media -->
 					<nav id="top-menu-nav">
-							<img src="http://www.domocracy.es/wp-content/uploads/2014/12/google-_domocracy_icon.png" />
-							<img src="http://www.domocracy.es/wp-content/uploads/2014/12/facebook_domocracy_icon-.png" />
-							<img src="http://www.domocracy.es/wp-content/uploads/2014/12/alerts_domocracy_icon.png" />
-							<img src="http://www.domocracy.es/wp-content/uploads/2014/12/twitter_domocracy_icon.png" />
-							<img src="http://www.domocracy.es/wp-content/uploads/2014/12/youtube_domocracy_icon.png" />
-							<img src="http://www.domocracy.es/wp-content/uploads/2014/12/linkedin_domocracy_icon.png" />
+							<a href="https://plus.google.com/u/0/103107082212820767885/posts"><img src="http://www.domocracy.es/wp-content/uploads/2014/12/google-_domocracy_icon.png" />	</a>
+							<a href="https://www.facebook.com/domocracy?ref=hl"><img src="http://www.domocracy.es/wp-content/uploads/2014/12/facebook_domocracy_icon-.png" />	</a>
+							<a href=""><img src="http://www.domocracy.es/wp-content/uploads/2014/12/alerts_domocracy_icon.png" />	</a>
+							<a href="https://twitter.com/domocracytech"><img src="http://www.domocracy.es/wp-content/uploads/2014/12/twitter_domocracy_icon.png" />	</a>
+							<a href="https://www.youtube.com/channel/UCoIFhqScd6S3J1CDNqVikiw"><img src="http://www.domocracy.es/wp-content/uploads/2014/12/youtube_domocracy_icon.png" />	</a>
+							<a href="https://www.linkedin.com/company/5255062?trk=tyah&trkInfo=tarId%3A1419262907372%2Ctas%3Adomocrac%2Cidx%3A1-1-1"><img src="http://www.domocracy.es/wp-content/uploads/2014/12/linkedin_domocracy_icon.png" />	</a>
 						<?php
 						$menuClass = 'nav';
 						if ( 'on' == et_get_option( 'divi_disable_toptier' ) ) $menuClass .= ' et_disable_top_tier';
