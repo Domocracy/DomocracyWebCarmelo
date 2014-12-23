@@ -130,28 +130,10 @@
 
 				<div id="et-top-navigation">
 					<nav id="top-menu-nav">
-					<?php
-						$menuClass = 'nav';
-						if ( 'on' == et_get_option( 'divi_disable_toptier' ) ) $menuClass .= ' et_disable_top_tier';
-						$primaryNav = '';
-
-						$primaryNav = wp_nav_menu( array( 'theme_location' => 'primary-menu', 'container' => '', 'fallback_cb' => '', 'menu_class' => $menuClass, 'menu_id' => 'top-menu', 'echo' => false ) );
-
-						if ( '' == $primaryNav ) :
-					?>
-						<ul id="top-menu" class="<?php echo esc_attr( $menuClass ); ?>">
-							<?php if ( 'on' == et_get_option( 'divi_home_link' ) ) { ?>
-								<li <?php if ( is_home() ) echo( 'class="current_page_item"' ); ?>><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'Divi' ); ?></a></li>
-							<?php }; ?>
-
-							<?php show_page_menu( $menuClass, false, false ); ?>
-							<?php show_categories_menu( $menuClass, false ); ?>
-						</ul>
-					<?php
-						else :
-							echo( $primaryNav );
-						endif;
-					?>
+							<a href="https://www.domocracytech.com">HOME</a>&nbsp;&nbsp;&nbsp;
+							<a href="#anclaKickstarter">KICKSTARTER CAMPAIGN</a>&nbsp;&nbsp;&nbsp;
+							<a href="#anclaSuscribe">SUSCRIBE</a>&nbsp;&nbsp;&nbsp;
+							<a href="https://www.domocracytech.com/blog">BLOG</a>&nbsp;&nbsp;&nbsp;
 					</nav>
 					<!-- copy nav in order to add social media -->
 					<nav id="top-menu-nav">
