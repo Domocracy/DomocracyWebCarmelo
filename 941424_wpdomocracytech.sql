@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.9
+-- version 4.2.11
 -- http://www.phpmyadmin.net
 --
--- Host: mysql51-151.wc2:3306
--- Generation Time: Jan 08, 2015 at 11:25 AM
--- Server version: 5.1.70
--- PHP Version: 5.2.13
+-- Host: 127.0.0.1
+-- Generation Time: Jan 08, 2015 at 06:43 PM
+-- Server version: 5.6.21
+-- PHP Version: 5.6.3
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `941424_wpdomocracytech`
 --
-CREATE DATABASE `941424_wpdomocracytech` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `941424_wpdomocracytech`;
 
 -- --------------------------------------------------------
 
@@ -29,14 +27,11 @@ USE `941424_wpdomocracytech`;
 --
 
 CREATE TABLE IF NOT EXISTS `wp_commentmeta` (
-  `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`meta_id` bigint(20) unsigned NOT NULL,
   `comment_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `meta_key` varchar(255) DEFAULT NULL,
-  `meta_value` longtext,
-  PRIMARY KEY (`meta_id`),
-  KEY `comment_id` (`comment_id`),
-  KEY `meta_key` (`meta_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `meta_value` longtext
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -45,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `wp_commentmeta` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_comments` (
-  `comment_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`comment_ID` bigint(20) unsigned NOT NULL,
   `comment_post_ID` bigint(20) unsigned NOT NULL DEFAULT '0',
   `comment_author` tinytext NOT NULL,
   `comment_author_email` varchar(100) NOT NULL DEFAULT '',
@@ -59,13 +54,8 @@ CREATE TABLE IF NOT EXISTS `wp_comments` (
   `comment_agent` varchar(255) NOT NULL DEFAULT '',
   `comment_type` varchar(20) NOT NULL DEFAULT '',
   `comment_parent` bigint(20) unsigned NOT NULL DEFAULT '0',
-  `user_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`comment_ID`),
-  KEY `comment_post_ID` (`comment_post_ID`),
-  KEY `comment_approved_date_gmt` (`comment_approved`,`comment_date_gmt`),
-  KEY `comment_date_gmt` (`comment_date_gmt`),
-  KEY `comment_parent` (`comment_parent`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `user_id` bigint(20) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -74,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `wp_comments` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_links` (
-  `link_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`link_id` bigint(20) unsigned NOT NULL,
   `link_url` varchar(255) NOT NULL DEFAULT '',
   `link_name` varchar(255) NOT NULL DEFAULT '',
   `link_image` varchar(255) NOT NULL DEFAULT '',
@@ -86,10 +76,8 @@ CREATE TABLE IF NOT EXISTS `wp_links` (
   `link_updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `link_rel` varchar(255) NOT NULL DEFAULT '',
   `link_notes` mediumtext NOT NULL,
-  `link_rss` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`link_id`),
-  KEY `link_visible` (`link_visible`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `link_rss` varchar(255) NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -98,20 +86,18 @@ CREATE TABLE IF NOT EXISTS `wp_links` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_options` (
-  `option_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`option_id` bigint(20) unsigned NOT NULL,
   `option_name` varchar(64) NOT NULL DEFAULT '',
   `option_value` longtext NOT NULL,
-  `autoload` varchar(20) NOT NULL DEFAULT 'yes',
-  PRIMARY KEY (`option_id`),
-  UNIQUE KEY `option_name` (`option_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2653 ;
+  `autoload` varchar(20) NOT NULL DEFAULT 'yes'
+) ENGINE=InnoDB AUTO_INCREMENT=2655 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `wp_options`
 --
 
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
-(1, 'siteurl', 'http://www.domocracytech.com', 'yes'),
+(1, 'siteurl', 'http://localhost', 'yes'),
 (2, 'blogname', 'Domocracy', 'yes'),
 (3, 'blogdescription', 'Domocracy - Home automation for everyone', 'yes'),
 (4, 'users_can_register', '0', 'yes'),
@@ -142,8 +128,8 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (32, 'hack_file', '0', 'yes'),
 (33, 'blog_charset', 'UTF-8', 'yes'),
 (34, 'moderation_keys', '', 'no'),
-(35, 'active_plugins', 'a:6:{i:0;s:51:"feed-template-customize/feed-template-customize.php";i:1;s:43:"insert-html-snippet/insert-html-snippet.php";i:2;s:49:"social-sharing-toolkit/social_sharing_toolkit.php";i:3;s:24:"wordpress-seo/wp-seo.php";i:4;s:31:"wp-statistics/wp-statistics.php";i:5;s:32:"xml-sitemap-feed/xml-sitemap.php";}', 'yes'),
-(36, 'home', 'http://www.domocracytech.com', 'yes'),
+(35, 'active_plugins', 'a:4:{i:0;s:51:"feed-template-customize/feed-template-customize.php";i:2;s:49:"social-sharing-toolkit/social_sharing_toolkit.php";i:3;s:24:"wordpress-seo/wp-seo.php";i:4;s:31:"wp-statistics/wp-statistics.php";}', 'yes'),
+(36, 'home', 'http://localhost', 'yes'),
 (37, 'category_base', '', 'yes'),
 (38, 'ping_sites', 'http://rpc.pingomatic.com/', 'yes'),
 (39, 'advanced_edit', '0', 'yes'),
@@ -293,8 +279,8 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (1285, 'xyz_credit_link', '0', 'yes'),
 (1286, 'xyz_ihs_limit', '20', 'yes'),
 (1311, 'widget_xyz_insert_html_widget', 'a:2:{i:1;a:0:{}s:12:"_multiwidget";i:1;}', 'yes'),
-(1338, 'wp_statistics_plugin_version', '8.6.3', 'yes'),
-(1339, 'wp_statistics_db_version', '8.6.3', 'yes'),
+(1338, 'wp_statistics_plugin_version', '6.1', 'yes'),
+(1339, 'wp_statistics_db_version', '6.1', 'yes'),
 (1345, 'wps_chart_type', 'line', 'yes'),
 (1353, 'wpseo_titles', 'a:82:{s:10:"title_test";i:0;s:17:"forcerewritetitle";b:0;s:14:"hide-feedlinks";b:0;s:12:"hide-rsdlink";b:0;s:14:"hide-shortlink";b:0;s:16:"hide-wlwmanifest";b:0;s:5:"noodp";b:0;s:6:"noydir";b:0;s:15:"usemetakeywords";b:0;s:16:"title-home-wpseo";s:42:"%%sitename%% %%page%% %%sep%% %%sitedesc%%";s:18:"title-author-wpseo";s:41:"%%name%%, Author at %%sitename%% %%page%%";s:19:"title-archive-wpseo";s:38:"%%date%% %%page%% %%sep%% %%sitename%%";s:18:"title-search-wpseo";s:63:"You searched for %%searchphrase%% %%page%% %%sep%% %%sitename%%";s:15:"title-404-wpseo";s:35:"Page Not Found %%sep%% %%sitename%%";s:19:"metadesc-home-wpseo";s:0:"";s:21:"metadesc-author-wpseo";s:0:"";s:22:"metadesc-archive-wpseo";s:0:"";s:18:"metakey-home-wpseo";s:0:"";s:20:"metakey-author-wpseo";s:0:"";s:22:"noindex-subpages-wpseo";b:0;s:20:"noindex-author-wpseo";b:0;s:21:"noindex-archive-wpseo";b:1;s:14:"disable-author";b:0;s:12:"disable-date";b:0;s:10:"title-post";s:39:"%%title%% %%page%% %%sep%% %%sitename%%";s:13:"metadesc-post";s:0:"";s:12:"metakey-post";s:0:"";s:12:"noindex-post";b:0;s:17:"noauthorship-post";b:0;s:13:"showdate-post";b:0;s:16:"hideeditbox-post";b:0;s:10:"title-page";s:39:"%%title%% %%page%% %%sep%% %%sitename%%";s:13:"metadesc-page";s:0:"";s:12:"metakey-page";s:0:"";s:12:"noindex-page";b:0;s:17:"noauthorship-page";b:1;s:13:"showdate-page";b:0;s:16:"hideeditbox-page";b:0;s:16:"title-attachment";s:39:"%%title%% %%page%% %%sep%% %%sitename%%";s:19:"metadesc-attachment";s:0:"";s:18:"metakey-attachment";s:0:"";s:18:"noindex-attachment";b:0;s:23:"noauthorship-attachment";b:1;s:19:"showdate-attachment";b:0;s:22:"hideeditbox-attachment";b:0;s:13:"title-project";s:39:"%%title%% %%page%% %%sep%% %%sitename%%";s:16:"metadesc-project";s:0:"";s:15:"metakey-project";s:0:"";s:15:"noindex-project";b:0;s:20:"noauthorship-project";b:1;s:16:"showdate-project";b:0;s:19:"hideeditbox-project";b:0;s:23:"title-ptarchive-project";s:51:"%%pt_plural%% Archive %%page%% %%sep%% %%sitename%%";s:26:"metadesc-ptarchive-project";s:0:"";s:25:"metakey-ptarchive-project";s:0:"";s:25:"bctitle-ptarchive-project";s:0:"";s:25:"noindex-ptarchive-project";b:0;s:18:"title-tax-category";s:53:"%%term_title%% Archives %%page%% %%sep%% %%sitename%%";s:21:"metadesc-tax-category";s:0:"";s:20:"metakey-tax-category";s:0:"";s:24:"hideeditbox-tax-category";b:0;s:20:"noindex-tax-category";b:0;s:18:"title-tax-post_tag";s:53:"%%term_title%% Archives %%page%% %%sep%% %%sitename%%";s:21:"metadesc-tax-post_tag";s:0:"";s:20:"metakey-tax-post_tag";s:0:"";s:24:"hideeditbox-tax-post_tag";b:0;s:20:"noindex-tax-post_tag";b:0;s:21:"title-tax-post_format";s:53:"%%term_title%% Archives %%page%% %%sep%% %%sitename%%";s:24:"metadesc-tax-post_format";s:0:"";s:23:"metakey-tax-post_format";s:0:"";s:27:"hideeditbox-tax-post_format";b:0;s:23:"noindex-tax-post_format";b:1;s:26:"title-tax-project_category";s:53:"%%term_title%% Archives %%page%% %%sep%% %%sitename%%";s:29:"metadesc-tax-project_category";s:0:"";s:28:"metakey-tax-project_category";s:0:"";s:32:"hideeditbox-tax-project_category";b:0;s:28:"noindex-tax-project_category";b:0;s:21:"title-tax-project_tag";s:53:"%%term_title%% Archives %%page%% %%sep%% %%sitename%%";s:24:"metadesc-tax-project_tag";s:0:"";s:23:"metakey-tax-project_tag";s:0:"";s:27:"hideeditbox-tax-project_tag";b:0;s:23:"noindex-tax-project_tag";b:0;}', 'yes'),
 (1354, 'wpseo', 'a:18:{s:14:"blocking_files";a:0:{}s:26:"ignore_blog_public_warning";b:0;s:31:"ignore_meta_description_warning";b:0;s:20:"ignore_page_comments";b:0;s:16:"ignore_permalink";b:0;s:11:"ignore_tour";b:1;s:15:"ms_defaults_set";b:0;s:23:"theme_description_found";s:0:"";s:21:"theme_has_description";b:0;s:19:"tracking_popup_done";b:1;s:7:"version";s:5:"1.7.1";s:11:"alexaverify";s:0:"";s:20:"disableadvanced_meta";b:1;s:12:"googleverify";s:0:"";s:8:"msverify";s:0:"";s:15:"pinterestverify";s:0:"";s:12:"yandexverify";s:0:"";s:14:"yoast_tracking";b:0;}', 'yes'),
@@ -304,7 +290,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (1358, 'wpseo_internallinks', 'a:13:{s:20:"breadcrumbs-404crumb";s:25:"Error 404: Page not found";s:23:"breadcrumbs-blog-remove";b:0;s:20:"breadcrumbs-boldlast";b:0;s:25:"breadcrumbs-archiveprefix";s:12:"Archives for";s:18:"breadcrumbs-enable";b:0;s:16:"breadcrumbs-home";s:4:"Home";s:18:"breadcrumbs-prefix";s:0:"";s:24:"breadcrumbs-searchprefix";s:16:"You searched for";s:15:"breadcrumbs-sep";s:7:"&raquo;";s:23:"post_types-post-maintax";i:0;s:26:"post_types-project-maintax";i:0;s:34:"taxonomy-project_category-ptparent";i:0;s:29:"taxonomy-project_tag-ptparent";i:0;}', 'yes'),
 (1359, 'wpseo_xml', 'a:20:{s:22:"disable_author_sitemap";b:1;s:22:"disable_author_noposts";b:1;s:16:"enablexmlsitemap";b:1;s:16:"entries-per-page";i:1000;s:14:"xml_ping_yahoo";b:1;s:12:"xml_ping_ask";b:1;s:38:"user_role-administrator-not_in_sitemap";b:0;s:31:"user_role-editor-not_in_sitemap";b:0;s:31:"user_role-author-not_in_sitemap";b:0;s:36:"user_role-contributor-not_in_sitemap";b:0;s:35:"user_role-subscriber-not_in_sitemap";b:0;s:30:"post_types-post-not_in_sitemap";b:0;s:30:"post_types-page-not_in_sitemap";b:0;s:36:"post_types-attachment-not_in_sitemap";b:1;s:34:"taxonomies-category-not_in_sitemap";b:0;s:34:"taxonomies-post_tag-not_in_sitemap";b:0;s:37:"taxonomies-post_format-not_in_sitemap";b:0;s:33:"post_types-project-not_in_sitemap";b:0;s:42:"taxonomies-project_category-not_in_sitemap";b:0;s:37:"taxonomies-project_tag-not_in_sitemap";b:0;}', 'yes'),
 (1368, 'wp_statistics', 'a:40:{s:11:"disable_map";b:0;s:12:"map_location";b:0;s:18:"google_coordinates";b:0;s:16:"schedule_dbmaint";b:0;s:21:"schedule_dbmaint_days";b:0;s:5:"geoip";s:2:"on";s:12:"update_geoip";s:0:"";s:14:"schedule_geoip";s:0:"";s:13:"last_geoip_dl";s:10:"1419347444";s:8:"auto_pop";s:0:"";s:10:"useronline";s:1:"1";s:12:"check_online";s:2:"30";s:6:"visits";s:1:"1";s:8:"visitors";s:1:"1";s:8:"store_ua";b:0;s:11:"coefficient";s:1:"1";s:5:"pages";b:1;s:15:"track_all_pages";b:0;s:14:"disable_column";b:0;s:8:"menu_bar";b:0;s:12:"hide_notices";b:0;s:12:"chart_totals";b:0;s:12:"stats_report";b:0;s:11:"time_report";s:5:"daily";s:11:"send_report";s:4:"mail";s:14:"content_report";s:0:"";s:15:"read_capability";b:0;s:17:"manage_capability";b:0;s:17:"record_exclusions";b:0;s:9:"robotlist";s:904:"A6-Indexer\nAbachoBOT\naccoona\nAcoiRobot\nAddThis.com\nADmantX\nAhrefsBot\nalexa\nAltaVista\nappie\narchive.org_bot\nAsk Jeeves\nASPSeek\nBaiduspider\nBenjojo\nbingbot\nBOT for JCE\nButterfly\nccbot\nclamantivirus\ncrawler\nCrocCrawler\nDumbot\neStyle\nezooms\nfacebookexternalhit\nFAST\nFeedfetcher-Google\nFirfly\nfroogle\nGeonaBot\nGigabot\ngirafabot\nGooglebot\nia_archiver\nIDBot\nInfoSeek\ninktomi\nLeikibot\nlinkdexbot\nLoadTimeBot\nlooksmart\nLycos\nMail.RU_Bot\nMe.dium\nmeanpathbot\nMediapartners-Google\nMJ12bot\nmsnbot\nmoreover\nMRBOT\nNationalDirectory\nNerdyBot\nniki-bot\nnutch\nOpenbot\nPagesInventory\nproximic\nrabaz\nRambler\nRankivabot\nScooter\nScrubby\nsees.co\nSeznamBot\nSlurp\nSocialSearch\nSogou web spider\nSpade\nspbot\nSurveyBot\nTechnoratiSnoop\nTECNOSEEK\nTeoma\ntrendictionbot\nTweetmemeBot\nTwiceler\nTwitterbot\nTwitturls\nURL_Spider_SQL\nWebAlta Crawler\nWebBug\nWebFindBot\nWeSEE:Search\nWotbox\nwww.galaxy.com\nyandex\nYahoo\nYammybot\nZyBorg\nZemlyaCrawl";s:10:"exclude_ip";b:0;s:17:"exclude_loginpage";b:0;s:17:"exclude_adminpage";b:0;s:6:"widget";a:24:{s:11:"name_widget";b:0;s:17:"useronline_widget";b:0;s:13:"tvisit_widget";b:0;s:15:"tvisitor_widget";b:0;s:13:"yvisit_widget";b:0;s:15:"yvisitor_widget";b:0;s:13:"wvisit_widget";b:0;s:13:"mvisit_widget";b:0;s:14:"ysvisit_widget";b:0;s:14:"ttvisit_widget";b:0;s:16:"ttvisitor_widget";b:0;s:14:"tpviews_widget";b:0;s:10:"ser_widget";b:0;s:9:"select_se";b:0;s:9:"tp_widget";b:0;s:10:"tpg_widget";b:0;s:9:"tc_widget";b:0;s:9:"ts_widget";b:0;s:9:"tu_widget";b:0;s:9:"ap_widget";b:0;s:9:"ac_widget";b:0;s:9:"au_widget";b:0;s:10:"lpd_widget";b:0;s:10:"select_lps";b:0;}s:21:"exclude_administrator";s:1:"1";s:8:"browscap";b:0;s:18:"disable_se_clearch";b:1;s:8:"map_type";s:6:"jqvmap";s:15:"update_browscap";b:1;s:20:"last_overview_memory";i:17301504;}', 'yes'),
-(1400, '_site_transient_update_core', 'O:8:"stdClass":4:{s:7:"updates";a:3:{i:0;O:8:"stdClass":10:{s:8:"response";s:7:"upgrade";s:8:"download";s:57:"https://downloads.wordpress.org/release/wordpress-4.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:57:"https://downloads.wordpress.org/release/wordpress-4.1.zip";s:10:"no_content";s:68:"https://downloads.wordpress.org/release/wordpress-4.1-no-content.zip";s:11:"new_bundled";s:69:"https://downloads.wordpress.org/release/wordpress-4.1-new-bundled.zip";s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:3:"4.1";s:7:"version";s:3:"4.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.1";s:15:"partial_version";s:0:"";}i:1;O:8:"stdClass":11:{s:8:"response";s:10:"autoupdate";s:8:"download";s:57:"https://downloads.wordpress.org/release/wordpress-4.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:57:"https://downloads.wordpress.org/release/wordpress-4.1.zip";s:10:"no_content";s:68:"https://downloads.wordpress.org/release/wordpress-4.1-no-content.zip";s:11:"new_bundled";s:69:"https://downloads.wordpress.org/release/wordpress-4.1-new-bundled.zip";s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:3:"4.1";s:7:"version";s:3:"4.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.1";s:15:"partial_version";s:0:"";s:13:"support_email";s:26:"updatehelp40@wordpress.org";}i:2;O:8:"stdClass":12:{s:8:"response";s:10:"autoupdate";s:8:"download";s:59:"https://downloads.wordpress.org/release/wordpress-4.0.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:59:"https://downloads.wordpress.org/release/wordpress-4.0.1.zip";s:10:"no_content";s:70:"https://downloads.wordpress.org/release/wordpress-4.0.1-no-content.zip";s:11:"new_bundled";s:71:"https://downloads.wordpress.org/release/wordpress-4.0.1-new-bundled.zip";s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:5:"4.0.1";s:7:"version";s:5:"4.0.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.1";s:15:"partial_version";s:0:"";s:12:"notify_email";s:1:"1";s:13:"support_email";s:26:"updatehelp40@wordpress.org";}}s:12:"last_checked";i:1420704461;s:15:"version_checked";s:5:"3.9.3";s:12:"translations";a:0:{}}', 'yes'),
+(1400, '_site_transient_update_core', 'O:8:"stdClass":4:{s:7:"updates";a:4:{i:0;O:8:"stdClass":10:{s:8:"response";s:7:"upgrade";s:8:"download";s:57:"https://downloads.wordpress.org/release/wordpress-4.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:57:"https://downloads.wordpress.org/release/wordpress-4.1.zip";s:10:"no_content";s:68:"https://downloads.wordpress.org/release/wordpress-4.1-no-content.zip";s:11:"new_bundled";s:69:"https://downloads.wordpress.org/release/wordpress-4.1-new-bundled.zip";s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:3:"4.1";s:7:"version";s:3:"4.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.1";s:15:"partial_version";s:0:"";}i:1;O:8:"stdClass":11:{s:8:"response";s:10:"autoupdate";s:8:"download";s:57:"https://downloads.wordpress.org/release/wordpress-4.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:57:"https://downloads.wordpress.org/release/wordpress-4.1.zip";s:10:"no_content";s:68:"https://downloads.wordpress.org/release/wordpress-4.1-no-content.zip";s:11:"new_bundled";s:69:"https://downloads.wordpress.org/release/wordpress-4.1-new-bundled.zip";s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:3:"4.1";s:7:"version";s:3:"4.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.1";s:15:"partial_version";s:0:"";s:13:"support_email";s:26:"updatehelp40@wordpress.org";}i:2;O:8:"stdClass":12:{s:8:"response";s:10:"autoupdate";s:8:"download";s:59:"https://downloads.wordpress.org/release/wordpress-4.0.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:59:"https://downloads.wordpress.org/release/wordpress-4.0.1.zip";s:10:"no_content";s:70:"https://downloads.wordpress.org/release/wordpress-4.0.1-no-content.zip";s:11:"new_bundled";s:71:"https://downloads.wordpress.org/release/wordpress-4.0.1-new-bundled.zip";s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:5:"4.0.1";s:7:"version";s:5:"4.0.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.1";s:15:"partial_version";s:0:"";s:12:"notify_email";s:1:"1";s:13:"support_email";s:26:"updatehelp40@wordpress.org";}i:3;O:8:"stdClass":11:{s:8:"response";s:10:"autoupdate";s:8:"download";s:59:"https://downloads.wordpress.org/release/wordpress-3.9.3.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:59:"https://downloads.wordpress.org/release/wordpress-3.9.3.zip";s:10:"no_content";s:70:"https://downloads.wordpress.org/release/wordpress-3.9.3-no-content.zip";s:11:"new_bundled";s:71:"https://downloads.wordpress.org/release/wordpress-3.9.3-new-bundled.zip";s:7:"partial";s:69:"https://downloads.wordpress.org/release/wordpress-3.9.3-partial-1.zip";s:8:"rollback";s:70:"https://downloads.wordpress.org/release/wordpress-3.9.3-rollback-1.zip";}s:7:"current";s:5:"3.9.3";s:7:"version";s:5:"3.9.3";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.1";s:15:"partial_version";s:5:"3.9.1";s:13:"support_email";s:26:"updatehelp40@wordpress.org";}}s:12:"last_checked";i:1420738934;s:15:"version_checked";s:5:"3.9.1";s:12:"translations";a:0:{}}', 'yes'),
 (1428, '_site_transient_timeout_browser_5745179b6e4dc44155ca95a5622b2ca5', '1419976397', 'yes'),
 (1429, '_site_transient_browser_5745179b6e4dc44155ca95a5622b2ca5', 'a:9:{s:8:"platform";s:7:"Windows";s:4:"name";s:6:"Chrome";s:7:"version";s:12:"39.0.2171.95";s:10:"update_url";s:28:"http://www.google.com/chrome";s:7:"img_src";s:49:"http://s.wordpress.org/images/browsers/chrome.png";s:11:"img_src_ssl";s:48:"https://wordpress.org/images/browsers/chrome.png";s:15:"current_version";s:2:"18";s:7:"upgrade";b:0;s:8:"insecure";b:0;}', 'yes'),
 (1563, '_site_transient_timeout_poptags_40cd750bba9870f18aada2478b24840a', '1419437029', 'yes');
@@ -332,18 +318,18 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (2495, '_transient_feed_b9388c83948825c1edaef0d856b7b109', 'a:4:{s:5:"child";a:1:{s:0:"";a:1:{s:3:"rss";a:1:{i:0;a:6:{s:4:"data";s:3:"\n	\n";s:7:"attribs";a:1:{s:0:"";a:1:{s:7:"version";s:3:"2.0";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:1:{s:7:"channel";a:1:{i:0;a:6:{s:4:"data";s:72:"\n		\n		\n		\n		\n		\n		\n				\n\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n\n	";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:7:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:39:"WordPress Plugins » View: Most Popular";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:45:"https://wordpress.org/plugins/browse/popular/";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:39:"WordPress Plugins » View: Most Popular";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"language";a:1:{i:0;a:5:{s:4:"data";s:5:"en-US";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Wed, 07 Jan 2015 08:36:22 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:9:"generator";a:1:{i:0;a:5:{s:4:"data";s:25:"http://bbpress.org/?v=1.1";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"item";a:15:{i:0;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:7:"Akismet";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:46:"https://wordpress.org/plugins/akismet/#post-15";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 09 Mar 2007 22:11:30 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:33:"15@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:98:"Akismet checks your comments against the Akismet Web service to see if they look like spam or not.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:14:"Matt Mullenweg";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:1;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:14:"Contact Form 7";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:55:"https://wordpress.org/plugins/contact-form-7/#post-2141";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 02 Aug 2007 12:45:03 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:35:"2141@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:54:"Just another contact form plugin. Simple but flexible.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:16:"Takayuki Miyoshi";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:2;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:19:"All in One SEO Pack";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:59:"https://wordpress.org/plugins/all-in-one-seo-pack/#post-753";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 30 Mar 2007 20:08:18 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:34:"753@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:126:"All in One SEO Pack is a WordPress SEO plugin to automatically optimize your WordPress blog for Search Engines such as Google.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:8:"uberdose";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:3;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:24:"Jetpack by WordPress.com";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:49:"https://wordpress.org/plugins/jetpack/#post-23862";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 20 Jan 2011 02:21:38 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"23862@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:28:"Your WordPress, Streamlined.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:9:"Tim Moore";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:4;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:22:"WordPress SEO by Yoast";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:54:"https://wordpress.org/plugins/wordpress-seo/#post-8321";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 01 Jan 2009 20:34:44 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:35:"8321@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:131:"Improve your WordPress SEO: Write better content and have a fully optimized WordPress site using Yoast&#039;s WordPress SEO plugin.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:13:"Joost de Valk";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:5;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:33:"WooCommerce - excelling eCommerce";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:53:"https://wordpress.org/plugins/woocommerce/#post-29860";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Mon, 05 Sep 2011 08:13:36 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"29860@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:97:"WooCommerce is a powerful, extendable eCommerce plugin that helps you sell anything. Beautifully.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:9:"WooThemes";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:6;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:18:"Wordfence Security";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:51:"https://wordpress.org/plugins/wordfence/#post-29832";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Sun, 04 Sep 2011 03:13:51 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"29832@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:137:"Wordfence Security is a free enterprise class security and performance plugin that makes your site up to 50 times faster and more secure.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:9:"Wordfence";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:7;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:19:"Google XML Sitemaps";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:64:"https://wordpress.org/plugins/google-sitemap-generator/#post-132";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 09 Mar 2007 22:31:32 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:34:"132@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:105:"This plugin will generate a special XML sitemap which will help search engines to better index your blog.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:5:"arnee";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:8;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:25:"Google Analytics by Yoast";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:71:"https://wordpress.org/plugins/google-analytics-for-wordpress/#post-2316";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 14 Sep 2007 12:15:27 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:35:"2316@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:124:"Track your WordPress site easily with the latest tracking codes and lots added data for search result pages and error pages.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:13:"Joost de Valk";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:9;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:18:"WordPress Importer";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:60:"https://wordpress.org/plugins/wordpress-importer/#post-18101";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 20 May 2010 17:42:45 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"18101@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:101:"Import posts, pages, comments, custom fields, categories, tags and more from a WordPress export file.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:14:"Brian Colinger";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:10;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:33:"Google Analytics Dashboard for WP";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:75:"https://wordpress.org/plugins/google-analytics-dashboard-for-wp/#post-50539";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Sun, 10 Mar 2013 17:07:11 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"50539@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:148:"Displays Google Analytics reports and real-time statistics in your WordPress Dashboard. Inserts the latest tracking code in every page of your site.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:10:"Alin Marcu";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:11;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:15:"NextGEN Gallery";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:56:"https://wordpress.org/plugins/nextgen-gallery/#post-1169";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Mon, 23 Apr 2007 20:08:06 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:35:"1169@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:121:"The most popular WordPress gallery plugin and one of the most popular plugins of all time with over 10 million downloads.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:9:"Alex Rabe";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:12;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:34:"UpdraftPlus Backup and Restoration";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:53:"https://wordpress.org/plugins/updraftplus/#post-38058";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Mon, 21 May 2012 15:14:11 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"38058@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:148:"Backup and restoration made easy. Complete backups; manual or scheduled (backup to S3, Dropbox, Google Drive, Rackspace, FTP, SFTP, email + others).";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:14:"David Anderson";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:13;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:16:"TinyMCE Advanced";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:57:"https://wordpress.org/plugins/tinymce-advanced/#post-2082";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Wed, 27 Jun 2007 15:00:26 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:35:"2082@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:71:"Enables the advanced features of TinyMCE, the WordPress WYSIWYG editor.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:10:"Andrew Ozz";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:14;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:46:"iThemes Security (formerly Better WP Security)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:60:"https://wordpress.org/plugins/better-wp-security/#post-21738";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 22 Oct 2010 22:06:05 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"21738@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:63:"The easiest, most effective way to secure WordPress in seconds.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:13:"Chris Wiegman";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}}}s:27:"http://www.w3.org/2005/Atom";a:1:{s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:0:"";s:7:"attribs";a:1:{s:0:"";a:3:{s:4:"href";s:46:"https://wordpress.org/plugins/rss/view/popular";s:3:"rel";s:4:"self";s:4:"type";s:19:"application/rss+xml";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}}}}}}}}s:4:"type";i:128;s:7:"headers";a:11:{s:6:"server";s:5:"nginx";s:4:"date";s:29:"Wed, 07 Jan 2015 09:03:06 GMT";s:12:"content-type";s:23:"text/xml; charset=UTF-8";s:10:"connection";s:5:"close";s:4:"vary";s:15:"Accept-Encoding";s:7:"expires";s:29:"Wed, 07 Jan 2015 09:11:22 GMT";s:13:"cache-control";s:0:"";s:6:"pragma";s:0:"";s:13:"last-modified";s:31:"Wed, 07 Jan 2015 08:36:22 +0000";s:15:"x-frame-options";s:10:"SAMEORIGIN";s:4:"x-nc";s:11:"HIT lax 249";}s:5:"build";s:14:"20141223093939";}', 'no'),
 (2496, '_transient_timeout_feed_mod_b9388c83948825c1edaef0d856b7b109', '1420664492', 'no'),
 (2497, '_transient_feed_mod_b9388c83948825c1edaef0d856b7b109', '1420621292', 'no'),
-(2498, '_transient_timeout_plugin_slugs', '1420707692', 'no'),
-(2499, '_transient_plugin_slugs', 'a:8:{i:0;s:19:"akismet/akismet.php";i:1;s:51:"feed-template-customize/feed-template-customize.php";i:2;s:9:"hello.php";i:3;s:43:"insert-html-snippet/insert-html-snippet.php";i:4;s:49:"social-sharing-toolkit/social_sharing_toolkit.php";i:5;s:24:"wordpress-seo/wp-seo.php";i:6;s:31:"wp-statistics/wp-statistics.php";i:7;s:32:"xml-sitemap-feed/xml-sitemap.php";}', 'no'),
+(2498, '_transient_timeout_plugin_slugs', '1420825382', 'no'),
+(2499, '_transient_plugin_slugs', 'a:6:{i:0;s:19:"akismet/akismet.php";i:1;s:51:"feed-template-customize/feed-template-customize.php";i:2;s:9:"hello.php";i:3;s:49:"social-sharing-toolkit/social_sharing_toolkit.php";i:4;s:24:"wordpress-seo/wp-seo.php";i:5;s:31:"wp-statistics/wp-statistics.php";}', 'no'),
 (2516, '_site_transient_timeout_browser_5c55dd0374d143d36857e7cd944440b3', '1421240781', 'yes'),
 (2517, '_site_transient_browser_5c55dd0374d143d36857e7cd944440b3', 'a:9:{s:8:"platform";s:7:"Windows";s:4:"name";s:6:"Chrome";s:7:"version";s:12:"39.0.2171.95";s:10:"update_url";s:28:"http://www.google.com/chrome";s:7:"img_src";s:49:"http://s.wordpress.org/images/browsers/chrome.png";s:11:"img_src_ssl";s:48:"https://wordpress.org/images/browsers/chrome.png";s:15:"current_version";s:2:"18";s:7:"upgrade";b:0;s:8:"insecure";b:0;}', 'yes'),
 (2581, '_site_transient_update_themes', 'O:8:"stdClass":4:{s:12:"last_checked";i:1420726197;s:7:"checked";a:4:{s:4:"Divi";s:3:"2.0";s:14:"twentyfourteen";s:3:"1.1";s:14:"twentythirteen";s:3:"1.2";s:12:"twentytwelve";s:3:"1.4";}s:8:"response";a:4:{s:14:"twentyfourteen";a:4:{s:5:"theme";s:14:"twentyfourteen";s:11:"new_version";s:3:"1.3";s:3:"url";s:43:"https://wordpress.org/themes/twentyfourteen";s:7:"package";s:60:"https://downloads.wordpress.org/theme/twentyfourteen.1.3.zip";}s:14:"twentythirteen";a:4:{s:5:"theme";s:14:"twentythirteen";s:11:"new_version";s:3:"1.4";s:3:"url";s:43:"https://wordpress.org/themes/twentythirteen";s:7:"package";s:60:"https://downloads.wordpress.org/theme/twentythirteen.1.4.zip";}s:12:"twentytwelve";a:4:{s:5:"theme";s:12:"twentytwelve";s:11:"new_version";s:3:"1.6";s:3:"url";s:41:"https://wordpress.org/themes/twentytwelve";s:7:"package";s:58:"https://downloads.wordpress.org/theme/twentytwelve.1.6.zip";}s:4:"Divi";a:2:{s:11:"new_version";s:3:"2.2";s:3:"url";s:52:"https://www.elegantthemes.com/api/changelog/divi.txt";}}s:12:"translations";a:0:{}}', 'yes'),
-(2582, '_site_transient_update_plugins', 'O:8:"stdClass":3:{s:12:"last_checked";i:1420704466;s:8:"response";a:1:{s:31:"wp-statistics/wp-statistics.php";O:8:"stdClass":6:{s:2:"id";s:5:"21429";s:4:"slug";s:13:"wp-statistics";s:6:"plugin";s:31:"wp-statistics/wp-statistics.php";s:11:"new_version";s:5:"8.7.2";s:3:"url";s:44:"https://wordpress.org/plugins/wp-statistics/";s:7:"package";s:62:"https://downloads.wordpress.org/plugin/wp-statistics.8.7.2.zip";}}s:12:"translations";a:0:{}}', 'yes'),
+(2582, '_site_transient_update_plugins', 'O:8:"stdClass":3:{s:12:"last_checked";i:1420738980;s:8:"response";a:4:{s:19:"akismet/akismet.php";O:8:"stdClass":6:{s:2:"id";s:2:"15";s:4:"slug";s:7:"akismet";s:6:"plugin";s:19:"akismet/akismet.php";s:11:"new_version";s:5:"3.0.4";s:3:"url";s:38:"https://wordpress.org/plugins/akismet/";s:7:"package";s:56:"https://downloads.wordpress.org/plugin/akismet.3.0.4.zip";}s:49:"social-sharing-toolkit/social_sharing_toolkit.php";O:8:"stdClass":7:{s:2:"id";s:5:"24232";s:4:"slug";s:22:"social-sharing-toolkit";s:6:"plugin";s:49:"social-sharing-toolkit/social_sharing_toolkit.php";s:11:"new_version";s:3:"2.3";s:14:"upgrade_notice";s:10:"Bug fixes.";s:3:"url";s:53:"https://wordpress.org/plugins/social-sharing-toolkit/";s:7:"package";s:69:"https://downloads.wordpress.org/plugin/social-sharing-toolkit.2.3.zip";}s:24:"wordpress-seo/wp-seo.php";O:8:"stdClass":6:{s:2:"id";s:4:"5899";s:4:"slug";s:13:"wordpress-seo";s:6:"plugin";s:24:"wordpress-seo/wp-seo.php";s:11:"new_version";s:5:"1.7.1";s:3:"url";s:44:"https://wordpress.org/plugins/wordpress-seo/";s:7:"package";s:62:"https://downloads.wordpress.org/plugin/wordpress-seo.1.7.1.zip";}s:31:"wp-statistics/wp-statistics.php";O:8:"stdClass":6:{s:2:"id";s:5:"21429";s:4:"slug";s:13:"wp-statistics";s:6:"plugin";s:31:"wp-statistics/wp-statistics.php";s:11:"new_version";s:5:"8.7.2";s:3:"url";s:44:"https://wordpress.org/plugins/wp-statistics/";s:7:"package";s:62:"https://downloads.wordpress.org/plugin/wp-statistics.8.7.2.zip";}}s:12:"translations";a:0:{}}', 'yes'),
 (2587, '_transient_timeout_wpseo_sitemap_cache_post_tag_', '1420793035', 'no'),
 (2588, '_transient_wpseo_sitemap_cache_post_tag_', '<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n	<url>\n		<loc>http://www.domocracytech.com/tag/home-automation/</loc>\n		<lastmod>2014-12-30T12:40:48+00:00</lastmod>\n		<changefreq>weekly</changefreq>\n		<priority>0.2</priority>\n	</url>\n	<url>\n		<loc>http://www.domocracytech.com/tag/share-play/</loc>\n		<lastmod>2014-12-30T12:40:48+00:00</lastmod>\n		<changefreq>weekly</changefreq>\n		<priority>0.2</priority>\n	</url>\n	<url>\n		<loc>http://www.domocracytech.com/tag/video-games/</loc>\n		<lastmod>2014-12-30T12:40:48+00:00</lastmod>\n		<changefreq>weekly</changefreq>\n		<priority>0.2</priority>\n	</url>\n</urlset>', 'no'),
-(2589, '_transient_timeout_wpseo_sitemap_cache_post_', '1420793941', 'no'),
-(2590, '_transient_wpseo_sitemap_cache_post_', '<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n	<url>\n		<loc>http://www.domocracytech.com/inauguration-of-the-cube/</loc>\n		<lastmod>2014-07-02T14:10:45+00:00</lastmod>\n		<changefreq>weekly</changefreq>\n		<priority>0.6</priority>\n		<image:image>\n			<image:loc>http://www.domocracytech.com/wp-content/uploads/2014/07/bgh0.jpg</image:loc>\n			<image:caption><![CDATA[Inauguration of ]]></image:caption>\n		</image:image>\n	</url>\n	<url>\n		<loc>http://www.domocracytech.com/domocracy-preselected-bolt/</loc>\n		<lastmod>2014-07-04T15:49:50+00:00</lastmod>\n		<changefreq>weekly</changefreq>\n		<priority>0.6</priority>\n		<image:image>\n			<image:loc>http://www.domocracytech.com/wp-content/uploads/2014/07/boltlogo.png</image:loc>\n			<image:caption><![CDATA[Domocracy passes preselection process at Bolt Accelerator]]></image:caption>\n		</image:image>\n	</url>\n	<url>\n		<loc>http://www.domocracytech.com/first-day-in-bolt/</loc>\n		<lastmod>2014-12-23T13:32:45+00:00</lastmod>\n		<changefreq>weekly</changefreq>\n		<priority>0.6</priority>\n		<image:image>\n			<image:loc>http://www.domocracytech.com/wp-content/uploads/2014/12/CAM00301-1080x8101.jpg</image:loc>\n			<image:caption><![CDATA[First day in Bolt]]></image:caption>\n		</image:image>\n	</url>\n	<url>\n		<loc>http://www.domocracytech.com/video-games-need-domocracy/</loc>\n		<lastmod>2014-12-30T12:40:48+00:00</lastmod>\n		<changefreq>weekly</changefreq>\n		<priority>0.6</priority>\n		<image:image>\n			<image:loc>http://www.domocracytech.com/wp-content/uploads/2014/12/473650063_4bc9f4fcf4_b.jpg</image:loc>\n			<image:caption><![CDATA[Video Games need Domocracy]]></image:caption>\n		</image:image>\n	</url>\n</urlset>', 'no'),
-(2591, '_transient_timeout_wpseo_sitemap_cache_category_', '1420793965', 'no');
+(2589, '_transient_timeout_wpseo_sitemap_cache_post_', '1420793941', 'no');
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
+(2590, '_transient_wpseo_sitemap_cache_post_', '<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n	<url>\n		<loc>http://www.domocracytech.com/inauguration-of-the-cube/</loc>\n		<lastmod>2014-07-02T14:10:45+00:00</lastmod>\n		<changefreq>weekly</changefreq>\n		<priority>0.6</priority>\n		<image:image>\n			<image:loc>http://www.domocracytech.com/wp-content/uploads/2014/07/bgh0.jpg</image:loc>\n			<image:caption><![CDATA[Inauguration of ]]></image:caption>\n		</image:image>\n	</url>\n	<url>\n		<loc>http://www.domocracytech.com/domocracy-preselected-bolt/</loc>\n		<lastmod>2014-07-04T15:49:50+00:00</lastmod>\n		<changefreq>weekly</changefreq>\n		<priority>0.6</priority>\n		<image:image>\n			<image:loc>http://www.domocracytech.com/wp-content/uploads/2014/07/boltlogo.png</image:loc>\n			<image:caption><![CDATA[Domocracy passes preselection process at Bolt Accelerator]]></image:caption>\n		</image:image>\n	</url>\n	<url>\n		<loc>http://www.domocracytech.com/first-day-in-bolt/</loc>\n		<lastmod>2014-12-23T13:32:45+00:00</lastmod>\n		<changefreq>weekly</changefreq>\n		<priority>0.6</priority>\n		<image:image>\n			<image:loc>http://www.domocracytech.com/wp-content/uploads/2014/12/CAM00301-1080x8101.jpg</image:loc>\n			<image:caption><![CDATA[First day in Bolt]]></image:caption>\n		</image:image>\n	</url>\n	<url>\n		<loc>http://www.domocracytech.com/video-games-need-domocracy/</loc>\n		<lastmod>2014-12-30T12:40:48+00:00</lastmod>\n		<changefreq>weekly</changefreq>\n		<priority>0.6</priority>\n		<image:image>\n			<image:loc>http://www.domocracytech.com/wp-content/uploads/2014/12/473650063_4bc9f4fcf4_b.jpg</image:loc>\n			<image:caption><![CDATA[Video Games need Domocracy]]></image:caption>\n		</image:image>\n	</url>\n</urlset>', 'no'),
+(2591, '_transient_timeout_wpseo_sitemap_cache_category_', '1420793965', 'no'),
 (2592, '_transient_wpseo_sitemap_cache_category_', '<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n	<url>\n		<loc>http://www.domocracytech.com/category/articles/</loc>\n		<lastmod>2014-12-30T12:40:48+00:00</lastmod>\n		<changefreq>weekly</changefreq>\n		<priority>0.2</priority>\n	</url>\n	<url>\n		<loc>http://www.domocracytech.com/category/uncategorized/</loc>\n		<lastmod>2014-12-23T13:32:45+00:00</lastmod>\n		<changefreq>weekly</changefreq>\n		<priority>0.2</priority>\n	</url>\n</urlset>', 'no'),
 (2593, '_transient_timeout_wpseo_sitemap_cache_page_', '1420793915', 'no'),
 (2594, '_transient_wpseo_sitemap_cache_page_', '<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n	<url>\n		<loc>http://www.domocracytech.com/</loc>\n		<lastmod>2014-12-24T11:43:13+00:00</lastmod>\n		<changefreq>weekly</changefreq>\n		<priority>1</priority>\n		<image:image>\n			<image:loc>http://www.domocracytech.com/wp-content/uploads/2014/04/unnamed-1.png</image:loc>\n			<image:caption><![CDATA[unnamed (1)]]></image:caption>\n		</image:image>\n		<image:image>\n			<image:loc>http://www.domocracytech.com/wp-content/uploads/2014/04/unnamed1.png</image:loc>\n			<image:caption><![CDATA[unnamed]]></image:caption>\n		</image:image>\n		<image:image>\n			<image:loc>http://www.domocracytech.com/wp-content/uploads/2014/04/youtube_domocracy_icon.png</image:loc>\n			<image:caption><![CDATA[youtube domocracy icon]]></image:caption>\n		</image:image>\n		<image:image>\n			<image:loc>http://www.domocracytech.com/wp-content/uploads/2014/04/twitter_domocracy_icon.png</image:loc>\n			<image:caption><![CDATA[twitter domocracy icon]]></image:caption>\n		</image:image>\n		<image:image>\n			<image:loc>http://www.domocracytech.com/wp-content/uploads/2014/04/linkedin_domocracy_icon.png</image:loc>\n			<image:caption><![CDATA[linkedin domocracy icon]]></image:caption>\n		</image:image>\n		<image:image>\n			<image:loc>http://www.domocracytech.com/wp-content/uploads/2014/04/google+_domocracy_icon.png</image:loc>\n			<image:caption><![CDATA[google+ domocracy icon]]></image:caption>\n		</image:image>\n		<image:image>\n			<image:loc>http://www.domocracytech.com/wp-content/uploads/2014/04/alerts_domocracy_icon.png</image:loc>\n			<image:caption><![CDATA[alerts domocracy icon]]></image:caption>\n		</image:image>\n		<image:image>\n			<image:loc>http://www.domocracytech.com/wp-content/uploads/2014/04/facebook_domocracy_icon-.png</image:loc>\n			<image:caption><![CDATA[facebook domocracy icon ]]></image:caption>\n		</image:image>\n		<image:image>\n			<image:loc>http://www.domocracytech.com/wp-content/uploads/2014/04/paypal.png</image:loc>\n			<image:caption><![CDATA[paypal]]></image:caption>\n		</image:image>\n		<image:image>\n			<image:loc>http://www.domocracytech.com/wp-content/uploads/2014/04/openfuure.png</image:loc>\n			<image:caption><![CDATA[openfuure]]></image:caption>\n		</image:image>\n		<image:image>\n			<image:loc>http://www.domocracytech.com/wp-content/uploads/2014/04/bolt.png</image:loc>\n			<image:caption><![CDATA[bolt]]></image:caption>\n		</image:image>\n		<image:image>\n			<image:loc>http://www.domocracytech.com/wp-content/uploads/2014/04/google.png</image:loc>\n			<image:caption><![CDATA[google]]></image:caption>\n		</image:image>\n		<image:image>\n			<image:loc>http://www.domocracytech.com/wp-content/uploads/2014/04/amazon.png</image:loc>\n			<image:caption><![CDATA[amazon]]></image:caption>\n		</image:image>\n	</url>\n	<url>\n		<loc>http://www.domocracytech.com/blog/</loc>\n		<lastmod>2014-12-30T13:02:38+00:00</lastmod>\n		<changefreq>weekly</changefreq>\n		<priority>0.8</priority>\n	</url>\n</urlset>', 'no'),
@@ -364,7 +350,9 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (2629, '_site_transient_timeout_theme_roots', '1420727997', 'yes'),
 (2630, '_site_transient_theme_roots', 'a:4:{s:4:"Divi";s:7:"/themes";s:14:"twentyfourteen";s:7:"/themes";s:14:"twentythirteen";s:7:"/themes";s:12:"twentytwelve";s:7:"/themes";}', 'yes'),
 (2651, '_transient_timeout_wps_excluded_hostname_to_ip_cache', '1420737684', 'no'),
-(2652, '_transient_wps_excluded_hostname_to_ip_cache', 'a:0:{}', 'no');
+(2652, '_transient_wps_excluded_hostname_to_ip_cache', 'a:0:{}', 'no'),
+(2653, 'wps_robotlist', 'A6-Indexer\nAbachoBOT\naccoona\nAcoiRobot\nAddThis.com\nADmantX\nAhrefsBot\nalexa\nAltaVista\nappie\narchive.org_bot\nAsk Jeeves\nASPSeek\nBaiduspider\nBenjojo\nbingbot\nBOT for JCE\nButterfly\nccbot\nclamantivirus\ncrawler\nCrocCrawler\nDumbot\neStyle\nezooms\nfacebookexternalhit\nFAST\nFeedfetcher-Google\nFirfly\nfroogle\nGeonaBot\nGigabot\ngirafabot\nGooglebot\nia_archiver\nIDBot\nInfoSeek\ninktomi\nLeikibot\nlinkdexbot\nLoadTimeBot\nlooksmart\nLycos\nMail.RU_Bot\nMe.dium\nmeanpathbot\nMediapartners-Google\nMJ12bot\nmsnbot\nmoreover\nMRBOT\nNationalDirectory\nNerdyBot\nniki-bot\nnutch\nOpenbot\nPagesInventory\nproximic\nrabaz\nRambler\nRankivabot\nScooter\nScrubby\nsees.co\nSeznamBot\nSlurp\nSocialSearch\nSogou web spider\nSpade\nspbot\nSurveyBot\nTechnoratiSnoop\nTECNOSEEK\nTeoma\ntrendictionbot\nTweetmemeBot\nTwiceler\nTwitterbot\nTwitturls\nURL_Spider_SQL\nWebAlta Crawler\nWebBug\nWebFindBot\nWeSEE:Search\nWotbox\nwww.galaxy.com\nyandex\nYahoo\nYammybot\nZyBorg\nZemlyaCrawl', 'yes'),
+(2654, 'wps_exclude_administrator', '1', 'yes');
 
 -- --------------------------------------------------------
 
@@ -373,14 +361,11 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 --
 
 CREATE TABLE IF NOT EXISTS `wp_postmeta` (
-  `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`meta_id` bigint(20) unsigned NOT NULL,
   `post_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `meta_key` varchar(255) DEFAULT NULL,
-  `meta_value` longtext,
-  PRIMARY KEY (`meta_id`),
-  KEY `post_id` (`post_id`),
-  KEY `meta_key` (`meta_key`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=610 ;
+  `meta_value` longtext
+) ENGINE=InnoDB AUTO_INCREMENT=610 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `wp_postmeta`
@@ -715,7 +700,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 --
 
 CREATE TABLE IF NOT EXISTS `wp_posts` (
-  `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`ID` bigint(20) unsigned NOT NULL,
   `post_author` bigint(20) unsigned NOT NULL DEFAULT '0',
   `post_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `post_date_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -737,13 +722,8 @@ CREATE TABLE IF NOT EXISTS `wp_posts` (
   `menu_order` int(11) NOT NULL DEFAULT '0',
   `post_type` varchar(20) NOT NULL DEFAULT 'post',
   `post_mime_type` varchar(100) NOT NULL DEFAULT '',
-  `comment_count` bigint(20) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`ID`),
-  KEY `post_name` (`post_name`),
-  KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
-  KEY `post_parent` (`post_parent`),
-  KEY `post_author` (`post_author`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=498 ;
+  `comment_count` bigint(20) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=498 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `wp_posts`
@@ -1174,14 +1154,11 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 --
 
 CREATE TABLE IF NOT EXISTS `wp_statistics_exclusions` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+`ID` int(11) NOT NULL,
   `date` date NOT NULL,
   `reason` varchar(255) DEFAULT NULL,
-  `count` bigint(20) NOT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `date` (`date`),
-  KEY `reason` (`reason`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `count` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1190,16 +1167,12 @@ CREATE TABLE IF NOT EXISTS `wp_statistics_exclusions` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_statistics_historical` (
-  `ID` bigint(20) NOT NULL AUTO_INCREMENT,
+`ID` bigint(20) NOT NULL,
   `category` varchar(25) NOT NULL,
   `page_id` bigint(20) NOT NULL,
   `uri` varchar(255) NOT NULL,
-  `value` bigint(20) NOT NULL,
-  PRIMARY KEY (`ID`),
-  UNIQUE KEY `page_id` (`page_id`),
-  UNIQUE KEY `uri` (`uri`),
-  KEY `category` (`category`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `value` bigint(20) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `wp_statistics_historical`
@@ -1219,11 +1192,7 @@ CREATE TABLE IF NOT EXISTS `wp_statistics_pages` (
   `uri` varchar(255) NOT NULL,
   `date` date NOT NULL,
   `count` int(11) NOT NULL,
-  `id` int(11) NOT NULL,
-  UNIQUE KEY `date_2` (`date`,`uri`),
-  KEY `url` (`uri`),
-  KEY `date` (`date`),
-  KEY `id` (`id`)
+  `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -1318,8 +1287,8 @@ INSERT INTO `wp_statistics_pages` (`uri`, `date`, `count`, `id`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `wp_statistics_useronline` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ip` varchar(60) NOT NULL,
+`ID` int(11) NOT NULL,
+  `ip` varchar(20) NOT NULL,
   `timestamp` int(10) NOT NULL,
   `date` datetime NOT NULL,
   `referred` text NOT NULL,
@@ -1327,9 +1296,8 @@ CREATE TABLE IF NOT EXISTS `wp_statistics_useronline` (
   `platform` varchar(255) DEFAULT NULL,
   `version` varchar(255) DEFAULT NULL,
   `created` int(11) DEFAULT NULL,
-  `location` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=793 ;
+  `location` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=793 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1338,12 +1306,11 @@ CREATE TABLE IF NOT EXISTS `wp_statistics_useronline` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_statistics_visit` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+`ID` int(11) NOT NULL,
   `last_visit` datetime NOT NULL,
   `last_counter` date NOT NULL,
-  `visit` int(10) NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+  `visit` int(10) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `wp_statistics_visit`
@@ -1375,22 +1342,16 @@ INSERT INTO `wp_statistics_visit` (`ID`, `last_visit`, `last_counter`, `visit`) 
 --
 
 CREATE TABLE IF NOT EXISTS `wp_statistics_visitor` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+`ID` int(11) NOT NULL,
   `last_counter` date NOT NULL,
   `referred` text NOT NULL,
   `agent` varchar(255) NOT NULL,
   `platform` varchar(255) DEFAULT NULL,
   `version` varchar(255) DEFAULT NULL,
   `UAString` varchar(255) DEFAULT NULL,
-  `ip` varchar(60) NOT NULL,
-  `location` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`ID`),
-  UNIQUE KEY `date_ip_agent` (`last_counter`,`ip`,`agent`(75),`platform`(75),`version`(75)),
-  KEY `agent` (`agent`),
-  KEY `platform` (`platform`),
-  KEY `version` (`version`),
-  KEY `location` (`location`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=585 ;
+  `ip` varchar(20) NOT NULL,
+  `location` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=585 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `wp_statistics_visitor`
@@ -1988,9 +1949,7 @@ INSERT INTO `wp_statistics_visitor` (`ID`, `last_counter`, `referred`, `agent`, 
 CREATE TABLE IF NOT EXISTS `wp_term_relationships` (
   `object_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `term_taxonomy_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  `term_order` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`object_id`,`term_taxonomy_id`),
-  KEY `term_taxonomy_id` (`term_taxonomy_id`)
+  `term_order` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -2032,16 +1991,13 @@ INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 --
 
 CREATE TABLE IF NOT EXISTS `wp_term_taxonomy` (
-  `term_taxonomy_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`term_taxonomy_id` bigint(20) unsigned NOT NULL,
   `term_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `taxonomy` varchar(32) NOT NULL DEFAULT '',
   `description` longtext NOT NULL,
   `parent` bigint(20) unsigned NOT NULL DEFAULT '0',
-  `count` bigint(20) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`term_taxonomy_id`),
-  UNIQUE KEY `term_id_taxonomy` (`term_id`,`taxonomy`),
-  KEY `taxonomy` (`taxonomy`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+  `count` bigint(20) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `wp_term_taxonomy`
@@ -2071,14 +2027,11 @@ INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 --
 
 CREATE TABLE IF NOT EXISTS `wp_terms` (
-  `term_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`term_id` bigint(20) unsigned NOT NULL,
   `name` varchar(200) NOT NULL DEFAULT '',
   `slug` varchar(200) NOT NULL DEFAULT '',
-  `term_group` bigint(10) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`term_id`),
-  UNIQUE KEY `slug` (`slug`),
-  KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+  `term_group` bigint(10) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `wp_terms`
@@ -2108,14 +2061,11 @@ INSERT INTO `wp_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `wp_usermeta` (
-  `umeta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`umeta_id` bigint(20) unsigned NOT NULL,
   `user_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `meta_key` varchar(255) DEFAULT NULL,
-  `meta_value` longtext,
-  PRIMARY KEY (`umeta_id`),
-  KEY `user_id` (`user_id`),
-  KEY `meta_key` (`meta_key`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=144 ;
+  `meta_value` longtext
+) ENGINE=InnoDB AUTO_INCREMENT=144 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `wp_usermeta`
@@ -2273,7 +2223,7 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 --
 
 CREATE TABLE IF NOT EXISTS `wp_users` (
-  `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`ID` bigint(20) unsigned NOT NULL,
   `user_login` varchar(60) NOT NULL DEFAULT '',
   `user_pass` varchar(64) NOT NULL DEFAULT '',
   `user_nicename` varchar(50) NOT NULL DEFAULT '',
@@ -2282,11 +2232,8 @@ CREATE TABLE IF NOT EXISTS `wp_users` (
   `user_registered` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `user_activation_key` varchar(60) NOT NULL DEFAULT '',
   `user_status` int(11) NOT NULL DEFAULT '0',
-  `display_name` varchar(250) NOT NULL DEFAULT '',
-  PRIMARY KEY (`ID`),
-  KEY `user_login_key` (`user_login`),
-  KEY `user_nicename` (`user_nicename`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+  `display_name` varchar(250) NOT NULL DEFAULT ''
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `wp_users`
@@ -2308,13 +2255,12 @@ INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_
 --
 
 CREATE TABLE IF NOT EXISTS `wp_xyz_ihs_short_code` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `title` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
   `content` longtext COLLATE utf8_unicode_ci NOT NULL,
   `short_code` varchar(2000) COLLATE utf8_unicode_ci NOT NULL,
-  `status` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `wp_xyz_ihs_short_code`
@@ -2328,6 +2274,202 @@ INSERT INTO `wp_xyz_ihs_short_code` (`id`, `title`, `content`, `short_code`, `st
 (5, 'irAnclaSuscribe', '<A HREF="#anclaSuscribe"></A>', '[xyz-ihs snippet="irAnclaSuscribe"]', 1),
 (6, 'anclaSuscribe', '<A NAME="anclaSuscribe"></A>', '[xyz-ihs snippet="anclaSuscribe"]', 1);
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `wp_commentmeta`
+--
+ALTER TABLE `wp_commentmeta`
+ ADD PRIMARY KEY (`meta_id`), ADD KEY `comment_id` (`comment_id`), ADD KEY `meta_key` (`meta_key`);
+
+--
+-- Indexes for table `wp_comments`
+--
+ALTER TABLE `wp_comments`
+ ADD PRIMARY KEY (`comment_ID`), ADD KEY `comment_post_ID` (`comment_post_ID`), ADD KEY `comment_approved_date_gmt` (`comment_approved`,`comment_date_gmt`), ADD KEY `comment_date_gmt` (`comment_date_gmt`), ADD KEY `comment_parent` (`comment_parent`);
+
+--
+-- Indexes for table `wp_links`
+--
+ALTER TABLE `wp_links`
+ ADD PRIMARY KEY (`link_id`), ADD KEY `link_visible` (`link_visible`);
+
+--
+-- Indexes for table `wp_options`
+--
+ALTER TABLE `wp_options`
+ ADD PRIMARY KEY (`option_id`), ADD UNIQUE KEY `option_name` (`option_name`);
+
+--
+-- Indexes for table `wp_postmeta`
+--
+ALTER TABLE `wp_postmeta`
+ ADD PRIMARY KEY (`meta_id`), ADD KEY `post_id` (`post_id`), ADD KEY `meta_key` (`meta_key`);
+
+--
+-- Indexes for table `wp_posts`
+--
+ALTER TABLE `wp_posts`
+ ADD PRIMARY KEY (`ID`), ADD KEY `post_name` (`post_name`), ADD KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`), ADD KEY `post_parent` (`post_parent`), ADD KEY `post_author` (`post_author`);
+
+--
+-- Indexes for table `wp_statistics_exclusions`
+--
+ALTER TABLE `wp_statistics_exclusions`
+ ADD PRIMARY KEY (`ID`), ADD KEY `date` (`date`), ADD KEY `reason` (`reason`);
+
+--
+-- Indexes for table `wp_statistics_historical`
+--
+ALTER TABLE `wp_statistics_historical`
+ ADD PRIMARY KEY (`ID`), ADD UNIQUE KEY `page_id` (`page_id`), ADD UNIQUE KEY `uri` (`uri`), ADD KEY `category` (`category`);
+
+--
+-- Indexes for table `wp_statistics_pages`
+--
+ALTER TABLE `wp_statistics_pages`
+ ADD UNIQUE KEY `date_2` (`date`,`uri`), ADD KEY `url` (`uri`), ADD KEY `date` (`date`), ADD KEY `id` (`id`);
+
+--
+-- Indexes for table `wp_statistics_useronline`
+--
+ALTER TABLE `wp_statistics_useronline`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `wp_statistics_visit`
+--
+ALTER TABLE `wp_statistics_visit`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `wp_statistics_visitor`
+--
+ALTER TABLE `wp_statistics_visitor`
+ ADD PRIMARY KEY (`ID`), ADD UNIQUE KEY `date_ip_agent` (`last_counter`,`ip`,`agent`(75),`platform`(75),`version`(75)), ADD KEY `agent` (`agent`), ADD KEY `platform` (`platform`), ADD KEY `version` (`version`), ADD KEY `location` (`location`);
+
+--
+-- Indexes for table `wp_term_relationships`
+--
+ALTER TABLE `wp_term_relationships`
+ ADD PRIMARY KEY (`object_id`,`term_taxonomy_id`), ADD KEY `term_taxonomy_id` (`term_taxonomy_id`);
+
+--
+-- Indexes for table `wp_term_taxonomy`
+--
+ALTER TABLE `wp_term_taxonomy`
+ ADD PRIMARY KEY (`term_taxonomy_id`), ADD UNIQUE KEY `term_id_taxonomy` (`term_id`,`taxonomy`), ADD KEY `taxonomy` (`taxonomy`);
+
+--
+-- Indexes for table `wp_terms`
+--
+ALTER TABLE `wp_terms`
+ ADD PRIMARY KEY (`term_id`), ADD UNIQUE KEY `slug` (`slug`), ADD KEY `name` (`name`);
+
+--
+-- Indexes for table `wp_usermeta`
+--
+ALTER TABLE `wp_usermeta`
+ ADD PRIMARY KEY (`umeta_id`), ADD KEY `user_id` (`user_id`), ADD KEY `meta_key` (`meta_key`);
+
+--
+-- Indexes for table `wp_users`
+--
+ALTER TABLE `wp_users`
+ ADD PRIMARY KEY (`ID`), ADD KEY `user_login_key` (`user_login`), ADD KEY `user_nicename` (`user_nicename`);
+
+--
+-- Indexes for table `wp_xyz_ihs_short_code`
+--
+ALTER TABLE `wp_xyz_ihs_short_code`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `wp_commentmeta`
+--
+ALTER TABLE `wp_commentmeta`
+MODIFY `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `wp_comments`
+--
+ALTER TABLE `wp_comments`
+MODIFY `comment_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `wp_links`
+--
+ALTER TABLE `wp_links`
+MODIFY `link_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `wp_options`
+--
+ALTER TABLE `wp_options`
+MODIFY `option_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2655;
+--
+-- AUTO_INCREMENT for table `wp_postmeta`
+--
+ALTER TABLE `wp_postmeta`
+MODIFY `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=610;
+--
+-- AUTO_INCREMENT for table `wp_posts`
+--
+ALTER TABLE `wp_posts`
+MODIFY `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=498;
+--
+-- AUTO_INCREMENT for table `wp_statistics_exclusions`
+--
+ALTER TABLE `wp_statistics_exclusions`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `wp_statistics_historical`
+--
+ALTER TABLE `wp_statistics_historical`
+MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `wp_statistics_useronline`
+--
+ALTER TABLE `wp_statistics_useronline`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=793;
+--
+-- AUTO_INCREMENT for table `wp_statistics_visit`
+--
+ALTER TABLE `wp_statistics_visit`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
+--
+-- AUTO_INCREMENT for table `wp_statistics_visitor`
+--
+ALTER TABLE `wp_statistics_visitor`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=585;
+--
+-- AUTO_INCREMENT for table `wp_term_taxonomy`
+--
+ALTER TABLE `wp_term_taxonomy`
+MODIFY `term_taxonomy_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+--
+-- AUTO_INCREMENT for table `wp_terms`
+--
+ALTER TABLE `wp_terms`
+MODIFY `term_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+--
+-- AUTO_INCREMENT for table `wp_usermeta`
+--
+ALTER TABLE `wp_usermeta`
+MODIFY `umeta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=144;
+--
+-- AUTO_INCREMENT for table `wp_users`
+--
+ALTER TABLE `wp_users`
+MODIFY `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `wp_xyz_ihs_short_code`
+--
+ALTER TABLE `wp_xyz_ihs_short_code`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
