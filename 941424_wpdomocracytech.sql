@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2015 at 06:46 PM
+-- Generation Time: Jan 08, 2015 at 06:51 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -192,7 +192,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (96, 'widget_archives', 'a:2:{i:2;a:3:{s:5:"title";s:0:"";s:5:"count";i:0;s:8:"dropdown";i:0;}s:12:"_multiwidget";i:1;}', 'yes'),
 (97, 'widget_meta', 'a:2:{s:12:"_multiwidget";i:1;i:1;a:0:{}}', 'yes'),
 (98, 'sidebars_widgets', 'a:7:{s:19:"wp_inactive_widgets";a:0:{}s:9:"sidebar-1";a:3:{i:0;s:8:"search-2";i:1;s:14:"recent-posts-2";i:2;s:10:"archives-2";}s:9:"sidebar-2";a:0:{}s:9:"sidebar-3";a:0:{}s:9:"sidebar-4";a:0:{}s:9:"sidebar-5";a:0:{}s:13:"array_version";i:3;}', 'yes'),
-(99, 'cron', 'a:5:{i:1420744560;a:1:{s:20:"wp_maybe_auto_update";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1420747225;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1420747238;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1420750537;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
+(99, 'cron', 'a:6:{i:1420739791;a:1:{s:25:"wpseo_ping_search_engines";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:2:{s:8:"schedule";b:0;s:4:"args";a:0:{}}}}i:1420744560;a:1:{s:20:"wp_maybe_auto_update";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1420747225;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1420747238;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1420750537;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
 (106, '_transient_random_seed', 'ec144852ecfa4b308fd6143c0801fccb', 'yes'),
 (107, 'auth_key', '=LDzGBW^H[o%x =Jbt9rWJ^Dpw.Lm+PHC}{lV&(q#{,y?F=?FGf.{95q6xegu~}V', 'yes'),
 (108, 'auth_salt', 'rM|#K<aaM_c81<a=d&7D)M1%}BQ;0JN:_a]OZF;92LTC+72epiI2bs:;-x$]-E)A', 'yes'),
@@ -201,7 +201,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (111, 'nonce_key', '!zjh,}N3=pFe,33h5oYi$)t45SLOQbXYGzGCpZoTQsV:n}YV]$]mEC/<mE$]hY@s', 'yes'),
 (112, 'nonce_salt', 'Xm&fCrprd5{I?<K^))rcP?w.mp;jL |qY7>qc2H^*Yz#oIso17DCf&i/<G>!TL6D', 'yes'),
 (137, 'current_theme', 'Divi', 'yes'),
-(138, 'theme_mods_Divi', 'a:10:{i:0;b:0;s:30:"et_pb_predefined_layouts_added";s:2:"on";s:16:"background_color";s:6:"000000";s:16:"background_image";s:0:"";s:17:"background_repeat";s:6:"repeat";s:21:"background_position_x";s:4:"left";s:21:"background_attachment";s:5:"fixed";s:21:"et_pb_replace_content";s:2:"on";s:18:"nav_menu_locations";a:3:{s:11:"footer-menu";i:2;s:12:"primary-menu";i:2;s:14:"secondary-menu";i:0;}s:36:"et_pb_predefined_layouts_updated_2_0";s:2:"on";}', 'yes'),
+(138, 'theme_mods_Divi', 'a:10:{i:0;b:0;s:30:"et_pb_predefined_layouts_added";s:2:"on";s:16:"background_color";s:6:"000000";s:16:"background_image";s:0:"";s:17:"background_repeat";s:6:"repeat";s:21:"background_position_x";s:4:"left";s:21:"background_attachment";s:5:"fixed";s:21:"et_pb_replace_content";s:2:"on";s:18:"nav_menu_locations";a:3:{s:11:"footer-menu";i:2;s:12:"primary-menu";i:2;s:14:"secondary-menu";i:16;}s:36:"et_pb_predefined_layouts_updated_2_0";s:2:"on";}', 'yes'),
 (139, 'theme_switched', '', 'yes'),
 (140, 'shop_catalog_image_size', 'a:3:{s:5:"width";s:3:"400";s:6:"height";s:3:"400";s:4:"crop";i:1;}', 'yes'),
 (141, 'shop_single_image_size', 'a:3:{s:5:"width";s:3:"510";s:6:"height";s:4:"9999";s:4:"crop";i:0;}', 'yes'),
@@ -293,9 +293,9 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (1400, '_site_transient_update_core', 'O:8:"stdClass":4:{s:7:"updates";a:4:{i:0;O:8:"stdClass":10:{s:8:"response";s:7:"upgrade";s:8:"download";s:57:"https://downloads.wordpress.org/release/wordpress-4.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:57:"https://downloads.wordpress.org/release/wordpress-4.1.zip";s:10:"no_content";s:68:"https://downloads.wordpress.org/release/wordpress-4.1-no-content.zip";s:11:"new_bundled";s:69:"https://downloads.wordpress.org/release/wordpress-4.1-new-bundled.zip";s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:3:"4.1";s:7:"version";s:3:"4.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.1";s:15:"partial_version";s:0:"";}i:1;O:8:"stdClass":11:{s:8:"response";s:10:"autoupdate";s:8:"download";s:57:"https://downloads.wordpress.org/release/wordpress-4.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:57:"https://downloads.wordpress.org/release/wordpress-4.1.zip";s:10:"no_content";s:68:"https://downloads.wordpress.org/release/wordpress-4.1-no-content.zip";s:11:"new_bundled";s:69:"https://downloads.wordpress.org/release/wordpress-4.1-new-bundled.zip";s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:3:"4.1";s:7:"version";s:3:"4.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.1";s:15:"partial_version";s:0:"";s:13:"support_email";s:26:"updatehelp40@wordpress.org";}i:2;O:8:"stdClass":12:{s:8:"response";s:10:"autoupdate";s:8:"download";s:59:"https://downloads.wordpress.org/release/wordpress-4.0.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:59:"https://downloads.wordpress.org/release/wordpress-4.0.1.zip";s:10:"no_content";s:70:"https://downloads.wordpress.org/release/wordpress-4.0.1-no-content.zip";s:11:"new_bundled";s:71:"https://downloads.wordpress.org/release/wordpress-4.0.1-new-bundled.zip";s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:5:"4.0.1";s:7:"version";s:5:"4.0.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.1";s:15:"partial_version";s:0:"";s:12:"notify_email";s:1:"1";s:13:"support_email";s:26:"updatehelp40@wordpress.org";}i:3;O:8:"stdClass":11:{s:8:"response";s:10:"autoupdate";s:8:"download";s:59:"https://downloads.wordpress.org/release/wordpress-3.9.3.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:59:"https://downloads.wordpress.org/release/wordpress-3.9.3.zip";s:10:"no_content";s:70:"https://downloads.wordpress.org/release/wordpress-3.9.3-no-content.zip";s:11:"new_bundled";s:71:"https://downloads.wordpress.org/release/wordpress-3.9.3-new-bundled.zip";s:7:"partial";s:69:"https://downloads.wordpress.org/release/wordpress-3.9.3-partial-1.zip";s:8:"rollback";s:70:"https://downloads.wordpress.org/release/wordpress-3.9.3-rollback-1.zip";}s:7:"current";s:5:"3.9.3";s:7:"version";s:5:"3.9.3";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.1";s:15:"partial_version";s:5:"3.9.1";s:13:"support_email";s:26:"updatehelp40@wordpress.org";}}s:12:"last_checked";i:1420739186;s:15:"version_checked";s:5:"3.9.1";s:12:"translations";a:0:{}}', 'yes'),
 (1428, '_site_transient_timeout_browser_5745179b6e4dc44155ca95a5622b2ca5', '1419976397', 'yes'),
 (1429, '_site_transient_browser_5745179b6e4dc44155ca95a5622b2ca5', 'a:9:{s:8:"platform";s:7:"Windows";s:4:"name";s:6:"Chrome";s:7:"version";s:12:"39.0.2171.95";s:10:"update_url";s:28:"http://www.google.com/chrome";s:7:"img_src";s:49:"http://s.wordpress.org/images/browsers/chrome.png";s:11:"img_src_ssl";s:48:"https://wordpress.org/images/browsers/chrome.png";s:15:"current_version";s:2:"18";s:7:"upgrade";b:0;s:8:"insecure";b:0;}', 'yes'),
-(1570, 'xmlsf_version', '4.3.2', 'yes'),
-(1573, 'xmlsf_sitemaps', 'a:2:{s:7:"sitemap";s:11:"sitemap.xml";s:12:"sitemap-news";s:16:"sitemap-news.xml";}', 'yes');
+(1570, 'xmlsf_version', '4.3.2', 'yes');
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
+(1573, 'xmlsf_sitemaps', 'a:2:{s:7:"sitemap";s:11:"sitemap.xml";s:12:"sitemap-news";s:16:"sitemap-news.xml";}', 'yes'),
 (1574, 'xmlsf_ping', 'a:2:{s:6:"google";a:2:{s:3:"uri";s:52:"http://www.google.com/webmasters/tools/ping?sitemap=";s:6:"active";s:1:"1";}s:4:"bing";a:2:{s:3:"uri";s:33:"http://www.bing.com/ping?sitemap=";s:6:"active";s:1:"1";}}', 'yes'),
 (1575, 'xmlsf_robots', 'Disallow: */xmlrpc.php\r\nDisallow: */wp-*.php\r\nDisallow: */trackback/\r\nDisallow: *?wptheme=\r\nDisallow: *?comments=\r\nDisallow: *?replytocom\r\nDisallow: */comment-page-\r\nDisallow: *?s=\r\nDisallow: */wp-content/\r\nAllow: */wp-content/uploads/', 'yes'),
 (1576, 'xmlsf_post_types', 'a:3:{s:4:"post";a:6:{s:4:"name";s:4:"post";s:6:"active";s:1:"1";s:7:"archive";s:0:"";s:8:"priority";s:3:"0.7";s:16:"dynamic_priority";s:1:"1";s:4:"tags";a:1:{s:5:"image";s:8:"attached";}}s:4:"page";a:4:{s:4:"name";s:4:"page";s:6:"active";s:1:"1";s:8:"priority";s:3:"0.3";s:4:"tags";a:1:{s:5:"image";s:8:"attached";}}s:7:"project";a:2:{s:4:"name";s:7:"project";s:8:"priority";s:3:"0.5";}}', 'yes'),
@@ -364,7 +364,7 @@ CREATE TABLE IF NOT EXISTS `wp_postmeta` (
   `post_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `meta_key` varchar(255) DEFAULT NULL,
   `meta_value` longtext
-) ENGINE=InnoDB AUTO_INCREMENT=610 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=655 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `wp_postmeta`
@@ -690,7 +690,47 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (606, 496, '_wp_attachment_metadata', 'a:5:{s:5:"width";i:1600;s:6:"height";i:1166;s:4:"file";s:57:"2014/12/domocracy-wereables-television-why-smart-home.jpg";s:5:"sizes";a:7:{s:9:"thumbnail";a:4:{s:4:"file";s:57:"domocracy-wereables-television-why-smart-home-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:6:"medium";a:4:{s:4:"file";s:57:"domocracy-wereables-television-why-smart-home-300x218.jpg";s:5:"width";i:300;s:6:"height";i:218;s:9:"mime-type";s:10:"image/jpeg";}s:5:"large";a:4:{s:4:"file";s:58:"domocracy-wereables-television-why-smart-home-1024x746.jpg";s:5:"width";i:1024;s:6:"height";i:746;s:9:"mime-type";s:10:"image/jpeg";}s:21:"et-pb-post-main-image";a:4:{s:4:"file";s:57:"domocracy-wereables-television-why-smart-home-400x250.jpg";s:5:"width";i:400;s:6:"height";i:250;s:9:"mime-type";s:10:"image/jpeg";}s:31:"et-pb-post-main-image-fullwidth";a:4:{s:4:"file";s:58:"domocracy-wereables-television-why-smart-home-1080x675.jpg";s:5:"width";i:1080;s:6:"height";i:675;s:9:"mime-type";s:10:"image/jpeg";}s:21:"et-pb-portfolio-image";a:4:{s:4:"file";s:57:"domocracy-wereables-television-why-smart-home-400x284.jpg";s:5:"width";i:400;s:6:"height";i:284;s:9:"mime-type";s:10:"image/jpeg";}s:28:"et-pb-portfolio-image-single";a:4:{s:4:"file";s:58:"domocracy-wereables-television-why-smart-home-1080x787.jpg";s:5:"width";i:1080;s:6:"height";i:787;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:10:{s:8:"aperture";i:0;s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";i:0;s:9:"copyright";s:0:"";s:12:"focal_length";i:0;s:3:"iso";i:0;s:13:"shutter_speed";i:0;s:5:"title";s:0:"";}}'),
 (607, 497, '_wp_attached_file', '2014/12/why-you-should-have-smart-home-domocracy.png'),
 (608, 497, '_wp_attachment_metadata', 'a:5:{s:5:"width";i:676;s:6:"height";i:290;s:4:"file";s:52:"2014/12/why-you-should-have-smart-home-domocracy.png";s:5:"sizes";a:4:{s:9:"thumbnail";a:4:{s:4:"file";s:52:"why-you-should-have-smart-home-domocracy-150x150.png";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:9:"image/png";}s:6:"medium";a:4:{s:4:"file";s:52:"why-you-should-have-smart-home-domocracy-300x128.png";s:5:"width";i:300;s:6:"height";i:128;s:9:"mime-type";s:9:"image/png";}s:21:"et-pb-post-main-image";a:4:{s:4:"file";s:52:"why-you-should-have-smart-home-domocracy-400x250.png";s:5:"width";i:400;s:6:"height";i:250;s:9:"mime-type";s:9:"image/png";}s:21:"et-pb-portfolio-image";a:4:{s:4:"file";s:52:"why-you-should-have-smart-home-domocracy-400x284.png";s:5:"width";i:400;s:6:"height";i:284;s:9:"mime-type";s:9:"image/png";}}s:10:"image_meta";a:10:{s:8:"aperture";i:0;s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";i:0;s:9:"copyright";s:0:"";s:12:"focal_length";i:0;s:3:"iso";i:0;s:13:"shutter_speed";i:0;s:5:"title";s:0:"";}}'),
-(609, 420, '_thumbnail_id', '497');
+(609, 420, '_thumbnail_id', '497'),
+(610, 498, '_menu_item_type', 'custom'),
+(611, 498, '_menu_item_menu_item_parent', '0'),
+(612, 498, '_menu_item_object_id', '498'),
+(613, 498, '_menu_item_object', 'custom'),
+(614, 498, '_menu_item_target', ''),
+(615, 498, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(616, 498, '_menu_item_xfn', ''),
+(617, 498, '_menu_item_url', 'https://www.facebook.com/domocracy'),
+(619, 499, '_menu_item_type', 'custom'),
+(620, 499, '_menu_item_menu_item_parent', '0'),
+(621, 499, '_menu_item_object_id', '499'),
+(622, 499, '_menu_item_object', 'custom'),
+(623, 499, '_menu_item_target', ''),
+(624, 499, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(625, 499, '_menu_item_xfn', ''),
+(626, 499, '_menu_item_url', 'https://twitter.com/domocracytech'),
+(628, 500, '_menu_item_type', 'custom'),
+(629, 500, '_menu_item_menu_item_parent', '0'),
+(630, 500, '_menu_item_object_id', '500'),
+(631, 500, '_menu_item_object', 'custom'),
+(632, 500, '_menu_item_target', ''),
+(633, 500, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(634, 500, '_menu_item_xfn', ''),
+(635, 500, '_menu_item_url', 'https://plus.google.com/116643382984774842068'),
+(637, 501, '_menu_item_type', 'custom'),
+(638, 501, '_menu_item_menu_item_parent', '0'),
+(639, 501, '_menu_item_object_id', '501'),
+(640, 501, '_menu_item_object', 'custom'),
+(641, 501, '_menu_item_target', ''),
+(642, 501, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(643, 501, '_menu_item_xfn', ''),
+(644, 501, '_menu_item_url', 'https://www.youtube.com/channel/UCoIFhqScd6S3J1CDNqVikiw'),
+(646, 502, '_menu_item_type', 'custom'),
+(647, 502, '_menu_item_menu_item_parent', '0'),
+(648, 502, '_menu_item_object_id', '502'),
+(649, 502, '_menu_item_object', 'custom'),
+(650, 502, '_menu_item_target', ''),
+(651, 502, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(652, 502, '_menu_item_xfn', ''),
+(653, 502, '_menu_item_url', 'https://www.linkedin.com/company/5255062?trk=tyah&trkInfo=idx%3A1-1-1%2CtarId%3A1420739419833%2Ctas%3ADomocracy');
 
 -- --------------------------------------------------------
 
@@ -722,7 +762,7 @@ CREATE TABLE IF NOT EXISTS `wp_posts` (
   `post_type` varchar(20) NOT NULL DEFAULT 'post',
   `post_mime_type` varchar(100) NOT NULL DEFAULT '',
   `comment_count` bigint(20) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=498 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=503 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `wp_posts`
@@ -1144,7 +1184,12 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (494, 2, '2015-01-08 15:08:51', '2015-01-08 15:08:51', 'There are those who might tell you to have a smart-home for security. There are those who would tell you it’s for saving energy and others that’d say it’s about comfort… But come on, <strong>everybody knows that it’s just because Smart-Homes rule!</strong>\r\n\r\nLast year, I spent a couple of weeks installing a DIY Home-Automation project. It was a very simple system for controlling lights and fans at home. It may seem silly, but I realized the real power of the system when I were lying on my bed in a 113ºF hot day. At that moment, being able to climate the room with nothing but a slide of my finger was a heaven gift.\r\n\r\nBut what is really a smart-home?. It''s not just becoming a sort of jedi that can controls lights remotely using <i>the power of the force.</i> We started Domocracy on top of the belief that homes had to be taken to the next level. <strong>Your house must be an extension of yourself</strong> as are your smartphone, tablet and obviously.... your wearables. A few years ago, that would have sounded crazy, but nowadays the technology allows us to do this integration in order to make our home become the house of the future.\r\n\r\n<strong>Small details make The Big Difference</strong>. My colleagues heard this story hundreds of times but I''m going to tell it again:\r\n\r\n<i>When I was a child, my family and I used to spent every Sunday at my grandma''s house. After having lunch we watched TV series altogether in the couch. Everything seems perfect ... except there wasn''t a remote controller for the tv, so switching tv channels resulted in me lifting from the couch every fifteen minutes.</i>\r\n\r\n<a href="http://www.domocracytech.com/wp-content/uploads/2014/12/domocracy-wereables-television-why-smart-home.jpg"><img class="aligncenter wp-image-496 size-large" src="http://www.domocracytech.com/wp-content/uploads/2014/12/domocracy-wereables-television-why-smart-home-1024x746.jpg" alt="domocracy-wereables-television-why-smart-home" width="1024" height="746" /></a>\r\n\r\nAnd I’m not that old... I''m not from the 1920''s, our remote just had been lost for long ... Think about it. We have become so used to it, that today no one would even conceive using the TV buttons to switch channels. Why can’t this happen with the rest of the home?  From turning on your game console while you are away for checking updates through to reducing your energy consumption by dimming your thermostat if you are going to be late home due to a traffic jam. Never again leave the electric hob on, or your daugher’s hair straightener, or anything for that matter!\r\n\r\nIt doesn''t matter if you are geek, a TV addict or if you love to go out of home. It''s always a good idea to make your Home Smart.\r\n\r\nKnow, think about it. We talk about making it easy, affordable and open source. Do you want to know some more? Soon, very soon in our Kickstarter campaing!\r\n\r\n<iframe src="//www.youtube.com/embed/Ss74UUJu-RE" width="640" height="360" frameborder="0" allowfullscreen="allowfullscreen"></iframe>', 'Why should you have a Smart-Home?', '', 'inherit', 'open', 'open', '', '420-autosave-v1', '', '', '2015-01-08 15:08:51', '2015-01-08 15:08:51', '', 420, 'http://www.domocracytech.com/420-autosave-v1/', 0, 'revision', '', 0),
 (495, 6, '2015-01-08 14:06:49', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'open', 'open', '', '', '', '', '2015-01-08 14:06:49', '0000-00-00 00:00:00', '', 0, 'http://www.domocracytech.com/?p=495', 0, 'post', '', 0),
 (496, 2, '2015-01-08 14:24:42', '2015-01-08 14:24:42', '', 'domocracy-wereables-television-why-smart-home', '', 'inherit', 'open', 'open', '', 'domocracy-wereables-television-why-smart-home', '', '', '2015-01-08 14:24:42', '2015-01-08 14:24:42', '', 420, 'http://www.domocracytech.com/wp-content/uploads/2014/12/domocracy-wereables-television-why-smart-home.jpg', 0, 'attachment', 'image/jpeg', 0),
-(497, 2, '2015-01-08 15:08:25', '2015-01-08 15:08:25', '', 'why-you-should-have-smart-home-domocracy', '', 'inherit', 'open', 'open', '', 'why-you-should-have-smart-home-domocracy', '', '', '2015-01-08 15:08:25', '2015-01-08 15:08:25', '', 420, 'http://www.domocracytech.com/wp-content/uploads/2014/12/why-you-should-have-smart-home-domocracy.png', 0, 'attachment', 'image/png', 0);
+(497, 2, '2015-01-08 15:08:25', '2015-01-08 15:08:25', '', 'why-you-should-have-smart-home-domocracy', '', 'inherit', 'open', 'open', '', 'why-you-should-have-smart-home-domocracy', '', '', '2015-01-08 15:08:25', '2015-01-08 15:08:25', '', 420, 'http://www.domocracytech.com/wp-content/uploads/2014/12/why-you-should-have-smart-home-domocracy.png', 0, 'attachment', 'image/png', 0),
+(498, 2, '2015-01-08 17:51:31', '2015-01-08 17:51:31', '', 'Facebook', '', 'publish', 'open', 'open', '', 'facebook', '', '', '2015-01-08 17:51:37', '2015-01-08 17:51:37', '', 0, 'http://localhost/?p=498', 1, 'nav_menu_item', '', 0),
+(499, 2, '2015-01-08 17:51:32', '2015-01-08 17:51:32', '', 'Twitter', '', 'publish', 'open', 'open', '', 'twitter', '', '', '2015-01-08 17:51:37', '2015-01-08 17:51:37', '', 0, 'http://localhost/?p=499', 2, 'nav_menu_item', '', 0),
+(500, 2, '2015-01-08 17:51:32', '2015-01-08 17:51:32', '', 'Google+', '', 'publish', 'open', 'open', '', 'google', '', '', '2015-01-08 17:51:37', '2015-01-08 17:51:37', '', 0, 'http://localhost/?p=500', 3, 'nav_menu_item', '', 0),
+(501, 2, '2015-01-08 17:51:32', '2015-01-08 17:51:32', '', 'YouTube', '', 'publish', 'open', 'open', '', 'youtube', '', '', '2015-01-08 17:51:37', '2015-01-08 17:51:37', '', 0, 'http://localhost/?p=501', 4, 'nav_menu_item', '', 0),
+(502, 2, '2015-01-08 17:51:32', '2015-01-08 17:51:32', '', 'LinkedIn', '', 'publish', 'open', 'open', '', 'linkedin', '', '', '2015-01-08 17:51:37', '2015-01-08 17:51:37', '', 0, 'http://localhost/?p=502', 5, 'nav_menu_item', '', 0);
 
 -- --------------------------------------------------------
 
@@ -1981,7 +2026,12 @@ INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 (486, 1, 0),
 (488, 1, 0),
 (490, 1, 0),
-(492, 1, 0);
+(492, 1, 0),
+(498, 16, 0),
+(499, 16, 0),
+(500, 16, 0),
+(501, 16, 0),
+(502, 16, 0);
 
 -- --------------------------------------------------------
 
@@ -1996,7 +2046,7 @@ CREATE TABLE IF NOT EXISTS `wp_term_taxonomy` (
   `description` longtext NOT NULL,
   `parent` bigint(20) unsigned NOT NULL DEFAULT '0',
   `count` bigint(20) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `wp_term_taxonomy`
@@ -2017,7 +2067,8 @@ INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 (12, 12, 'category', '', 0, 0),
 (13, 13, 'category', '', 0, 0),
 (14, 14, 'category', '', 0, 0),
-(15, 15, 'category', '', 0, 1);
+(15, 15, 'category', '', 0, 1),
+(16, 16, 'nav_menu', '', 0, 5);
 
 -- --------------------------------------------------------
 
@@ -2030,7 +2081,7 @@ CREATE TABLE IF NOT EXISTS `wp_terms` (
   `name` varchar(200) NOT NULL DEFAULT '',
   `slug` varchar(200) NOT NULL DEFAULT '',
   `term_group` bigint(10) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `wp_terms`
@@ -2051,7 +2102,8 @@ INSERT INTO `wp_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
 (12, 'Developer', 'developer', 0),
 (13, 'Tips', 'tips', 0),
 (14, 'News', 'news', 0),
-(15, 'Articles', 'articles', 0);
+(15, 'Articles', 'articles', 0),
+(16, 'Social Menu', 'social-menu', 0);
 
 -- --------------------------------------------------------
 
@@ -2107,7 +2159,7 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (34, 2, 'wp_user-settings-time', '1419349081'),
 (35, 2, 'closedpostboxes_page', 'a:0:{}'),
 (36, 2, 'metaboxhidden_page', 'a:7:{i:0;s:20:"et_settings_meta_box";i:1;s:12:"revisionsdiv";i:2;s:16:"commentstatusdiv";i:3;s:11:"commentsdiv";i:4;s:7:"slugdiv";i:5;s:9:"authordiv";i:6;s:29:"wp_statistics_editor_meta_box";}'),
-(37, 2, 'nav_menu_recently_edited', '2'),
+(37, 2, 'nav_menu_recently_edited', '16'),
 (38, 2, 'managenav-menuscolumnshidden', 'a:4:{i:0;s:11:"link-target";i:1;s:11:"css-classes";i:2;s:3:"xfn";i:3;s:11:"description";}'),
 (39, 2, 'metaboxhidden_nav-menus', 'a:6:{i:0;s:8:"add-post";i:1;s:11:"add-project";i:2;s:12:"add-post_tag";i:3;s:15:"add-post_format";i:4;s:20:"add-project_category";i:5;s:15:"add-project_tag";}'),
 (40, 3, 'first_name', 'Pablo'),
@@ -2413,12 +2465,12 @@ MODIFY `option_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26
 -- AUTO_INCREMENT for table `wp_postmeta`
 --
 ALTER TABLE `wp_postmeta`
-MODIFY `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=610;
+MODIFY `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=655;
 --
 -- AUTO_INCREMENT for table `wp_posts`
 --
 ALTER TABLE `wp_posts`
-MODIFY `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=498;
+MODIFY `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=503;
 --
 -- AUTO_INCREMENT for table `wp_statistics_exclusions`
 --
@@ -2448,12 +2500,12 @@ MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=585;
 -- AUTO_INCREMENT for table `wp_term_taxonomy`
 --
 ALTER TABLE `wp_term_taxonomy`
-MODIFY `term_taxonomy_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+MODIFY `term_taxonomy_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `wp_terms`
 --
 ALTER TABLE `wp_terms`
-MODIFY `term_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+MODIFY `term_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `wp_usermeta`
 --
