@@ -219,7 +219,13 @@ table.shop_table { margin-bottom: 30px !important; }
 			#et-secondary-nav li { margin-right: 15px; }
 			#et-secondary-nav > li:last-child { margin-right: 0; }
 			.et-cart-info span:before { content: "\e07a"; margin-right: 10px; }
-		#main-header nav#top-menu-nav { padding-top: 10px;}
+		
+/*---------------------------------------------------------------------------
+|	
+|	Styles related to top menu navigations.
+|
+*---------------------------------------------------------------------------*/
+		#main-header nav#top-menu-nav { padding-top: 10px; padding-right:50px;}
 		nav#top-menu-nav, #top-menu { float: left; }
 			#top-menu li { display: inline-block; font-size: 14px; padding-right: 22px; }
 			#top-menu > li:last-child { padding-right: 0; }
@@ -830,7 +836,6 @@ body.woocommerce div.product .woocommerce-tabs .panel, body.woocommerce #content
 /*------------------------------------------------*/
 
 #et-top-navigation { float: right; }
-
 .nav li { position: relative; }
 .nav li ul { position: absolute; top: 52px; left: -27px; padding: 20px; }
 .et-fixed-header .nav li ul { top: 38px; }

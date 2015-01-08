@@ -160,7 +160,14 @@
 					$primaryNav = '';
 					
 					
-					$primaryNav = wp_nav_menu( array( 'theme_location' => 'primary-menu', 'container' => '', 'fallback_cb' => '', 'menu_class' => $menuClass, 'menu_id' => 'top-menu', 'echo' => false ) );
+					$primaryNav = wp_nav_menu( 
+											array( 	'theme_location' => 'primary-menu', 
+													'container' 		=> '', 
+													'fallback_cb' 		=> '', 
+													'menu_class' 		=> $menuClass, 
+													'menu_id' 			=> 'top-menu', 
+													'items_wrap'		=> '<ul id="%1$s" class="%2$s">%3$s</ul>',
+													'echo' 				=> false ) );
 					
 					if ( '' == $primaryNav ) :
 				?>
@@ -186,7 +193,15 @@
 					$menuClass = 'nav';
 					if ( 'on' == et_get_option( 'divi_disable_toptier' ) ) $menuClass .= ' et_disable_top_tier';
 					$secondaryNav = '';
-					$secondaryNav = wp_nav_menu( array( 'theme_location' => 'secondary-menu', 'container' => '', 'fallback_cb' => '', 'menu_class' => $menuClass, 'menu_id' => 'top-menu', 'echo' => false ) );
+					$secondaryNav = wp_nav_menu( 
+											array( 	'theme_location' 	=> 'secondary-menu', 
+													'container' 		=> '', 
+													'fallback_cb' 		=> '', 
+													'menu_class' 		=> $menuClass, 
+													'menu_id' 			=> 'top-menu', 
+													'items_wrap'		=> '<ul id="%1$s" class="%2$s">%3$s</ul>',
+													'echo' 				=> false ) );
+					
 					if ( '' == $secondaryNav ) :
 				?>
 					<ul id="top-menu" class="<?php echo esc_attr( $menuClass ); ?>">
