@@ -186,13 +186,6 @@
 				?>
 				</nav>
 				
-				
-				<div id="et_mobile_nav_menu">
-					<a href="#" class="mobile_nav closed">
-						<span class="select_page">%1$s</span>
-						<span class="mobile_menu_bar"></span>
-					</a>
-				</div>
 <!-- -------------------------------------------------------------------------------------------------------------- -->
 <!-- navigation for secondary menu -->
 <!-- -------------------------------------------------------------------------------------------------------------- -->
@@ -252,7 +245,7 @@
 				<?php endif; // true === et_get_option( 'show_search_icon', false ) ?>
 
 				<!-- This method call the function attached to et_header_top, it creates the compact menu for mobiles -->
-				<!-- Omitted for the secondary menu: <?php do_action( 'et_header_top' ); ?> -->
+				<?php do_action( 'et_header_top' ); ?> 
 				
 			</div> <!-- #et-top-navigation -->
 		</div> <!-- .container -->
