@@ -2622,7 +2622,12 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
 	.et-fixed-header { padding: 18px 0 19px 0 !important; min-height: 43px !important; box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) !important; -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) !important; -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) !important;  }
 	.et-fixed-header #logo { max-height: 43px; }
 	.et-fixed-header nav#top-menu-nav { padding-top: 11px;}
-
+	
+	/*-------- Customized hamburguer menu color --------*/
+	span.mobile_menu_bar:before {
+    color:#FFFFFF !important;
+	}
+	/*---------------------------------------------------*/
 	.et-social-icons, #footer-info { float: none; text-align: center; }
 
 	.et-social-icons { margin: 0 0 5px; }
