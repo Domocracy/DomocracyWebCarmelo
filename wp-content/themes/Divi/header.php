@@ -217,8 +217,8 @@
 						echo( $secondaryNav );
 					endif;
 				?>
+				</nav>
 				
-				<!-- End -->
 				<?php
 				if ( ! $et_top_info_defined ) {
 					et_show_cart_total( array(
