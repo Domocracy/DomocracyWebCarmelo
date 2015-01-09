@@ -1795,7 +1795,9 @@
 			});
 		}
 
-		et_duplicate_menu( $('#et-top-navigation ul.nav'), $('#et-top-navigation .mobile_nav'), 'mobile_menu', 'et_mobile_menu' );
+		/*---	Only duplicate navigation menu (primary) not social menu (secondary)	---*/
+		et_duplicate_menu( $('#et-top-navigation ul.primary'), $('#et-top-navigation .mobile_nav'), 'mobile_menu', 'et_mobile_menu' );
+		
 
 		et_duplicate_menu( $('.et_pb_fullwidth_menu ul.nav'), $('.et_pb_fullwidth_menu .mobile_nav'), 'mobile_menu', 'et_mobile_menu' );
 

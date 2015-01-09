@@ -155,7 +155,7 @@
 <!-- -------------------------------------------------------------------------------------------------------------- -->
 				<nav id="top-menu-nav">
 				<?php
-					$menuClass = 'nav';
+					$menuClass = 'nav primary';
 					if ( 'on' == et_get_option( 'divi_disable_toptier' ) ) $menuClass .= ' et_disable_top_tier';
 					$primaryNav = '';
 					
@@ -191,7 +191,7 @@
 <!-- -------------------------------------------------------------------------------------------------------------- -->
 				<nav id="top-menu-nav">
 				<?php
-					$menuClass = 'nav';
+					$menuClass = 'nav secondary';
 					if ( 'on' == et_get_option( 'divi_disable_toptier' ) ) $menuClass .= ' et_disable_top_tier';
 					$secondaryNav = '';
 					$secondaryNav = wp_nav_menu( 
