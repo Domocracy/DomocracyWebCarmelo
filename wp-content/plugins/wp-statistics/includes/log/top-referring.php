@@ -8,34 +8,27 @@
 	});
 </script>
 <?php
-	$search_engines = wp_statistics_searchengine_list();
-	
-	$search_result['All'] = wp_statistics_searchengine('all','total');
-
-	foreach( $search_engines as $key => $se ) {
-		$search_result[$key] = wp_statistics_searchengine($key,'total');
-	}
-
 	if( array_key_exists('referr',$_GET) ) {
-		$referr = esc_sql( $_GET['referr'] );
+		$referr = '%' . $_GET['referr'] . '%';
+		$title = $_GET['referr'];
 	}
 	else {
 		$referr = '';
 	}
 	
 	if( $referr ) {
-		$total = $wpdb->query("SELECT `referred` FROM `{$table_prefix}statistics_visitor` WHERE `referred` LIKE '%" . esc_sql($referr) . "%'");
+		$total = $wpdb->query($wpdb->prepare("SELECT `referred` FROM `{$table_prefix}statistics_visitor` WHERE `referred` LIKE %s", $referr));
 	} else {
 		$total = $wpdb->query("SELECT `referred` FROM `{$table_prefix}statistics_visitor` WHERE referred <> ''");
 	}
 ?>
 <div class="wrap">
 	<?php screen_icon('options-general'); ?>
-	<h2><?php _e('Top referring sites', 'wp_statistics'); ?></h2>
+	<h2><?php _e('Top Referring Sites', 'wp_statistics'); ?></h2>
 	<ul class="subsubsub">
 		<li class="all"><a <?php if(!$referr) { echo 'class="current"'; } ?>href="?page=wps_referers_menu"><?php _e('All', 'wp_statistics'); ?> <span class="count">(<?php echo $total; ?>)</span></a></li>
 		<?php if($referr) { ?>
-			| <li><a class="current" href="?page=wps_referers_menu&referr=<?php echo $referr; ?>"> <?php echo $referr; ?> <span class="count">(<?php echo $total; ?>)</span></a></li>
+			| <li><a class="current" href="?page=wps_referers_menu&referr=<?php echo $referr; ?>"> <?php echo $title; ?> <span class="count">(<?php echo $total; ?>)</span></a></li>
 		<?php } ?>
 	</ul>
 	<div class="postbox-container" id="last-log">
@@ -46,7 +39,7 @@
 					<?php if($referr) { ?>
 						<h3 class="hndle"><span><?php _e('Referring sites from', 'wp_statistics'); ?>: <?php echo $referr; ?></span></h3>
 					<?php } else { ?>
-						<h3 class="hndle"><span><?php _e('Top referring sites', 'wp_statistics'); ?></span></h3>
+						<h3 class="hndle"><span><?php _e('Top Referring Sites', 'wp_statistics'); ?></span></h3>
 					<?php } ?>
 					<div class="inside">
 							<?php
@@ -85,7 +78,7 @@
 											
 											echo "<div class='log-agent'><a href='?page=wp-statistics/wp-statistics.php&type=last-all-visitor&agent={$items->agent}'>{$agent}</a></div>";
 											
-											echo "<div class='log-url'><a href='{$items->referred}'><div class='dashicons dashicons-admin-links'></div> ".substr($items->referred, 0, 100)."[...]</a></div>";
+											echo "<div class='log-url'><a href='" . htmlentities($items->referred,ENT_QUOTES) . "'><div class='dashicons dashicons-admin-links'></div> " . htmlentities(substr($items->referred, 0, 100),ENT_QUOTES) . "[...]</a></div>";
 										echo "</div>";
 									
 									}
@@ -116,7 +109,7 @@
 											echo "<div class='log-referred'>{$i} - <a href='?page=wps_referers_menu&referr={$items}'>{$items}</a></div>";
 											echo "<div class='log-ip'>".__('References', 'wp_statistics').": " . number_format_i18n($value) . "</div>";
 											echo "<div class='clear'></div>";
-											echo "<div class='log-url'><a href='http://{$items}/' title='{$items}'><div class='dashicons dashicons-admin-links'></div> http://{$items}/</a></div>";
+											echo "<div class='log-url'><a href='http://" . htmlentities($items,ENT_QUOTES) . "/' title='" . htmlentities($items,ENT_QUOTES) . "'><div class='dashicons dashicons-admin-links'></div> http://" . htmlentities($items,ENT_QUOTES) . "/</a></div>";
 										echo "</div>";
 										
 									}

@@ -5,19 +5,13 @@
 </script>
 <?php
 	$search_engines = wp_statistics_searchengine_list();
-	
-	$search_result['All'] = wp_statistics_searchengine('all','total');
-
-	foreach( $search_engines as $key => $se ) {
-		$search_result[$key] = wp_statistics_searchengine($key,'total');
-	}
 ?>
 <div class="wrap">
 	<?php screen_icon('options-general'); ?>
-	<h2><?php _e('Search Engine Referrers Statistics', 'wp_statistics'); ?></h2>
+	<h2><?php _e('Search Engine Referral Statistics', 'wp_statistics'); ?></h2>
 
 	<ul class="subsubsub">
-		<?php $daysToDisplay = 20; if( array_key_exists('hitdays',$_GET)) { if( $_GET['hitdays'] > 0 ) { $daysToDisplay = $_GET['hitdays']; } } ?>
+		<?php $daysToDisplay = 20; if( array_key_exists('hitdays',$_GET)) { if( intval($_GET['hitdays']) > 0 ) { $daysToDisplay = intval($_GET['hitdays']); } } ?>
 		<li class="all"><a <?php if($daysToDisplay == 10) { echo 'class="current"'; } ?>href="?page=wps_searches_menu&hitdays=10"><?php _e('10 Days', 'wp_statistics'); ?></a></li>
 		| <li class="all"><a <?php if($daysToDisplay == 20) { echo 'class="current"'; } ?>href="?page=wps_searches_menu&hitdays=20"><?php _e('20 Days', 'wp_statistics'); ?></a></li>
 		| <li class="all"><a <?php if($daysToDisplay == 30) { echo 'class="current"'; } ?>href="?page=wps_searches_menu&hitdays=30"><?php _e('30 Days', 'wp_statistics'); ?></a></li>
@@ -33,110 +27,132 @@
 			<div class="meta-box-sortables">
 				<div class="postbox">
 					<div class="handlediv" title="<?php _e('Click to toggle', 'wp_statistics'); ?>"><br /></div>
-					<h3 class="hndle"><span><?php _e('Search Engine Referrers Statistical Chart', 'wp_statistics'); ?></span></h3>
+					<h3 class="hndle"><span><?php _e('Search Engine Referral Statistics', 'wp_statistics'); ?></span></h3>
 					<div class="inside">
 						<script type="text/javascript">
 						var visit_chart;
 						jQuery(document).ready(function() {
-							visit_chart = new Highcharts.Chart({
-								chart: {
-									renderTo: 'search-stats',
-									type: '<?php echo get_option('wps_chart_type'); ?>',
-									backgroundColor: '#FFFFFF',
-									height: '600'
-								},
-								credits: {
-									enabled: false
-								},
-								title: {
-									text: '<?php echo __('Referrer search engine chart in the last', 'wp_statistics') . ' ' . $daysToDisplay . ' ' . __('days', 'wp_statistics'); ?>',
-									style: {
-										fontSize: '12px',
-										fontFamily: 'Tahoma',
-										fontWeight: 'bold'
-									}
-								},
-								xAxis: {
-									type: 'datetime',
-									labels: {
-										rotation: -45,
-										step: <?php echo round($daysToDisplay/20);?>
-										},
-									categories: [
-									<?php
-										for( $i=$daysToDisplay; $i>=0; $i--) {
-											echo '"'.$wpstats->Current_Date_i18n('Y-m-d', '-'.$i).'"';
-											if( $i > 0 ) { echo ", "; }
-										}
-									?>]
-								},
-								yAxis: {
-									min: 0,
-									title: {
-										text: '<?php _e('Number of referrer', 'wp_statistics'); ?>',
-										style: {
-											fontSize: '12px',
-											fontFamily: 'Tahoma'
-										}
-									}
-								},
-								<?php if( is_rtl() ) { ?>
-								legend: {
-									rtl: true,
-									itemStyle: {
-											fontSize: '11px',
-											fontFamily: 'Tahoma'
-										}
-								},
-								<?php } ?>
-								tooltip: {
-									crosshairs: true,
-									shared: true,
-									style: {
-										fontSize: '12px',
-										fontFamily: 'Tahoma'
-									},
-									useHTML: true
-								},
-								series: [
-<?php
-								$total_stats = get_option( 'wps_chart_totals' );
+<?php								
+								$total_stats = $WP_Statistics->get_option( 'chart_totals' );
 								$total_daily = array();
 
 								foreach( $search_engines as $se ) {
-									echo "								{\n";
-									echo "									name: '" . __($se['name'], 'wp_statistics') . "',\n";
-									echo "									data: [";
+									
+									echo "var searches_data_line_" . $se['tag'] . " = [";
+									
+									for( $i=$daysToDisplay; $i>=0; $i--) {
+										if( !array_key_exists( $i, $total_daily ) ) { $total_daily[$i] = 0; }
+										
+										$stat = wp_statistics_searchengine($se['tag'], '-'.$i);
+										$total_daily[$i] += $stat;
+										
+										echo "['" . $WP_Statistics->Current_Date('Y-m-d', '-'.$i) . "'," . $stat . "], ";
+										
+									}
 
-									for( $i=20; $i>=0; $i--) {
-										$result = wp_statistics_searchengine($se['tag'], '-'.$i) . ", ";
-										$total_daily[$i] += $result;
-										echo $result;
+									echo "];\n";
+								}
+
+								if( $total_stats == 1 ) {
+									echo "var searches_data_line_total = [";
+
+									for( $i=$daysToDisplay; $i>=0; $i--) {
+										echo "['" . $WP_Statistics->Current_Date('Y-m-d', '-'.$i) . "'," . $total_daily[$i] . "], ";
 									}
 									
-									echo "]\n";
-									echo "								},\n";
+									echo "];\n";
 								}
 								
-								if( $total_stats == 1 ) {
-									echo "								{\n";
-									echo "									name: '" . __('Total', 'wp_statistics') . "',\n";
-									echo "									data: [";
-
-									for( $i=20; $i>=0; $i--) {
-										echo $total_daily[$i] . ", ";
-									}
-									
-									echo "]\n";
-									echo "								},\n";
-								}
+								$tickInterval = $daysToDisplay / 20;
+								if( $tickInterval < 1 ) { $tickInterval = 1; }
 ?>
-								]
+							visit_chart = jQuery.jqplot('search-stats', [<?php foreach( $search_engines as $se ) { echo "searches_data_line_" . $se['tag'] . ", "; } if( $total_stats == 1 ) { echo 'searches_data_line_total'; }?>], {
+								title: {
+									text: '<b><?php echo __('Search engine referrals in the last', 'wp_statistics') . ' ' . $daysToDisplay . ' ' . __('days', 'wp_statistics'); ?></b>',
+									fontSize: '12px',
+									fontFamily: 'Tahoma',
+									textColor: '#000000',
+									},
+								axes: {
+									xaxis: {
+											min: '<?php echo $WP_Statistics->Current_Date('Y-m-d', '-'.$daysToDisplay);?>',
+											max: '<?php echo $WP_Statistics->Current_Date('Y-m-d', '');?>',
+											tickInterval: '<?php echo $tickInterval?> day',
+											renderer:jQuery.jqplot.DateAxisRenderer,
+											tickRenderer: jQuery.jqplot.CanvasAxisTickRenderer,
+											tickOptions: { 
+												angle: -45,
+												formatString:'%b %#d',
+												showGridline: false, 
+												},
+										},										
+									yaxis: {
+											min: 0,
+											padMin: 1.0,
+											label: '<?php _e('Number of referrals', 'wp_statistics'); ?>',
+											labelRenderer: jQuery.jqplot.CanvasAxisLabelRenderer,
+											labelOptions: {
+												angle: -90,
+												fontSize: '12px',
+												fontFamily: 'Tahoma',
+												fontWeight: 'bold',
+											},
+										}
+									},
+								legend: {
+									show: true,
+									location: 's',
+									placement: 'outsideGrid',
+									labels: [<?php foreach( $search_engines as $se ) { echo "'" . __( $se['name'], 'wp_statistics' ) . "', "; } if( $total_stats == 1 ) { echo "'" . __('Total', 'wp_statistics') . "'"; }?>],
+									renderer: jQuery.jqplot.EnhancedLegendRenderer,
+									rendererOptions:
+										{
+											numberColumns: <?php echo count($search_engines) + 1; ?>, 
+											disableIEFading: false,
+											border: 'none',
+										},
+									},
+								highlighter: {
+									show: true,
+									bringSeriesToFront: true,
+									tooltipAxes: 'xy',
+									formatString: '%s:&nbsp;<b>%i</b>&nbsp;',
+									tooltipContentEditor: tooltipContentEditor,
+								},
+								grid: {
+								 drawGridlines: true,
+								 borderColor: 'transparent',
+								 shadow: false,
+								 drawBorder: false,
+								 shadowColor: 'transparent'
+								},
+							} );
+
+							function tooltipContentEditor(str, seriesIndex, pointIndex, plot) {
+								// display series_label, x-axis_tick, y-axis value
+								return plot.legend.labels[seriesIndex] + ", " + str;;
+							}
+							
+							jQuery(window).resize(function() {
+								JQPlotSearchChartLengendClickRedraw()
 							});
+
+							function JQPlotSearchChartLengendClickRedraw() {
+								visit_chart.replot( {resetAxes: ['yaxis'] } );
+								jQuery('div[id="search-stats"] .jqplot-table-legend').click(function() {
+									JQPlotSearchChartLengendClickRedraw();
+								});
+							}
+							
+							jQuery('div[id="search-stats"] .jqplot-table-legend').click(function() {
+								JQPlotSearchChartLengendClickRedraw()
+							});
+
 						});
+
 						</script>
 						
-						<div id="search-stats"></div>
+						<div id="search-stats" style="height:500px;"></div>
 						
 					</div>
 				</div>

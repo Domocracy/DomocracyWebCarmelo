@@ -2,8 +2,8 @@
 Contributors: linksalpha
 Tags: Facebook, Like, LinkedIn, Share, Google, Plus, +1, Pinterest, Google+, Twitter, Tweet, Follow, StumbleUpon, Stumble, Tumblr, Delicious, Digg, Reddit, Myspace, Hyves, YouTube, Flickr, 500px, Picasa, deaviantART, App.net, mail, Gmail, AOL, Evernote, Hotmail, Instapaper, Mail.ru, Pocket, Sonico, vkontakte, Weibo, Yahoo Mail, Yammer, RSS, feed, connect, recommend, social, sharing, widget, shortcode, page, post, button, counter, icon, bitly, Open Graph
 Requires at least: 3.0
-Tested up to: 3.6.1
-Stable tag: 2.2
+Tested up to: 3.9.1
+Stable tag: 2.3
 License: GPLv2 or later
 
 Easy sharing and connecting on social networks. Display on posts or use widgets or shortcode. Also Twitter name/hashtag to link converter.
@@ -42,7 +42,7 @@ The plugin currently supports the following networks for sharing your content:
 
 On Tweet button you can specify a Twitter handle which is then appended to the tweet a visitor sends (like "... via @WordPress"). An email send button is also included.
 
-You can decide which networks to support on your blog, where the buttons will appear (either above or below the content). Through drag and drop you can easily change the order in which the buttons appear. 
+You can decide which networks to support on your blog, where the buttons will appear (either above or below the content). Through drag and drop you can easily change the order in which the buttons appear.
 
 For each button you can choose a different type (not all types are available for each button):
 
@@ -55,14 +55,14 @@ For each button you can choose a different type (not all types are available for
 * medium icon with text
 * large icon
 
-You can also choose the orientation of the buttons: 
+You can also choose the orientation of the buttons:
 
 * horizontal (buttons are placed side by side)
-* vertical (buttons are placed below each other) 
+* vertical (buttons are placed below each other)
 
-= Divider = 
+= Divider =
 
-In version 2.0.4 three dividers were added to each list. These might be useful in ordering the buttons, especially in the case of varying button types used with a horizontal orientation. A divider will split the element containing the buttons in two, allowing for more customization. 
+In version 2.0.4 three dividers were added to each list. These might be useful in ordering the buttons, especially in the case of varying button types used with a horizontal orientation. A divider will split the element containing the buttons in two, allowing for more customization.
 
 = Shortcode =
 
@@ -74,7 +74,7 @@ Since version 2.1.2: Use one or both of the url and title attributes to override
 
 The widget has it's own list of buttons with the same possibilities as the list for posts & pages. You can however specify a fixed title and url to use for the buttons in the widget.
 
-= Follow Widget = 
+= Follow Widget =
 
 Since version 2.0.0 an extra widget is added with the possibility to provide easy links to your profiles on other social networks.
 
@@ -108,11 +108,11 @@ A button for an RSS feed is also included. Of course the type, order and orienta
 * medium icon with text
 * large icon
 
-To use a button you must enter your user / profile id or username for the network. To use the RSS feed button you must enter the full url. 
+To use a button you must enter your user / profile id or username for the network. To use the RSS feed button you must enter the full url.
 
 = Automatic Twitter links =
 
-This plugin also includes a configurable & improved version of my earlier Automatic Twitter Links plugin. You can decide if you want to convert Twitter names and/or hashtags to links. 
+This plugin also includes a configurable & improved version of my earlier Automatic Twitter Links plugin. You can decide if you want to convert Twitter names and/or hashtags to links.
 Twitter names will link to their Twitter profile and hashtags will link to the Twitter search page.
 
 = Bitly =
@@ -121,7 +121,7 @@ Since version 2.0.5 the plugin has the option to use bitly to shorten the urls f
 
 = Pinterest =
 
-Since version 2.0.5 the plugin has the option to show Pinterest buttons. The plugin tries to find the featured image or first image in the content if available. If no image is available the button is omitted. 
+Since version 2.0.5 the plugin has the option to show Pinterest buttons. The plugin tries to find the featured image or first image in the content if available. If no image is available the button is omitted.
 Since version 2.0.7 is is possible to enter the URL of a default image to use in case no image was found. You can also set the plugin to always use the default image regardless of any available images.
 
 = Open Graph =
@@ -159,7 +159,7 @@ To display the follow buttons somewhere else you can use the following code:
 	echo $social_sharing_toolkit->create_followers();
 ?>`
 
-= The LinkedIn follow link doesn't seem right = 
+= The LinkedIn follow link doesn't seem right =
 
 You may need to setup you custom public profile url. To do so, use the following steps:
 1. When signed in to LinkedIn, Go to Edit Profile
@@ -178,10 +178,13 @@ Upload the Social Sharing Toolkit plugin to the `/wp-content/plugins/` folder on
 == Screenshots ==
 
 1. Plugin configuration: General settings
-2. Plugin configuration: Content, Shortcode and Share Widget have the same options 
+2. Plugin configuration: Content, Shortcode and Share Widget have the same options
 3. Advanced settings with bitly, Pinterest and Open Graph options
 
 == Upgrade Notice ==
+
+= 2.3 =
+* Bug fixes.
 
 = 2.2 =
 * Added option to select image size available for sharing if featured image is set.
@@ -310,7 +313,7 @@ Please update to version 1.0.1 to prevent an unexpected printing of the page tit
 * Included an option to specify a default image for the Pinterest button
 * Fixed some major issues with shortcodes and excerpts
 
-= 2.0.6 = 
+= 2.0.6 =
 * Fixed buttons not appearing on pages
 * Fixed Pinterest issue
 
@@ -374,11 +377,11 @@ Please update to version 1.0.1 to prevent an unexpected printing of the page tit
 * Added feature to choose if buttons display in excerpts (doesn't work on some themes)
 
 = 1.3.0 =
-* Added feature to display buttons only on posts, only on pages or on posts and pages 
+* Added feature to display buttons only on posts, only on pages or on posts and pages
 * Improved hashtag to link conversion
 * Fixed Facebook language to en_US to prevent width issues
 * Fixed excerpt issue
-* Fixed some css issues 
+* Fixed some css issues
 
 = 1.2.5 =
 * Added title field to widget
@@ -391,7 +394,7 @@ Please update to version 1.0.1 to prevent an unexpected printing of the page tit
 * Added widget
 
 = 1.0.1 =
-* Fixed unexpected printing of the page title 
+* Fixed unexpected printing of the page title
 
 = 1.0.0 =
 * First version

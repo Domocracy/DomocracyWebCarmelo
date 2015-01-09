@@ -3,7 +3,7 @@
  Plugin Name: Social Sharing Toolkit
  Plugin URI: http://wordpress.org/plugins/social-sharing-toolkit/
  Description: This plugin enables sharing of your content via popular social networks and can also convert Twitter names and hashtags to links. Easy & configurable.
- Version: 2.2
+ Version: 2.3
  Author: linksalpha
  Author URI: http://www.linksalpha.com
  */
@@ -254,16 +254,16 @@ class MR_Social_Sharing_Toolkit {
 				<form method="post" action="">
 					<input type="hidden" name="mr_social_sharing_save_options" value="Y"/>
 					<h2>Social Sharing Toolkit</h2>
-					
+
 					<div id="mr_social_sharing_tabs">
-						<ul class="tabs">	
+						<ul class="tabs">
 							<li><a href="#tab_0">' . __('General settings', 'mr_social_sharing_toolkit') . '</a><li>
 							<li><a href="#tab_1">' . __('Content', 'mr_social_sharing_toolkit') . '</a><li>
 							<li><a href="#tab_2">' . __('Shortcode', 'mr_social_sharing_toolkit') . '</a><li>
 							<li><a href="#tab_3">' . __('Share Widget', 'mr_social_sharing_toolkit') . '</a><li>
 							<li><a href="#tab_4">' . __('Follow Widget', 'mr_social_sharing_toolkit') . '</a><li>
 							<li><a href="#tab_5">' . __('Advanced settings', 'mr_social_sharing_toolkit') . '</a><li>
-							<li><a href="#tab_6">' . __('Custom CSS', 'mr_social_sharing_toolkit') . '</a><li>								
+							<li><a href="#tab_6">' . __('Custom CSS', 'mr_social_sharing_toolkit') . '</a><li>
 						</ul>
 						<div id="tab_0" class="mr_social_sharing_networks">
 							<h3>' . __('General settings', 'mr_social_sharing_toolkit') . ':</h3>
@@ -271,7 +271,7 @@ class MR_Social_Sharing_Toolkit {
 		if ($this -> options['mr_social_sharing_js_footer'] == 1) { echo ' checked="checked"';
 		}
 		echo ' value="1" /> ' . __('Load JavaScript in footer', 'mr_social_sharing_toolkit') . '</label>
-							
+
 							<p>
 								<span class="description"> ' . __('Improves performance but may not work on some themes', 'mr_social_sharing_toolkit') . '</span>
 							</p>
@@ -330,7 +330,7 @@ class MR_Social_Sharing_Toolkit {
 							' . __('Check the boxes to display the button on your website. For each button you can select a separate style from the dropdown box. You can change the order of the buttons by dragging them to the desired location in the list. For the tweet button you can also fill in your Twitter username which will then be appended to the tweet (like via @WordPress).', 'mr_social_sharing_toolkit') . '
 						</p>';
 		$this -> showListAdmin($this -> share_buttons);
-		echo '				
+		echo '
 					</div>
 					<div id="tab_2" class="mr_social_sharing_networks">
 						<h3>' . __('Shortcode', 'mr_social_sharing_toolkit') . '</h3>
@@ -338,7 +338,7 @@ class MR_Social_Sharing_Toolkit {
 							' . __('Check the boxes to display the button on your website. For each button you can select a separate style from the dropdown box. You can change the order of the buttons by dragging them to the desired location in the list. For the tweet button you can also fill in your Twitter username which will then be appended to the tweet (like via @WordPress).', 'mr_social_sharing_toolkit') . '
 						</p>';
 		$this -> showListAdmin($this -> share_buttons, 'shortcode_');
-		echo '				
+		echo '
 					</div>
 					<div id="tab_3" class="mr_social_sharing_networks">
 						<h3>' . __('Share Widget', 'mr_social_sharing_toolkit') . '</h3>
@@ -365,10 +365,10 @@ class MR_Social_Sharing_Toolkit {
 						<label for="mr_social_sharing_follow_new" class="check"><input type="checkbox" name="mr_social_sharing_follow_new" id="mr_social_sharing_follow_new"';
 		if ($this -> options['mr_social_sharing_follow_new'] == 1) { echo ' checked="checked"';
 		}
-		echo ' value="1" /> ' . __("Open links in new window or tab", 'mr_social_sharing_toolkit') . '</label>		
+		echo ' value="1" /> ' . __("Open links in new window or tab", 'mr_social_sharing_toolkit') . '</label>
 					</div>
 					<div id="tab_5" class="mr_social_sharing_networks">
-						<h3>' . __('Advanced settings', 'mr_social_sharing_toolkit') . '</h3>										
+						<h3>' . __('Advanced settings', 'mr_social_sharing_toolkit') . '</h3>
 						<h4>' . __('Automatic Twitter links', 'mr_social_sharing_toolkit') . '</h4>
 						<p>' . __('Select what you want to convert:', 'mr_social_sharing_toolkit') . '</p>
 						<label for="mr_social_sharing_twitter_handles" class="check"><input type="checkbox" name="mr_social_sharing_twitter_handles" id="mr_social_sharing_twitter_handles"';
@@ -392,7 +392,7 @@ class MR_Social_Sharing_Toolkit {
 		if ($this -> options['mr_social_sharing_linkify_new'] == 1) { echo ' checked="checked"';
 		}
 		echo ' value="1" /> ' . __("Open links in new window or tab", 'mr_social_sharing_toolkit') . '</label>';
-		
+
 		// Image Size
 		echo 			'<h4>' . __('Image Size', 'mr_social_sharing_toolkit') . '</h4>
 						<p>' . __('Select the image size to be used while sharing', 'mr_social_sharing_toolkit') . '</p>
@@ -410,8 +410,8 @@ class MR_Social_Sharing_Toolkit {
 		if ($this -> options['mr_social_sharing_attachment_image_size'] == 'full') { echo ' selected="selected"';}
 		echo '>' . __('Full', 'mr_social_sharing_toolkit') . '</option>
 							</select></label><br/><br/>';
-		
-		// Bitly		
+
+		// Bitly
 		echo 			'<h4>' . __('Bitly', 'mr_social_sharing_toolkit') . '</h4>
 						<p>' . __('Use Bitly url shortening for the tweet button', 'mr_social_sharing_toolkit') . '</p>
 						<label for="mr_social_sharing_bitly_enable" class="check"><input type="checkbox" name="mr_social_sharing_bitly[enable]" id="mr_social_sharing_bitly_enable"';
@@ -444,7 +444,7 @@ class MR_Social_Sharing_Toolkit {
 		if (isset($this -> options['mr_social_sharing_opengraph']['fixed_image']) && $this -> options['mr_social_sharing_opengraph']['fixed_image'] == 1) { echo ' checked="checked"';
 		}
 		echo ' value="1" /> ' . __("Always use the default image", 'mr_social_sharing_toolkit') . '</label><br/>
-						<p><span class="description">' . __("Check this box to always display the default image with your shared content", 'mr_social_sharing_toolkit') . '</span></p>						
+						<p><span class="description">' . __("Check this box to always display the default image with your shared content", 'mr_social_sharing_toolkit') . '</span></p>
 					</div>
 					<div id="tab_6" class="mr_social_sharing_networks">
 						<h3>' . __('Custom CSS', 'mr_social_sharing_toolkit') . '</h3>
@@ -477,7 +477,7 @@ class MR_Social_Sharing_Toolkit {
 								<img class="right" src="' . plugins_url('/images/move.png', __FILE__) . '" title="' . __('Change button order', 'mr_social_sharing_toolkit') . '" alt="' . __('Change button order', 'mr_social_sharing_toolkit') . '"/>';
 				if (is_array($buttons[$button]['types']) && $buttons[$button]['types'][0] != '') {
 					if (count($buttons[$button]['types']) == 1) {
-						echo '	
+						echo '
 								<input type="hidden" name="mr_social_sharing_' . $button_type . 'buttons[' . $button . '][type]" value="' . $buttons[$button]['types'][0] . '"/>';
 					} else {
 						echo '
@@ -491,7 +491,7 @@ class MR_Social_Sharing_Toolkit {
 						echo '</select>';
 					}
 				} else {
-					echo '	
+					echo '
 								<input type="hidden" name="mr_social_sharing_' . $button_type . 'buttons[' . $button . '][type]" value=""/>';
 				}
 				if (array_key_exists('id', $buttons[$button])) {
@@ -518,11 +518,11 @@ class MR_Social_Sharing_Toolkit {
 								<input type="hidden" name="mr_social_sharing_' . $button_type . 'button_order[]" value="' . $button . '"/></span>
 								<span class="mr_social_sharing_custom"><input type="text" class="text" name="mr_social_sharing_' . $button_type . 'buttons[' . $button . '][icon]" id="mr_social_sharing_' . $button_type . $button . '_icon" value="' . $this -> options['mr_social_sharing_' . $button_type . 'buttons'][$button]['icon'] . '"/>
 								<label for="mr_social_sharing_' . $button_type . $button . '_icon" class="text">' . __('Custom icon url', 'mr_social_sharing_toolkit') . '</label>
-					
+
 								<input type="text" class="text" name="mr_social_sharing_' . $button_type . 'buttons[' . $button . '][text]" id="mr_social_sharing_' . $button_type . $button . '_text" value="' . stripslashes($this -> options['mr_social_sharing_' . $button_type . 'buttons'][$button]['text']) . '"/>
 								<label for="mr_social_sharing_' . $button_type . $button . '_text" class="text">' . __('Custom text', 'mr_social_sharing_toolkit') . '</label></span>
-					
-								
+
+
 							</li>';
 			}
 		}
@@ -585,14 +585,14 @@ class MR_Social_Sharing_Toolkit {
 		<meta property="og:site_name" content="' . get_bloginfo('name') . '"/>';
 		if (isset($this -> options['mr_social_sharing_opengraph']['fixed_image']) && $this -> options['mr_social_sharing_opengraph']['fixed_image']) {
 			if ($this -> options['mr_social_sharing_opengraph']['default_image'] != '') {
-				echo '			
+				echo '
 		<meta property="og:image" content="' . $this -> options['mr_social_sharing_opengraph']['default_image'] . '"/>';
 			}
 		} else {
 			$media = '';
 			if (current_theme_supports('post-thumbnails')) {
 				if(isset($this->options['mr_social_sharing_attachment_image_size'])) {
-					$image_size = $this->options['mr_social_sharing_attachment_image_size']; 	
+					$image_size = $this->options['mr_social_sharing_attachment_image_size'];
 				} else {
 					$image_size = 'thumbnail';
 				}
@@ -612,10 +612,10 @@ class MR_Social_Sharing_Toolkit {
 				}
 			}
 			if ($media != '') {
-				echo '			
+				echo '
 					<meta property="og:image" content="' . $media . '"/>';
 			} elseif ($this -> options['mr_social_sharing_opengraph']['default_image'] != '') {
-				echo '			
+				echo '
 					<meta property="og:image" content="' . $this -> options['mr_social_sharing_opengraph']['default_image'] . '"/>';
 			}
 		}
@@ -797,7 +797,7 @@ class MR_Social_Sharing_Toolkit {
 			} else {
 				if (current_theme_supports('post-thumbnails')) {
 					if(isset($this->options['mr_social_sharing_attachment_image_size'])) {
-						$image_size = $this->options['mr_social_sharing_attachment_image_size']; 	
+						$image_size = $this->options['mr_social_sharing_attachment_image_size'];
 					} else {
 						$image_size = 'thumbnail';
 					}
@@ -850,7 +850,7 @@ class MR_Social_Sharing_Toolkit {
 			} else {
 				if (current_theme_supports('post-thumbnails')) {
 					if(isset($this->options['mr_social_sharing_attachment_image_size'])) {
-						$image_size = $this->options['mr_social_sharing_attachment_image_size']; 	
+						$image_size = $this->options['mr_social_sharing_attachment_image_size'];
 					} else {
 						$image_size = 'thumbnail';
 					}
@@ -903,7 +903,7 @@ class MR_Social_Sharing_Toolkit {
 			} else {
 				if (current_theme_supports('post-thumbnails')) {
 					if(isset($this->options['mr_social_sharing_attachment_image_size'])) {
-						$image_size = $this->options['mr_social_sharing_attachment_image_size']; 	
+						$image_size = $this->options['mr_social_sharing_attachment_image_size'];
 					} else {
 						$image_size = 'thumbnail';
 					}
@@ -983,7 +983,7 @@ class MR_Social_Sharing_Toolkit {
 		$text = trim($text);
 		return $text;
 	}
-	
+
 	function smart_truncate($string, $required_length) {
 		$parts = preg_split('/([\s\n\r]+)/', $string, null, PREG_SPLIT_DELIM_CAPTURE);
 		$parts_count = count($parts);
@@ -997,7 +997,7 @@ class MR_Social_Sharing_Toolkit {
 		}
 		return implode(array_slice($parts, 0, $last_part));
 	}
-	
+
 	function prepare_string($string, $string_length) {
 		$final_string = '';
 		$utf8marker = chr(128);
@@ -1030,13 +1030,13 @@ if (is_array($buttons) && count($buttons) > 0) {
 unset($buttons);
 
 define('MR_Social_Sharing_Toolkit_Admin_URL', "options-general.php?page=mr_social_sharing");
-function mr_social_sharing_actlinks( $links ) { 
-    $settings_link = '<a href="'.MR_Social_Sharing_Toolkit_Admin_URL.'">'.__('Settings').'</a>'; 
-    array_unshift( $links, $settings_link ); 
-    return $links; 
+function mr_social_sharing_actlinks( $links ) {
+    $settings_link = '<a href="'.MR_Social_Sharing_Toolkit_Admin_URL.'">'.__('Settings').'</a>';
+    array_unshift( $links, $settings_link );
+    return $links;
 }
-$plugin = plugin_basename(__FILE__); 
-add_filter("plugin_action_links_$plugin", 'mr_social_sharing_actlinks' ); 
+$plugin = plugin_basename(__FILE__);
+add_filter("plugin_action_links_$plugin", 'mr_social_sharing_actlinks' );
 
 $MR_Social_Sharing_Toolkit = new MR_Social_Sharing_Toolkit();
 add_action('admin_menu', array($MR_Social_Sharing_Toolkit, 'plugin_menu'));

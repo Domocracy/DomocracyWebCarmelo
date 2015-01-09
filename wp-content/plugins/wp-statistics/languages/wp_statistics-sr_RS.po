@@ -1,975 +1,2141 @@
-# Translation of WP Statistics in Serbian
-# This file is distributed under the same license as the WP Statistics package.
+# Translation of Wordpress Statistics in Serbian
+# This file is distributed under the same license as the Wordpress Statistics package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2013-12-26 11:39+0330\n"
+"PO-Revision-Date: 2014-10-14 17:16-0500\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.5.5\n"
-"Project-Id-Version: WP Statistics\n"
+"X-Generator: Poedit 1.6.9\n"
+"Project-Id-Version: Wordpress Statistics\n"
 "POT-Creation-Date: \n"
-"Last-Translator: Mostafa Soufi <mst404@gmail.com>\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: sr_RS\n"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/all-browsers.php:8
+#: includes/log/widgets/about.php:8
+msgid "About WP Statistics Version %s"
+msgstr "О ВП Статистика версион %s"
+
+#: includes/log/widgets/summary.php:106
+msgid "Date: %s"
+msgstr "Датум: %s"
+
+#: includes/log/widgets/summary.php:110
+msgid "Time: %s"
+msgstr "Тиме: %s подаци"
+
+#: includes/optimization/delete-agents.php:14
+msgid "%s agent data deleted successfully."
+msgstr "%s сагентизбрисани успешно евиденцији."
+
+#: includes/optimization/delete-platforms.php:14
+msgid "%s platform data deleted successfully."
+msgstr "платформаза податке %s успешно обрисан"
+
+#: includes/optimization/empty.php:53
+msgid "%s table data deleted successfully."
+msgstr "подаци Табела %s успешно"
+
+#: includes/optimization/purge-data.php:17
+#: includes/optimization/purge-data.php:27
+#: includes/optimization/purge-data.php:37
+#: includes/optimization/purge-data.php:47
+msgid "%s data older than %s days purged successfully."
+msgstr "обрисан %s подаци старији од %s дана успешно очишћен"
+
+#: includes/optimization/purge-data.php:19
+#: includes/optimization/purge-data.php:29
+#: includes/optimization/purge-data.php:39
+#: includes/optimization/purge-data.php:49
+msgid "No records found to purge from %s!"
+msgstr "Не са намерени  цистка од %s Фајл!."
+
+#: includes/optimization/tabs/wps-optimization-resources.php:44
+#: includes/optimization/tabs/wps-optimization-resources.php:55
+#: includes/optimization/tabs/wps-optimization-resources.php:66
+#: includes/optimization/tabs/wps-optimization-resources.php:77
+#: includes/optimization/tabs/wps-optimization-resources.php:88
+msgid "Number of rows in the %s table"
+msgstr "Број редова у %s табели"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:211
+msgid "browscap Cache File"
+msgstr "бровсцап Цацхе Филе"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:220
+msgid "browscap cache file does not exist."
+msgstr "бровсцап кеш датотека не постоји."
+
+#: includes/optimization/tabs/wps-optimization-resources.php:224
+msgid "The file size and date of the browscap cache file."
+msgstr "величина и датум бровсцап кеш  Дођите"
+
+#: includes/settings/tabs/wps-about.php:24
+msgid ""
+"Come visit our great new %s and keep up to date on the latest news about WP "
+"Statistics."
+msgstr ""
+"посетите нашу велику нову %s и држе до датума на најновије вести Око ВП "
+"статистику."
+
+#: includes/settings/tabs/wps-about.php:24
+msgid "website"
+msgstr "аутора"
+
+#: includes/settings/tabs/wps-about.php:40
+msgid ""
+"WP Statistics supports internationalization and we encourage our users to "
+"submit translations, please visit our %s to see the current status and %s if "
+"you would like to help."
+msgstr ""
+"ВП статистику подржава интернационализацију и охрабрујемо наше кориснике да "
+"доставе преводе, посетите наш %s да бисте видели тренутни статус и %s ако "
+"желите да помогнете."
+
+#: includes/settings/tabs/wps-about.php:40
+msgid "translation collaboration site"
+msgstr "превод сарадња сајт"
+
+#: includes/settings/tabs/wps-about.php:40
+msgid "drop us a line"
+msgstr "пошаљите нам линију"
+
+#: includes/settings/tabs/wps-about.php:52
+#: includes/settings/tabs/wps-about.php:53
+msgid "Have you read the %s?"
+msgstr "Да ли сте прочитали %s?"
+
+#: includes/settings/tabs/wps-about.php:52
+msgid "FAQs"
+msgstr "ФАК"
+
+#: includes/settings/tabs/wps-about.php:53
+msgid "manual"
+msgstr "Упутству"
+
+#: includes/settings/tabs/wps-about.php:54
+msgid "Have you search the %s for a similar issue?"
+msgstr "имају претражујете %s за сличан проблем?"
+
+#: includes/settings/tabs/wps-about.php:54
+msgid "support forum"
+msgstr "Форум"
+
+#: includes/settings/tabs/wps-about.php:70
+msgid ""
+"Then please open a new thread on the %s and we'll respond as soon as "
+"possible."
+msgstr ""
+"Затим отворите нову тему о %s, а ми ћемо одговорити у најкраћем могућем року."
+
+#: includes/settings/tabs/wps-about.php:70
+msgid "WordPress.org support forum"
+msgstr "ВордПресс.орг Форум"
+
+#: includes/settings/tabs/wps-about.php:74
+msgid "Alternatively %s support is available as well."
+msgstr "Алтернативно помагања %s је доступан као и ."
+
+#: includes/settings/tabs/wps-access-level.php:85
+msgid "See the %s for details on capability levels."
+msgstr "Видети %s за детаље о нивоима способности."
+
+#: includes/settings/tabs/wps-access-level.php:85
+msgid "WordPress Roles and Capabilities page"
+msgstr "ВордПресс улоге и способности Паге"
+
+#: includes/settings/tabs/wps-general.php:67
+msgid ""
+"This feature will not store IP addresses in the database but instead used a "
+"unique hash.  The \"Store entire user agent string\" setting will be "
+"disabled if this is selected.  You will not be able to recover the IP "
+"addresses in the future to recover location information if this is enabled."
+msgstr ""
+"Ова функција неће чувати ИП адресе у бази података, али уместо тога користи "
+"јединствену хасх.  \"Сторе цела Прелистувач стринг \" Постављање ће бити "
+"онемогућен ако је он изабран. Нећете бити у стању да се опорави ИП адресе у "
+"будућности да се опорави информације о локацији, ако је то омогућено."
+
+#: includes/settings/tabs/wps-general.php:340
+msgid "Note: To send SMS text messages please install the %s plugin."
+msgstr ""
+"Напомена: Да бисте послали СМС текстуалне поруке инсталирајте %s плугинВП"
+
+#: includes/settings/tabs/wps-general.php:340
+msgid "WordPress SMS"
+msgstr "ВордПресс СМС"
+
+#: wp-statistics.php:27
+msgid ""
+"ERROR: WP Statistics has detected an unsupported version of PHP, WP "
+"Statistics will not function without PHP Version "
+msgstr ""
+"ГРЕШКА:.Статистика је открио неподржано верзију ПХП, ВП Статистике неће "
+"функционисати без ПХП верзија "
+
+#: wp-statistics.php:27
+msgid " or higher!"
+msgstr " или више!"
+
+#: wp-statistics.php:81
+msgid ""
+"Online user tracking in WP Statistics is not enabled, please go to %s and "
+"enable it."
+msgstr ""
+"Усер Праћење у ВП Статистика није омогућен, молимо идите на %s и омогућити "
+"гаомогућена.,"
+
+#: wp-statistics.php:81 wp-statistics.php:84 wp-statistics.php:87
+msgid "setting page"
+msgstr "поставка паге"
+
+#: wp-statistics.php:84
+msgid ""
+"Hit tracking in WP Statistics is not enabled, please go to %s and enable it."
+msgstr "хит Праћење у ВП статистике није  молимо идите на %s и омогућити га."
+
+#: wp-statistics.php:87
+msgid ""
+"Visitor tracking in WP Statistics is not enabled, please go to %s and enable "
+"it."
+msgstr ""
+"посетилац праћење у ВП Статистика није омогућен, молимо идите на %s и "
+"омогућити гаактивна.,"
+
+#: wp-statistics.php:90
+msgid ""
+"GeoIP collection is not active, please go to %s and enable this feature."
+msgstr "ГеоИП збирка није  молимо идите на %s и омогућите  поставкуфункцију.>"
+
+#: wp-statistics.php:90
+msgid "Setting page > GeoIP"
+msgstr "овустраницуГеоИП"
+
+msgid "http://wp-statistics.com/"
+msgstr "хттп://вп-статистицс.цом/"
+
+msgid "Mostafa Soufi & Greg Ross"
+msgstr "Мостафа Соуфи & Грег Росс"
+
+#: includes/settings/wps-settings.php:90
+msgid "browscap"
+msgstr "бровсцап"
+
+#: wp-statistics.php:706
+msgid "Error downloading browscap database from: %s - %s"
+msgstr "Грешка при преузимању бровсцап базу података: %s - %s"
+
+#: wp-statistics.php:794
+msgid "browscap database updated successfully!"
+msgstr "бровсцап База%је успешно ажуриранаили!"
+
+#: wp-statistics.php:802
+msgid "browscap already at current version!"
+msgstr "бровсцап већ у тренутној верзији"
+
+#: includes/optimization/tabs/wps-optimization-database.php:5
+msgid "Database Setup"
+msgstr "База Сетуп"
+
+#: includes/optimization/tabs/wps-optimization-database.php:10
+msgid "Re-run Install"
+msgstr "Ре-рун Инсталл"
+
+#: includes/optimization/tabs/wps-optimization-database.php:14
+msgid "Install Now!"
+msgstr "Инсталл Сада,"
+
+#: includes/optimization/tabs/wps-optimization-database.php:15
+msgid ""
+"If for some reason your installation of WP Statistics is missing the "
+"database tables or other core items, this will re-execute the install "
+"process."
+msgstr ""
+"ако из неког разлога ваш инсталација ВП статистику недостаје табела базе "
+"података  друге основне ставке, то ће поново извршити процес "
+"инсталирањаЕктенсион.."
+
+#: includes/optimization/tabs/wps-optimization-resources.php:163
+msgid ""
+"If the PHP BC Math Extension is installed.  BC Math is no longer required "
+"for the GeoIP code and is listed here only for historical reasons."
+msgstr ""
+"Ако је инсталиран ПХП БЦ Матх  БЦ Математика више није потребан за ГеоИП "
+"кода и наведени овде само из историјских разлога."
+
+#: includes/optimization/tabs/wps-optimization-resources.php:168
+msgid "File Info"
+msgstr "Филе Инфо"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:173
+msgid "GeoIP Database"
+msgstr "ГеоИП"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:184
+#: includes/optimization/tabs/wps-optimization-resources.php:203
+#: includes/optimization/tabs/wps-optimization-resources.php:222
+msgid ", created on "
+msgstr "Датабасе,створено од "
+
+#: includes/optimization/tabs/wps-optimization-resources.php:186
+msgid "The file size and date of the GeoIP database."
+msgstr "величине фајла и датум базе ГеоИП."
+
+#: includes/optimization/tabs/wps-optimization-resources.php:192
+msgid "browscap.ini File"
+msgstr "Бровсцап.ини Филе"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:201
+msgid "browscap.ini file does not exist."
+msgstr "бровсцап.ини датотека не постоји."
+
+#: includes/optimization/tabs/wps-optimization-resources.php:205
+msgid "The file size and date of the browscap.ini file."
+msgstr "Филе величину и датум бровсцап.ини фајлаће"
+
+#: includes/optimization/wps-optimization.php:51
+msgid "Install routine complete."
+msgstr "Инсталл рутинску ЦОМПЛЕТЕбровсцап..."
+
+#: includes/settings/tabs/wps-browscap.php:17
+msgid "browscap settings"
+msgstr "бровсцап Сеттингс"
+
+#: includes/settings/tabs/wps-browscap.php:22
+msgid "browscap usage"
+msgstr "бровсцап Употреба"
+
+#: includes/settings/tabs/wps-browscap.php:28
+msgid "The browscap database will be downloaded and used to detect robots."
+msgstr ""
+"база података бровсцап ће бити преузета и користити за детекцију роботе"
+
+#: includes/settings/tabs/wps-browscap.php:34
+msgid "Update browscap Info"
+msgstr "Упдате бровсцап Инфо"
+
+#: includes/settings/tabs/wps-browscap.php:39
+msgid "Download browscap Database"
+msgstr "Довнлоад бровсцап база"
+
+#: includes/settings/tabs/wps-browscap.php:46
+msgid "Schedule weekly update of browscap DB"
+msgstr "Распоред недељно ажурирање бровсцап ДБ"
+
+#: includes/settings/tabs/wps-browscap.php:69
+msgid "Download of the browscap database will be scheduled for once a week."
+msgstr "преузимање базе бити заказана једном недељно."
+
+#: includes/optimization/tabs/wps-optimization-database.php:40
+msgid ""
+"Older installs of WP Statistics allow for duplicate entries in the visitors "
+"table in a corner case.  Newer installs protect against this with a unique "
+"index on the table.  To create the index on the older installs duplicate "
+"entries must be deleted first.  Clicking \"Update Now\" will scan the "
+"vistitors table, delete duplicate entries and add the index."
+msgstr ""
+"Starije WP Statistics instalacije dozvoljavaju dupliranje unosa u tabeli "
+"posetilaca u izuzetnim slučajevima. Novije instalacije štite se od toga "
+"jedinstvenim indeksom na tabeli. Da biste kreirali indeks na starijim "
+"instalacijama, prvo morate obrisati duple unose. Ako kliknete na opciju  "
+"\"Ažuriraj sad\", tabele posetilaca biće skenirane, dupli unosi će biti "
+"obrisani i indeksi će biti dodati tabeli."
+
+#: includes/optimization/tabs/wps-optimization-database.php:46
+msgid ""
+"Older installs of WP Statistics allow for duplicate entries in the visitors "
+"table in a corner case.  Newer installs protect against this with a unique "
+"index on the table."
+msgstr ""
+"Starije WP Statistics instalacije dozvoljavaju dupliranje unosa u tabeli "
+"posetilaca u izuzetnim slučajevima. Novije instalacije štite se od toga "
+"jedinstvenim indeksom na tabeli."
+
+#: includes/optimization/tabs/wps-optimization-database.php:47
+msgid ""
+"Congratulations, your installation is already up to date, nothing to do."
+msgstr "Čestitamo! Vaša instalacija već je ažurirana, nemate šta da radite."
+
+#: includes/settings/tabs/wps-about.php:55
+msgid "Have you search the Internet for any error messages you are receiving?"
+msgstr ""
+"Jeste li pretražili internet da uporedite poruke o grešci koje dobijate?"
+
+#: includes/settings/tabs/wps-about.php:66
+msgid ""
+"Are you getting a blank or incomplete page displayed in your browser?  Did "
+"you view the source for the page and check for any fatal errors?"
+msgstr ""
+"Da li vam se u pretraživaču prikazuje prazna ili nekompletna stranica? Jeste "
+"li potražili stranicu u izvoru i proverili ima li fatalnih grešaka?"
+
+#: includes/settings/tabs/wps-about.php:67
+msgid "Have you checked your PHP and web server error logs?"
+msgstr "Jeste li proverili svoj PHP i dnevnike grešaka web servera?"
+
+#: widget.php:15
+msgid "Show site stats in sidebar."
+msgstr "Prikaži statistiku site-a u bočnoj traci sa menijem"
+
+#: includes/log/last-search.php:97 includes/log/last-visitor.php:94
+#: includes/log/widgets/google.map.php:65 includes/log/widgets/jqv.map.php:59
+#: includes/log/widgets/recent.php:22 includes/log/widgets/words.php:25
+msgid "#hash#"
+msgstr "#hash#"
+
+#: includes/optimization/tabs/wps-optimization-updates.php:4
+msgid ""
+"This will replace all IP addresses in the database with hash values and "
+"cannot be undo, are you sure?"
+msgstr ""
+"Ovo će zameniti sve IP adrese u bazi podataka hash vrednostima i ne može se "
+"poništiti. Jeste li sigurni?"
+
+#: includes/optimization/tabs/wps-optimization-updates.php:26
+msgid ""
+"Updates any unknown location data in the database, this may take a while"
+msgstr ""
+"Ažurira bilo koju nepoznatu lokaciju podataka u bazi podataka. Može "
+"potrajati izvesno vreme"
+
+#: includes/optimization/tabs/wps-optimization-updates.php:31
+#: includes/settings/tabs/wps-general.php:56
+msgid "IP Addresses"
+msgstr "IP adrese"
+
+#: includes/optimization/tabs/wps-optimization-updates.php:36
+#: includes/settings/tabs/wps-general.php:61
+msgid "Hash IP Addresses"
+msgstr "Hash IP adrese"
+
+#: includes/optimization/tabs/wps-optimization-updates.php:41
+msgid ""
+"Replace IP addresses in the database with hash values, you will not be able "
+"to recover the IP addresses in the future to populate location information "
+"afterwards and this may take a while"
+msgstr ""
+"Zamenjuje IP adrese u bazi podataka hash vrednostima. Nećete moći da vratite "
+"IP adrese da biste ispunili informacije o lokaciji u budućnosti. Može "
+"potrajati izvesno vreme."
+
+#: includes/optimization/wps-optimization.php:43
+msgid "IP Addresses replaced with hash values."
+msgstr "IP adrese zamenjene hash vrednostima."
+
+#: includes/settings/tabs/wps-access-level.php:149
+msgid "Force robot list update after upgrades"
+msgstr "Ažuriraj listu robota nakon nadgradnje"
+
+#: includes/settings/tabs/wps-access-level.php:152
+msgid ""
+"Force the robot list to be reset to the default after an update to WP "
+"Statistics takes place.  Note if this option is enabled any custom robots "
+"you have added to the list will be lost."
+msgstr ""
+"Vratite listu robota na podrazumevane vrednosti posle WP Statistics "
+"ažuriranja. Obratite pažnju na to da li je ova opcija aktivirana ili će bilo "
+"koji prilagođeni roboti dodati ovoj listi biti izgubljeni."
+
+#: includes/settings/tabs/wps-general.php:40
+msgid "This will delete the manual when you save the settings, are you sure?"
+msgstr "Kad sačuvate podešavanja, obrisaćete priručnik. Jeste li sigurni?"
+
+#: includes/settings/tabs/wps-general.php:220
+msgid ""
+"By default WP Statistics displays an alert if any of the core features are "
+"disabled on every admin page, this option will disable these notices."
+msgstr ""
+"Po standardu, WP Statistics prikazuje upozorenje ako je bilo koja suštinska "
+"karakteristika deaktivirana na svakoj administratorskoj stranici. Ova opcija "
+"će deaktivirati ta obaveštenja."
+
+#: includes/settings/tabs/wps-general.php:226
+msgid "Delete the manual"
+msgstr "Obriši uputstvo"
+
+#: includes/settings/tabs/wps-general.php:232
+msgid ""
+"By default WP Statistics stores the admin manual in the plugin directory (~5 "
+"meg), if this option is enabled it will be deleted now and during upgrades "
+"in the future."
+msgstr ""
+"Po standardu, WP Statistics čuva uputstvo administratora u direktorijumu "
+"plugin-a (~5 meg). Ako je ova opcija deaktivirana, sada će biti obrisano, "
+"kao i tokom ažuriranja u budućnosti."
+
+#: includes/optimization/tabs/wps-optimization-database.php:20
+msgid "Database Index"
+msgstr "Indeks baze podataka"
+
+#: includes/optimization/tabs/wps-optimization-database.php:41
+msgid ""
+"This operation could take a long time on installs with many rows in the "
+"visitors table."
+msgstr ""
+"Ova operacija mogla bi da potraje malo duže ako u tabeli posetilaca ima "
+"mnogo redova."
+
+#: includes/optimization/wps-optimization.php:129
+msgid "Database"
+msgstr "Baza podataka"
+
+#: includes/settings/tabs/wps-general.php:298
+msgid "Schedule"
+msgstr "Planer"
+
+#: includes/settings/tabs/wps-general.php:328
+msgid "Send reports via"
+msgstr "Pošalji izveštaje putem"
+
+#: includes/settings/tabs/wps-general.php:347
+msgid "E-mail addresses"
+msgstr "E-mail adrese"
+
+#: includes/settings/tabs/wps-general.php:352
+msgid ""
+"A comma separated list of e-mail addresses to send the reports to if e-mail "
+"is selected above."
+msgstr ""
+"Gore je prikazana lista e-mail adresa odvojenih zarezima na koje traba slati "
+"izveštaje, ukoliko su odabrane. "
+
+#: includes/settings/tabs/wps-general.php:358
+msgid "Report body"
+msgstr "Tekst izveštaja"
+
+#: includes/settings/tabs/wps-overview-display.php:75
+msgid "The following three items are global to all users."
+msgstr "Sledeće tri stavke zajedničke su za sve korisnike"
+
+#: includes/settings/tabs/wps-overview-display.php:80
+msgid "Map type"
+msgstr "Vrsta mape"
+
+#: includes/settings/tabs/wps-overview-display.php:86
+msgid "JQVMap"
+msgstr "JQVMap"
+
+#: includes/settings/tabs/wps-overview-display.php:93
+msgid ""
+"The \"Google\" option will use Google's mapping service to plot the recent "
+"visitors (requires access to Google)."
+msgstr ""
+"Opcija \"Google\" koristiće Google mape za prikazivanje nedavnih posetilaca "
+"(zahteva Google pristup). "
+
+#: includes/settings/tabs/wps-overview-display.php:94
+msgid ""
+"The \"JQVMap\" option will use JQVMap javascript mapping library to plot the "
+"recent visitors (requires no extenral services)."
+msgstr ""
+"Opcija \"JQVMap\" koristiće JQVMap javascript mapiranje biblioteke za "
+"prikazivanje nedavnih posetilaca (ne zahteva eksterne servise)."
+
+#: includes/settings/tabs/wps-overview-display.php:118
+msgid ""
+"This feature may cause a performance degradation when viewing statistics and "
+"is only valid if the map type is set to \"Google\"."
+msgstr ""
+"Ova funkcionalnost može izazvati pogoršanje performansi za vreme pregleda "
+"statistika. Validna je samo ako je vrsta mape podešena na \"Google\"."
+
+#: includes/log/all-browsers.php:50
+msgid "Browsers by type"
+msgstr "Pretraživači po vrsti"
+
+#: includes/log/all-browsers.php:133
+msgid "Browsers by platform"
+msgstr "Pretraživači po platformi"
+
+#: includes/log/exclusions.php:97
+msgid "Excluded hits in the last"
+msgstr "Broj izuzetih zahteva u poslednjih:"
+
+#: includes/log/hit-statistics.php:36
+msgid "Hits Statistics Chart"
+msgstr "Statistička karta zahteva"
+
+#: includes/log/hit-statistics.php:69 includes/log/widgets/hits.php:39
+msgid "Hits in the last"
+msgstr "Broja zahteva u poslednjih"
+
+#: includes/log/last-search.php:30 includes/log/widgets/words.php:16
+#: includes/settings/tabs/wps-overview-display.php:36
+msgid "Latest Search Words"
+msgstr "Poslednje reči u pretrazi"
+
+#: includes/log/last-search.php:62
+msgid "Latest Search Word Statistics"
+msgstr "Statistika pretrage poslednjih reči"
+
+#: includes/log/last-visitor.php:61
+msgid "Recent Visitor Statistics"
+msgstr "Statistika o nedavnim posetiocima"
+
+#: includes/log/widgets/google.map.php:9 includes/log/widgets/jqv.map.php:9
+msgid "Today Visitors Map"
+msgstr "Mapa današnjih posetilaca"
+
+#: includes/log/widgets/summary.php:8
+msgid "Summary"
+msgstr "Kratak pregled"
+
+#: includes/log/widgets/summary.php:13
+msgid "User(s) Online"
+msgstr "Online(s) korisnika"
+
+#: includes/log/widgets/browsers.php:45
+msgid "Top 10 Browsers"
+msgstr "10 vrhunskih pretraživača"
+
+#: includes/log/top-referring.php:34 includes/log/top-referring.php:49
+#: includes/log/widgets/referring.php:13
+#: includes/settings/tabs/wps-overview-display.php:26
+msgid "Top Referring Sites"
+msgstr "Site-ovi sa najvećim brojem uputa"
+
+#: includes/log/widgets/about.php:16
+msgid "Rate and Review"
+msgstr "Ocenite i napišite pregled"
+
+#: includes/log/widgets/about.php:20
+msgid "More Information"
+msgstr "Više informacija"
+
+#: includes/log/widgets/about.php:29 includes/settings/tabs/wps-about.php:12
+msgid ""
+"This product includes GeoLite2 data created by MaxMind, available from %s."
+msgstr ""
+"Ovaj proizvod sadrži GeoLite2 podatke koje je kreirao MaxMind, raspoložive "
+"sa %s."
+
+#: includes/log/search-statistics.php:77 includes/log/widgets/search.php:46
+msgid "Search engine referrals in the last"
+msgstr "Upućivanje pretraživača u poslednjih"
+
+#: includes/log/search-statistics.php:98 includes/log/widgets/search.php:67
+msgid "Number of referrals"
+msgstr "Broj uputa"
+
+#: includes/log/widgets/pages.php:13
+msgid "Top 10 Pages"
+msgstr "Prvih 10 stranica"
+
+#: includes/log/search-statistics.php:17 includes/log/search-statistics.php:36
+msgid "Search Engine Referral Statistics"
+msgstr "Statistika upućivanja pretraživača"
+
+#: includes/settings/tabs/wps-about.php:8
+msgid "WP Statistics V%s"
+msgstr "WP Statistics Verzija V%s"
+
+#: includes/settings/tabs/wps-about.php:20
+msgid "Visit Us Online"
+msgstr "Posetite nas online"
+
+#: includes/settings/tabs/wps-about.php:28
+msgid "Rate and Review at WordPress.org"
+msgstr "Ocenite i napišite pregled na WordPress.org"
+
+#: includes/settings/tabs/wps-about.php:32
+msgid "Thanks for installing WP Statistics, we encourage you to submit a "
+msgstr "Hvala što ste instalirali WP Statistics. Slobodno ga"
+
+#: includes/settings/tabs/wps-about.php:32
+msgid "rating and review"
+msgstr " ocenite i napišite komentar na "
+
+#: includes/settings/tabs/wps-about.php:32
+msgid "over at WordPress.org.  Your feedback is greatly appreciated!"
+msgstr "WordPress.org. Vaše povratne informacije mnogo nam znače!"
+
+#: includes/settings/tabs/wps-about.php:49
+msgid ""
+"We're sorry you're having problem with WP Statistics and we're happy to help "
+"out.  Here are a few things to do before contacting us:"
+msgstr ""
+"Žao nam je što vam WP Statistics zadaje problem i srećni smo što možemo da "
+"vam pomognemo. Evo šta treba da uradite pre nego što nam se obratite:"
+
+#: includes/settings/tabs/wps-about.php:58
+msgid "And a few things to double-check:"
+msgstr "Još jednom proverite sledeće:"
+
+#: includes/settings/tabs/wps-about.php:61
+msgid "How's your memory_limit in php.ini?"
+msgstr "Kako stojite sa ograničenjem_memorije u php.ini?"
+
+#: includes/settings/tabs/wps-about.php:62
+msgid "Have you tried disabling any other plugins you may have installed?"
+msgstr ""
+"Jeste li pokušali da deaktivirate bilo koji drugi plugin koji ste, možda, "
+"instalirali?"
+
+#: includes/settings/tabs/wps-about.php:63
+msgid "Have you tried using the default WordPress theme?"
+msgstr "Jeste li pokušali da upotrebite podrazumevanu WordPress temu?"
+
+#: includes/settings/tabs/wps-about.php:64
+msgid "Have you double checked the plugin settings?"
+msgstr "Jeste li ponovo proverili podešavanja plugin-a?"
+
+#: includes/settings/tabs/wps-about.php:65
+msgid "Do you have all the required PHP extensions installed?"
+msgstr "Imate li instalirane sve potrebne PHP ekstenzije? "
+
+#: includes/settings/tabs/wps-about.php:70
+msgid "Still not having any luck?"
+msgstr "Niste imali sreće?"
+
+#: includes/optimization/tabs/wps-optimization-export.php:17
+#: includes/optimization/tabs/wps-optimization-export.php:35
+#: includes/optimization/tabs/wps-optimization-purging.php:128
+#: includes/optimization/tabs/wps-optimization-purging.php:169
+#: includes/optimization/tabs/wps-optimization-purging.php:193
+#: includes/settings/tabs/wps-general.php:303
+#: includes/settings/tabs/wps-general.php:333
+msgid "Please select"
+msgstr "Odaberite"
+
+#: includes/settings/tabs/wps-general.php:365
+msgid ""
+"Any shortcode supported by your installation of WordPress, include all "
+"shortcodes for WP Statistics (see the admin manual for a list of codes "
+"available) are supported in the body of the message."
+msgstr ""
+"Bilo koji shortcode koji podržava vaša WordPress instalacija, uključujući i "
+"shortcode-ove za WP Statistics (pogledajte uputstvo administratora za listu "
+"raspoloživih kodova), podržan je u tekstu poruke. "
+
+#: includes/settings/tabs/wps-general.php:368
+msgid ""
+"Input data codes are now deprecated and will be removed in a future version "
+"of WP Statistics, please use the appropriate shortcodes, they are included "
+"here only for historical purposes:"
+msgstr ""
+"Uneti kodovi podataka sada  zastareli su i biće ukljonjeni iz budućih "
+"verzija plugin-a WP Statistics. Koristite odgovarajuće shortcode-ove koji su "
+"prikazani ovde samo da bi ostali zabeleženi:"
+
+#: includes/settings/tabs/wps-geoip.php:22
+msgid ""
+"IP location services provided by GeoLite2 data created by MaxMind, available "
+"from %s."
+msgstr ""
+"IP servis lokacija obezbeđuju GeoLite2 podaci koje je kreirao MaxMind, "
+"raspoloživ sa %s."
+
+#: includes/settings/tabs/wps-overview-display.php:23
+#: includes/settings/tabs/wps-overview-display.php:32
+msgid "None"
+msgstr "Nijedan"
+
+#: includes/settings/tabs/wps-overview-display.php:28
+#: includes/settings/wps-settings.php:92
+msgid "About"
+msgstr "O"
+
+#: includes/settings/tabs/wps-overview-display.php:123
+msgid "Widgets to Display"
+msgstr "Widget-i za prikazivanje"
+
+#: includes/settings/tabs/wps-overview-display.php:132
+msgid ""
+"The following items are unique to each user.  If you do not select the "
+"'About' widget it will automatically be displayed in the last positon of "
+"column A."
+msgstr ""
+"Sledeće stavke  jedinstvene su za svakog korisnika. Ako ne odaberete ‘O’ "
+"widget, automatski će biti  prikazan na poslednjem mestu A kolone. "
+
+#: includes/settings/tabs/wps-overview-display.php:137
+msgid "Slot"
+msgstr "Slot"
+
+#: includes/settings/tabs/wps-overview-display.php:141
+msgid "Column A"
+msgstr "Kolona A"
+
+#: includes/settings/tabs/wps-overview-display.php:145
+msgid "Column B"
+msgstr "Kolona B"
+
+#: includes/settings/tabs/wps-overview-display.php:151
+msgid "Slot 1"
+msgstr "Slot 1"
+
+#: includes/settings/tabs/wps-overview-display.php:181
+msgid "Slot 2"
+msgstr "Slot 2"
+
+#: includes/settings/tabs/wps-overview-display.php:211
+msgid "Slot 3"
+msgstr "Slot 3"
+
+#: includes/settings/tabs/wps-overview-display.php:241
+msgid "Slot 4"
+msgstr "Slot 4"
+
+#: includes/settings/tabs/wps-overview-display.php:271
+msgid "Slot 5"
+msgstr "Slot 5"
+
+#: includes/settings/tabs/wps-overview-display.php:301
+msgid "Slot 6"
+msgstr "Slot 6"
+
+#: includes/settings/tabs/wps-overview-display.php:305
+msgid "N/A"
+msgstr "N/A"
+
+#: widget.php:280
+msgid "Search Engine Referred"
+msgstr "Uputi pretraživača"
+
+#: schedule.php:10
+msgid "Once Weekly"
+msgstr "Jednom nedeljno"
+
+#: schedule.php:17
+msgid "Once Every 2 Weeks"
+msgstr "Jednom u 2 nedelje"
+
+#: schedule.php:24
+msgid "Once Every 4 Weeks"
+msgstr "Jednom u 4 nedelje"
+
+#: wp-statistics.php:39
+msgid "Complete statistics for your WordPress site."
+msgstr "Kompletirajte statistiku za svoj WordPress site."
+
+#: includes/log/widgets/about.php:15
+msgid "Website"
+msgstr "Website"
+
+#: includes/log/top-referring.php:117 includes/log/widgets/referring.php:19
+msgid "References"
+msgstr "Reference"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:33
+msgid "PHP Memory Limit"
+msgstr "PHP ograničenje memorije"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:38
+msgid "The memory limit a script is allowed to consume, set in php.ini."
+msgstr ""
+"Ograničenje memorije koje je dozvoljeno skripti da utroši, podešeno u php."
+"ini."
+
+#: wp-statistics.php:38
+msgid "WP Statistics"
+msgstr "WP Statistics"
+
+#: wp-statistics.php:164
+msgid "Visit WordPress.org page"
+msgstr "Posetite stranicu WordPress.org "
+
+#: includes/log/page-statistics.php:29
+msgid "Page Trend for Post ID"
+msgstr "Trend stranice za ID posta"
+
+#: includes/log/page-statistics.php:48
+msgid "Page Trend"
+msgstr "Trend stranice"
+
+#: includes/log/page-statistics.php:68
+msgid "Page Trending Stats"
+msgstr "Statistika za trend stranice"
+
+#: includes/settings/tabs/wps-access-level.php:97
+msgid "Record exclusions"
+msgstr "Izuzeci zapisa"
+
+#: includes/settings/tabs/wps-access-level.php:130
+msgid "Robot list"
+msgstr "Lista robota"
+
+#: includes/settings/tabs/wps-access-level.php:157
+msgid "Excluded IP address list"
+msgstr "Isključena lista IP adresa"
+
+#: includes/settings/tabs/wps-access-level.php:160
+msgid ""
+"A list of IP addresses and subnet masks (one per line) to exclude from "
+"statistics collection (both 192.168.0.0/24 and 192.168.0.0/255.255.255.0 "
+"formats are accepted).  To specify an IP address only, use a subnet value of "
+"32 or 255.255.255.255."
+msgstr ""
+"Lista IP adresa i subnet maske (po jedna u svakom redu) za izuzimanje iz "
+"statističke kolekcije (192.168.0.0/24 i 192.168.0.0/255.255.255.0 formata je "
+"prihvaćeno). Da biste naveli samo IP adresu, koristite subnet vrednost 32 "
+"ili 255.255.255.255."
+
+#: includes/settings/tabs/wps-access-level.php:172
+msgid "Excluded login page"
+msgstr "Izuzeta stranica za prijavljivanje"
+
+#: includes/settings/tabs/wps-access-level.php:179
+msgid "Excluded admin pages"
+msgstr "Isključene stranice administratora"
+
+#: includes/settings/tabs/wps-general.php:72
+msgid "Users Online"
+msgstr "Online korisnici"
+
+#: includes/settings/tabs/wps-general.php:77
+msgid "User online"
+msgstr "Korisnik online"
+
+#: includes/settings/tabs/wps-general.php:172
+msgid "Track all pages"
+msgstr "Prati sve stranice"
+
+#: includes/settings/tabs/wps-general.php:184
+msgid "Disable hits column in post/pages list"
+msgstr "Deaktiviraj zahteve kolumne na postovima/stranicama"
+
+#: includes/settings/tabs/wps-general.php:195
+msgid "Miscellaneous"
+msgstr "Razno"
+
+#: wp-statistics.php:164
+msgid "Click here to visit the plugin on WordPress.org"
+msgstr "Kliknite ovde da biste posetili plugin na WordPress.org"
+
+#: wp-statistics.php:167
+msgid "Click here to rate and review this plugin on WordPress.org"
+msgstr ""
+"Kliknite ovde da biste ocenili i komentarisali ovaj plugin na WordPress.org"
+
+#: wp-statistics.php:167
+msgid "Rate this plugin"
+msgstr "Ocenite ovaj plugin"
+
+#: wp-statistics.php:211
+msgid "WP Statistics - Hits"
+msgstr "WP Statistics - Zahtevi"
+
+#: wp-statistics.php:599
+msgid "Error downloading GeoIP database from: %s - %s"
+msgstr "Došlo je do greške prilikom preuzimanja GeoIP baze podataka sa %s - %s"
+
+#: widget.php:108 widget.php:277
+msgid "Total Page Views"
+msgstr "Ukupan broj pregleda stranice"
+
+#: includes/settings/tabs/wps-general.php:155
+#: includes/settings/tabs/wps-general.php:160 wp-statistics.php:259
+msgid "Pages"
+msgstr "Stranice"
+
+#: wp-statistics.php:266
+msgid "Manual"
+msgstr "Uputstvo"
+
+#: wp-statistics.php:364
+msgid "Download ODF file"
+msgstr "Preuzmi ODF datoteku"
+
+#: wp-statistics.php:365
+msgid "Download HTML file"
+msgstr "Preuzmi HTML datoteku"
+
+#: wp-statistics.php:369
+msgid "Manual file not found."
+msgstr "Datoteka sa uputstvom nije pronađena"
+
+#: includes/log/exclusions.php:54
+msgid "Exclusions Statistics"
+msgstr "Statistika izuzetaka"
+
+#: includes/settings/tabs/wps-overview-display.php:37
+msgid "Top Pages Visited"
+msgstr "Najposećenije stranice"
+
+#: includes/log/top-pages.php:160 includes/log/widgets/pages.php:27
+msgid "No page title found"
+msgstr "Nije pronađen naslov stranice "
+
+#: includes/log/top-pages.php:13 includes/log/top-pages.php:132
+msgid "Top Pages"
+msgstr "Najposećenije stranice"
+
+#: includes/log/top-pages.php:20
+msgid "Top 5 Pages Trends"
+msgstr "Trendovi za prvih 5 stranica"
+
+#: includes/log/top-pages.php:49
+msgid "Top 5 Page Trending Stats"
+msgstr "Statistika trendova na prvih 5 stranica"
+
+#: includes/log/page-statistics.php:89 includes/log/top-pages.php:70
+msgid "Number of Hits"
+msgstr "Broj zahteva"
+
+#: manual/manual.php:29
+msgid "Manual not found: %s"
+msgstr "Uputstvo nije pronađeno: %s"
+
+#: manual/manual.php:39
+msgid "Invalid file type selected: %s"
+msgstr "Odabrana nevažeća vrsta datoteke: %s"
+
+#: widget.php:116
+msgid "Search Engine referred"
+msgstr "Uputi pretraživača"
+
+#: includes/optimization/tabs/wps-optimization-export.php:47
+msgid "Include Header Row"
+msgstr "Uključi red u zaglavlju"
+
+#: includes/optimization/tabs/wps-optimization-export.php:52
+msgid "Include a header row as the first line of the exported file."
+msgstr "Uključi red u zaglavlju kao prvi red izvezene datoteke"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:125
+msgid "PHP Safe Mode"
+msgstr "PHP bezbedan režim"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:130
+msgid "Is PHP Safe Mode active.  The GeoIP code is not supported in Safe Mode."
+msgstr ""
+"Da li je PHP bezbedni režim aktivan? GeoIP kod nije podržan u bezbednom "
+"režimu."
+
+#: includes/settings/tabs/wps-geoip.php:106
+msgid "GeoIP collection is disabled due to the following reasons:"
+msgstr "GeoIP kolekcija deaktivirana je iz sledećih razloga:"
+
+#: includes/settings/tabs/wps-geoip.php:126
+msgid ""
+"PHP safe mode detected!  GeoIP collection is not supported with PHP's safe "
+"mode enabled!"
+msgstr ""
+"Otkriven je PHP bezbedni režim! GeoIP kolekcija nije podržana kad je "
+"aktiviran PHP bezbedni režim!"
+
+#: includes/settings/tabs/wps-general.php:214
+msgid "Hide admin notices about non active features"
+msgstr "Sakrij administratorske beleške o neaktivnim funkcionalnostima"
+
+#: includes/settings/tabs/wps-general.php:237
+msgid "Search Enginges"
+msgstr "Pretraživači"
+
+#: includes/settings/tabs/wps-general.php:242
+msgid ""
+"Disabling all search engines is not allowed, doing so will result in all "
+"search engines being active."
+msgstr ""
+"Deaktiviranje svih pretraživača nije dozvoljeno. Takav potez rezultiraće "
+"aktiviranjem svih pretraživača."
+
+#: includes/settings/tabs/wps-general.php:257
+msgid "disable"
+msgstr "deaktiviraj"
+
+#: includes/settings/tabs/wps-general.php:258
+msgid "Disable %s from data collection and reporting."
+msgstr "Deaktiviraj %s iz kolekcije podataka i izveštavanja"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:147
+msgid "cURL Version"
+msgstr "cURL verzija"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:151
+msgid "cURL not installed"
+msgstr "cURL nije instaliran"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:152
+msgid ""
+"The PHP cURL Extension version you are running.  cURL is required for the "
+"GeoIP code, if it is not installed GeoIP will be disabled."
+msgstr ""
+"Verzija PHP cURL ekstenzije koju vi imate. Za GeoIP kod cURL je obavezan. "
+"Ako nije instaliran, GeoIP će se deaktivirati."
+
+#: includes/optimization/tabs/wps-optimization-resources.php:158
+msgid "BC Math"
+msgstr "BC Math"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:162
+msgid "Installed"
+msgstr "Instaliran"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:162
+msgid "Not installed"
+msgstr "Nije instaliran"
+
+#: includes/settings/tabs/wps-geoip.php:114
+msgid ""
+"GeoIP collection requires the cURL PHP extension and it is not loaded on "
+"your version of PHP!"
+msgstr ""
+"GeoIP kolekcija zahteva cURL PHP ekstenziju i nije otpremljena na vašoj PHP "
+"verziji!"
+
+#: includes/settings/tabs/wps-geoip.php:120
+msgid ""
+"GeoIP collection requires the BC Math PHP extension and it is not loaded on "
+"your version of PHP!"
+msgstr ""
+"GeoIP kolekcija zahteva BC Math PHP ekstenziju i nije otpremljena na vašoj "
+"PHP verziji!"
+
+#: includes/functions/geoip-populate.php:26
+msgid ""
+"Unable to load the GeoIP database, make sure you have downloaded it in the "
+"settings page."
+msgstr ""
+"Nije moguće učitati GeoIP bazu podataka. Proverite na stranici podešavanja "
+"da li ste je preuzeli. "
+
+#: includes/optimization/tabs/wps-optimization-resources.php:182
+msgid "Database file does not exist."
+msgstr "Datoteka baze podataka ne postoji."
+
+#: includes/log/last-visitor.php:59
+msgid "Search for"
+msgstr "Traži"
+
+#: includes/log/widgets/browsers.php:8 includes/log/widgets/countries.php:11
+#: includes/log/widgets/hits.php:8 includes/log/widgets/pages.php:13
+#: includes/log/widgets/recent.php:9 includes/log/widgets/referring.php:13
+#: includes/log/widgets/search.php:8 includes/log/widgets/words.php:16
+msgid "More"
+msgstr "Više"
+
+#: includes/settings/tabs/wps-general.php:269
+msgid "Include totals"
+msgstr "Uključujući ukupne vrednosti"
+
+#: includes/settings/tabs/wps-general.php:275
+msgid ""
+"Add a total line to charts with multiple values, like the search engine "
+"referrals"
+msgstr ""
+"Dodaj red za ukupne vrednosti grafikonima, kao što su uputi pretraživača."
+
+#: includes/settings/tabs/wps-overview-display.php:100
+msgid "Disable map"
+msgstr "Deaktiviraj mapu"
+
+#: includes/settings/tabs/wps-overview-display.php:106
+msgid "Disable the map display"
+msgstr "Deaktiviraj prikaz mape"
+
+#: includes/settings/tabs/wps-overview-display.php:112
+msgid "Get country location from Google"
+msgstr "Izlistaj lokaciju države sa Google mape"
+
+#: includes/log/exclusions.php:8
+msgid ""
+"Attention: Exclusion are not currently set to be recorded, the results below "
+"may not reflect current statistics!"
+msgstr ""
+"Pažnja: Trenutno se izuzeci ne beleže, rezultati koji slede možda ne "
+"odražavaju tačnu statistiku!"
+
+#: includes/log/exclusions.php:118
+msgid "Number of excluded hits"
+msgstr "Broj isključenih zahteva"
+
+#: includes/settings/tabs/wps-access-level.php:86
+msgid ""
+"Hint: manage_network = Super Admin Network, manage_options = Administrator, "
+"edit_others_posts = Editor, publish_posts = Author, edit_posts = "
+"Contributor, read = Everyone."
+msgstr ""
+"Savet:  upravljaj_mrežom = Super Admin Mreža, upravljaj_opcijama = "
+"Administrator, uredi_tuđe_postove = Urednik, objavi_postove = Autor, "
+"uredi_postove = Saradnik, čitaj = Svi."
+
+#: includes/settings/tabs/wps-access-level.php:99
+#: includes/settings/tabs/wps-access-level.php:151
+msgid "Enable"
+msgstr "Aktiviraj"
+
+#: includes/settings/tabs/wps-access-level.php:100
+msgid ""
+"This will record all the excluded hits in a separate table with the reasons "
+"why it was excluded but no other information.  This will generate a lot of "
+"data but is useful if you want to see the total number of hits your site "
+"gets, not just actual user visits."
+msgstr ""
+"Na ovaj način zabeležiće se svi izuzeti zahtevi u odvojenoj tabeli zajedno "
+"sa razlozima zbog kojih su izuzeti, ali bez ijedne druge informacije. Na "
+"ovaj način generisaće se veliki broj podataka, ali koriristiće vam kad "
+"budete hteli da vidite ukupan broj zahteva koje dobija vaš site, a ne samo "
+"broj poseta trenutnih korisnika."
+
+#: includes/settings/tabs/wps-access-level.php:168
+msgid "Site URL Exclusions"
+msgstr "Izuzeci URL site-a"
+
+#: includes/settings/tabs/wps-access-level.php:175
+msgid "Exclude the login page for registering as a hit."
+msgstr "Izuzmi stranicu za prijavljivanje i nemoj je registrovati kao zahtev"
+
+#: includes/settings/tabs/wps-access-level.php:182
+msgid "Exclude the admin pages for registering as a hit."
+msgstr "Isključi stranice administratora i nemoj ih registrovati kao zahtev."
+
+#: includes/settings/tabs/wps-access-level.php:93 wp-statistics.php:254
+msgid "Exclusions"
+msgstr "Izuzeci"
+
+#: includes/log/exclusions.php:68
+msgid "Total Exclusions: %s"
+msgstr "Ukupno izuzetaka %s"
+
+#: includes/log/exclusions.php:75
+msgid "Exclusions Statistical Chart"
+msgstr "Statistička karta izuzetaka"
+
+#: includes/settings/tabs/wps-access-level.php:33
+msgid "Access Levels"
+msgstr "Nivoi pristupa"
+
+#: includes/optimization/wps-optimization.php:126
+msgid "Resources/Information"
+msgstr "Izvori/Informacije"
+
+#: includes/optimization/wps-optimization.php:128
+msgid "Purging"
+msgstr "Brisanje"
+
+#: includes/optimization/wps-optimization.php:130
+msgid "Updates"
+msgstr "Ažuriranja"
+
+#: includes/settings/wps-settings.php:88
+msgid "Access/Exclusions"
+msgstr "Pristup/Izuzeci"
+
+#: includes/settings/wps-settings.php:91
+msgid "Maintenance"
+msgstr "Održavanje"
+
+#: includes/settings/wps-settings.php:126
+msgid "Update"
+msgstr "Ažuriraj"
+
+#: includes/settings/wps-settings.php:86
+msgid "General"
+msgstr "Opšti"
+
+#: includes/optimization/empty.php:57
+msgid "Error, %s not emptied!"
+msgstr "Greška, %s nije ispražnjen!"
+
+#: includes/optimization/tabs/wps-optimization-purging.php:118
+msgid "Data"
+msgstr "Podaci"
+
+#: includes/optimization/tabs/wps-optimization-purging.php:145
+msgid "Purge records older than"
+msgstr "Obriši zapise starije od"
+
+#: includes/optimization/tabs/wps-optimization-purging.php:151
+msgid ""
+"Deleted user statistics data older than the selected number of days.  "
+"Minimum value is 30 days."
+msgstr ""
+"Podaci o statistici korisnika stariji od određenog broja dana su obrisani. "
+"Minimalna vrednost je 30 dana."
+
+#: includes/optimization/tabs/wps-optimization-purging.php:152
+msgid "Purge now!"
+msgstr "Obriši sad!"
+
+#: includes/optimization/purge-data.php:55
+msgid "Please select a value over 30 days."
+msgstr "Odaberite vrednost preko 30 dana."
+
+#: includes/settings/tabs/wps-maintenance.php:20
+msgid ""
+"This will permanently delete data from the database each day, are you sure "
+"you want to enable this option?"
+msgstr ""
+"Ovako ćete trajno obrisati podatke iz baze podataka za svaki dan. Jeste li "
+"sigurni da želite da aktivirate ovu opciju?"
+
+#: includes/settings/tabs/wps-maintenance.php:30
+msgid "Database Maintenance"
+msgstr "Održavanje baze podataka"
+
+#: includes/settings/tabs/wps-maintenance.php:35
+msgid "Run a daily WP Cron job to prune the databases"
+msgstr "Svakoga dana pokrenite WP Cron da biste srezali baze podataka"
+
+#: includes/settings/tabs/wps-maintenance.php:41
+msgid ""
+"A WP Cron job will be run daily to prune any data older than a set number of "
+"days."
+msgstr ""
+"WP Cron će se pokretati svakog dana da bi odbacio bilo koje podatke starije "
+"od određenog broja dana. "
+
+#: includes/settings/tabs/wps-maintenance.php:47
+msgid "Prune data older than"
+msgstr "Odbaci podatke starije od"
+
+#: includes/settings/tabs/wps-maintenance.php:52
+msgid "Days"
+msgstr "Dana"
+
+#: includes/settings/tabs/wps-maintenance.php:53
+msgid ""
+"The number of days to keep statistics for.  Minimum value is 30 days.  "
+"Invalid values will disable the daily maintenance."
+msgstr ""
+"Broj dana za čuvanje statistike. Minimalna vrednost je 30 dana. Nevažeće "
+"vrednosti će onemogućiti svakodnevno održavanje."
+
+#: includes/settings/wps-settings.php:89
+msgid "GeoIP"
+msgstr "GeoIP"
+
+#: includes/settings/tabs/wps-browscap.php:54
+#: includes/settings/tabs/wps-geoip.php:64
+msgid "Next update will be"
+msgstr "Naredno ažuriranje biće"
+
+#: includes/settings/tabs/wps-geoip.php:109
+msgid ""
+"GeoIP collection requires PHP %s or above, it is currently disabled due to "
+"the installed PHP version being  "
+msgstr ""
+"GeoIP kolekcija zahteva PHP verziju %s ili noviju. Trenutno je deaktivirana "
+"jer je instalirana PHP verzija "
+
+#: includes/log/widgets/search.php:8 includes/log/widgets/summary.php:64
+msgid "Search Engine Referrals"
+msgstr "Uputi pretraživača"
+
+#: includes/log/widgets/summary.php:88
+msgid "Daily Total"
+msgstr "Ukupno dnevno"
+
+#: includes/log/widgets/summary.php:102
+msgid "Current Time and Date"
+msgstr "Trenutno vreme i datum"
+
+#: includes/optimization/tabs/wps-optimization-database.php:39
+#: includes/optimization/tabs/wps-optimization-updates.php:25
+#: includes/optimization/tabs/wps-optimization-updates.php:40
+msgid "Update Now!"
+msgstr "Ažuriraj sada!"
+
+#: includes/settings/tabs/wps-access-level.php:87
+msgid ""
+"Each of the above casscades the rights upwards in the default WordPress "
+"configuration.  So for example selecting publish_posts grants the right to "
+"Authors, Editors, Admins and Super Admins."
+msgstr ""
+"Sve navedene kaskade prikazuju kompetencije u podrazumevanoj WordPress "
+"konfiguraciji. Na primer, kada odaberete objavi_postove, prava na to imaju "
+"autori, urednici, administratori i super administratori."
+
+#: includes/settings/tabs/wps-access-level.php:88
+msgid ""
+"If you need a more robust solution to delegate access you might want to look "
+"at %s in the WordPress plugin directory."
+msgstr ""
+"Ako vam je potrebno striktnije rešenje za raspodelu pristupa, možda ćete "
+"hteti da pogledate %s u WordPress plugin direktorijumu."
+
+#: includes/settings/tabs/wps-access-level.php:62
+msgid "Required user level to view WP Statistics"
+msgstr "Neophodan korisnički nivo za pregled plugin-a WP Statistics."
+
+#: includes/settings/tabs/wps-access-level.php:77
+msgid "Required user level to manage WP Statistics"
+msgstr "Neophodan korisnički nivo za upravljanje plugin-om WP Statistics."
+
+#: includes/settings/tabs/wps-geoip.php:56
+msgid "Schedule monthly update of GeoIP DB"
+msgstr "Planiraj ažuriranje GeoIP baze podataka jednom mesečno"
+
+#: includes/settings/tabs/wps-geoip.php:82
+msgid ""
+"Download of the GeoIP database will be scheduled for 2 days after the first "
+"Tuesday of the month."
+msgstr ""
+"Preuzimanje GeoIP baze podataka biće planirano 2 dana posle prvog utorka u "
+"mesecu."
+
+#: includes/settings/tabs/wps-geoip.php:83
+msgid ""
+"This option will also download the database if the local filesize is less "
+"than 1k (which usually means the stub that comes with the plugin is still in "
+"place)."
+msgstr ""
+"Ova opcija će, takođe, preuzeti bazu podataka ako je veličina lokalne "
+"datoteke manja od 1k (što obično znači da je stub koji dolazi uz plugin još "
+"na svom mestu)."
+
+#: includes/settings/tabs/wps-geoip.php:89
+msgid "Populate missing GeoIP after update of GeoIP DB"
+msgstr "Ubacite nedostajući GeoIP nakon ažuriranja GeoIP baze podataka"
+
+#: includes/settings/tabs/wps-geoip.php:95
+msgid "Update any missing GeoIP data after downloading a new database."
+msgstr ""
+"Ažurirajte bilo koji nedostajući GeoIP podatak nakon preuzimanja nove baze "
+"podataka."
+
+#: includes/functions/geoip-populate.php:50
+msgid "Updated %s GeoIP records in the visitors database."
+msgstr "GeoIP zapisi  %s ažurirani u bazi podataka posetilaca"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:98
+msgid "Version Info"
+msgstr "Podaci o verziji"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:103
+msgid "WP Statistics Version"
+msgstr "WP Statistics verzija"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:108
+msgid "The WP Statistics version you are running."
+msgstr "WP Statistics verzija koju vi imate"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:114
+msgid "PHP Version"
+msgstr "PHP verzija"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:119
+msgid "The PHP version you are running."
+msgstr "PHP verzija koju vi imate"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:136
+msgid "jQuery Version"
+msgstr "jQuery verzija"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:141
+msgid "The jQuery version you are running."
+msgstr "jQuery verzija koju vi imate"
+
+#: wp-statistics.php:610
+msgid "Error could not open downloaded GeoIP database for reading: %s"
+msgstr ""
+"Došlo je do greške. Preuzeta GeoIP baza podataka %s ne može da se otvori za "
+"čitanje"
+
+#: wp-statistics.php:617
+msgid "Error could not open destination GeoIP database for writing %s"
+msgstr ""
+"Došlo je do greške. Destinacija GeoIP baza podataka ne može da se otvori za "
+"pisanje %s."
+
+#: wp-statistics.php:633
+msgid "GeoIP Database updated successfully!"
+msgstr "GeoIP baza podataka uspešno ažurirana!"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:229
+msgid "Client Info"
+msgstr "Podaci o klijentu"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:234
+msgid "Client IP"
+msgstr "IP klijenta"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:239
+msgid "The client IP address."
+msgstr "IP adresa klijenta"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:245
+msgid "User Agent"
+msgstr "Korisnički agent"
+
+#: includes/optimization/tabs/wps-optimization-resources.php:250
+msgid "The client user agent string."
+msgstr "Niz korisničkog agenta klijenta"
+
+#: includes/settings/tabs/wps-access-level.php:105
+msgid "Exclude User Roles"
+msgstr "Isključi korisničke uloge"
+
+#: includes/settings/tabs/wps-access-level.php:119
+#: includes/settings/tabs/wps-access-level.php:174
+#: includes/settings/tabs/wps-access-level.php:181
+msgid "Exclude"
+msgstr "Isključi"
+
+#: includes/settings/tabs/wps-access-level.php:120
+msgid "Exclude %s role from data collection."
+msgstr "Isključi %s ulogu iz kolekcije podataka."
+
+#: includes/settings/tabs/wps-access-level.php:126
+msgid "IP/Robot Exclusions"
+msgstr "IP/Robot izuzeci"
+
+#: includes/settings/tabs/wps-access-level.php:143
+msgid ""
+"A list of words (one per line) to match against to detect robots.  Entries "
+"must be at least 4 characters long or they will be ignored."
+msgstr ""
+"Lista reči (po jedna reč u svakom redu) za detektovanje robota. Unosi moraju "
+"biti dugački najmanje 4 karaktera. U suprotnom, biće ignorisani. "
+
+#: includes/settings/tabs/wps-access-level.php:144
+msgid "Reset to Default"
+msgstr "Vrati na podrazumevane vrednosti"
+
+#: includes/settings/tabs/wps-access-level.php:161
+msgid "Add 10.0.0.0"
+msgstr "Dodaj 10.0.0.0"
+
+#: includes/settings/tabs/wps-access-level.php:162
+msgid "Add 172.16.0.0"
+msgstr "Dodaj 172.16.0.0"
+
+#: includes/settings/tabs/wps-access-level.php:163
+msgid "Add 192.168.0.0"
+msgstr "Dodaj 192.168.0.0"
+
+#: includes/settings/tabs/wps-general.php:264
+msgid "Charts"
+msgstr "Grafikoni"
+
+#: includes/settings/tabs/wps-geoip.php:38
+msgid ""
+"For get more information and location (country) from visitor, enable this "
+"feature."
+msgstr ""
+"Da biste dobili više informacija i lokaciju (državu) posetilaca, aktivirajte "
+"ovu funkcionalnost."
+
+#: includes/settings/wps-settings.php:87 wp-statistics.php:248
+msgid "Overview"
+msgstr "Pregled"
+
+#: includes/optimization/tabs/wps-optimization-database.php:25
+#: includes/optimization/tabs/wps-optimization-updates.php:21
+#: wp-statistics.php:251
+msgid "Countries"
+msgstr "Države"
+
+#: wp-statistics.php:176 wp-statistics.php:253
+msgid "Hits"
+msgstr "Zahtevi"
+
+#: wp-statistics.php:255
+msgid "Referers"
+msgstr "Uput"
+
+#: wp-statistics.php:256
+msgid "Searches"
+msgstr "Pretrage"
+
+#: wp-statistics.php:257
+msgid "Search Words"
+msgstr "Reči za pretragu"
+
+#: includes/settings/tabs/wps-general.php:94
+msgid "Second"
+msgstr "Sekunde"
+
+#: includes/log/all-browsers.php:17
 msgid "Browser Statistics"
-msgstr "Statistika Pretraživača"
+msgstr "Statistika pretraživača"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/all-browsers.php:46
-msgid "Browsers by Type"
-msgstr "Pretraživači po Tipu"
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/all-browsers.php:121
+#: includes/log/all-browsers.php:107
 msgid "Platform"
 msgstr "Platforma"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/all-browsers.php:141
-msgid "Browsers by Platform"
-msgstr "Pretraživači po Platformi"
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/all-browsers.php:185
-msgid "Platform share"
-msgstr "Deljenje po platformi"
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/all-browsers.php:266
+#: includes/log/all-browsers.php:241
 msgid "%s Version"
-msgstr "%s Verzije"
+msgstr "%s verzija"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/all-browsers.php:330
-msgid "Browser version share"
-msgstr "Verzija pretraživača"
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/hit-statistics.php:8
+#: includes/log/hit-statistics.php:17 includes/log/widgets/hits.php:8
 msgid "Hit Statistics"
-msgstr "Statistika Pogodaka"
+msgstr "Statistika zahteva"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/hit-statistics.php:12
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/search-statistics.php:12
+#: includes/log/exclusions.php:57 includes/log/hit-statistics.php:21
+#: includes/log/page-statistics.php:33 includes/log/search-statistics.php:21
 msgid "10 Days"
-msgstr "10 Dana"
+msgstr "10 dana"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/hit-statistics.php:13
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/search-statistics.php:13
+#: includes/log/exclusions.php:58 includes/log/hit-statistics.php:22
+#: includes/log/page-statistics.php:34 includes/log/search-statistics.php:22
 msgid "20 Days"
-msgstr "Dana 20"
+msgstr "20 dana"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/hit-statistics.php:14
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/search-statistics.php:14
+#: includes/log/exclusions.php:59 includes/log/hit-statistics.php:23
+#: includes/log/page-statistics.php:35 includes/log/search-statistics.php:23
 msgid "30 Days"
-msgstr " Dana 30 "
+msgstr "30 dana"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/hit-statistics.php:15
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/search-statistics.php:15
+#: includes/log/exclusions.php:60 includes/log/hit-statistics.php:24
+#: includes/log/page-statistics.php:36 includes/log/search-statistics.php:24
 msgid "2 Months"
-msgstr "2 Meseca"
+msgstr "2 meseca"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/hit-statistics.php:16
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/search-statistics.php:16
+#: includes/log/exclusions.php:61 includes/log/hit-statistics.php:25
+#: includes/log/page-statistics.php:37 includes/log/search-statistics.php:25
 msgid "3 Months"
-msgstr "3 Meseca"
+msgstr "3 meseca"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/hit-statistics.php:17
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/search-statistics.php:17
+#: includes/log/exclusions.php:62 includes/log/hit-statistics.php:26
+#: includes/log/page-statistics.php:38 includes/log/search-statistics.php:26
 msgid "6 Months"
-msgstr "6 Meseci"
+msgstr "6 meseci"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/hit-statistics.php:18
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/search-statistics.php:18
+#: includes/log/exclusions.php:63 includes/log/hit-statistics.php:27
+#: includes/log/page-statistics.php:39 includes/log/search-statistics.php:27
 msgid "9 Months"
-msgstr "9 Meseci"
+msgstr "9 meseci"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/hit-statistics.php:19
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/search-statistics.php:19
+#: includes/log/exclusions.php:64 includes/log/hit-statistics.php:28
+#: includes/log/page-statistics.php:40 includes/log/search-statistics.php:28
 msgid "1 Year"
-msgstr "1 Godina"
+msgstr "1 godina"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/hit-statistics.php:27
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:346
+#: includes/settings/tabs/wps-overview-display.php:34
 msgid "Hits Statistical Chart"
-msgstr ""
+msgstr "Grafikon statistike zahteva"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/hit-statistics.php:43
-msgid "Hits chart in the last"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/hit-statistics.php:43
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/search-statistics.php:43
+#: includes/log/exclusions.php:97 includes/log/hit-statistics.php:69
+#: includes/log/search-statistics.php:77 includes/log/widgets/hits.php:39
+#: includes/log/widgets/search.php:46
+#: includes/optimization/tabs/wps-optimization-purging.php:150
 msgid "days"
-msgstr ""
+msgstr "dana"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:258
+#: includes/log/widgets/countries.php:11
+#: includes/settings/tabs/wps-overview-display.php:27
 msgid "Top 10 Countries"
-msgstr ""
+msgstr "Prvih 10 zemalja"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:264
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/top-countries.php:18
+#: includes/log/top-countries.php:28 includes/log/widgets/countries.php:17
 msgid "Rank"
-msgstr ""
+msgstr "Rang"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:265
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/top-countries.php:19
+#: includes/log/top-countries.php:29 includes/log/widgets/countries.php:18
 msgid "Flag"
-msgstr ""
+msgstr "Zastava"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:267
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/top-countries.php:21
+#: includes/log/top-countries.php:31 includes/log/widgets/countries.php:20
 msgid "Visitor Count"
-msgstr ""
+msgstr "Broj posetilaca"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:313
-msgid ""
-"Please donate to WP Statistics. With your help WP Statistics will rule the "
-"world!"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:441
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/search-statistics.php:27
+#: includes/settings/tabs/wps-overview-display.php:35
 msgid "Search Engine Referrers Statistical Chart"
-msgstr ""
+msgstr " Grafikon statistike uputa pretraživača"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/search-statistics.php:8
-msgid "Search Engine Referrers Statistics"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/search-statistics.php:43
-msgid "Referrer search engine chart in the last"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/top-countries.php:9
+#: includes/log/top-countries.php:19
 msgid "Top Countries"
-msgstr ""
+msgstr "Najveći broj iz država"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/delete-agents.php:14
-msgid "<code>%s</code> agent data deleted successfully."
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/delete-platforms.php:14
-msgid "<code>%s</code> platform data deleted successfully."
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:229
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:201
+#: includes/optimization/tabs/wps-optimization-purging.php:159
 msgid "Delete User Agent Types"
-msgstr ""
+msgstr "Obriši vrste korisničkih agenata"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:234
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:206
+#: includes/optimization/tabs/wps-optimization-purging.php:164
 msgid "Delete Agents"
-msgstr ""
+msgstr "Obriši agente"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:249
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:221
+#: includes/optimization/tabs/wps-optimization-purging.php:179
 msgid "All visitor data will be lost for this agent type."
-msgstr ""
+msgstr "Svi podaci o posetiocima za ovu vrstu agenta biće izgubljeni"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:250
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:274
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:222
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:246
+#: includes/optimization/tabs/wps-optimization-purging.php:180
+#: includes/optimization/tabs/wps-optimization-purging.php:204
 msgid "Delete now!"
-msgstr ""
+msgstr "Obriši sad!"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:258
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:230
+#: includes/optimization/tabs/wps-optimization-purging.php:188
 msgid "Delete Platforms"
-msgstr ""
+msgstr "Obriši platforme"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:273
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:245
+#: includes/optimization/tabs/wps-optimization-purging.php:203
 msgid "All visitor data will be lost for this platform type."
-msgstr ""
+msgstr "Svi podaci o posetiocima za ovu vrstu platforme biće izgubljeni."
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:282
+#: includes/optimization/tabs/wps-optimization-updates.php:16
 msgid "GeoIP Options"
-msgstr ""
+msgstr "GeoIP opcije"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:287
-msgid "Populate Location"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:291
-msgid "Populate now!"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:292
-msgid "Populate any missing location fields, this may take a while."
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:56
+#: includes/settings/tabs/wps-general.php:133
 msgid "Store entire user agent string"
-msgstr ""
+msgstr "Sačuvaj ceo niz korisničkog agenta "
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:62
+#: includes/settings/tabs/wps-general.php:139
 msgid "Only enabled for debugging"
-msgstr ""
+msgstr "Aktivirano samo za otklanjanje grešaka"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:201
+#: includes/settings/tabs/wps-geoip.php:17
 msgid "GeoIP settings"
-msgstr ""
+msgstr "GeoIP podešavanja"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:215
+#: includes/settings/tabs/wps-geoip.php:32
 msgid "GeoIP collection"
-msgstr ""
+msgstr "GeoIP kolekcija"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:227
+#: includes/settings/tabs/wps-geoip.php:44
 msgid "Update GeoIP Info"
-msgstr ""
+msgstr "Ažuriraj GeoIP Info"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:232
+#: includes/settings/tabs/wps-geoip.php:49
 msgid "Download GeoIP Database"
-msgstr ""
+msgstr "Preuzmi GeoIP bazu podataka"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:233
+#: includes/settings/tabs/wps-browscap.php:40
+#: includes/settings/tabs/wps-geoip.php:50
 msgid "Save changes on this page to download the update."
-msgstr ""
+msgstr "Sačuvaj izmene na ovoj stranici radi preuzimanja ažuriranja."
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:10
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:35
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:62
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:10
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:35
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:62
+#: includes/optimization/tabs/wps-optimization-purging.php:10
+#: includes/optimization/tabs/wps-optimization-purging.php:36
+#: includes/optimization/tabs/wps-optimization-purging.php:62
+#: includes/optimization/tabs/wps-optimization-purging.php:90
 msgid "Are you sure?"
-msgstr ""
+msgstr "Jeste li sigurni?"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:222
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:194
+#: includes/optimization/tabs/wps-optimization-purging.php:137
 msgid "Clear now!"
-msgstr ""
+msgstr "Obriši sad!"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/wp-statistics.php:79
+#: wp-statistics.php:261
 msgid "Optimization"
-msgstr ""
+msgstr "Optimizacija"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/delete-agents.php:5
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/delete-platforms.php:5
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/empty.php:5
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/export.php:5
+#: includes/optimization/delete-agents.php:5
+#: includes/optimization/delete-platforms.php:5
+#: includes/optimization/empty.php:5 includes/optimization/export.php:5
+#: includes/optimization/purge-data.php:5
+#: includes/optimization/wps-optimization.php:3 manual/manual.php:5
 msgid "Access denied!"
-msgstr ""
+msgstr "Pristup odbijen"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/empty.php:15
-msgid "<code>%s</code> table data deleted successfully."
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/delete-agents.php:18
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/delete-platforms.php:18
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/empty.php:23
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/export.php:47
+#: includes/optimization/delete-agents.php:18
+#: includes/optimization/delete-platforms.php:18
+#: includes/optimization/empty.php:42 includes/optimization/export.php:57
 msgid "Please select the desired items."
-msgstr ""
+msgstr "Molimo odaberite željene stavke"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:120
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:92
+#: includes/optimization/tabs/wps-optimization-resources.php:17
 msgid "Resources"
-msgstr ""
+msgstr "Izvori"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:125
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:130
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:97
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:102
+#: includes/optimization/tabs/wps-optimization-resources.php:22
+#: includes/optimization/tabs/wps-optimization-resources.php:27
 msgid "Memory usage in PHP"
-msgstr ""
+msgstr "Upotreba memorije u PHP"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:129
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:101
+#: includes/optimization/tabs/wps-optimization-resources.php:26
 msgid "Byte"
-msgstr ""
+msgstr "Bajt"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:136
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:108
-msgid "Number of rows in the <code>%sstatistics_useronline</code> table"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:140
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:151
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:162
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:112
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:123
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:134
+#: includes/optimization/tabs/wps-optimization-resources.php:48
+#: includes/optimization/tabs/wps-optimization-resources.php:59
+#: includes/optimization/tabs/wps-optimization-resources.php:70
+#: includes/optimization/tabs/wps-optimization-resources.php:81
+#: includes/optimization/tabs/wps-optimization-resources.php:92
 msgid "Row"
-msgstr ""
+msgstr "Red"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:141
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:152
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:163
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:113
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:124
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:135
+#: includes/optimization/tabs/wps-optimization-resources.php:49
+#: includes/optimization/tabs/wps-optimization-resources.php:60
+#: includes/optimization/tabs/wps-optimization-resources.php:71
+#: includes/optimization/tabs/wps-optimization-resources.php:82
+#: includes/optimization/tabs/wps-optimization-resources.php:93
 msgid "Number of rows"
-msgstr ""
+msgstr "Broj redova"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:147
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:119
-msgid "Number of rows in the <code>%sstatistics_visit</code> table"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:158
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:130
-msgid "Number of rows in the <code>%sstatistics_visitor</code> table"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:168
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:140
+#: includes/optimization/tabs/wps-optimization-export.php:7
+#: includes/optimization/wps-optimization.php:127
 msgid "Export"
-msgstr ""
+msgstr "Izvezi"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:173
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:145
+#: includes/optimization/tabs/wps-optimization-export.php:12
 msgid "Export from"
-msgstr ""
+msgstr "Izvezi iz"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:183
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:155
+#: includes/optimization/tabs/wps-optimization-export.php:24
 msgid "Select the table for the output file."
-msgstr ""
+msgstr "Odaberite tabelu za izlaznu datoteku."
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:189
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:161
+#: includes/optimization/tabs/wps-optimization-export.php:30
 msgid "Export To"
-msgstr ""
+msgstr "Izvezi u"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:200
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:172
+#: includes/optimization/tabs/wps-optimization-export.php:41
 msgid "Select the output file type."
-msgstr ""
+msgstr "Odaberite vrstu izlazne datoteke."
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:201
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:173
+#: includes/optimization/tabs/wps-optimization-export.php:53
 msgid "Start Now!"
-msgstr ""
+msgstr "Počni sad!"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:206
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:178
-msgid "Empty"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:211
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:183
+#: includes/optimization/tabs/wps-optimization-purging.php:123
 msgid "Empty Table"
-msgstr ""
+msgstr "Isprazni tabelu"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:221
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:193
+#: includes/optimization/tabs/wps-optimization-purging.php:136
 msgid "All data table will be lost."
-msgstr ""
+msgstr "Svi podaci će se izgubiti"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:362
-msgid "Hits chart in the last 20 days"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:457
-msgid "Referrer search engine chart in the last 20 days"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:480
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/search-statistics.php:67
-msgid "Number of referrer"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:104
-msgid "Chart Settings"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:109
-msgid "Chart type"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:115
-msgid "Line"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:116
-msgid "Spline"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:117
-msgid "Area"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:118
-msgid "Area Spline"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:119
-msgid "Column"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:120
-msgid "Bar"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:121
-msgid "Scatter"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:123
-msgid "Chart type in view stats."
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:306
+#: includes/settings/tabs/wps-about.php:44
 msgid "Support"
-msgstr ""
+msgstr "Podrška"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:306
+#: includes/settings/tabs/wps-about.php:74
 msgid "Farsi"
-msgstr ""
+msgstr "Фарси"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/top-referring.php:26
+#: includes/log/top-referring.php:47
 msgid "Referring sites from"
-msgstr ""
+msgstr "Upućuje site-ove sa"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:305
+#: includes/settings/tabs/wps-about.php:36
 msgid "Translations"
-msgstr ""
+msgstr "Prevodi"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:307
-msgid "Facebook"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:113
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:214
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:258
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:346
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:441
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:548
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:589
-msgid "(See more)"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-search.php:4
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-visitor.php:4
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:4
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/top-referring.php:4
+#: includes/log/top-referring.php:4
 msgid "To be added soon"
-msgstr ""
+msgstr "Uskoro će biti dodati"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-search.php:60
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-visitor.php:75
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:565
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:604
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/top-referring.php:59
+#: includes/log/last-search.php:102 includes/log/last-visitor.php:99
+#: includes/log/top-referring.php:78 includes/log/widgets/recent.php:27
+#: includes/log/widgets/words.php:32
+#: includes/settings/tabs/wps-overview-display.php:33
+#: includes/settings/tabs/wps-overview-display.php:71
 msgid "Map"
-msgstr ""
+msgstr "Mapa"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-search.php:83
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-visitor.php:100
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/top-referring.php:105
+#: includes/log/last-search.php:139 includes/log/last-visitor.php:132
+#: includes/log/top-pages.php:181 includes/log/top-referring.php:132
 msgid "Page"
-msgstr ""
+msgstr "Stranica"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-search.php:83
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-visitor.php:100
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/top-referring.php:105
+#: includes/log/last-search.php:139 includes/log/last-visitor.php:132
+#: includes/log/top-pages.php:181 includes/log/top-referring.php:132
 msgid "From"
-msgstr ""
+msgstr "Iz"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/wp-statistics.php:48
-msgid ""
-"Facilities Wordpress Statistics not enabled! Please go to <a href=\"%s"
-"\">setting page</a> and enable statistics"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/wp-statistics.php:166
+#: wp-statistics.php:455
 msgid "Table plugin does not exist! Please disable and re-enable the plugin."
 msgstr ""
+"Tabela plugin-a ne postoji! Deaktivirajte i ponovo aktivirajte plugin. "
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/schedule.php:32
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:133
+#: includes/settings/tabs/wps-general.php:280
+#: includes/settings/tabs/wps-general.php:285 schedule.php:161
 msgid "Statistical reporting"
-msgstr ""
+msgstr "Statistički izveštaji"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:4
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:6
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/wp-statistics.php:76
+#: widget.php:14 wp-statistics.php:245
 msgid "Statistics"
-msgstr ""
+msgstr "Statistike"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:5
-msgid "Show site stats in sidebar"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:19
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/wp-statistics.php:99
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:24
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:20
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:189
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:9
+#: includes/settings/tabs/wps-general.php:369 widget.php:38 widget.php:247
+#: wp-statistics.php:310
 msgid "User Online"
-msgstr "Online Korisnici"
+msgstr "Online korisnici"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:26
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:191
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:12
+#: includes/settings/tabs/wps-general.php:371 widget.php:45 widget.php:250
 msgid "Today Visit"
-msgstr "Današnja Poseta"
+msgstr "Današnja poseta"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:33
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:190
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:15
+#: includes/settings/tabs/wps-general.php:370 widget.php:52 widget.php:253
 msgid "Today Visitor"
-msgstr ""
+msgstr "Današnji posetioci"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:40
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:193
+#: includes/settings/tabs/wps-general.php:373 widget.php:59
 msgid "Yesterday Visit"
-msgstr ""
+msgstr "Jučerašnja poseta"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:47
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:192
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:21
+#: includes/settings/tabs/wps-general.php:372 widget.php:66 widget.php:259
 msgid "Yesterday Visitor"
-msgstr ""
+msgstr "Jučerašnji posetioci"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:54
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:24
+#: widget.php:73 widget.php:262
 msgid "Week Visit"
-msgstr "Nedeljna Poseta"
+msgstr "Nedeljna poseta"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:61
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:27
+#: widget.php:80 widget.php:265
 msgid "Month Visit"
-msgstr "Mesečna Poseta"
+msgstr "Mesečna poseta"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:68
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:30
+#: widget.php:87 widget.php:268
 msgid "Years Visit"
-msgstr "Godišnja Poseta"
+msgstr "Godišnja poseta"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:75
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:195
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:33
+#: includes/settings/tabs/wps-general.php:375 widget.php:94 widget.php:271
 msgid "Total Visit"
-msgstr "Ukupna Poseta"
+msgstr "Ukupna poseta"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:82
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:194
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:36
+#: includes/settings/tabs/wps-general.php:374 widget.php:101 widget.php:274
 msgid "Total Visitor"
-msgstr ""
+msgstr "Ukupno posetilaca"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:90
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:71
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:39
-msgid "Search Engine reffered"
-msgstr "Prosleđeni sa Pretraživača"
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:105
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:57
+#: widget.php:123 widget.php:300
 msgid "Total Posts"
-msgstr "Ukupno Postova"
+msgstr "Ukupno postova"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:112
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:60
+#: widget.php:130 widget.php:303
 msgid "Total Pages"
-msgstr "Ukupno Stranica"
+msgstr "Ukupno stranica"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:119
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:63
+#: widget.php:137 widget.php:306
 msgid "Total Comments"
-msgstr "Ukupno Komentara"
+msgstr "Ukupno komentara"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:126
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:66
+#: widget.php:144 widget.php:309
 msgid "Total Spams"
-msgstr "Ukupno Spama"
+msgstr "Ukupno spam-ova"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:133
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:69
+#: widget.php:151 widget.php:312
 msgid "Total Users"
-msgstr "Ukupno Korisnika"
+msgstr "Ukupno korisnika"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:140
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:72
+#: widget.php:158 widget.php:315
 msgid "Average Posts"
-msgstr "Prosek Postova"
+msgstr "Prosečno postova"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:147
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:75
+#: widget.php:165 widget.php:318
 msgid "Average Comments"
-msgstr "Prosek Komentara"
+msgstr "Prosečno komentara"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:154
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:78
+#: widget.php:172 widget.php:321
 msgid "Average Users"
-msgstr "Prosek Korisnika"
+msgstr "Prosečno korisnika"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/widget.php:161
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:81
+#: widget.php:179 widget.php:324
 msgid "Last Post Date"
-msgstr "Datum Poslednjeg Posta"
+msgstr "Datum poslednjeg posta"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/wp-statistics.php:78
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/wp-statistics.php:124
+#: wp-statistics.php:340
 msgid "View Stats"
-msgstr ""
+msgstr "Vidi statistiku"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/wp-statistics.php:80
+#: wp-statistics.php:152 wp-statistics.php:262
 msgid "Settings"
-msgstr ""
+msgstr "Podešavanja"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/wp-statistics.php:104
+#: wp-statistics.php:316
 msgid "Today visitor"
-msgstr ""
+msgstr "Broj posetilaca danas"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/wp-statistics.php:109
+#: wp-statistics.php:322
 msgid "Today visit"
-msgstr ""
+msgstr "Broj poseta danas"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/wp-statistics.php:114
+#: wp-statistics.php:328
 msgid "Yesterday visitor"
-msgstr ""
+msgstr "Broj poseta juče"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/wp-statistics.php:119
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:18
+#: widget.php:256 wp-statistics.php:334
 msgid "Yesterday visit"
-msgstr "Jučerašnja Poseta"
+msgstr "Jučerašnja poseta"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/wp-statistics.php:156
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/wp-statistics.php:250
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/wp-statistics.php:269
+#: wp-statistics.php:444 wp-statistics.php:544 wp-statistics.php:815
 msgid "You do not have sufficient permissions to access this page."
-msgstr ""
+msgstr "Nemate odgovarajuće dozvole za pristup ovoj stranici"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/all-browsers.php:14
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/all-browsers.php:120
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/all-browsers.php:265
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/hit-statistics.php:26
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-search.php:24
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-visitor.php:35
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:18
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:112
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:212
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:256
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:300
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:345
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:440
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:546
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:587
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/search-statistics.php:26
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/top-referring.php:24
+#: includes/log/all-browsers.php:23 includes/log/all-browsers.php:106
+#: includes/log/all-browsers.php:240 includes/log/exclusions.php:74
+#: includes/log/hit-statistics.php:35 includes/log/last-search.php:61
+#: includes/log/last-visitor.php:57 includes/log/page-statistics.php:47
+#: includes/log/search-statistics.php:35 includes/log/top-pages.php:19
+#: includes/log/top-pages.php:131 includes/log/top-referring.php:45
+#: includes/log/widgets/about.php:7 includes/log/widgets/browsers.php:7
+#: includes/log/widgets/countries.php:9 includes/log/widgets/google.map.php:8
+#: includes/log/widgets/hits.php:7 includes/log/widgets/jqv.map.php:8
+#: includes/log/widgets/pages.php:11 includes/log/widgets/recent.php:7
+#: includes/log/widgets/referring.php:11 includes/log/widgets/search.php:7
+#: includes/log/widgets/summary.php:7 includes/log/widgets/words.php:14
 msgid "Click to toggle"
-msgstr ""
+msgstr "Klikni za aktiviranje/deaktiviranje"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:19
+#: includes/settings/tabs/wps-overview-display.php:24
 msgid "Summary Statistics"
-msgstr ""
+msgstr "Pregled statistike"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/hit-statistics.php:93
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:30
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:411
+#: includes/log/hit-statistics.php:104 includes/log/widgets/hits.php:74
+#: includes/log/widgets/summary.php:19
 msgid "Visitor"
-msgstr ""
+msgstr "Posetilac"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/hit-statistics.php:103
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:31
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:421
+#: includes/log/hit-statistics.php:104 includes/log/widgets/hits.php:74
+#: includes/log/widgets/summary.php:20
 msgid "Visit"
-msgstr ""
+msgstr "Poseta"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:35
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:76
+#: includes/log/widgets/summary.php:24 includes/log/widgets/summary.php:69
 msgid "Today"
-msgstr ""
+msgstr "Danas"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:41
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:77
+#: includes/log/widgets/summary.php:30 includes/log/widgets/summary.php:70
 msgid "Yesterday"
-msgstr ""
+msgstr "Juče"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:47
+#: includes/log/widgets/summary.php:36
 msgid "Week"
-msgstr ""
+msgstr "Ove nedelje"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:53
+#: includes/log/widgets/summary.php:42
 msgid "Month"
-msgstr ""
+msgstr "Ovog meseca"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:59
+#: includes/log/widgets/summary.php:48
 msgid "Year"
-msgstr ""
+msgstr "Ove godine"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:65
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:99
+#: includes/log/search-statistics.php:112 includes/log/widgets/search.php:81
+#: includes/log/widgets/summary.php:54 includes/log/widgets/summary.php:94
 msgid "Total"
-msgstr ""
+msgstr "Ukupno"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:105
-msgid ""
-"Today date: <code dir=\"ltr\">%s</code>, Time: <code dir=\"ltr\">%s</code>"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:107
+#: includes/log/widgets/summary.php:102
 msgid "(Adjustment)"
-msgstr ""
+msgstr "(Prilagođavanje)"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/all-browsers.php:15
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:113
+#: includes/log/all-browsers.php:24 includes/log/widgets/browsers.php:8
+#: includes/settings/tabs/wps-overview-display.php:25 wp-statistics.php:249
 msgid "Browsers"
-msgstr ""
+msgstr "Pretraživači"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:144
-msgid "Graph of Browsers"
-msgstr ""
+#: includes/log/widgets/browsers.php:38
+msgid "Other"
+msgstr "Ostali"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/all-browsers.php:90
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:188
-msgid "Browser share"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:214
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/top-referring.php:13
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/top-referring.php:28
-msgid "Top referring sites"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:220
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/top-referring.php:90
-msgid "Reference"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:221
+#: includes/log/widgets/referring.php:20
 msgid "Address"
-msgstr ""
+msgstr "Adresa"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:301
-msgid "About plugin"
-msgstr "O ovom dodatku "
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:304
-msgid "Plugin version: %s"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:308
-msgid "Weblog"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:316
-msgid "Donate"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/hit-statistics.php:67
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:385
+#: includes/log/hit-statistics.php:90 includes/log/widgets/hits.php:60
 msgid "Number of visits and visitors"
-msgstr ""
+msgstr "Broj poseta i posetilaca"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-search.php:13
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-search.php:25
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:548
-msgid "Latest search words"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-search.php:16
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-search.php:63
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:81
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:506
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:568
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/search-statistics.php:93
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:44
+#: includes/settings/tabs/wps-overview-display.php:86
 msgid "Google"
 msgstr "Google"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-search.php:17
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-search.php:65
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:87
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:516
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:570
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/search-statistics.php:103
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:47
-msgid "Yahoo!"
-msgstr "Yahoo!"
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-search.php:18
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-search.php:67
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:93
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:526
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:572
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/search-statistics.php:113
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:50
-msgid "Bing"
-msgstr "Bing"
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-visitor.php:13
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-visitor.php:36
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:589
+#: includes/log/last-visitor.php:27 includes/log/widgets/recent.php:9
+#: includes/settings/tabs/wps-overview-display.php:38
 msgid "Recent Visitors"
-msgstr "Skorašnji posetioci"
+msgstr "Nedavni posetioci"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-visitor.php:76
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/log.php:266
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/top-countries.php:20
+#: includes/log/top-countries.php:30 includes/log/widgets/countries.php:19
 msgid "Country"
-msgstr "Zemlja"
+msgstr "Država"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:15
-msgid "General Settings"
-msgstr "Opšta Podešavanja"
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:25
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:37
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:49
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:61
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:138
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:220
+#: includes/settings/tabs/wps-browscap.php:27
+#: includes/settings/tabs/wps-browscap.php:51
+#: includes/settings/tabs/wps-general.php:66
+#: includes/settings/tabs/wps-general.php:82
+#: includes/settings/tabs/wps-general.php:110
+#: includes/settings/tabs/wps-general.php:126
+#: includes/settings/tabs/wps-general.php:138
+#: includes/settings/tabs/wps-general.php:165
+#: includes/settings/tabs/wps-general.php:177
+#: includes/settings/tabs/wps-general.php:189
+#: includes/settings/tabs/wps-general.php:219
+#: includes/settings/tabs/wps-general.php:231
+#: includes/settings/tabs/wps-general.php:274
+#: includes/settings/tabs/wps-general.php:290
+#: includes/settings/tabs/wps-geoip.php:37
+#: includes/settings/tabs/wps-geoip.php:61
+#: includes/settings/tabs/wps-geoip.php:94
+#: includes/settings/tabs/wps-maintenance.php:40
+#: includes/settings/tabs/wps-overview-display.php:105
+#: includes/settings/tabs/wps-overview-display.php:117
 msgid "Active"
-msgstr "Aktivni"
+msgstr "Aktivan"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:26
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:38
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:50
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:139
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:221
+#: includes/settings/tabs/wps-general.php:83
+#: includes/settings/tabs/wps-general.php:111
+#: includes/settings/tabs/wps-general.php:127
+#: includes/settings/tabs/wps-general.php:166
+#: includes/settings/tabs/wps-general.php:178
+#: includes/settings/tabs/wps-general.php:190
+#: includes/settings/tabs/wps-general.php:291
 msgid "Enable or disable this feature"
-msgstr "Omogući ili onemogući ovu opciju"
+msgstr "Aktiviraj ili deaktiviraj ovu opciju"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:32
+#: includes/log/top-pages.php:163 includes/log/widgets/pages.php:30
+#: includes/settings/tabs/wps-general.php:100
+#: includes/settings/tabs/wps-general.php:105
 msgid "Visits"
 msgstr "Posete"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:44
+#: includes/settings/tabs/wps-general.php:116
+#: includes/settings/tabs/wps-general.php:121 wp-statistics.php:258
 msgid "Visitors"
 msgstr "Posetioci"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:68
+#: includes/settings/tabs/wps-general.php:89
 msgid "Check for online users every"
-msgstr "Proveri online korisnike svakih"
+msgstr "Proveri online korisnike svake"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:73
-msgid "Secound"
-msgstr "Sekunda"
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:74
+#: includes/settings/tabs/wps-general.php:95
 msgid "Time for the check accurate online user in the site. Now: %s Second"
 msgstr ""
+"Vreme za proveru tačnog broja online korisnika na site-u. Trenutno % sekundi"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:80
+#: includes/settings/tabs/wps-general.php:200
 msgid "Show stats in menu bar"
-msgstr "Prikaži statistiku u meniju"
+msgstr "Prikaži statistiku na traci sa menijem"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:85
+#: includes/settings/tabs/wps-general.php:205
 msgid "No"
-msgstr ""
+msgstr "Ne"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:86
+#: includes/settings/tabs/wps-general.php:206
 msgid "Yes"
 msgstr "Da"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:88
+#: includes/settings/tabs/wps-general.php:208
 msgid "Show stats in admin menu bar"
-msgstr "Prikaži statistiku u administratorskom meniju"
+msgstr "Prikaži statistiku na traci sa menijem za administratore"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:94
+#: includes/settings/tabs/wps-general.php:145
 msgid "Coefficient per visitor"
 msgstr "Koeficijent po posetiocu"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:99
+#: includes/settings/tabs/wps-general.php:150
 msgid "For each visit to account for several hits. Currently %s."
-msgstr ""
+msgstr "Za svakog posetioca broji se po nekoliko zahteva. Trenutno %s."
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:128
-msgid "Statistical reporting settings"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:146
-msgid "Time send"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:178
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:194
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:216
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:239
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization-geoip.php:263
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:150
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:166
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:188
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:211
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/optimization/optimization.php:235
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:114
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:151
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:167
-msgid "Please select."
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:152
-msgid "Hourly"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:153
-msgid "Twice daily"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:154
-msgid "daily"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:156
+#: includes/settings/tabs/wps-general.php:322
 msgid "Select when receiving statistics report."
-msgstr ""
+msgstr "Odaberite kad ćete dobijati statistički izveštaj."
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:162
-msgid "Send Statistical reporting to"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:168
+#: includes/settings/tabs/wps-general.php:334
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:169
+#: includes/settings/tabs/wps-general.php:335
 msgid "SMS"
-msgstr ""
+msgstr "SMS"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:171
+#: includes/settings/tabs/wps-general.php:337
 msgid "Type Select Get Status Report."
-msgstr ""
+msgstr "Odaberite vrstu izveštaja o statusu"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:174
-msgid ""
-"Note: To send SMS text messages please install the <a href=\"%s\" target="
-"\"_blank\">Wordpress SMS</a> plugin."
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:181
-msgid "Send Content Report"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:186
+#: includes/settings/tabs/wps-general.php:363
 msgid "Enter the contents of the reports received."
-msgstr ""
+msgstr "Unesite sadržaj primljenih izveštaja"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/settings.php:188
-msgid "Input data:"
-msgstr ""
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:2
+#: widget.php:240
 msgid "Name"
-msgstr "Ime"
+msgstr "Naziv"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:6
+#: widget.php:244
 msgid "Items"
 msgstr "Stavke"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:42
+#: widget.php:283
 msgid "Select type of search engine"
-msgstr "Izaberi tip pretraživača"
+msgstr "Odaberite vrstu pretraživača"
 
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-search.php:15
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/last-visitor.php:15
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/log/top-referring.php:15
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:53
+#: includes/log/last-visitor.php:29 includes/log/top-referring.php:36
+#: includes/optimization/tabs/wps-optimization-purging.php:134 widget.php:296
 msgid "All"
-msgstr "Sve"
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:84
-msgid "Type date for last update"
-msgstr "Ukucaj datum poslednjeg ažuriranja"
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:86
-msgid "English"
-msgstr "Engleski"
-
-#: F:\Programming\xampp\htdocs\cms\wordpress\wp-content\plugins\wp-statistics/includes/setting/widget.php:89
-msgid "Persian"
-msgstr "Persijski"
+msgstr "Svi"

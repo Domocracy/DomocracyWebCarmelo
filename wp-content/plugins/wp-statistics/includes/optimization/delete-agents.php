@@ -8,10 +8,13 @@
 	
 	if($agent) {
 		
-		$result = $wpdb->query("DELETE FROM {$table_prefix}statistics_visitor WHERE agent = '$agent'");
+		$result = $wpdb->query($wpdb->prepare("DELETE FROM {$table_prefix}statistics_visitor WHERE `agent` = %s", $agent ));
 		
 		if($result) {
-			echo sprintf(__('<code>%s</code> agent data deleted successfully.', 'wp_statistics'), $agent);
+			echo sprintf(__('%s agent data deleted successfully.', 'wp_statistics'), '<code>' . $agent . '</code>');
+		}
+		else {
+			_e('No agent data found to remove!', 'wp_statistics');
 		}
 		
 	} else {

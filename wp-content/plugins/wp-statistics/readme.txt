@@ -1,33 +1,33 @@
 === WP Statistics ===
 Contributors: mostafa.s1990, GregRoss
 Donate link: http://mostafa-soufi.ir/donate/
-Tags: statistics, stats, visit, visitors, chart, browser, blog, today, yesterday, week, month, yearl, total, post, page, sidebar, summary, feedburner, hits, pagerank, google, alexa, live visit
+Tags: statistics, stats, visit, visitors, chart, browser, blog, today, yesterday, week, month, year, total, post, page, sidebar, summary, feedburner, hits, pagerank, google, alexa, live visit
 Requires at least: 3.0
-Tested up to: 3.9.1
-Stable tag: 6.1
+Tested up to: 4.1
+Stable tag: 8.7.2
 License: GPL2
 
-Complete statistics for your blog.
+Complete statistics for your WordPress site.
 
 == Description ==
-A perfect plugin for your blog visitor statistics.
+A comprehensive plugin for your WordPress visitor statistics, come visit us at our [website](http://wp-statistics.com) for all the latest news and information.
 
-Track Visitor and visit statistics to your blog for today and keep up to a year of history!
+Track statistics for your WordPress site without depending on external services and uses arrogate data whenever possible to respect your users privacy.
 
-Now includes tracking of individual page hits!
+Now includes support for not storing IP addresses in the database!
 
-On screen statistics report a graphs are easily viewed through the admin interface.
+On screen statistics presented as graphs are easily viewed through the WordPress admin interface.
 
 This product includes GeoLite2 data created by MaxMind, available from http://www.maxmind.com.
 
 = Features =
-
-* User Online, see how many people are currently viewing your site
+* User online, see how many people are currently viewing your site
 * Visits, see how many hits your site gets each day
 * Visitors, see who's visiting your site
 * Page tracking, see which pages are viewed most often
 * Search Engines, see search queries and redirects from popular search engines like Google, Bing, DuckDuckGo, Yahoo, Yandex and Baidu
 * GeoIP location by Country
+* Support for not storing IP addresses in the database.
 * Interactive map of visitors location
 * E-mail reports of statistics
 * Set access level for view and manage roles based on WordPress roles
@@ -42,24 +42,48 @@ This product includes GeoLite2 data created by MaxMind, available from http://ww
 * Overview and detail pages for all kinds of data, including; browser versions, country stats, hits, exclusions, referrers, searches, search words and visitors
 * Widget to provide information to your users
 * Shortcodes for many different types of data in both widgets and posts/pages
+* Dashboard widget for the admin area
 * Comprehensive Admin Manual
 
-= Translators =
+= Support =
+We're sorry you're having problem with WP Statistics and we're happy to help out.  Here are a few things to do before contacting us:
 
+* Have you read the [FAQs](http://wordpress.org/plugins/wp-statistics/faq/)?
+* Have you read the [manual](http://plugins.svn.wordpress.org/wp-statistics/trunk/manual/WP%20Statistics%20Admin%20Manual.html)?
+* Have you search the [support forum](http://wordpress.org/support/plugin/wp-statistics) for a similar issue?
+* Have you search the Internet for any error messages you are receiving?
+* Make sure you have access to your PHP error logs.
+
+And a few things to double-check:
+
+* How's your memory_limit in php.ini?
+* Have you tried disabling any other plugins you may have installed?
+* Have you tried using the default WordPress theme?
+* Have you double checked the plugin settings?
+* Do you have all the required PHP extensions installed?
+* Are you getting a blank or incomplete page displayed in your browser?  Did you view the source for the page and check for any fatal errors?
+* Have you checked your PHP and web server error logs?
+
+Still not having any luck? Open a new thread on one of the support forums and we'll respond as soon as possible.
+
+* [English Support Forum](http://wordpress.org/support/plugin/wp-statistics)
+* [Persian Support Forum](http://forum.wp-parsi.com/forum/17-%D9%85%D8%B4%DA%A9%D9%84%D8%A7%D8%AA-%D8%AF%DB%8C%DA%AF%D8%B1/)
+
+= Translations =
 * English
 * Persian
 * Portuguese [Thanks](http://www.musicalmente.info/)
 * Romanian [Thanks Luke Tyler](http://www.nobelcom.com/)
-* French Thanks Anice Gnampa. Additional translations by Nicolas Baudet and eldidi
+* French Thanks Anice Gnampa. Additional translations by Nicolas Baudet, eldidi and apeedn
 * Russian [Thanks Igor Dubilej](http://www.iflexion.com/)
 * Spanish Thanks Jose
 * Arabic [Thanks Hammad Shammari](http://www.facebook.com/aboHatim)
 * Turkish [Thanks aidinMC](http://www.artadl.ir/) & [Manset27.com](http://www.manset27.com/) & [Abdullah Manaz](http://www.manaz.net/)
-* Italian [Thanks Tony Bellardi](http://www.tonybellardi.com/)
-* German [Thanks Andreas Martin](http://www.andreasmartin.com/)
+* Italian [Thanks Tony Bellardi](http://www.tonybellardi.com/) & Andrea Beducci
+* German [Thanks Andreas Martin](http://www.andreasmartin.com/) and Mike
 * Russian [Thanks Oleg](http://www.bestplugins.ru/)
 * Bengali [Thanks Mehdi Akram](http://www.shamokaldarpon.com/)
-* Serbian [Thanks Radovan Georgijevic](http://www.georgijevic.info/)
+* Serbian [Thanks Radovan Georgijevic](http://www.georgijevic.info/) & [Thanks Ogi Djuraskovic](http://firstsiteguide.com/)
 * Polish Thanks Radosław Rak and Tomasz Stulka.
 * Indonesian [Thanks Agit Amrullah](http://www.facebook.com/agitowblinkerz/)
 * Hungarian [Thanks ZSIMI](http://www.zsimi.hu/)
@@ -67,28 +91,20 @@ This product includes GeoLite2 data created by MaxMind, available from http://ww
 * Chinese (China) [Thanks Toine Cheung](https://twitter.com/ToineCheung)
 * Dutch thanks Friso van Wieringen.
 
-[Percentage languages ​​translation](http://teamwork.wp-parsi.com/projects/wp-statistics/)
-To complete the language deficits of [this section](http://teamwork.wp-parsi.com/projects/wp-statistics/) apply.
-
-= Support =
-
-* [Donate to this plugin](http://mostafa-soufi.ir/donate/)
-* [Plugin Support Forum](http://wordpress.org/support/plugin/wp-statistics)
-* [Plugin Facebook page](https://www.facebook.com/pages/Wordpress-Statistics/546922341997898?ref=stream)
-* [Persian Support](http://forum.wp-parsi.com/forum/17-%D9%85%D8%B4%DA%A9%D9%84%D8%A7%D8%AA-%D8%AF%DB%8C%DA%AF%D8%B1/)
+Translations are done by people just like you, help make WP Statistics available to more people around the world and [do a translation](http://teamwork.wp-parsi.com/projects/wp-statistics/) today!
 
 == Installation ==
 1. Upload `wp-statistics` to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Make sure the Date and Time is set correctly in Wordpress.
+3. Make sure the Date and Time is set correctly in WordPress.
 4. Go to the plugin settings page and configure as required (note this will also download the GeoIP database for the fist time).
 
 == Frequently Asked Questions ==
 = Where's the Admin Manual? =
 The admin manual is installed as part of the plugin, simply go to Statistics->Manual to view it.  At the top of the page will also be two icons that will allow you to download it in either ODT or HTML formats.
 
-= If the plug does not work? =
-Disable / Enable the plugin.
+= What do I do if the plug does not work? =
+Disable / Enable the plugin.  You may also want to remove and re-install it.
 
 = All visitors are being set to unknown for their location? =
 Make sure you've downloaded the GeoIP database and the GeoIP code is enabled.  
@@ -102,7 +118,7 @@ The webcrawler detection code has been fixed and will now exclude them from your
 The GeoIP code requires several things to function, PHP 5.3 or above, the bcmath extension, the cURL extension and PHP cannot be running in safe mode.  All of these conditions are checked for but there may be additional items required.  Check your PHP log files and see if there are any fatal errors listed.
 
 = How much memory does PHP Statistics require? =
-This depends on how many hits your site gets.  The data collection code is very light weight, however the reporting and statistics code can take a lot of memory to process.  The longer you collect data for the more memory you will need to process it.  At a bare minimum, a basic WordPress site with WP Statitics should have at least 32g of RAM.  Sites with lots of plugins and high traffic should look at significantly increasing that.
+This depends on how many hits your site gets.  The data collection code is very light weight, however the reporting and statistics code can take a lot of memory to process.  The longer you collect data for the more memory you will need to process it.  At a bare minimum, a basic WordPress site with WP Statistics should have at least 32 meg of RAM available for a page load.  Sites with lots of plugins and high traffic should look at significantly increasing that (128 to 256 meg is not unreasonable).
 
 = I've enabled IP subnet exclusions and now no visitors are recorded? =
 Be very careful to set the subnet mask correctly on the subnet list, it is very easy to catch too much traffic.  Likewise if you are excluding a single IP address make sure to include a subnet mask of 32 or 255.255.255.255 otherwise the default subnet of 0 will be used, catching all ip addresses.
@@ -114,10 +130,64 @@ Make sure you have WordPress configured correctly for SMTP and also check your W
 WP Statistics hasn't been tested with multi-site and there have been some issues reported with getting it enabled correctly on all sites in a network.
 
 = Does WP Statistics report on post hits? =
-Yes, version 6.0 has introduced page hit tracking!
+Yes, version 6.0 has introduced page hit statistics!
 
 = Does WP Statistics track the time of the hits? =
 No.
+
+= The GeoIP database isn't downloading and when I force a download through the settings page I get the following error: "Error downloading GeoIP database from: http://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.mmdb.gz - Forbidden" =
+This means that MaxMind has block the IP address of your webserver, this is often the case if it has been blacklisted in the past due to abuse.
+
+You have two options:
+- Contact MaxMind and have them unblock your IP address
+- Manually download the database
+
+To manually download the database and install it take the following steps:
+
+- On another system (any PC will do) download the maxmind database from http://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.mmdb.gz
+- Decompress the database
+- Connect to your web host and create a "wp-statistics" directory in your wordpress uploads folder (usually it is located in wp-content, so you would create a directory "wp-content/uploads/wp-statistics").
+- Upload the GeoLite-Country.mmdb file to the folder you just created.
+
+You can also ask MaxMind to unblock your host.  Note that automatic updates will not function until you can successfully download the database from your web server.
+
+= I've activated the plugin but the menus don't show up and nothing happens? =
+
+WP Statistics requires PHP 5.3, if it has detected an older version of PHP installed it will active cleanly in WordPress but disable all functionality, you will have to upgrade to PHP 5.3 or above for it to function.  WP Statistics will display an error on your plugin list just below the WP Statistics entry to let you know.
+
+If there is no error message there may be something else wrong, your first thing to try is disabling your other plugins as they can sometimes cause conflicts.
+
+If you still don't see the menus, go to the support forums and open a new thread and we'll try to help out.
+
+= I'm using another statistics plugin/service and get different numbers for them, why? =
+
+Pretty much every plugin/service is going to give you different results for visits and vistors, there are several reasons for this:
+
+* Web crawler detection
+* Detection method (javascript vs server side PHP)
+* Centralized exclusions
+
+Services that use centralized databases, like Google Analytics, for spam and robot detection have better detection than WP Statistics can.  The trade off of course is relaying on an external service.
+
+= When I upgrade or install WP Statistics I get an error message like "Parse error: syntax error, unexpected T_STRING, expecting T_CONSTANT_ENCAPSED_STRING or '('" =
+
+Since WP Statistics 8.0, PHP 5.3 or above has been required.  If you are using an older version of PHP it cannot understand the new syntax included in WP Statistics 8.0 and generates a parse error. 
+
+Your hosting provider should have a newer version of PHP available, sometimes you must activate it through your hosting control panel.
+
+Since the last release of PHP 5.2 is over 3 years ago (Jan 2011) and is no longer supported or receiving security fixes, if your provider does not support a newer version you should probably be moving hosting providers.
+
+If you have done an upgrade and you can no longer access your site due to the parse error you will have to manually delete the wp-statistics directory from your wordpress/wp-content/plugins directory, either through your hosting providers control panel or FTP.
+
+Do not use older versions of WP Statistics as they have know security issues and will leave your site vulnerable to attack.
+
+= I've decided to stay with WP Statistics 7.4 even though its a bad idea but now WordPress continuously reports there are updates available, how can I stop that? =
+
+Don't, upgrade immediately to the latest version of WP Statistics.
+
+= Something has gone horribly wrong and my site no longer loads, how can I disable the plugin without access to the admin area? =
+
+You can manually disable plugins in WordPress by simply renaming the folder they are installed in.  Using FTP or your hosting providers file manager, go to your WordPress directory, from ther go to wp-content/plugins and rename or delete the wp-statistics folder.
 
 == Screenshots ==
 1. View stats page.
@@ -132,19 +202,236 @@ No.
 10. View latest search engine referrers Statistics page.
 
 == Upgrade Notice ==
-= 6.0 =
-* BACKUP YOUR DATABASE BEFORE INSTALLING!
-* This update includes a new database table, you should not lose any data to make sure to backup your database just in case.
-* You can now track statistics on WordPress pages!  However this is disabled by default, go to Statistics->Settings->General Settings->Pages to enabled it.
-* There's a new admin manual, you can view or download it by going to Statistics->Manual.
+= 8.7 =
+BACKUP YOUR DATABASE BEFORE INSTALLING!  This release alters the table structure of the database.
 
-= 5.3 = 
-* Robots list updated, please either go to "Statistics->Settings->IP/Robot Exclusions", "Reset to Default" and then save or manually make the changes which can be found in the change log details.
+= 8.5 =
+This is a security update release, please update as soon as possible.  In addition to the security fixes there are several new features, see the change log for details.
+
+= 8.0 =
+PHP 5.3 is now required for WP Statistics!  DO NOT UPGRADE TO 8.0 IF YOU ARE RUNNING AN OLDER VERSION!
+BACKUP YOUR DATABASE BEFORE INSTALLING!  This release alters the table structure of the database.
+Support for old format substitution codes in the statistics reports has been removed, the upgrade now converts them to short codes but you should verify the report content after upgrading.
 
 == Changelog ==
-= 6.x =
-* Added Dutch (nl_NL) translation, thanks Friso van Wieringen.
+= 8.7.2 =
+* Added: shareaholic-bot to robots list.
+* Fixed: Robot threshold setting was not being saved.
+* Updated: Italian translation, thanks illatooscuro.
+* Updated: Arabic translation, thanks Hammad.
+* Updated: Honey pot page title now includes "Pot" in it.
+
+= 8.7.1 =
+* Fixed: Variable scope for the exclusion match/reason updated to protected from private to allow the GeoIP code to set them.  This could cause various issues including failed uploades depending on the error reporting level set for PHP.
+
+= 8.7 =
+* Added: Charts with multiple lines now include the data set name in the tooltip.
+* Added: Honey pot option to detect crawlers.
+* Added: Robot threshold option.
+* Added: Hit count for visitors is now recorded and displayed.
+* Added: Top Visitors today widget and page.
+* Fixed: GeoIP exclusion logic didn't work as the location information was not set before it was applied, moved it to the appropriate location.
+* Fixed: Incorrect setting names for country include/excludes as well as hosts.
+* Fixed: Page URI length could exceed the database storage limit and cause duplicate entry warnings, URI is now truncated before being stored.
+* Updated: Polish and Farsi translations.
+* Updated: User agent parser to V0.3.2.
+* Updated: GeoIP library to v2.1.1.
+
+= 8.6.3 =
+* Fixed: Really fix included countries code this time.
+* Fixed: Typo in excluded hosts code.
+
+= 8.6.2 =
+* Fixed: New included countries code incorrectly identified all countries as excluded.
+
+= 8.6.1 =
+* Added: Code to perform additional clean up of uncommon user agents.
+* Fixed: Spurious break statement in GeoIP exclusion code which caused a fatal error in certian cases.
+
+= 8.6 =
+* Added: Option to remove URI parameters from page tracking.
+* Added: GeoIP exclusion options.
+* Added: Host name exclusion options.
+* Fixed: Map dashboard widget fails when Google is selected as map provider.
+* Fixed: Changing the statistical report schedule would not actually change the schedule unless you disabled and then enabled the statistical reports feature.
+* Updated: French language.
+
+= 8.5.1 =
+* Fixed: Typo in last search page causing fatal error in PHP.
+
+= 8.5 =
+* Added: try/catch condition around browscap call to avoid fatal errors stopping the script.
+* Added: Page trend widget to post/page editor.
+* Added: Aland Islands Flag icon.
+* Added: Option to record all online users regardless if they would otherwise be excluded.
+* Added: Option to disable the page editor widget.
+* Fixed: Various security fixes, thanks Ryan.
+* Fixed: Resolved warnings when natcasesort received a null list, thanks robertalks.
+* Fixed: Before updating the browscap.ini cache file, remove stale lock files.
+* Fixed: Avoid throwing a fatal error when the shutdown code is called if for some reason the global $WP_Statistics variable has been destroyed during a page load.
+* Updated: The online code now uses the same rules to exclude users as the hits code.
+* Updated: Minor code cleanups and data return checks.
+* Updated: German translations, thanks bios4.
+* Updated: Polish and Turkish translations.
+* Updated: Use built in WordPress function to translate user roles instead of custom strings in our PO file, thanks bios4.
+
+= 8.4 =
+* Added: Dashboard widgets for all of the widgets on the overview page.
+* Added: Option to disable all dashboard widgets.
+* Added: Old dashboard widget upgraded with last 10 days of hits statistics.
+* Added: Online users page and time a user has been online.
+* Fixed: Fixed missing site_url on top 10 pages in the overview page.
+* Fixed: Incorrect url generated for Google map if dashboard was being forced in to https mode.
+* Fixed: Properly un-escape quotation marks in report body if magic quotes is enabled.
+* Fixed: URL referrer CSS style would 'push' other entires to the next line on small displays.
+* Fixed: Various PHP warnings on uninitalized variables, thanks bseddon
+* Updated: Polish translations.
+* Updated: Default map type now set to JQVMap.
+
+= 8.3.1 =
+* Updated: Various SQL code clean ups.
+* Updated: Varioud data validation clean ups.
+* Updated: Various data output encoding updates, thanks Marc.
+
+= 8.3 =
+* Added: Sanity checks for file size and results to browscap.ini updates, if the new cache file size is wrong or it mis-identifies a common real browser as a crawler the update will be rolled back.
+* Added: Option to e-mail a report on browscap.ini, database pruning, upgrades and GeoIP database updates.
+* Updated: Polish translations.
+* Updated: Added "Notificaitons" tab to the settings page and moved statistical report settings to it.
+* Fixed: The historical data table no longer uses reserved keywords as column names which caused issues on older versions of MySQL.
+* Fixed: Unable to set visits historical count.
+* Fixed: Purging did not record visits/visitors correctly if not already set through the optimization page.
+* Fixed: JavaScript bug when a non-administrative user viewed the settings page.
+* Removed: Reference to old settings file for the widget.
+
+= 8.2 =
+* Added: Support for historical data.
+* Added: Removal option.
+* Updated: Optimized SQL statements to hopefully get rid of duplicate key error/warnings.
+* Updated: Persian, Polish, Italian translations.
+* Fixed: Duplicate date display on charts due to DST time change.
+
+= 8.1.1 =
+* Fixed: Bug in browscap.ini update code that could mis-identify all hits as robots.
+* Fixed: Bug in the scheduled reports code that failed to process the report content correctly.
+* Fixed: Bug in schedule reports that failed to select the current schedule in the drop down.
+* Removed: Depricated variables from the report content description.
+
+= 8.1 =
+* Added: Detected browser information to the optimization page.
+* Updated: Re-organized new browscap code to avoid PHP 5.2 or below throwing a parse error.
+* Fixed: If the client sent no user agent string a fatal error would be generated, added additional logic to handle this case.
+* Removed: Unused code in various log displays.
+
+= 8.0 =
+* Added: browscap.ini support for robot detection.
+* Added: Statistics->Optimization->Database tab now how an option to re-run the install routine in case you have had to delete tables from the database.
+* Added: PHP version check, WP Statistics now requires PHP 5.3 and will no longer execute without it.
+* Added: Dashboard widget.
+* Updated: Top pages now decode the URL for better readability.
+* Updated: GeoIP library from version 0.5 to 2.0.
+* Updated: User Agent detection code.
+* Updated: Serbian, Polish translations.
+* Updated: All missing language strings have been machine translated when possible.
+* Updated: IP hashing code has moved out of beta.
+* Fixed: Incorrect country name being displayed for Georgia.
+* Fixed: Bug in detecting the new index in the Statistics->Optimization->Database tab.
+* Fixed: Duplicate closing tag in summary page.
+* Fixed: Purging the database did not display the results.
+* Removed: Support for old format substitution codes in the statistics reports, upgrade now converts them to short codes.
+
+= 7.4 =
+* Added: Link URL for referred.
+* Updated: Widget code now adhears to WordPress standards.
+* Updated: Persian, Arabic and German (thanks Mike) translations.
+* Updated: Unique index on visitors table now takes in to account the agent/platform/version information.
+* Updated: Line charts now redraw when the legend is clicked to add/remove a line.
+* Fixed: Dates on charts with large number of data points now no longer overwrite each other.
+* Fixed: Admin bar menu item would use the incorrect admin URL in some circumstances.
+* Removed: Screenshots are no longer included in the distribution.
+
+= 7.3 =
+* Added: Option to delete the admin manual.
+* Added: Option to force the robots list to be updated during an upgrade.
+* Added: Beta code for not storing IP addresses in the database.
+* Fixed: Bug with new JQVMap code not displaying flags correctly.
+* Updated: French (fr_FR) language, thanks apeedn.
+* Updated: Visitors online code now treats different browsers/platforms from the same IP address as different users (this helps with multiple users behind proxy servers).
+* Updated: Visitors code now treats different browsers/platforms from the same IP address as different users (this helps with multiple users behind proxy servers).
+* Updated: Persian (fa_IR) language.
+* Updated: Tested with WordPress 4.0.
+
+= 7.2 =
+* Added: Total visitors by country to the push pins on the overview map.
+* Added: Statistical reports can now be sent to a custom list of e-mail addresses instead of just the administrator.
+* Added: JQVMap option for the overview map.
+* Fixed: Additional WP_DEBUG warnings cleaned up.
+* Fixed: Google map would sometimes only use part of the area to draw the map in the overview page.
+* Updated: Statistical report schedules are now listed by occurrence instead of randomly.
+* Updated: Vertical alignment of statistical report option label column now correct.
+* Updated: Various grammatical updates.
+* Updated: Overview map now limits the number of visitors to five per country.
+* Updated: Persian (fa_IR) language.
+
+= 7.1 =
+* Added: clearch.org search provider, disabled by default.
+* Added: Database tab to optimization page to manually add unique index on the visitors table removed in 7.0.3.
+* Updated: Additional WP_DEBUG message fixes.
+* Updated: Overview widgets no longer overflows on smaller displays.
+* Updated: Charts now properly resize when the browser window does.
+
+= 7.0.4 =
+* Fixed: Typo in table definition of visitor table's UAString field.
+
+= 7.0.3 =
+* Added: Extra check that the co-efficient setting is valid.
+* Updated: Format of the dbDetla scripts to match the guidelines from WordPress, thanks kitchin.
+* Updated: Handled some WP_DEBUG warning messages, thanks kitchin.
+* Updated: Multiple additional WP_DEBUG warning fixes.
 * Updated: Arabic (ar) language.
+* Updated: Polish (pl_PL) language.
+* Fixed: Typo in variable name which causes the robots list to be overwritten with the defaults incorrectly.
+* Fixed: Access role exclusions and search engine exclusions options not displaying correctly in the settings page.
+* Removed: Database upgrade code to add the unique index on the visitors table due to issues with multiple users.  Will add back in a future release as a user selectable option.
+
+= 7.0.2 =
+* Fixed: Database prefix not being used when creating/updating tables correctly.
+* Fixed: New installs caused an error in the new upgrade code as the visitor table did not exist yet.
+* Fixed: Replaced use of deprecated $table_prefix global during install/update.
+
+= 7.0.1 =
+* Fixed: Error during new installations due to $wpdb object not being available.
+
+= 7.0 =
+* Added: New robots to the robots list: aiHitBot, AntivirusPro, BeetleBot, Blekkobot, cbot, clumboot, coccoc, crowsnest.tv, dbot, dotbot, downloadbot, EasouSpider, Exabot, facebook.com, FriendFeedBot, gimme60bot, GroupHigh, IstellaBot, Kraken, LinkpadBot, MojeekBot, NetcraftSurveyAgent, p4Bot, PaperLiBot, Pimonster, scrapy.org, SearchmetricsBot, SemanticBot, SemrushBot, SiteExplorer, Socialradarbot, SpiderLing, uMBot-LN, Vagabondo, vBSEO, WASALive-Bot, WebMasterAid, WeSEE, XoviBot, YoudaoBot,
+* Added: Overview page can now be customized for what is displayed on a per user basis.
+* Added: Overview tab to the settings page to control what is displayed.  This page is available to any user that has read access to WP Statistics.
+* Added: Dutch (nl_NL) translation, thanks Friso van Wieringen.
+* Added: New index on visitor table for existing installs to avoid duplicate entries being created.
+* Added: jqPlot javascript library.
+* Added: Three new schedule options for statistical reports; weekly, bi-weekly and every 4 weeks.
+* Fixed: Some country codes not displaying in the "Top Countries" overview widget/page.
+* Fixed: Export filename contained a colon, which is not a valid character.
+* Fixed: In some cases purging data in the optimization page would succeed but the UI would "re-activate".
+* Updated: All charts now use jqPlot instead of HighCharts so we are now fully GPL compliant.
+* Updated: "Top Referring Sites" on the overview page now only displays if there are entries to be displayed.
+* Updated: "Latest Search Words" on the overview page now only displays if there are entries to be displayed.
+* Updated: "Top Pages Visited" on the overview page now only displays if there are entries to be displayed.
+* Updated: About on the overview page box.
+* Updated: Settings page from css tabs to jQuery tabs.
+* Updated: Settings system (which used individual WordPress settings for each option) to a new unified system (uses a single WordPress setting and stores it as an array)
+* Updated: Optimization page from css tabs to jQuery tabs.
+* Updated: Install/Upgrade code to share a single code base.
+* Updated: Persian (fa_IR) language.
+* Updated: Arabic (ar) language.
+* Updated: rtl.css file for new version.
+* Updated: Lots of code comments.
+* Updated: Statistical report schedule list in settings is now dynamically generated.
+* Updated: WP-Statistics screenshots.
+* Removed: "Alternate map location" setting as it has been made redundant by the new overview display settings.
+* Removed: "Chart type" setting as chart types are now hard coded to the appropriate type for the data.
+* Removed: HighCharts javascript library.
+* Removed: Unused function objectToArray().
 
 = 6.1 =
 * Added: Display of the current memory_limit setting from php.ini in the optimization page.
