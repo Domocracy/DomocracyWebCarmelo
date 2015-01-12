@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
+-- version 3.4.9
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 12, 2015 at 01:08 PM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Host: mysql51-151.wc2:3306
+-- Generation Time: Jan 12, 2015 at 10:32 AM
+-- Server version: 5.1.70
+-- PHP Version: 5.2.13
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `941424_wpdomocracytech`
 --
+CREATE DATABASE `941424_wpdomocracytech` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `941424_wpdomocracytech`;
 
 -- --------------------------------------------------------
 
@@ -27,11 +29,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `wp_commentmeta` (
-`meta_id` bigint(20) unsigned NOT NULL,
+  `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `comment_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `meta_key` varchar(255) DEFAULT NULL,
-  `meta_value` longtext
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `meta_value` longtext,
+  PRIMARY KEY (`meta_id`),
+  KEY `comment_id` (`comment_id`),
+  KEY `meta_key` (`meta_key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -40,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `wp_commentmeta` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_comments` (
-`comment_ID` bigint(20) unsigned NOT NULL,
+  `comment_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `comment_post_ID` bigint(20) unsigned NOT NULL DEFAULT '0',
   `comment_author` tinytext NOT NULL,
   `comment_author_email` varchar(100) NOT NULL DEFAULT '',
@@ -54,8 +59,14 @@ CREATE TABLE IF NOT EXISTS `wp_comments` (
   `comment_agent` varchar(255) NOT NULL DEFAULT '',
   `comment_type` varchar(20) NOT NULL DEFAULT '',
   `comment_parent` bigint(20) unsigned NOT NULL DEFAULT '0',
-  `user_id` bigint(20) unsigned NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `user_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`comment_ID`),
+  KEY `comment_post_ID` (`comment_post_ID`),
+  KEY `comment_approved_date_gmt` (`comment_approved`,`comment_date_gmt`),
+  KEY `comment_date_gmt` (`comment_date_gmt`),
+  KEY `comment_parent` (`comment_parent`),
+  KEY `comment_author_email` (`comment_author_email`(10))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -64,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `wp_comments` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_links` (
-`link_id` bigint(20) unsigned NOT NULL,
+  `link_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `link_url` varchar(255) NOT NULL DEFAULT '',
   `link_name` varchar(255) NOT NULL DEFAULT '',
   `link_image` varchar(255) NOT NULL DEFAULT '',
@@ -76,8 +87,10 @@ CREATE TABLE IF NOT EXISTS `wp_links` (
   `link_updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `link_rel` varchar(255) NOT NULL DEFAULT '',
   `link_notes` mediumtext NOT NULL,
-  `link_rss` varchar(255) NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `link_rss` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`link_id`),
+  KEY `link_visible` (`link_visible`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -86,18 +99,20 @@ CREATE TABLE IF NOT EXISTS `wp_links` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_options` (
-`option_id` bigint(20) unsigned NOT NULL,
+  `option_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `option_name` varchar(64) NOT NULL DEFAULT '',
   `option_value` longtext NOT NULL,
-  `autoload` varchar(20) NOT NULL DEFAULT 'yes'
-) ENGINE=InnoDB AUTO_INCREMENT=2772 DEFAULT CHARSET=utf8;
+  `autoload` varchar(20) NOT NULL DEFAULT 'yes',
+  PRIMARY KEY (`option_id`),
+  UNIQUE KEY `option_name` (`option_name`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2800 ;
 
 --
 -- Dumping data for table `wp_options`
 --
 
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
-(1, 'siteurl', 'http://localhost', 'yes'),
+(1, 'siteurl', 'http://www.domocracytech.com', 'yes'),
 (2, 'blogname', 'Domocracy', 'yes'),
 (3, 'blogdescription', 'Domocracy - Home automation for everyone', 'yes'),
 (4, 'users_can_register', '0', 'yes'),
@@ -129,7 +144,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (33, 'blog_charset', 'UTF-8', 'yes'),
 (34, 'moderation_keys', '', 'no'),
 (35, 'active_plugins', 'a:6:{i:0;s:51:"feed-template-customize/feed-template-customize.php";i:1;s:43:"insert-html-snippet/insert-html-snippet.php";i:2;s:28:"menu-social-icons/plugin.php";i:3;s:49:"social-sharing-toolkit/social_sharing_toolkit.php";i:4;s:24:"wordpress-seo/wp-seo.php";i:5;s:31:"wp-statistics/wp-statistics.php";}', 'yes'),
-(36, 'home', 'http://localhost', 'yes'),
+(36, 'home', 'http://www.domocracytech.com', 'yes'),
 (37, 'category_base', '', 'yes'),
 (38, 'ping_sites', 'http://rpc.pingomatic.com/', 'yes'),
 (39, 'advanced_edit', '0', 'yes'),
@@ -193,7 +208,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (97, 'widget_meta', 'a:2:{s:12:"_multiwidget";i:1;i:1;a:0:{}}', 'yes'),
 (98, 'sidebars_widgets', 'a:7:{s:19:"wp_inactive_widgets";a:0:{}s:9:"sidebar-1";a:3:{i:0;s:8:"search-2";i:1;s:14:"recent-posts-2";i:2;s:10:"archives-2";}s:9:"sidebar-2";a:0:{}s:9:"sidebar-3";a:0:{}s:9:"sidebar-4";a:0:{}s:9:"sidebar-5";a:0:{}s:13:"array_version";i:3;}', 'yes'),
 (99, 'cron', 'a:5:{i:1421090160;a:1:{s:20:"wp_maybe_auto_update";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1421092825;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1421092838;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1421096137;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
-(106, '_transient_random_seed', '25375c1f951e0e0b2ce6685fcbaa9560', 'yes'),
+(106, '_transient_random_seed', 'b5ced59dea5a61b2f2d98971dd568412', 'yes'),
 (107, 'auth_key', '=LDzGBW^H[o%x =Jbt9rWJ^Dpw.Lm+PHC}{lV&(q#{,y?F=?FGf.{95q6xegu~}V', 'yes'),
 (108, 'auth_salt', 'rM|#K<aaM_c81<a=d&7D)M1%}BQ;0JN:_a]OZF;92LTC+72epiI2bs:;-x$]-E)A', 'yes'),
 (109, 'logged_in_key', 'Y~s`Ww.2{yO-OrhPt,b1uz?oQ?+e05ZpNxpo}8]431%2B5A{Mv9?mLEliP!|Q:W,', 'yes'),
@@ -353,13 +368,15 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (2758, '_transient_et_pb_mailchimp_lists', 'a:3:{s:10:"b028b97dd5";s:17:"English Companies";s:10:"1a06409e32";s:17:"Spanish Companies";s:10:"44960bfa20";s:27:"Domocracy Kickstarter Alert";}', 'no'),
 (2759, '_transient_timeout_et_pb_aweber_lists', '1421141063', 'no'),
 (2760, '_transient_et_pb_aweber_lists', 'a:0:{}', 'no'),
-(2763, '_transient_timeout_wps_excluded_hostname_to_ip_cache', '1421064641', 'no'),
-(2764, '_transient_wps_excluded_hostname_to_ip_cache', 'a:0:{}', 'no'),
 (2765, '_site_transient_timeout_theme_roots', '1421066121', 'yes'),
 (2766, '_site_transient_theme_roots', 'a:5:{s:4:"Divi";s:7:"/themes";s:13:"twentyfifteen";s:7:"/themes";s:14:"twentyfourteen";s:7:"/themes";s:14:"twentythirteen";s:7:"/themes";s:12:"twentytwelve";s:7:"/themes";}', 'yes'),
 (2767, '_site_transient_timeout_poptags_40cd750bba9870f18aada2478b24840a', '1421075139', 'yes'),
 (2768, '_site_transient_poptags_40cd750bba9870f18aada2478b24840a', 'a:40:{s:6:"widget";a:3:{s:4:"name";s:6:"widget";s:4:"slug";s:6:"widget";s:5:"count";s:4:"4851";}s:4:"post";a:3:{s:4:"name";s:4:"Post";s:4:"slug";s:4:"post";s:5:"count";s:4:"3015";}s:6:"plugin";a:3:{s:4:"name";s:6:"plugin";s:4:"slug";s:6:"plugin";s:5:"count";s:4:"2967";}s:5:"admin";a:3:{s:4:"name";s:5:"admin";s:4:"slug";s:5:"admin";s:5:"count";s:4:"2471";}s:5:"posts";a:3:{s:4:"name";s:5:"posts";s:4:"slug";s:5:"posts";s:5:"count";s:4:"2299";}s:7:"sidebar";a:3:{s:4:"name";s:7:"sidebar";s:4:"slug";s:7:"sidebar";s:5:"count";s:4:"1879";}s:6:"google";a:3:{s:4:"name";s:6:"google";s:4:"slug";s:6:"google";s:5:"count";s:4:"1692";}s:7:"twitter";a:3:{s:4:"name";s:7:"twitter";s:4:"slug";s:7:"twitter";s:5:"count";s:4:"1646";}s:6:"images";a:3:{s:4:"name";s:6:"images";s:4:"slug";s:6:"images";s:5:"count";s:4:"1639";}s:9:"shortcode";a:3:{s:4:"name";s:9:"shortcode";s:4:"slug";s:9:"shortcode";s:5:"count";s:4:"1623";}s:8:"comments";a:3:{s:4:"name";s:8:"comments";s:4:"slug";s:8:"comments";s:5:"count";s:4:"1584";}s:4:"page";a:3:{s:4:"name";s:4:"page";s:4:"slug";s:4:"page";s:5:"count";s:4:"1564";}s:5:"image";a:3:{s:4:"name";s:5:"image";s:4:"slug";s:5:"image";s:5:"count";s:4:"1469";}s:8:"facebook";a:3:{s:4:"name";s:8:"Facebook";s:4:"slug";s:8:"facebook";s:5:"count";s:4:"1290";}s:3:"seo";a:3:{s:4:"name";s:3:"seo";s:4:"slug";s:3:"seo";s:5:"count";s:4:"1243";}s:5:"links";a:3:{s:4:"name";s:5:"links";s:4:"slug";s:5:"links";s:5:"count";s:4:"1158";}s:9:"wordpress";a:3:{s:4:"name";s:9:"wordpress";s:4:"slug";s:9:"wordpress";s:5:"count";s:4:"1134";}s:7:"gallery";a:3:{s:4:"name";s:7:"gallery";s:4:"slug";s:7:"gallery";s:5:"count";s:4:"1065";}s:6:"social";a:3:{s:4:"name";s:6:"social";s:4:"slug";s:6:"social";s:5:"count";s:4:"1051";}s:5:"email";a:3:{s:4:"name";s:5:"email";s:4:"slug";s:5:"email";s:5:"count";s:3:"888";}s:7:"widgets";a:3:{s:4:"name";s:7:"widgets";s:4:"slug";s:7:"widgets";s:5:"count";s:3:"883";}s:5:"pages";a:3:{s:4:"name";s:5:"pages";s:4:"slug";s:5:"pages";s:5:"count";s:3:"864";}s:3:"rss";a:3:{s:4:"name";s:3:"rss";s:4:"slug";s:3:"rss";s:5:"count";s:3:"826";}s:6:"jquery";a:3:{s:4:"name";s:6:"jquery";s:4:"slug";s:6:"jquery";s:5:"count";s:3:"823";}s:5:"media";a:3:{s:4:"name";s:5:"media";s:4:"slug";s:5:"media";s:5:"count";s:3:"772";}s:5:"video";a:3:{s:4:"name";s:5:"video";s:4:"slug";s:5:"video";s:5:"count";s:3:"741";}s:4:"ajax";a:3:{s:4:"name";s:4:"AJAX";s:4:"slug";s:4:"ajax";s:5:"count";s:3:"740";}s:7:"content";a:3:{s:4:"name";s:7:"content";s:4:"slug";s:7:"content";s:5:"count";s:3:"694";}s:10:"javascript";a:3:{s:4:"name";s:10:"javascript";s:4:"slug";s:10:"javascript";s:5:"count";s:3:"682";}s:11:"woocommerce";a:3:{s:4:"name";s:11:"woocommerce";s:4:"slug";s:11:"woocommerce";s:5:"count";s:3:"662";}s:5:"login";a:3:{s:4:"name";s:5:"login";s:4:"slug";s:5:"login";s:5:"count";s:3:"655";}s:5:"photo";a:3:{s:4:"name";s:5:"photo";s:4:"slug";s:5:"photo";s:5:"count";s:3:"645";}s:10:"buddypress";a:3:{s:4:"name";s:10:"buddypress";s:4:"slug";s:10:"buddypress";s:5:"count";s:3:"640";}s:4:"feed";a:3:{s:4:"name";s:4:"feed";s:4:"slug";s:4:"feed";s:5:"count";s:3:"630";}s:4:"link";a:3:{s:4:"name";s:4:"link";s:4:"slug";s:4:"link";s:5:"count";s:3:"630";}s:6:"photos";a:3:{s:4:"name";s:6:"photos";s:4:"slug";s:6:"photos";s:5:"count";s:3:"616";}s:9:"ecommerce";a:3:{s:4:"name";s:9:"ecommerce";s:4:"slug";s:9:"ecommerce";s:5:"count";s:3:"608";}s:7:"youtube";a:3:{s:4:"name";s:7:"youtube";s:4:"slug";s:7:"youtube";s:5:"count";s:3:"590";}s:5:"share";a:3:{s:4:"name";s:5:"Share";s:4:"slug";s:5:"share";s:5:"count";s:3:"583";}s:8:"category";a:3:{s:4:"name";s:8:"category";s:4:"slug";s:8:"category";s:5:"count";s:3:"577";}}', 'yes'),
-(2769, '_site_transient_update_plugins', 'O:8:"stdClass":5:{s:12:"last_checked";i:1421064372;s:7:"checked";a:8:{s:19:"akismet/akismet.php";s:5:"3.0.4";s:51:"feed-template-customize/feed-template-customize.php";s:5:"1.0.1";s:9:"hello.php";s:3:"1.6";s:43:"insert-html-snippet/insert-html-snippet.php";s:5:"1.1.1";s:28:"menu-social-icons/plugin.php";s:5:"1.3.9";s:49:"social-sharing-toolkit/social_sharing_toolkit.php";s:3:"2.3";s:24:"wordpress-seo/wp-seo.php";s:5:"1.7.1";s:31:"wp-statistics/wp-statistics.php";s:5:"8.7.2";}s:8:"response";a:0:{}s:12:"translations";a:0:{}s:9:"no_update";a:8:{s:19:"akismet/akismet.php";O:8:"stdClass":6:{s:2:"id";s:2:"15";s:4:"slug";s:7:"akismet";s:6:"plugin";s:19:"akismet/akismet.php";s:11:"new_version";s:5:"3.0.4";s:3:"url";s:38:"https://wordpress.org/plugins/akismet/";s:7:"package";s:56:"https://downloads.wordpress.org/plugin/akismet.3.0.4.zip";}s:51:"feed-template-customize/feed-template-customize.php";O:8:"stdClass":6:{s:2:"id";s:5:"23606";s:4:"slug";s:23:"feed-template-customize";s:6:"plugin";s:51:"feed-template-customize/feed-template-customize.php";s:11:"new_version";s:5:"1.0.1";s:3:"url";s:54:"https://wordpress.org/plugins/feed-template-customize/";s:7:"package";s:72:"https://downloads.wordpress.org/plugin/feed-template-customize.1.0.1.zip";}s:9:"hello.php";O:8:"stdClass":6:{s:2:"id";s:4:"3564";s:4:"slug";s:11:"hello-dolly";s:6:"plugin";s:9:"hello.php";s:11:"new_version";s:3:"1.6";s:3:"url";s:42:"https://wordpress.org/plugins/hello-dolly/";s:7:"package";s:58:"https://downloads.wordpress.org/plugin/hello-dolly.1.6.zip";}s:43:"insert-html-snippet/insert-html-snippet.php";O:8:"stdClass":6:{s:2:"id";s:5:"33868";s:4:"slug";s:19:"insert-html-snippet";s:6:"plugin";s:43:"insert-html-snippet/insert-html-snippet.php";s:11:"new_version";s:5:"1.1.1";s:3:"url";s:50:"https://wordpress.org/plugins/insert-html-snippet/";s:7:"package";s:68:"https://downloads.wordpress.org/plugin/insert-html-snippet.1.1.1.zip";}s:28:"menu-social-icons/plugin.php";O:8:"stdClass":7:{s:2:"id";s:5:"41426";s:4:"slug";s:17:"menu-social-icons";s:6:"plugin";s:28:"menu-social-icons/plugin.php";s:11:"new_version";s:5:"1.3.9";s:14:"upgrade_notice";s:140:"Fix: Change use_latest filter to request &quot;latest&quot; version of FontAwesome, rather than stopping at 4.0.0. Current version is 4.0.3.";s:3:"url";s:48:"https://wordpress.org/plugins/menu-social-icons/";s:7:"package";s:66:"https://downloads.wordpress.org/plugin/menu-social-icons.1.3.9.zip";}s:49:"social-sharing-toolkit/social_sharing_toolkit.php";O:8:"stdClass":7:{s:2:"id";s:5:"24232";s:4:"slug";s:22:"social-sharing-toolkit";s:6:"plugin";s:49:"social-sharing-toolkit/social_sharing_toolkit.php";s:11:"new_version";s:3:"2.3";s:14:"upgrade_notice";s:10:"Bug fixes.";s:3:"url";s:53:"https://wordpress.org/plugins/social-sharing-toolkit/";s:7:"package";s:69:"https://downloads.wordpress.org/plugin/social-sharing-toolkit.2.3.zip";}s:24:"wordpress-seo/wp-seo.php";O:8:"stdClass":6:{s:2:"id";s:4:"5899";s:4:"slug";s:13:"wordpress-seo";s:6:"plugin";s:24:"wordpress-seo/wp-seo.php";s:11:"new_version";s:5:"1.7.1";s:3:"url";s:44:"https://wordpress.org/plugins/wordpress-seo/";s:7:"package";s:62:"https://downloads.wordpress.org/plugin/wordpress-seo.1.7.1.zip";}s:31:"wp-statistics/wp-statistics.php";O:8:"stdClass":6:{s:2:"id";s:5:"21429";s:4:"slug";s:13:"wp-statistics";s:6:"plugin";s:31:"wp-statistics/wp-statistics.php";s:11:"new_version";s:5:"8.7.2";s:3:"url";s:44:"https://wordpress.org/plugins/wp-statistics/";s:7:"package";s:62:"https://downloads.wordpress.org/plugin/wp-statistics.8.7.2.zip";}}}', 'yes');
+(2769, '_site_transient_update_plugins', 'O:8:"stdClass":5:{s:12:"last_checked";i:1421064372;s:7:"checked";a:8:{s:19:"akismet/akismet.php";s:5:"3.0.4";s:51:"feed-template-customize/feed-template-customize.php";s:5:"1.0.1";s:9:"hello.php";s:3:"1.6";s:43:"insert-html-snippet/insert-html-snippet.php";s:5:"1.1.1";s:28:"menu-social-icons/plugin.php";s:5:"1.3.9";s:49:"social-sharing-toolkit/social_sharing_toolkit.php";s:3:"2.3";s:24:"wordpress-seo/wp-seo.php";s:5:"1.7.1";s:31:"wp-statistics/wp-statistics.php";s:5:"8.7.2";}s:8:"response";a:0:{}s:12:"translations";a:0:{}s:9:"no_update";a:8:{s:19:"akismet/akismet.php";O:8:"stdClass":6:{s:2:"id";s:2:"15";s:4:"slug";s:7:"akismet";s:6:"plugin";s:19:"akismet/akismet.php";s:11:"new_version";s:5:"3.0.4";s:3:"url";s:38:"https://wordpress.org/plugins/akismet/";s:7:"package";s:56:"https://downloads.wordpress.org/plugin/akismet.3.0.4.zip";}s:51:"feed-template-customize/feed-template-customize.php";O:8:"stdClass":6:{s:2:"id";s:5:"23606";s:4:"slug";s:23:"feed-template-customize";s:6:"plugin";s:51:"feed-template-customize/feed-template-customize.php";s:11:"new_version";s:5:"1.0.1";s:3:"url";s:54:"https://wordpress.org/plugins/feed-template-customize/";s:7:"package";s:72:"https://downloads.wordpress.org/plugin/feed-template-customize.1.0.1.zip";}s:9:"hello.php";O:8:"stdClass":6:{s:2:"id";s:4:"3564";s:4:"slug";s:11:"hello-dolly";s:6:"plugin";s:9:"hello.php";s:11:"new_version";s:3:"1.6";s:3:"url";s:42:"https://wordpress.org/plugins/hello-dolly/";s:7:"package";s:58:"https://downloads.wordpress.org/plugin/hello-dolly.1.6.zip";}s:43:"insert-html-snippet/insert-html-snippet.php";O:8:"stdClass":6:{s:2:"id";s:5:"33868";s:4:"slug";s:19:"insert-html-snippet";s:6:"plugin";s:43:"insert-html-snippet/insert-html-snippet.php";s:11:"new_version";s:5:"1.1.1";s:3:"url";s:50:"https://wordpress.org/plugins/insert-html-snippet/";s:7:"package";s:68:"https://downloads.wordpress.org/plugin/insert-html-snippet.1.1.1.zip";}s:28:"menu-social-icons/plugin.php";O:8:"stdClass":7:{s:2:"id";s:5:"41426";s:4:"slug";s:17:"menu-social-icons";s:6:"plugin";s:28:"menu-social-icons/plugin.php";s:11:"new_version";s:5:"1.3.9";s:14:"upgrade_notice";s:140:"Fix: Change use_latest filter to request &quot;latest&quot; version of FontAwesome, rather than stopping at 4.0.0. Current version is 4.0.3.";s:3:"url";s:48:"https://wordpress.org/plugins/menu-social-icons/";s:7:"package";s:66:"https://downloads.wordpress.org/plugin/menu-social-icons.1.3.9.zip";}s:49:"social-sharing-toolkit/social_sharing_toolkit.php";O:8:"stdClass":7:{s:2:"id";s:5:"24232";s:4:"slug";s:22:"social-sharing-toolkit";s:6:"plugin";s:49:"social-sharing-toolkit/social_sharing_toolkit.php";s:11:"new_version";s:3:"2.3";s:14:"upgrade_notice";s:10:"Bug fixes.";s:3:"url";s:53:"https://wordpress.org/plugins/social-sharing-toolkit/";s:7:"package";s:69:"https://downloads.wordpress.org/plugin/social-sharing-toolkit.2.3.zip";}s:24:"wordpress-seo/wp-seo.php";O:8:"stdClass":6:{s:2:"id";s:4:"5899";s:4:"slug";s:13:"wordpress-seo";s:6:"plugin";s:24:"wordpress-seo/wp-seo.php";s:11:"new_version";s:5:"1.7.1";s:3:"url";s:44:"https://wordpress.org/plugins/wordpress-seo/";s:7:"package";s:62:"https://downloads.wordpress.org/plugin/wordpress-seo.1.7.1.zip";}s:31:"wp-statistics/wp-statistics.php";O:8:"stdClass":6:{s:2:"id";s:5:"21429";s:4:"slug";s:13:"wp-statistics";s:6:"plugin";s:31:"wp-statistics/wp-statistics.php";s:11:"new_version";s:5:"8.7.2";s:3:"url";s:44:"https://wordpress.org/plugins/wp-statistics/";s:7:"package";s:62:"https://downloads.wordpress.org/plugin/wp-statistics.8.7.2.zip";}}}', 'yes'),
+(2794, '_transient_timeout_wpseo_sitemap_cache_1_', '1421165645', 'no'),
+(2795, '_transient_wpseo_sitemap_cache_1_', '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n<sitemap>\n<loc>http://www.domocracytech.com/post-sitemap.xml</loc>\n<lastmod>2015-01-12T16:11:43+00:00</lastmod>\n</sitemap>\n<sitemap>\n<loc>http://www.domocracytech.com/page-sitemap.xml</loc>\n<lastmod>2014-12-30T13:02:38+00:00</lastmod>\n</sitemap>\n<sitemap>\n<loc>http://www.domocracytech.com/category-sitemap.xml</loc>\n<lastmod>2015-01-12T16:11:43+00:00</lastmod>\n</sitemap>\n<sitemap>\n<loc>http://www.domocracytech.com/post_tag-sitemap.xml</loc>\n<lastmod>2015-01-12T16:11:43+00:00</lastmod>\n</sitemap>\n<sitemap>\n<loc>http://www.domocracytech.com/project_category-sitemap.xml</loc>\n<lastmod>2015-01-12T16:14:05+00:00</lastmod>\n</sitemap>\n<sitemap>\n<loc>http://www.domocracytech.com/project_tag-sitemap.xml</loc>\n<lastmod>2015-01-12T16:14:05+00:00</lastmod>\n</sitemap>\n</sitemapindex>', 'no'),
+(2798, '_transient_timeout_wps_excluded_hostname_to_ip_cache', '1421080311', 'no'),
+(2799, '_transient_wps_excluded_hostname_to_ip_cache', 'a:0:{}', 'no');
 
 -- --------------------------------------------------------
 
@@ -368,11 +385,14 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 --
 
 CREATE TABLE IF NOT EXISTS `wp_postmeta` (
-`meta_id` bigint(20) unsigned NOT NULL,
+  `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `post_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `meta_key` varchar(255) DEFAULT NULL,
-  `meta_value` longtext
-) ENGINE=InnoDB AUTO_INCREMENT=654 DEFAULT CHARSET=utf8;
+  `meta_value` longtext,
+  PRIMARY KEY (`meta_id`),
+  KEY `post_id` (`post_id`),
+  KEY `meta_key` (`meta_key`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=664 ;
 
 --
 -- Dumping data for table `wp_postmeta`
@@ -580,7 +600,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (471, 414, '_et_pb_page_layout', 'et_right_sidebar'),
 (472, 414, '_et_post_bg_color', '#ffffff'),
 (473, 414, '_et_post_bg_layout', 'light'),
-(480, 420, '_edit_lock', '1420737624:2'),
+(480, 420, '_edit_lock', '1421078976:3'),
 (481, 420, '_edit_last', '3'),
 (482, 420, '_et_pb_page_layout', 'et_right_sidebar'),
 (483, 420, '_et_post_bg_color', '#ffffff'),
@@ -698,7 +718,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (606, 496, '_wp_attachment_metadata', 'a:5:{s:5:"width";i:1600;s:6:"height";i:1166;s:4:"file";s:57:"2014/12/domocracy-wereables-television-why-smart-home.jpg";s:5:"sizes";a:7:{s:9:"thumbnail";a:4:{s:4:"file";s:57:"domocracy-wereables-television-why-smart-home-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:6:"medium";a:4:{s:4:"file";s:57:"domocracy-wereables-television-why-smart-home-300x218.jpg";s:5:"width";i:300;s:6:"height";i:218;s:9:"mime-type";s:10:"image/jpeg";}s:5:"large";a:4:{s:4:"file";s:58:"domocracy-wereables-television-why-smart-home-1024x746.jpg";s:5:"width";i:1024;s:6:"height";i:746;s:9:"mime-type";s:10:"image/jpeg";}s:21:"et-pb-post-main-image";a:4:{s:4:"file";s:57:"domocracy-wereables-television-why-smart-home-400x250.jpg";s:5:"width";i:400;s:6:"height";i:250;s:9:"mime-type";s:10:"image/jpeg";}s:31:"et-pb-post-main-image-fullwidth";a:4:{s:4:"file";s:58:"domocracy-wereables-television-why-smart-home-1080x675.jpg";s:5:"width";i:1080;s:6:"height";i:675;s:9:"mime-type";s:10:"image/jpeg";}s:21:"et-pb-portfolio-image";a:4:{s:4:"file";s:57:"domocracy-wereables-television-why-smart-home-400x284.jpg";s:5:"width";i:400;s:6:"height";i:284;s:9:"mime-type";s:10:"image/jpeg";}s:28:"et-pb-portfolio-image-single";a:4:{s:4:"file";s:58:"domocracy-wereables-television-why-smart-home-1080x787.jpg";s:5:"width";i:1080;s:6:"height";i:787;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:10:{s:8:"aperture";i:0;s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";i:0;s:9:"copyright";s:0:"";s:12:"focal_length";i:0;s:3:"iso";i:0;s:13:"shutter_speed";i:0;s:5:"title";s:0:"";}}'),
 (607, 497, '_wp_attached_file', '2014/12/why-you-should-have-smart-home-domocracy.png'),
 (608, 497, '_wp_attachment_metadata', 'a:5:{s:5:"width";i:676;s:6:"height";i:290;s:4:"file";s:52:"2014/12/why-you-should-have-smart-home-domocracy.png";s:5:"sizes";a:4:{s:9:"thumbnail";a:4:{s:4:"file";s:52:"why-you-should-have-smart-home-domocracy-150x150.png";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:9:"image/png";}s:6:"medium";a:4:{s:4:"file";s:52:"why-you-should-have-smart-home-domocracy-300x128.png";s:5:"width";i:300;s:6:"height";i:128;s:9:"mime-type";s:9:"image/png";}s:21:"et-pb-post-main-image";a:4:{s:4:"file";s:52:"why-you-should-have-smart-home-domocracy-400x250.png";s:5:"width";i:400;s:6:"height";i:250;s:9:"mime-type";s:9:"image/png";}s:21:"et-pb-portfolio-image";a:4:{s:4:"file";s:52:"why-you-should-have-smart-home-domocracy-400x284.png";s:5:"width";i:400;s:6:"height";i:284;s:9:"mime-type";s:9:"image/png";}}s:10:"image_meta";a:10:{s:8:"aperture";i:0;s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";i:0;s:9:"copyright";s:0:"";s:12:"focal_length";i:0;s:3:"iso";i:0;s:13:"shutter_speed";i:0;s:5:"title";s:0:"";}}'),
-(609, 420, '_thumbnail_id', '497'),
+(609, 420, '_thumbnail_id', '505'),
 (610, 498, '_menu_item_type', 'custom'),
 (611, 498, '_menu_item_menu_item_parent', '0'),
 (612, 498, '_menu_item_object_id', '498'),
@@ -738,7 +758,9 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (650, 502, '_menu_item_target', ''),
 (651, 502, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
 (652, 502, '_menu_item_xfn', ''),
-(653, 502, '_menu_item_url', 'https://www.linkedin.com/company/5255062?trk=tyah&trkInfo=idx%3A1-1-1%2CtarId%3A1420739419833%2Ctas%3ADomocracy');
+(653, 502, '_menu_item_url', 'https://www.linkedin.com/company/5255062?trk=tyah&trkInfo=idx%3A1-1-1%2CtarId%3A1420739419833%2Ctas%3ADomocracy'),
+(658, 505, '_wp_attached_file', '2015/01/explosmComic.jpg'),
+(659, 505, '_wp_attachment_metadata', 'a:5:{s:5:"width";i:730;s:6:"height";i:290;s:4:"file";s:24:"2015/01/explosmComic.jpg";s:5:"sizes";a:4:{s:9:"thumbnail";a:4:{s:4:"file";s:24:"explosmComic-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:6:"medium";a:4:{s:4:"file";s:24:"explosmComic-300x119.jpg";s:5:"width";i:300;s:6:"height";i:119;s:9:"mime-type";s:10:"image/jpeg";}s:21:"et-pb-post-main-image";a:4:{s:4:"file";s:24:"explosmComic-400x250.jpg";s:5:"width";i:400;s:6:"height";i:250;s:9:"mime-type";s:10:"image/jpeg";}s:21:"et-pb-portfolio-image";a:4:{s:4:"file";s:24:"explosmComic-400x284.jpg";s:5:"width";i:400;s:6:"height";i:284;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:11:{s:8:"aperture";i:0;s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";i:0;s:9:"copyright";s:0:"";s:12:"focal_length";i:0;s:3:"iso";i:0;s:13:"shutter_speed";i:0;s:5:"title";s:0:"";s:11:"orientation";i:1;}}');
 
 -- --------------------------------------------------------
 
@@ -747,7 +769,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 --
 
 CREATE TABLE IF NOT EXISTS `wp_posts` (
-`ID` bigint(20) unsigned NOT NULL,
+  `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `post_author` bigint(20) unsigned NOT NULL DEFAULT '0',
   `post_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `post_date_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -769,8 +791,13 @@ CREATE TABLE IF NOT EXISTS `wp_posts` (
   `menu_order` int(11) NOT NULL DEFAULT '0',
   `post_type` varchar(20) NOT NULL DEFAULT 'post',
   `post_mime_type` varchar(100) NOT NULL DEFAULT '',
-  `comment_count` bigint(20) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=503 DEFAULT CHARSET=utf8;
+  `comment_count` bigint(20) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ID`),
+  KEY `post_name` (`post_name`),
+  KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
+  KEY `post_parent` (`post_parent`),
+  KEY `post_author` (`post_author`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=508 ;
 
 --
 -- Dumping data for table `wp_posts`
@@ -1117,7 +1144,7 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (413, 2, '2014-12-23 12:11:24', '2014-12-23 12:11:24', '', 'iconDomocracy', '', 'inherit', 'open', 'open', '', '1509839_402148116627557_2106176304297558343_n', '', '', '2014-12-23 12:11:24', '2014-12-23 12:11:24', '', 0, 'http://www.domocracytech.com/wp-content/uploads/2014/12/1509839_402148116627557_2106176304297558343_n.png', 0, 'attachment', 'image/png', 0),
 (414, 2, '2014-12-23 12:54:05', '2014-12-23 12:54:05', 'There are those who might tell you to have a smart-home for security. There are those who would tell you it’s for saving energy and others that’d say it’s about comfort… But come on, everybody knows that it’s just because Smart-Homes rule!\r\n\r\nLast year, I spent a couple of weeks installing a DIY Home-Automation project. It was a very simple system for controlling lights and fans at home. It may seem silly, but I realized the real power of the system when I were lying on my bed in a 113ºF hot day. At that moment, being able to climate the room with nothing but a slide of my finger was a heaven gift.\r\n\r\nBut what is really a smart-home?. It''s not just becoming a sort of jedi that can controls lights remotely using <i>the power of the force.</i> We started Domocracy on top of the belief that homes had to be taken to the next level. Your house must be an extension of yourself as are your smartphone, tablet and obviously.... your wearables. A few years ago, that would have sounded crazy, but nowadays the technology allows us to do this integration in order to make our home become the house of the future.\r\n\r\nSmall details make The Big Difference. My colleagues heard this story hundreds of times but I''m going to tell it again:\r\n\r\n<i>When I was a child, my family and I used to spent every Sunday at my grandma''s house. After having lunch we watched TV series altogether in the couch. Everything seems perfect ... except there wasn''t a remote controller for the tv, so switching tv channels resulted in me lifting from the couch every fifteen minutes.</i>\r\n\r\nAnd I’m not that old... I''m not from the 1920''s, our remote just had been lost for long ... Think about it. We have become so used to it, that today no one would even conceive using the TV buttons to switch channels. Why can’t this happen with the rest of the home?  From turning on your game console while you are away for checking updates through to reducing your energy consumption by dimming your thermostat if you are going to be late home due to a traffic jam. Never again leave the electric hob on, or your daugher’s hair straightener, or anything for that matter!\r\n\r\nIt doesn''t matter if you are geek, a TV addict or if you love to go out of home. It''s always a good idea to make your Home Smart.\r\n\r\n&nbsp;', 'Why should you have a smart-home?', '', 'trash', 'open', 'open', '', 'why-should-you-have-a-smart-home', '', '', '2014-12-23 13:21:38', '2014-12-23 13:21:38', '', 0, 'http://www.domocracytech.com/?p=414', 0, 'post', '', 0),
 (415, 2, '2014-12-23 12:54:05', '2014-12-23 12:54:05', 'There are those who might tell you to have a smart-home for security. There are those who would tell you it’s for saving energy and others that’d say it’s about comfort… But come on, everybody knows that it’s just because Smart-Homes rule!\r\n\r\nLast year, I spent a couple of weeks installing a DIY Home-Automation project. It was a very simple system for controlling lights and fans at home. It may seem silly, but I realized the real power of the system when I were lying on my bed in a 113ºF hot day. At that moment, being able to climate the room with nothing but a slide of my finger was a heaven gift.\r\n\r\nBut what is really a smart-home?. It''s not just becoming a sort of jedi that can controls lights remotely using <i>the power of the force.</i> We started Domocracy on top of the belief that homes had to be taken to the next level. Your house must be an extension of yourself as are your smartphone, tablet and obviously.... your wearables. A few years ago, that would have sounded crazy, but nowadays the technology allows us to do this integration in order to make our home become the house of the future.\r\n\r\nSmall details make The Big Difference. My colleagues heard this story hundreds of times but I''m going to tell it again:\r\n\r\n<i>When I was a child, my family and I used to spent every Sunday at my grandma''s house. After having lunch we watched TV series altogether in the couch. Everything seems perfect ... except there wasn''t a remote controller for the tv, so switching tv channels resulted in me lifting from the couch every fifteen minutes.</i>\r\n\r\nAnd I’m not that old... I''m not from the 1920''s, our remote just had been lost for long ... Think about it. We have become so used to it, that today no one would even conceive using the TV buttons to switch channels. Why can’t this happen with the rest of the home?  From turning on your game console while you are away for checking updates through to reducing your energy consumption by dimming your thermostat if you are going to be late home due to a traffic jam. Never again leave the electric hob on, or your daugher’s hair straightener, or anything for that matter!\r\n\r\nIt doesn''t matter if you are geek, a TV addict or if you love to go out of home. It''s always a good idea to make your Home Smart.\r\n\r\n&nbsp;', 'Why should you have a smart-home?', '', 'inherit', 'open', 'open', '', '414-revision-v1', '', '', '2014-12-23 12:54:05', '2014-12-23 12:54:05', '', 414, 'http://www.domocracytech.com/414-revision-v1/', 0, 'revision', '', 0),
-(420, 3, '2014-12-23 13:19:58', '0000-00-00 00:00:00', 'There are those who might tell you to have a smart-home for security. There are those who would tell you it’s for saving energy and others that’d say it’s about comfort… But come on, everybody knows that it’s just because Smart-Homes rule!\r\n\r\nLast year, I spent a couple of weeks installing a DIY Home-Automation project. It was a very simple system for controlling lights and fans at home. It may seem silly, but I realized the real power of the system when I were lying on my bed in a 113ºF hot day. At that moment, being able to climate the room with nothing but a slide of my finger was a heaven gift.\r\n\r\nBut what is really a smart-home?. It''s not just becoming a sort of jedi that can controls lights remotely using <i>the power of the force.</i> We started Domocracy on top of the belief that homes had to be taken to the next level. Your house must be an extension of yourself as are your smartphone, tablet and obviously.... your wearables. A few years ago, that would have sounded crazy, but nowadays the technology allows us to do this integration in order to make our home become the house of the future.\r\n\r\nSmall details make The Big Difference. My colleagues heard this story hundreds of times but I''m going to tell it again:\r\n\r\n<i>When I was a child, my family and I used to spent every Sunday at my grandma''s house. After having lunch we watched TV series altogether in the couch. Everything seems perfect ... except there wasn''t a remote controller for the tv, so switching tv channels resulted in me lifting from the couch every fifteen minutes.</i>\r\n\r\nAnd I’m not that old... I''m not from the 1920''s, our remote just had been lost for long ... Think about it. We have become so used to it, that today no one would even conceive using the TV buttons to switch channels. Why can’t this happen with the rest of the home?  From turning on your game console while you are away for checking updates through to reducing your energy consumption by dimming your thermostat if you are going to be late home due to a traffic jam. Never again leave the electric hob on, or your daugher’s hair straightener, or anything for that matter!\r\n\r\nIt doesn''t matter if you are geek, a TV addict or if you love to go out of home. It''s always a good idea to make your Home Smart.\r\n\r\n&nbsp;', 'Why should you have a Smart-Home?', '', 'draft', 'open', 'open', '', '', '', '', '2014-12-23 13:19:58', '2014-12-23 13:19:58', '', 0, 'http://www.domocracytech.com/?p=420', 0, 'post', '', 0);
+(420, 3, '2015-01-12 16:07:49', '2015-01-12 16:07:49', 'There are those who might tell you to have a smart-home for security. There are those who would tell you it’s for saving energy and others that’d say it’s about comfort… But come on, everybody knows that it’s just because Smart-Homes rule!\r\n\r\nLast year, I spent a couple of weeks installing a DIY Home-Automation project. It was a very simple system for controlling lights and fans at home. It may seem silly, but I realized the real power of the system when I were lying on my bed in a 113ºF hot day. At that moment, being able to climate the room with nothing but a slide of my finger was a heaven gift.\r\n\r\nBut what is really a smart-home?. It''s not just becoming a sort of jedi that can controls lights remotely using <i>the power of the force.</i> We started Domocracy on top of the belief that homes had to be taken to the next level. Your house must be an extension of yourself as are your smartphone, tablet and obviously.... your wearables. A few years ago, that would have sounded crazy, but nowadays the technology allows us to do this integration in order to make our home become the house of the future.\r\n\r\nSmall details make The Big Difference. My colleagues heard this story hundreds of times but I''m going to tell it again:\r\n\r\n<i>When I was a child, my family and I used to spent every Sunday at my grandma''s house. After having lunch we watched TV series altogether in the couch. Everything seems perfect ... except there wasn''t a remote controller for the tv, so switching tv channels resulted in me lifting from the couch every fifteen minutes.</i>\r\n\r\n<a href="http://www.domocracytech.com/wp-content/uploads/2014/12/domocracy-wereables-television-why-smart-home.jpg"><img class="  wp-image-496 aligncenter" src="http://www.domocracytech.com/wp-content/uploads/2014/12/domocracy-wereables-television-why-smart-home-300x218.jpg" alt="domocracy-wereables-television-why-smart-home" width="541" height="393" /></a>\r\n\r\nAnd I’m not that old... I''m not from the 1920''s, our remote just had been lost for long ... Think about it. We have become so used to it, that today no one would even conceive using the TV buttons to switch channels. Why can’t this happen with the rest of the home?  From turning on your game console while you are away for checking updates through to reducing your energy consumption by dimming your thermostat if you are going to be late home due to a traffic jam. Never again leave the electric hob on, or your daugther’s hair straightener, or anything for that matter!\r\n\r\nIt doesn''t matter if you are geek, a TV addict or if you love to go out of home. It''s always a good idea to make your Home Smart.', 'Why should you have a Smart-Home?', '', 'publish', 'open', 'open', '', 'smart-home', '', '', '2015-01-12 16:11:43', '2015-01-12 16:11:43', '', 0, 'http://www.domocracytech.com/?p=420', 0, 'post', '', 0);
 INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
 (422, 3, '2014-12-23 13:19:58', '2014-12-23 13:19:58', 'There are those who might tell you to have a smart-home for security. There are those who would tell you it’s for saving energy and others that’d say it’s about comfort… But come on, everybody knows that it’s just because Smart-Homes rule!\r\n\r\nLast year, I spent a couple of weeks installing a DIY Home-Automation project. It was a very simple system for controlling lights and fans at home. It may seem silly, but I realized the real power of the system when I were lying on my bed in a 113ºF hot day. At that moment, being able to climate the room with nothing but a slide of my finger was a heaven gift.\r\n\r\nBut what is really a smart-home?. It''s not just becoming a sort of jedi that can controls lights remotely using <i>the power of the force.</i> We started Domocracy on top of the belief that homes had to be taken to the next level. Your house must be an extension of yourself as are your smartphone, tablet and obviously.... your wearables. A few years ago, that would have sounded crazy, but nowadays the technology allows us to do this integration in order to make our home become the house of the future.\r\n\r\nSmall details make The Big Difference. My colleagues heard this story hundreds of times but I''m going to tell it again:\r\n\r\n<i>When I was a child, my family and I used to spent every Sunday at my grandma''s house. After having lunch we watched TV series altogether in the couch. Everything seems perfect ... except there wasn''t a remote controller for the tv, so switching tv channels resulted in me lifting from the couch every fifteen minutes.</i>\r\n\r\nAnd I’m not that old... I''m not from the 1920''s, our remote just had been lost for long ... Think about it. We have become so used to it, that today no one would even conceive using the TV buttons to switch channels. Why can’t this happen with the rest of the home?  From turning on your game console while you are away for checking updates through to reducing your energy consumption by dimming your thermostat if you are going to be late home due to a traffic jam. Never again leave the electric hob on, or your daugher’s hair straightener, or anything for that matter!\r\n\r\nIt doesn''t matter if you are geek, a TV addict or if you love to go out of home. It''s always a good idea to make your Home Smart.\r\n\r\n&nbsp;', 'Why should you have a Smart-Home?', '', 'inherit', 'open', 'open', '', '420-revision-v1', '', '', '2014-12-23 13:19:58', '2014-12-23 13:19:58', '', 420, 'http://www.domocracytech.com/420-revision-v1/', 0, 'revision', '', 0),
 (423, 2, '2014-12-23 13:21:53', '2014-12-23 13:21:53', 'Yesterday was our first day inside Bolt Accelerator. We''ve met a lot of new people and discovered so many interesting projects. It was an amazing day, and as the mentoring process develops, we are sure it''s only getting better and better.\nThe day started with a road trip (that''s always cool) from Seville to Malaga.\n\nOnce we arrived to the new offices and passed the security access, we began the setup. The offices are great: All white and modern furniture, and so much space for working with the teams. We even have a meetings-room and a kitchen!\nOh, and I didn''t mention our amazing views. The building is right in front of the beach, so whenever you need it, you can go, swim in the sea, and be back to work fresh and new in just 5 minutes!\n\n<a href="http://www.domocracy.es/wp-content/uploads/2014/07/IMG_20140715_193017.jpg"><img class="aligncenter wp-image-264" src="http://www.domocracy.es/wp-content/uploads/2014/07/IMG_20140715_193017.jpg" alt="IMG_20140715_193017" width="600" height="337" /></a>', 'First day in Bolt', '', 'inherit', 'open', 'open', '', '261-autosave-v1', '', '', '2014-12-23 13:21:53', '2014-12-23 13:21:53', '', 261, 'http://www.domocracytech.com/261-autosave-v1/', 0, 'revision', '', 0),
@@ -1197,7 +1224,12 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (499, 2, '2015-01-08 17:51:32', '2015-01-08 17:51:32', '', 'Twitter', '', 'publish', 'open', 'open', '', 'twitter', '', '', '2015-01-08 17:51:37', '2015-01-08 17:51:37', '', 0, 'http://localhost/?p=499', 2, 'nav_menu_item', '', 0),
 (500, 2, '2015-01-08 17:51:32', '2015-01-08 17:51:32', '', 'Google+', '', 'publish', 'open', 'open', '', 'google', '', '', '2015-01-08 17:51:37', '2015-01-08 17:51:37', '', 0, 'http://localhost/?p=500', 3, 'nav_menu_item', '', 0),
 (501, 2, '2015-01-08 17:51:32', '2015-01-08 17:51:32', '', 'YouTube', '', 'publish', 'open', 'open', '', 'youtube', '', '', '2015-01-08 17:51:37', '2015-01-08 17:51:37', '', 0, 'http://localhost/?p=501', 4, 'nav_menu_item', '', 0),
-(502, 2, '2015-01-08 17:51:32', '2015-01-08 17:51:32', '', 'LinkedIn', '', 'publish', 'open', 'open', '', 'linkedin', '', '', '2015-01-08 17:51:37', '2015-01-08 17:51:37', '', 0, 'http://localhost/?p=502', 5, 'nav_menu_item', '', 0);
+(502, 2, '2015-01-08 17:51:32', '2015-01-08 17:51:32', '', 'LinkedIn', '', 'publish', 'open', 'open', '', 'linkedin', '', '', '2015-01-08 17:51:37', '2015-01-08 17:51:37', '', 0, 'http://localhost/?p=502', 5, 'nav_menu_item', '', 0),
+(503, 3, '2015-01-12 16:04:53', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'open', 'open', '', '', '', '', '2015-01-12 16:04:53', '0000-00-00 00:00:00', '', 0, 'http://www.domocracytech.com/?p=503', 0, 'post', '', 0),
+(504, 3, '2015-01-12 16:07:49', '2015-01-12 16:07:49', 'There are those who might tell you to have a smart-home for security. There are those who would tell you it’s for saving energy and others that’d say it’s about comfort… But come on, everybody knows that it’s just because Smart-Homes rule!\r\n\r\nLast year, I spent a couple of weeks installing a DIY Home-Automation project. It was a very simple system for controlling lights and fans at home. It may seem silly, but I realized the real power of the system when I were lying on my bed in a 113ºF hot day. At that moment, being able to climate the room with nothing but a slide of my finger was a heaven gift.\r\n\r\nBut what is really a smart-home?. It''s not just becoming a sort of jedi that can controls lights remotely using <i>the power of the force.</i> We started Domocracy on top of the belief that homes had to be taken to the next level. Your house must be an extension of yourself as are your smartphone, tablet and obviously.... your wearables. A few years ago, that would have sounded crazy, but nowadays the technology allows us to do this integration in order to make our home become the house of the future.\r\n\r\nSmall details make The Big Difference. My colleagues heard this story hundreds of times but I''m going to tell it again:\r\n\r\n<i>When I was a child, my family and I used to spent every Sunday at my grandma''s house. After having lunch we watched TV series altogether in the couch. Everything seems perfect ... except there wasn''t a remote controller for the tv, so switching tv channels resulted in me lifting from the couch every fifteen minutes.</i>\r\n\r\nAnd I’m not that old... I''m not from the 1920''s, our remote just had been lost for long ... Think about it. We have become so used to it, that today no one would even conceive using the TV buttons to switch channels. Why can’t this happen with the rest of the home?  From turning on your game console while you are away for checking updates through to reducing your energy consumption by dimming your thermostat if you are going to be late home due to a traffic jam. Never again leave the electric hob on, or your daugther’s hair straightener, or anything for that matter!\r\n\r\nIt doesn''t matter if you are geek, a TV addict or if you love to go out of home. It''s always a good idea to make your Home Smart.', 'Why should you have a Smart-Home?', '', 'inherit', 'open', 'open', '', '420-revision-v1', '', '', '2015-01-12 16:07:49', '2015-01-12 16:07:49', '', 420, 'http://www.domocracytech.com/420-revision-v1/', 0, 'revision', '', 0),
+(505, 3, '2015-01-12 16:09:59', '2015-01-12 16:09:59', '', 'explosmComic', '', 'inherit', 'open', 'open', '', 'explosmcomic', '', '', '2015-01-12 16:09:59', '2015-01-12 16:09:59', '', 420, 'http://www.domocracytech.com/wp-content/uploads/2015/01/explosmComic.jpg', 0, 'attachment', 'image/jpeg', 0),
+(506, 3, '2015-01-12 16:11:25', '2015-01-12 16:11:25', 'There are those who might tell you to have a smart-home for security. There are those who would tell you it’s for saving energy and others that’d say it’s about comfort… But come on, everybody knows that it’s just because Smart-Homes rule!\n\nLast year, I spent a couple of weeks installing a DIY Home-Automation project. It was a very simple system for controlling lights and fans at home. It may seem silly, but I realized the real power of the system when I were lying on my bed in a 113ºF hot day. At that moment, being able to climate the room with nothing but a slide of my finger was a heaven gift.\n\nBut what is really a smart-home?. It''s not just becoming a sort of jedi that can controls lights remotely using <i>the power of the force.</i> We started Domocracy on top of the belief that homes had to be taken to the next level. Your house must be an extension of yourself as are your smartphone, tablet and obviously.... your wearables. A few years ago, that would have sounded crazy, but nowadays the technology allows us to do this integration in order to make our home become the house of the future.\n\nSmall details make The Big Difference. My colleagues heard this story hundreds of times but I''m going to tell it again:\n\n<i>When I was a child, my family and I used to spent every Sunday at my grandma''s house. After having lunch we watched TV series altogether in the couch. Everything seems perfect ... except there wasn''t a remote controller for the tv, so switching tv channels resulted in me lifting from the couch every fifteen minutes.</i>\n\n<a href="http://www.domocracytech.com/wp-content/uploads/2014/12/domocracy-wereables-television-why-smart-home.jpg"><img class="alignnone  wp-image-496" src="http://www.domocracytech.com/wp-content/uploads/2014/12/domocracy-wereables-television-why-smart-home-300x218.jpg" alt="domocracy-wereables-television-why-smart-home" width="394" height="286" /></a>\n\nAnd I’m not that old... I''m not from the 1920''s, our remote just had been lost for long ... Think about it. We have become so used to it, that today no one would even conceive using the TV buttons to switch channels. Why can’t this happen with the rest of the home?  From turning on your game console while you are away for checking updates through to reducing your energy consumption by dimming your thermostat if you are going to be late home due to a traffic jam. Never again leave the electric hob on, or your daugther’s hair straightener, or anything for that matter!\n\nIt doesn''t matter if you are geek, a TV addict or if you love to go out of home. It''s always a good idea to make your Home Smart.', 'Why should you have a Smart-Home?', '', 'inherit', 'open', 'open', '', '420-autosave-v1', '', '', '2015-01-12 16:11:25', '2015-01-12 16:11:25', '', 420, 'http://www.domocracytech.com/420-autosave-v1/', 0, 'revision', '', 0),
+(507, 3, '2015-01-12 16:11:43', '2015-01-12 16:11:43', 'There are those who might tell you to have a smart-home for security. There are those who would tell you it’s for saving energy and others that’d say it’s about comfort… But come on, everybody knows that it’s just because Smart-Homes rule!\r\n\r\nLast year, I spent a couple of weeks installing a DIY Home-Automation project. It was a very simple system for controlling lights and fans at home. It may seem silly, but I realized the real power of the system when I were lying on my bed in a 113ºF hot day. At that moment, being able to climate the room with nothing but a slide of my finger was a heaven gift.\r\n\r\nBut what is really a smart-home?. It''s not just becoming a sort of jedi that can controls lights remotely using <i>the power of the force.</i> We started Domocracy on top of the belief that homes had to be taken to the next level. Your house must be an extension of yourself as are your smartphone, tablet and obviously.... your wearables. A few years ago, that would have sounded crazy, but nowadays the technology allows us to do this integration in order to make our home become the house of the future.\r\n\r\nSmall details make The Big Difference. My colleagues heard this story hundreds of times but I''m going to tell it again:\r\n\r\n<i>When I was a child, my family and I used to spent every Sunday at my grandma''s house. After having lunch we watched TV series altogether in the couch. Everything seems perfect ... except there wasn''t a remote controller for the tv, so switching tv channels resulted in me lifting from the couch every fifteen minutes.</i>\r\n\r\n<a href="http://www.domocracytech.com/wp-content/uploads/2014/12/domocracy-wereables-television-why-smart-home.jpg"><img class="  wp-image-496 aligncenter" src="http://www.domocracytech.com/wp-content/uploads/2014/12/domocracy-wereables-television-why-smart-home-300x218.jpg" alt="domocracy-wereables-television-why-smart-home" width="541" height="393" /></a>\r\n\r\nAnd I’m not that old... I''m not from the 1920''s, our remote just had been lost for long ... Think about it. We have become so used to it, that today no one would even conceive using the TV buttons to switch channels. Why can’t this happen with the rest of the home?  From turning on your game console while you are away for checking updates through to reducing your energy consumption by dimming your thermostat if you are going to be late home due to a traffic jam. Never again leave the electric hob on, or your daugther’s hair straightener, or anything for that matter!\r\n\r\nIt doesn''t matter if you are geek, a TV addict or if you love to go out of home. It''s always a good idea to make your Home Smart.', 'Why should you have a Smart-Home?', '', 'inherit', 'open', 'open', '', '420-revision-v1', '', '', '2015-01-12 16:11:43', '2015-01-12 16:11:43', '', 420, 'http://www.domocracytech.com/420-revision-v1/', 0, 'revision', '', 0);
 
 -- --------------------------------------------------------
 
@@ -1206,11 +1238,14 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 --
 
 CREATE TABLE IF NOT EXISTS `wp_statistics_exclusions` (
-`ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `date` date NOT NULL,
   `reason` varchar(255) DEFAULT NULL,
-  `count` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `count` bigint(20) NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `date` (`date`),
+  KEY `reason` (`reason`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -1219,12 +1254,16 @@ CREATE TABLE IF NOT EXISTS `wp_statistics_exclusions` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_statistics_historical` (
-`ID` bigint(20) NOT NULL,
+  `ID` bigint(20) NOT NULL AUTO_INCREMENT,
   `category` varchar(25) NOT NULL,
   `page_id` bigint(20) NOT NULL,
   `uri` varchar(255) NOT NULL,
-  `value` bigint(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  `value` bigint(20) NOT NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `page_id` (`page_id`),
+  UNIQUE KEY `uri` (`uri`),
+  KEY `category` (`category`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `wp_statistics_historical`
@@ -1244,7 +1283,11 @@ CREATE TABLE IF NOT EXISTS `wp_statistics_pages` (
   `uri` varchar(255) NOT NULL,
   `date` date NOT NULL,
   `count` int(11) NOT NULL,
-  `id` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  UNIQUE KEY `date_2` (`date`,`uri`),
+  KEY `url` (`uri`),
+  KEY `date` (`date`),
+  KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -1322,17 +1365,46 @@ INSERT INTO `wp_statistics_pages` (`uri`, `date`, `count`, `id`) VALUES
 ('/video-games-need-domocracy', '2015-01-07', 3, 457),
 ('/video-games-need-domocracy/', '2015-01-07', 40, 457),
 ('/video-games-need-domocracy/feed/', '2015-01-07', 1, 457),
-('/', '2015-01-08', 25, 2),
+('/', '2015-01-08', 37, 2),
 ('/blog', '2015-01-08', 2, 139),
 ('/blog/', '2015-01-08', 1, 139),
-('/domocracy-preselected-bolt/', '2015-01-08', 1, 158),
+('/domocracy-preselected-bolt/', '2015-01-08', 2, 158),
 ('/first-day-in-bolt/', '2015-01-08', 1, 261),
 ('/home/feed/', '2015-01-08', 1, 2),
 ('/inauguration-of-the-cube/', '2015-01-08', 1, 157),
-('/video-games-need-domocracy', '2015-01-08', 2, 457),
-('/video-games-need-domocracy/', '2015-01-08', 12, 457),
-('/', '2015-01-10', 1, 2),
-('/', '2015-01-12', 5, 2);
+('/video-games-need-domocracy', '2015-01-08', 3, 457),
+('/video-games-need-domocracy/', '2015-01-08', 16, 457),
+('/', '2015-01-09', 82, 2),
+('/?p=460&preview=true', '2015-01-09', 1, 460),
+('/blog', '2015-01-09', 3, 139),
+('/blog/', '2015-01-09', 19, 139),
+('/blog/feed/', '2015-01-09', 1, 139),
+('/first-day-in-bolt/', '2015-01-09', 1, 261),
+('/index.php', '2015-01-09', 1, 2),
+('/smart-home', '2015-01-09', 6, 420),
+('/smart-home/', '2015-01-09', 40, 420),
+('/video-games-need-domocracy', '2015-01-09', 1, 457),
+('/video-games-need-domocracy/', '2015-01-09', 15, 457),
+('/', '2015-01-10', 15, 2),
+('/blog', '2015-01-10', 4, 139),
+('/blog/', '2015-01-10', 4, 139),
+('/smart-home', '2015-01-10', 1, 420),
+('/smart-home/', '2015-01-10', 10, 420),
+('/video-games-need-domocracy/', '2015-01-10', 11, 457),
+('/', '2015-01-11', 9, 2),
+('/blog', '2015-01-11', 1, 139),
+('/blog/', '2015-01-11', 1, 139),
+('/home/feed/', '2015-01-11', 1, 2),
+('/smart-home', '2015-01-11', 1, 420),
+('/smart-home/', '2015-01-11', 2, 420),
+('/video-games-need-domocracy/', '2015-01-11', 1, 457),
+('/', '2015-01-12', 55, 2),
+('/blog', '2015-01-12', 3, 139),
+('/blog/', '2015-01-12', 18, 139),
+('/domocracy-preselected-bolt/', '2015-01-12', 1, 158),
+('/first-day-in-bolt/', '2015-01-12', 2, 261),
+('/smart-home/', '2015-01-12', 30, 420),
+('/video-games-need-domocracy/', '2015-01-12', 2, 457);
 
 -- --------------------------------------------------------
 
@@ -1341,7 +1413,7 @@ INSERT INTO `wp_statistics_pages` (`uri`, `date`, `count`, `id`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `wp_statistics_useronline` (
-`ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `ip` varchar(60) NOT NULL,
   `timestamp` int(10) NOT NULL,
   `date` datetime NOT NULL,
@@ -1350,8 +1422,9 @@ CREATE TABLE IF NOT EXISTS `wp_statistics_useronline` (
   `platform` varchar(255) DEFAULT NULL,
   `version` varchar(255) DEFAULT NULL,
   `created` int(11) DEFAULT NULL,
-  `location` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `location` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1107 ;
 
 -- --------------------------------------------------------
 
@@ -1360,11 +1433,12 @@ CREATE TABLE IF NOT EXISTS `wp_statistics_useronline` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_statistics_visit` (
-`ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `last_visit` datetime NOT NULL,
   `last_counter` date NOT NULL,
-  `visit` int(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+  `visit` int(10) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
 
 --
 -- Dumping data for table `wp_statistics_visit`
@@ -1387,9 +1461,11 @@ INSERT INTO `wp_statistics_visit` (`ID`, `last_visit`, `last_counter`, `visit`) 
 (14, '2015-01-05 23:23:13', '2015-01-05', 38),
 (15, '2015-01-06 23:57:47', '2015-01-06', 122),
 (16, '2015-01-07 23:33:55', '2015-01-07', 222),
-(17, '2015-01-08 17:15:24', '2015-01-08', 102),
-(18, '2015-01-10 21:02:17', '2015-01-10', 3),
-(19, '2015-01-12 12:05:20', '2015-01-12', 11);
+(17, '2015-01-08 21:18:32', '2015-01-08', 243),
+(18, '2015-01-09 23:53:32', '2015-01-09', 433),
+(19, '2015-01-10 23:18:13', '2015-01-10', 67),
+(20, '2015-01-11 21:15:47', '2015-01-11', 33),
+(21, '2015-01-12 16:28:08', '2015-01-12', 214);
 
 -- --------------------------------------------------------
 
@@ -1398,7 +1474,7 @@ INSERT INTO `wp_statistics_visit` (`ID`, `last_visit`, `last_counter`, `visit`) 
 --
 
 CREATE TABLE IF NOT EXISTS `wp_statistics_visitor` (
-`ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `last_counter` date NOT NULL,
   `referred` text NOT NULL,
   `agent` varchar(255) NOT NULL,
@@ -1407,598 +1483,812 @@ CREATE TABLE IF NOT EXISTS `wp_statistics_visitor` (
   `UAString` varchar(255) DEFAULT NULL,
   `ip` varchar(60) NOT NULL,
   `location` varchar(10) DEFAULT NULL,
-  `hits` int(11) DEFAULT NULL,
-  `honeypot` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=587 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `date_ip_agent` (`last_counter`,`ip`,`agent`(75),`platform`(75),`version`(75)),
+  KEY `agent` (`agent`),
+  KEY `platform` (`platform`),
+  KEY `version` (`version`),
+  KEY `location` (`location`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=797 ;
 
 --
 -- Dumping data for table `wp_statistics_visitor`
 --
 
-INSERT INTO `wp_statistics_visitor` (`ID`, `last_counter`, `referred`, `agent`, `platform`, `version`, `UAString`, `ip`, `location`, `hits`, `honeypot`) VALUES
-(1, '2014-12-23', 'http://www.domocracytech.com/wp-admin/plugins.php', 'Chrome', 'Windows', '39.0.2171.95', NULL, '195.235.183.165', 'ES', NULL, NULL),
-(2, '2014-12-23', 'http://www.domocracytech.com', 'WordPress', 'http://www.domocracytech.com - Yoast', '3.9.1', '', '67.192.46.8', 'US', NULL, NULL),
-(3, '2014-12-23', 'http://www.domocracytech.com', 'WordPress', 'http://www.domocracytech.com - Yoast', '3.9.1', '', '67.192.46.14', 'US', NULL, NULL),
-(4, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '85.136.34.181', 'ES', NULL, NULL),
-(5, '2014-12-23', 'https://www.facebook.com/', 'Firefox', 'Macintosh', '28.0', '', '23.20.222.187', 'US', NULL, NULL),
-(6, '2014-12-23', 'http://www.facebook.com/l.php?u=http%3A%2F%2Fwww.domocracytech.com%2F&h=1ujpfRkot', 'MSIE', 'Windows', '8.0', '', '192.241.193.129', 'US', NULL, NULL),
-(7, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '79.151.92.142', 'ES', NULL, NULL),
-(8, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Android', '537.36', '', '201.144.174.27', 'MX', NULL, NULL),
-(9, '2014-12-23', 'http://www.domocracytech.com', 'LinkedInBot', '(compatible; Mozilla/5.0; Jakarta Commons-HttpClient/3.1 +http://www.linkedin.com)', '1.0', '', '108.174.2.203', 'US', NULL, NULL),
-(10, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '39.0.2171.95', '', '85.136.166.220', 'ES', NULL, NULL),
-(11, '2014-12-23', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Android', '4.0', '', '81.60.37.119', 'ES', NULL, NULL),
-(12, '2014-12-23', 'http://www.domocracytech.com', 'Firefox', 'Windows', '30.0', '', '194.2.200.6', 'FR', NULL, NULL),
-(13, '2014-12-23', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Windows', '37.0.2062.120', '', '83.49.235.79', 'ES', NULL, NULL),
-(14, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '62.151.68.23', 'ES', NULL, NULL),
-(15, '2014-12-23', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.163', 'ES', NULL, NULL),
-(16, '2014-12-23', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '85.136.147.249', 'ES', NULL, NULL),
-(17, '2014-12-23', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Macintosh', '39.0.2171.95', '', '89.141.64.107', 'ES', NULL, NULL),
-(18, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '39.0.2171.95', '', '23.227.160.112', 'US', NULL, NULL),
-(19, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Android', '30.0.0.0', '', '31.4.240.183', 'ES', NULL, NULL),
-(20, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.71', '', '71.107.249.56', 'US', NULL, NULL),
-(21, '2014-12-23', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.205', 'US', NULL, NULL),
-(22, '2014-12-23', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.203', 'US', NULL, NULL),
-(23, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '87.221.56.146', 'ES', NULL, NULL),
-(24, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '104.131.94.211', 'US', NULL, NULL),
-(25, '2014-12-23', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '85.136.132.114', 'ES', NULL, NULL),
-(26, '2014-12-23', 'http://www.domocracytech.com', 'AppEngine-Google', 'Unknown', 'Unknown', '', '107.178.200.4', 'US', NULL, NULL),
-(27, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '37.0.2062.120', '', '5.9.48.162', 'DE', NULL, NULL),
-(28, '2014-12-23', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '34.0', '', '79.156.23.114', 'ES', NULL, NULL),
-(29, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.152.108', 'US', NULL, NULL),
-(30, '2014-12-23', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.241.198.78', 'US', NULL, NULL),
-(31, '2014-12-23', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '176.9.29.147', 'DE', NULL, NULL),
-(32, '2014-12-23', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.187.162.165', 'FR', NULL, NULL),
-(33, '2014-12-23', 'http://t.co/1rV0wE8XRa', 'Chrome', 'Macintosh', '39.0.2171.95', '', '85.136.69.142', 'ES', NULL, NULL),
-(34, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '20.0.1132.57', '', '37.58.71.199', 'NL', NULL, NULL),
-(35, '2014-12-23', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES', NULL, NULL),
-(36, '2014-12-23', 'http://ow.ly/GlNB3', 'Firefox', 'Windows', '10.0.1', '', '50.28.48.158', 'US', NULL, NULL),
-(37, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Android', '39.0.2171.93', '', '201.144.174.27', 'MX', NULL, NULL),
-(38, '2014-12-23', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Windows', '39.0.2171.95', '', '85.56.103.210', 'ES', NULL, NULL),
-(39, '2014-12-23', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.204', 'US', NULL, NULL),
-(40, '2014-12-23', 'http://m.facebook.com/', 'Chrome', 'Android', '30.0.0.0', '', '85.62.233.162', 'ES', NULL, NULL),
-(41, '2014-12-23', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '146.185.2.58', 'CH', NULL, NULL),
-(42, '2014-12-23', 'http://www.domocracytech.com', 'Safari', 'iPad', '6.0', '', '90.170.24.193', 'ES', NULL, NULL),
-(43, '2014-12-23', 'http://m.facebook.com/', 'Android Browser', 'Android', '4.0', '', '84.123.188.149', 'ES', NULL, NULL),
-(44, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '5.8.190.118', 'ES', NULL, NULL),
-(45, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '31.0.1650.63', '', '107.22.72.145', 'US', NULL, NULL),
-(46, '2014-12-23', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '107.155.73.2', 'US', NULL, NULL),
-(47, '2014-12-23', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.195', 'US', NULL, NULL),
-(48, '2014-12-23', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.212', 'US', NULL, NULL),
-(49, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '26.0.1410.64', '', '54.172.134.33', 'US', NULL, NULL),
-(50, '2014-12-23', 'http://www.domocracytech.com', 'InAGist', 'Unknown', 'Unknown', '', '72.14.184.101', 'US', NULL, NULL),
-(51, '2014-12-23', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.202', 'US', NULL, NULL),
-(53, '2014-12-23', 'http://www.domocracytech.com', 'Firefox', 'Windows', '33.0', '', '54.234.16.70', 'US', NULL, NULL),
-(54, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.152.150', 'US', NULL, NULL),
-(55, '2014-12-23', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.161.52.156', 'US', NULL, NULL),
-(56, '2014-12-23', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '24.98.207.45', 'US', NULL, NULL),
-(57, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '37.0.2049.0', '', '192.95.29.199', 'CA', NULL, NULL),
-(58, '2014-12-23', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '88.150.152.170', 'GB', NULL, NULL),
-(59, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '37.0.2049.0', '', '192.99.35.168', 'CA', NULL, NULL),
-(60, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '37.0.2049.0', '', '192.99.13.218', 'CA', NULL, NULL),
-(61, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '37.0.2049.0', '', '192.99.46.86', 'CA', NULL, NULL),
-(62, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '37.0.2049.0', '', '198.27.75.228', 'CA', NULL, NULL),
-(63, '2014-12-23', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '23.96.208.137', 'US', NULL, NULL),
-(64, '2014-12-23', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '88.8.170.51', 'ES', NULL, NULL),
-(65, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '89.129.118.162', 'ES', NULL, NULL),
-(66, '2014-12-23', 'http://www.domocracytech.com', 'AppEngine-Google', 'Unknown', 'Unknown', '', '107.178.200.11', 'US', NULL, NULL),
-(67, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Android', '33.0.0.0', '', '85.51.81.126', 'ES', NULL, NULL),
-(68, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Android', '39.0.2171.93', '', '85.51.81.126', 'ES', NULL, NULL),
-(69, '2014-12-23', 'https://www.facebook.com/', 'Chrome', 'Linux', '40.0.2214.38', '', '85.136.241.220', 'ES', NULL, NULL),
-(70, '2014-12-23', 'https://www.facebook.com/', 'Safari', 'Macintosh', '8.0.2', '', '87.220.183.168', 'ES', NULL, NULL),
-(71, '2014-12-23', 'http://m.facebook.com', 'AppleWebKit', 'iPad', '600.1.4', '', '109.255.232.150', 'IE', NULL, NULL),
-(72, '2014-12-23', 'http://t.co/1rV0wE8XRa', 'Chrome', 'Windows', '39.0.2171.95', '', '82.139.126.34', 'NL', NULL, NULL),
-(73, '2014-12-23', 'http://t.co/cZwHPSdWXk', 'Firefox', 'Windows', '34.0', '', '80.31.180.97', 'ES', NULL, NULL),
-(74, '2014-12-23', 'http://m.facebook.com/', 'Chrome', 'Android', '30.0.0.0', '', '31.4.198.190', 'ES', NULL, NULL),
-(75, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Android', '28.0.1500.94', '', '31.4.198.190', 'ES', NULL, NULL),
-(76, '2014-12-23', 'http://www.domocracytech.com', 'MSIE', 'Windows', '6.0', '', '54.187.135.151', 'US', NULL, NULL),
-(77, '2014-12-24', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.59.34.187', 'FR', NULL, NULL),
-(78, '2014-12-24', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES', NULL, NULL),
-(79, '2014-12-24', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.162.89.97', 'US', NULL, NULL),
-(80, '2014-12-24', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.147.22.60', 'US', NULL, NULL),
-(81, '2014-12-24', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '88.8.170.51', 'ES', NULL, NULL),
-(82, '2014-12-24', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '198.186.192.44', 'US', NULL, NULL),
-(83, '2014-12-24', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '178.62.194.225', 'GB', NULL, NULL),
-(84, '2014-12-24', 'http://www.domocracytech.com', 'Safari', 'iPhone', '7.0', '', '85.136.0.197', 'ES', NULL, NULL),
-(85, '2014-12-24', 'http://www.domocracytech.com', 'Firefox', 'Linux', '33.0', '', '90.170.24.193', 'ES', NULL, NULL),
-(86, '2014-12-24', 'http://www.domocracytech.com', 'Chrome', 'Android', '39.0.2171.93', '', '37.29.232.181', 'ES', NULL, NULL),
-(87, '2014-12-24', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.206', 'US', NULL, NULL),
-(88, '2014-12-24', 'http://www.domocracytech.com', 'MSIE', 'Windows', '6.0', '', '54.69.76.86', 'US', NULL, NULL),
-(89, '2014-12-24', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.210', 'US', NULL, NULL),
-(90, '2014-12-24', 'http://www.domocracytech.com/wp-admin/profile.php', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.163', 'ES', NULL, NULL),
-(91, '2014-12-24', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.164', 'ES', NULL, NULL),
-(92, '2014-12-24', 'http://www.domocracytech.com', 'Safari', 'Macintosh', '8.0.2', '', '85.136.38.210', 'ES', NULL, NULL),
-(93, '2014-12-24', 'http://www.domocracytech.com', 'Safari', 'iPhone', '6.0', '', '213.143.48.194', 'ES', NULL, NULL),
-(94, '2014-12-24', 'http://lm.facebook.com/lsr.php?u=http%3A%2F%2Fwww.domocracytech.com%2F&ext=1419419428&hash=AcktygsmUW6-n0qBafBz_D3Cta3OWxCXwLYDwhq9HyhQeg&_rdr', 'Chrome', 'Android', '39.0.2171.93', '', '81.44.192.25', 'ES', NULL, NULL),
-(95, '2014-12-24', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '77.231.249.60', 'ES', NULL, NULL),
-(96, '2014-12-24', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '83.59.23.107', 'ES', NULL, NULL),
-(97, '2014-12-24', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.205', 'US', NULL, NULL),
-(98, '2014-12-24', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.203', 'US', NULL, NULL),
-(99, '2014-12-24', 'http://www.domocracytech.com/wp-admin/profile.php', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.165', 'ES', NULL, NULL),
-(100, '2014-12-24', 'http://www.domocracytech.com', 'Safari', 'Macintosh', '7.1.2', '', '83.57.124.73', 'ES', NULL, NULL),
-(101, '2014-12-24', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Linux', '37.0.2062.120', '', '122.179.62.252', 'IN', NULL, NULL),
-(102, '2014-12-24', 'http://m.facebook.com', 'AppleWebKit', 'iPad', '600.1.4', '', '85.136.0.197', 'ES', NULL, NULL),
-(103, '2014-12-24', 'http://t.co/cZwHPSdWXk', 'Safari', 'iPad', '7.0', '', '79.153.175.166', 'ES', NULL, NULL),
-(104, '2014-12-24', 'http://m.facebook.com/', 'Chrome', 'Android', '30.0.0.0', '', '37.132.20.18', 'ES', NULL, NULL),
-(105, '2014-12-24', 'http://www.domocracytech.com/', 'Safari', 'iPad', '7.0', '', '81.43.123.112', 'ES', NULL, NULL),
-(106, '2014-12-24', 'http://m.facebook.com/', 'Chrome', 'Android', '30.0.0.0', '', '47.62.106.146', 'ES', NULL, NULL),
-(107, '2014-12-24', 'http://www.domocracytech.com', 'AppEngine-Google', 'Unknown', 'Unknown', '', '107.178.200.15', 'US', NULL, NULL),
-(108, '2014-12-24', 'http://m.facebook.com', 'AppleWebKit', 'iPad', '600.1.4', '', '87.220.171.250', 'ES', NULL, NULL),
-(109, '2014-12-24', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '62.151.68.23', 'ES', NULL, NULL),
-(110, '2014-12-24', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '83.52.25.63', 'ES', NULL, NULL),
-(111, '2014-12-24', 'https://m.facebook.com', 'AppleWebKit', 'iPhone', '537.51.2', '', '67.68.31.111', 'CA', NULL, NULL),
-(112, '2014-12-24', 'http://www.domocracytech.com', 'Safari', 'Macintosh', '8.0', '', '85.136.70.221', 'ES', NULL, NULL),
-(113, '2014-12-24', 'http://domocracytech.com/', 'Chrome', 'Windows', '0.4.154.25', '', '5.9.53.251', 'DE', NULL, NULL),
-(114, '2014-12-24', 'https://www.linkedin.com/', 'Chrome', 'Windows', '38.0.2125.104', '', '89.129.169.189', 'ES', NULL, NULL),
-(115, '2014-12-24', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '85.136.146.23', 'ES', NULL, NULL),
-(116, '2014-12-24', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.204', 'US', NULL, NULL),
-(117, '2014-12-24', 'http://www.domocracytech.com', 'Chrome', 'Android', '39.0.2171.93', '', '213.143.61.106', 'ES', NULL, NULL),
-(118, '2014-12-24', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '39.0.2171.95', '', '213.98.143.199', 'ES', NULL, NULL),
-(119, '2014-12-25', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES', NULL, NULL),
-(120, '2014-12-25', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '198.186.192.44', 'US', NULL, NULL),
-(121, '2014-12-25', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '59.95.230.126', 'IN', NULL, NULL),
-(122, '2014-12-25', 'http://www.domocracytech.com', 'Chrome', 'Android', '39.0.2171.93', '', '79.156.226.215', 'ES', NULL, NULL),
-(123, '2014-12-25', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.213', 'US', NULL, NULL),
-(124, '2014-12-25', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.216', 'US', NULL, NULL),
-(125, '2014-12-25', 'http://t.co/cZwHPSdWXk', 'Safari', 'iPhone', '8.0', '', '188.87.99.169', 'ES', NULL, NULL),
-(126, '2014-12-25', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '88.8.170.51', 'ES', NULL, NULL),
-(127, '2014-12-25', 'http://www.domocracytech.com', 'Firefox', 'Windows', '36.0', '', '85.136.83.95', 'ES', NULL, NULL),
-(128, '2014-12-25', 'http://m.facebook.com/', 'Android Browser', 'Android', '4.0', '', '88.22.107.137', 'ES', NULL, NULL),
-(129, '2014-12-25', 'http://m.facebook.com/', 'Chrome', 'Android', '30.0.0.0', '', '89.131.140.187', 'ES', NULL, NULL),
-(130, '2014-12-25', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.91.64.129', 'US', NULL, NULL),
-(131, '2014-12-25', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '79.156.58.38', 'ES', NULL, NULL),
-(132, '2014-12-25', 'http://www.domocracytech.com', 'Chrome', 'Android', '39.0.2171.93', '', '89.129.123.88', 'ES', NULL, NULL),
-(133, '2014-12-25', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Macintosh', '39.0.2171.95', '', '217.216.1.196', 'ES', NULL, NULL),
-(134, '2014-12-25', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '89.129.123.88', 'ES', NULL, NULL),
-(135, '2014-12-25', 'http://www.domocracytech.com', 'Firefox', 'Windows', '18.0', '', '38.229.70.44', 'US', NULL, NULL),
-(136, '2014-12-25', 'http://m.facebook.com/', 'Android Browser', 'Android', '4.0', '', '81.45.55.237', 'ES', NULL, NULL),
-(137, '2014-12-25', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Android', '39.0.2171.93', '', '83.46.23.240', 'ES', NULL, NULL),
-(138, '2014-12-26', 'http://domocracytech.us8.list-manage2.com/profile/post', 'Chrome', 'Windows', '39.0.2171.95', '', '83.46.23.240', 'ES', NULL, NULL),
-(139, '2014-12-26', 'http://www.domocracytech.com', 'Firefox', 'Windows', '27.0', '', '10.9.71.2', '000', NULL, NULL),
-(140, '2014-12-26', 'http://www.domocracytech.com/', 'Chrome', 'Macintosh', '13.0.782.215', '', '216.38.216.197', 'US', NULL, NULL),
-(141, '2014-12-26', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES', NULL, NULL),
-(142, '2014-12-26', 'http://m.facebook.com/', 'Chrome', 'Android', '30.0.0.0', '', '92.58.115.241', 'ES', NULL, NULL),
-(143, '2014-12-26', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.205', 'US', NULL, NULL),
-(144, '2014-12-26', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '198.186.192.44', 'US', NULL, NULL),
-(145, '2014-12-26', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '88.1.185.50', 'ES', NULL, NULL),
-(146, '2014-12-26', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.164', 'ES', NULL, NULL),
-(147, '2014-12-26', 'http://www.domocracytech.com', 'Chrome', 'Android', '39.0.2171.93', '', '31.4.198.16', 'ES', NULL, NULL),
-(148, '2014-12-26', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '37.132.20.225', 'ES', NULL, NULL),
-(149, '2014-12-26', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '88.8.170.51', 'ES', NULL, NULL),
-(150, '2014-12-26', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Windows', '39.0.2171.95', '', '79.150.148.103', 'ES', NULL, NULL),
-(151, '2014-12-26', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '183.249.0.140', 'CN', NULL, NULL),
-(152, '2014-12-26', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.213', 'US', NULL, NULL),
-(153, '2014-12-27', 'http://www.domocracytech.com', 'Chrome', 'Windows', '40.0.2213.0', '', '190.176.129.249', 'AR', NULL, NULL),
-(154, '2014-12-27', 'http://www.domocracytech.com', 'Firefox', 'Windows', '19.0', '', '109.201.154.145', 'NL', NULL, NULL),
-(155, '2014-12-27', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES', NULL, NULL),
-(156, '2014-12-27', 'http://www.domocracytech.com', 'IEMobile', 'Windows Phone', '11.0', '', '81.45.55.245', 'ES', NULL, NULL),
-(157, '2014-12-27', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Windows', '39.0.2171.95', '', '77.71.138.87', 'MT', NULL, NULL),
-(158, '2014-12-27', 'http://t.co/1rV0wE8XRa', 'Chrome', 'Windows', '39.0.2171.95', '', '83.45.129.167', 'ES', NULL, NULL),
-(159, '2014-12-27', 'http://www.domocracytech.com', 'C-T', 'Unknown', 'Unknown', '', '212.33.255.53', 'RU', NULL, NULL),
-(160, '2014-12-27', 'http://www.domocracytech.com', 'MSIE', 'Windows', '5.01', '', '212.33.255.53', 'RU', NULL, NULL),
-(161, '2014-12-27', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '2.227.198.62', 'IT', NULL, NULL),
-(162, '2014-12-27', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '38.99.82.225', 'US', NULL, NULL),
-(163, '2014-12-27', 'http://www.domocracytech.com', 'Safari', 'Linux', '533.3', '', '38.99.82.225', 'US', NULL, NULL),
-(164, '2014-12-28', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '38.99.82.224', 'US', NULL, NULL),
-(165, '2014-12-28', 'http://www.domocracytech.com', 'Safari', 'Linux', '533.3', '', '38.99.82.224', 'US', NULL, NULL),
-(166, '2014-12-28', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES', NULL, NULL),
-(167, '2014-12-28', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '38.99.82.226', 'US', NULL, NULL),
-(168, '2014-12-28', 'http://www.domocracytech.com', 'Safari', 'Linux', '533.3', '', '38.99.82.226', 'US', NULL, NULL),
-(169, '2014-12-28', 'http://www.domocracytech.com', 'Chrome', 'Windows', '37.0.2062.120', '', '95.61.177.115', 'ES', NULL, NULL),
-(170, '2014-12-28', 'http://www.domocracytech.com', 'Firefox', 'Windows', '19.0', '', '109.201.154.145', 'NL', NULL, NULL),
-(171, '2014-12-28', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.216', 'US', NULL, NULL),
-(172, '2014-12-28', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '88.0.5.35', 'ES', NULL, NULL),
-(173, '2014-12-28', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '83.45.129.167', 'ES', NULL, NULL),
-(174, '2014-12-28', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '90.170.24.193', 'ES', NULL, NULL),
-(175, '2014-12-28', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '223.94.153.66', 'CN', NULL, NULL),
-(176, '2014-12-29', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.46', 'JP', NULL, NULL),
-(177, '2014-12-29', 'https://www.facebook.com/', 'MSIE', 'Windows', '10.0', '', '54.219.117.34', 'US', NULL, NULL),
-(178, '2014-12-29', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '54.219.117.34', 'US', NULL, NULL),
-(179, '2014-12-29', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.164', 'ES', NULL, NULL),
-(180, '2014-12-29', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.163', 'ES', NULL, NULL),
-(181, '2014-12-29', 'http://www.domocracytech.com', 'Firefox', 'Windows', '19.0', '', '109.201.154.145', 'NL', NULL, NULL),
-(182, '2014-12-29', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES', NULL, NULL),
-(183, '2014-12-29', 'https://www.google.com/', 'Chrome', 'Linux', '25.0.1364.97', '', '195.235.183.164', 'ES', NULL, NULL),
-(184, '2014-12-29', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.213', 'US', NULL, NULL),
-(185, '2014-12-30', 'http://www.domocracytech.com/blog/', 'Chrome', 'Windows', '40.0.2213.0', '', '190.176.129.249', 'AR', NULL, NULL),
-(186, '2014-12-30', 'http://donaldprestonwriter.com', 'CATExplorador', 'Unknown', '1.0beta', '', '188.226.232.60', 'NL', NULL, NULL),
-(187, '2014-12-30', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.163', 'ES', NULL, NULL),
-(188, '2014-12-30', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.203', 'US', NULL, NULL),
-(189, '2014-12-30', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0.2', '', '180.76.6.142', 'CN', NULL, NULL),
-(190, '2014-12-30', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0.2', '', '180.76.6.57', 'CN', NULL, NULL),
-(191, '2014-12-30', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.164', 'ES', NULL, NULL),
-(192, '2014-12-30', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '83.37.151.127', 'ES', NULL, NULL),
-(193, '2014-12-30', 'http://www.domocracytech.com', 'AppEngine-Google', 'Unknown', 'Unknown', '', '107.178.200.203', 'US', NULL, NULL),
-(194, '2014-12-30', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES', NULL, NULL),
-(195, '2014-12-30', 'http://www.domocracytech.com', 'IEMobile', 'Windows Phone', '11.0', '', '81.45.52.139', 'ES', NULL, NULL),
-(196, '2014-12-30', 'http://www.domocracytech.com', 'MSIE', 'Windows', '7.0', '', '79.117.228.146', 'RO', NULL, NULL),
-(197, '2014-12-30', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.204', 'US', NULL, NULL),
-(198, '2014-12-30', 'http://www.domocracytech.com', 'MSIE', 'Windows', '7.0', '', '120.237.226.130', 'CN', NULL, NULL),
-(199, '2014-12-30', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.205', 'US', NULL, NULL),
-(200, '2014-12-30', 'http://www.domocracytech.com', 'MSIE', 'Windows', '7.0', '', '59.35.4.98', 'CN', NULL, NULL),
-(201, '2014-12-30', 'http://www.domocracytech.com', 'AppEngine-Google', 'Unknown', 'Unknown', '', '107.178.200.201', 'US', NULL, NULL),
-(202, '2014-12-30', 'http://www.domocracytech.com/admin/uploadify/uploadify.swf', 'MSIE', 'Windows', '6.0', '', '176.67.25.127', 'UA', NULL, NULL),
-(205, '2014-12-30', 'http://www.domocracytech.com', 'MSIE', 'Windows', '7.0', '', '139.227.151.52', 'CN', NULL, NULL),
-(206, '2014-12-30', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '188.76.181.237', 'ES', NULL, NULL),
-(207, '2014-12-30', 'http://techpepper.org/home-automation-a-traves-del-videojuego/', 'Firefox', 'Linux', '33.0', '', '90.170.24.193', 'ES', NULL, NULL),
-(208, '2014-12-30', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Windows', '39.0.2171.95', '', '205.211.248.33', 'HN', NULL, NULL),
-(209, '2014-12-30', 'http://www.domocracytech.com/blog/', 'Chrome', 'Windows', '40.0.2213.0', '', '190.176.132.203', 'AR', NULL, NULL),
-(210, '2014-12-31', 'http://www.domocracytech.com/blog/', 'Chrome', 'Windows', '40.0.2213.0', '', '190.176.143.240', 'AR', NULL, NULL),
-(211, '2014-12-31', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '83.37.151.127', 'ES', NULL, NULL),
-(212, '2014-12-31', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.151.239', 'US', NULL, NULL),
-(213, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.241.198.78', 'US', NULL, NULL),
-(214, '2014-12-31', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.222', 'US', NULL, NULL),
-(215, '2014-12-31', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.97.99', 'JP', NULL, NULL),
-(216, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '78.46.85.13', 'DE', NULL, NULL),
-(217, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '23.96.208.137', 'US', NULL, NULL),
-(218, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.207.243.172', 'US', NULL, NULL),
-(219, '2014-12-31', 'http://www.domocracytech.com', 'Jakarta', 'Unknown', 'Unknown', '', '23.253.254.165', 'US', NULL, NULL),
-(220, '2014-12-31', 'http://www.domocracytech.com', 'SMRF', 'Unknown', 'Unknown', '', '184.72.239.155', 'US', NULL, NULL),
-(221, '2014-12-31', 'http://www.domocracytech.com', 'Safari', 'Linux', '537.21', '', '62.210.84.178', 'FR', NULL, NULL),
-(222, '2014-12-31', 'http://www.domocracytech.com', 'Safari', 'Linux', '537.21', '', '195.154.209.237', 'FR', NULL, NULL),
-(223, '2014-12-31', 'http://www.domocracytech.com', 'Firefox', 'Windows', '10.0.1', '', '50.28.48.158', 'US', NULL, NULL),
-(224, '2014-12-31', 'http://www.domocracytech.com', 'Firefox', 'Windows', '10.0.1', '', '50.28.32.13', 'US', NULL, NULL),
-(225, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '81.200.27.2', 'RU', NULL, NULL),
-(226, '2014-12-31', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.216', 'US', NULL, NULL),
-(227, '2014-12-31', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.210', 'US', NULL, NULL),
-(228, '2014-12-31', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '79.148.141.188', 'ES', NULL, NULL),
-(229, '2014-12-31', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.163', 'ES', NULL, NULL),
-(230, '2014-12-31', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.203', 'US', NULL, NULL),
-(231, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '218.107.22.69', 'CN', NULL, NULL),
-(232, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '88.198.247.166', 'DE', NULL, NULL),
-(233, '2014-12-31', 'http://www.domocracytech.com', 'MSIE', 'Windows', '5.01', '', '103.246.248.246', 'US', NULL, NULL),
-(234, '2014-12-31', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '31.0.1650.63', '', '107.22.72.145', 'US', NULL, NULL),
-(235, '2014-12-31', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.90.119.36', 'US', NULL, NULL),
-(236, '2014-12-31', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.151.196', 'US', NULL, NULL),
-(237, '2014-12-31', 'http://www.domocracytech.com', 'Safari', 'Macintosh', '8.0', '', '54.147.163.42', 'US', NULL, NULL),
-(238, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.241', 'US', NULL, NULL),
-(239, '2014-12-31', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.59', 'JP', NULL, NULL),
-(240, '2014-12-31', 'http://www.domocracytech.com', 'curl', 'Unknown', '7.24.0', '', '54.146.19.24', 'US', NULL, NULL),
-(241, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.245', 'US', NULL, NULL),
-(242, '2014-12-31', 'http://www.domocracytech.com', 'Jakarta', 'Unknown', 'Unknown', '', '23.253.78.156', 'US', NULL, NULL),
-(243, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '50.116.7.209', 'US', NULL, NULL),
-(244, '2014-12-31', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.202', 'US', NULL, NULL),
-(245, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES', NULL, NULL),
-(246, '2014-12-31', 'http://www.domocracytech.com', 'IEMobile', 'Windows Phone', '11.0', '', '81.45.52.82', 'ES', NULL, NULL),
-(247, '2014-12-31', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.149.128', 'US', NULL, NULL),
-(248, '2014-12-31', 'http://api.twitter.com/1/statuses/show/550335807522099200.json', 'InAGist', 'Unknown', 'Unknown', '', '96.126.124.49', 'US', NULL, NULL),
-(249, '2014-12-31', 'http://t.co/LfhOU8YB0O', 'Chrome', 'Windows', '39.0.2171.95', '', '83.58.198.198', 'ES', NULL, NULL),
-(250, '2014-12-31', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.167.252.122', 'US', NULL, NULL),
-(251, '2014-12-31', 'http://www.domocracytech.com', 'Crowsnest', 'Unknown', '0.5', '', '54.238.226.202', 'JP', NULL, NULL),
-(252, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.242', 'US', NULL, NULL),
-(253, '2014-12-31', 'http://www.domocracytech.com', 'Crowsnest', 'Unknown', '0.5', '', '54.92.33.255', 'JP', NULL, NULL),
-(254, '2014-12-31', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '23.22.238.254', 'US', NULL, NULL),
-(255, '2014-12-31', 'http://www.domocracytech.com/', 'MSIE', 'Windows', '6.0', '', '195.154.181.160', 'FR', NULL, NULL),
-(256, '2014-12-31', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.160.180.38', 'US', NULL, NULL),
-(257, '2014-12-31', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.234.227.202', 'US', NULL, NULL),
-(258, '2015-01-01', 'http://www.domocracytech.com', 'Chrome', 'Android', '39.0.2171.93', '', '81.36.180.10', 'ES', NULL, NULL),
-(259, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '46.105.109.159', 'FR', NULL, NULL),
-(260, '2015-01-01', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '171.96.178.248', 'TH', NULL, NULL),
-(261, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '94.23.251.171', 'FR', NULL, NULL),
-(262, '2015-01-01', 'http://www.domocracytech.com', 'Firefox', 'Windows', '3.5.6', '', '78.85.84.244', 'RU', NULL, NULL),
-(263, '2015-01-01', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.210', 'US', NULL, NULL),
-(264, '2015-01-01', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.213', 'US', NULL, NULL),
-(265, '2015-01-01', 'http://techpepper.org/home-automation-a-traves-del-videojuego/', 'Chrome', 'Linux', '38.0.2125.122', '', '190.203.182.21', 'VE', NULL, NULL),
-(266, '2015-01-01', 'http://www.domocracytech.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '83.58.198.198', 'ES', NULL, NULL),
-(267, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.241.198.78', 'US', NULL, NULL),
-(268, '2015-01-01', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.152.151', 'US', NULL, NULL),
-(269, '2015-01-01', 'http://www.domocracytech.com', 'HTMLParser', 'Unknown', '2.0', '', '184.169.191.72', 'US', NULL, NULL),
-(270, '2015-01-01', 'http://www.domocracytech.com', 'Chrome', 'Windows', '26.0.1410.64', '', '54.165.221.252', 'US', NULL, NULL),
-(271, '2015-01-01', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.202', 'US', NULL, NULL),
-(272, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '23.96.208.137', 'US', NULL, NULL),
-(273, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '5.39.64.85', 'FR', NULL, NULL),
-(274, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.246', 'US', NULL, NULL),
-(275, '2015-01-01', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.13', 'JP', NULL, NULL),
-(276, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.245', 'US', NULL, NULL),
-(277, '2015-01-01', 'http://www.domocracytech.com', 'Jakarta', 'Unknown', 'Unknown', '', '23.253.254.166', 'US', NULL, NULL),
-(278, '2015-01-01', 'http://t.co/DoNi9ugpNi', 'Chrome', 'Android', '28.0.1500.94', '', '31.4.199.159', 'ES', NULL, NULL),
-(279, '2015-01-01', 'http://api.twitter.com/1/statuses/show/550698153201377280.json', 'InAGist', 'Unknown', 'Unknown', '', '66.228.54.132', 'US', NULL, NULL),
-(280, '2015-01-01', 'http://www.domocracytech.com', 'python-requests', 'Unknown', '1.2.3', '', '54.246.137.243', 'IE', NULL, NULL),
-(281, '2015-01-01', 'http://www.domocracytech.com', 'LumiBot', 'Unknown', 'Unknown', '', '54.246.137.243', 'IE', NULL, NULL),
-(282, '2015-01-01', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '30.0.1599.66', '', '54.246.137.243', 'IE', NULL, NULL),
-(283, '2015-01-01', 'http://www.domocracytech.com', 'AppleWebKit', 'Macintosh', '534.24', '', '54.198.122.232', 'US', NULL, NULL),
-(284, '2015-01-01', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.97.119', 'JP', NULL, NULL),
-(285, '2015-01-01', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.162.6.244', 'US', NULL, NULL),
-(286, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES', NULL, NULL),
-(287, '2015-01-01', 'http://www.domocracytech.com', 'Kimengi', 'Unknown', 'nineconnections.com', '', '176.34.78.244', 'IE', NULL, NULL),
-(288, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '46.137.37.234', 'IE', NULL, NULL),
-(289, '2015-01-01', 'http://www.domocracytech.com', 'Twurly', 'Unknown', 'Unknown', '', '80.87.131.12', 'GB', NULL, NULL),
-(290, '2015-01-01', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '35.0.1916.153', '', '54.176.128.153', 'US', NULL, NULL),
-(291, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.145.131.1', 'US', NULL, NULL),
-(292, '2015-01-01', 'http://www.domocracytech.com', 'jack', 'Unknown', 'Unknown', '', '23.20.144.48', 'US', NULL, NULL),
-(293, '2015-01-01', 'http://www.domocracytech.com', 'Firefox', 'Windows', '3.0.2', '', '23.20.144.48', 'US', NULL, NULL),
-(294, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '97.107.142.195', 'US', NULL, NULL),
-(295, '2015-01-01', 'http://www.domocracytech.com', 'MSIE', 'Windows', '9.0', '', '148.251.246.203', 'DE', NULL, NULL),
-(296, '2015-01-01', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '35.0.1916.153', '', '54.176.104.7', 'US', NULL, NULL),
-(297, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '178.62.60.148', 'US', NULL, NULL),
-(298, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '81.200.27.2', 'RU', NULL, NULL),
-(299, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '178.33.236.26', 'FR', NULL, NULL),
-(300, '2015-01-02', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '47.62.75.197', 'ES', NULL, NULL),
-(301, '2015-01-02', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.146.24.118', 'US', NULL, NULL),
-(302, '2015-01-02', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.222', 'US', NULL, NULL),
-(303, '2015-01-02', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.151.196', 'US', NULL, NULL),
-(304, '2015-01-02', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.241.198.78', 'US', NULL, NULL),
-(305, '2015-01-02', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.80.107.182', 'US', NULL, NULL),
-(306, '2015-01-02', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.241', 'US', NULL, NULL),
-(307, '2015-01-02', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.54', 'JP', NULL, NULL),
-(308, '2015-01-02', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.244', 'US', NULL, NULL),
-(309, '2015-01-02', 'http://www.domocracytech.com', 'Jakarta', 'Unknown', 'Unknown', '', '23.253.254.163', 'US', NULL, NULL),
-(310, '2015-01-02', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '50.116.7.209', 'US', NULL, NULL),
-(311, '2015-01-02', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.82.167.1', 'US', NULL, NULL),
-(312, '2015-01-02', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.198.11.47', 'US', NULL, NULL),
-(313, '2015-01-02', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.204.112.36', 'US', NULL, NULL),
-(314, '2015-01-02', 'http://www.domocracytech.com', 'Firefox', 'Windows', '3.0', '', '54.172.138.161', 'US', NULL, NULL),
-(315, '2015-01-02', 'http://www.domocracytech.com', 'Firefox', 'Windows', '10.0.1', '', '50.28.51.253', 'US', NULL, NULL),
-(316, '2015-01-02', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '144.76.78.196', 'DE', NULL, NULL),
-(317, '2015-01-02', 'http://www.domocracytech.com', 'Firefox', 'Windows', '10.0.1', '', '50.28.48.158', 'US', NULL, NULL),
-(318, '2015-01-02', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.187.165.195', 'FR', NULL, NULL),
-(319, '2015-01-02', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.172.230', 'JP', NULL, NULL),
-(320, '2015-01-02', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '81.200.27.2', 'RU', NULL, NULL),
-(321, '2015-01-02', 'http://t.co/FkVMvQcUcm', 'Chrome', 'Android', '39.0.2171.93', '', '95.62.38.172', 'ES', NULL, NULL),
-(322, '2015-01-02', 'http://www.domocracytech.com', 'SMRF', 'Unknown', 'Unknown', '', '184.72.239.155', 'US', NULL, NULL),
-(323, '2015-01-02', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES', NULL, NULL),
-(324, '2015-01-02', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '107.191.51.141', 'US', NULL, NULL),
-(325, '2015-01-02', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '208.92.211.146', 'US', NULL, NULL),
-(326, '2015-01-02', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Windows', '39.0.2171.95', '', '95.18.211.169', 'ES', NULL, NULL),
-(327, '2015-01-02', 'http://www.domocracytech.com', 'MSIE', 'Windows', '6.0', '', '78.85.84.244', 'RU', NULL, NULL),
-(328, '2015-01-02', 'http://www.domocracytech.com/wp-login.php', 'MSIE', 'Windows', '6.0', '', '195.154.181.160', 'FR', NULL, NULL),
-(329, '2015-01-02', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.210', 'US', NULL, NULL),
-(330, '2015-01-02', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.216', 'US', NULL, NULL),
-(331, '2015-01-02', 'http://domocracytech.com/joomla', 'MSIE', 'Windows', '6.0', '', '188.24.174.148', 'RO', NULL, NULL),
-(332, '2015-01-02', 'http://domocracytech.com/drupal', 'MSIE', 'Windows', '6.0', '', '90.58.17.114', 'FR', NULL, NULL),
-(333, '2015-01-02', 'http://domocracytech.com/', 'MSIE', 'Windows', '6.0', '', '194.165.46.136', 'UA', NULL, NULL),
-(334, '2015-01-02', 'http://domocracytech.com/blog', 'MSIE', 'Windows', '6.0', '', '190.234.114.69', 'PE', NULL, NULL),
-(335, '2015-01-02', 'http://domocracytech.com/wp', 'MSIE', 'Windows', '6.0', '', '181.209.235.223', 'GT', NULL, NULL),
-(336, '2015-01-02', 'http://domocracytech.com/wordpress', 'MSIE', 'Windows', '6.0', '', '176.219.146.164', 'TR', NULL, NULL),
-(337, '2015-01-02', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.193.185.31', 'US', NULL, NULL),
-(338, '2015-01-02', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '89.129.118.162', 'ES', NULL, NULL),
-(339, '2015-01-03', 'http://domocracytech.com/wp-login.php', 'Unknown', 'Unknown', 'Unknown', '', '37.130.226.90', 'GB', NULL, NULL),
-(340, '2015-01-03', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.162.89.97', 'US', NULL, NULL),
-(341, '2015-01-03', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '189.197.229.138', 'MX', NULL, NULL),
-(342, '2015-01-03', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '5.39.64.85', 'FR', NULL, NULL),
-(343, '2015-01-03', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '128.178.156.91', 'CH', NULL, NULL),
-(344, '2015-01-03', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.151.187', 'US', NULL, NULL),
-(345, '2015-01-03', 'http://www.domocracytech.com', 'Ruby', 'Unknown', 'Unknown', '', '128.174.244.32', 'US', NULL, NULL),
-(346, '2015-01-03', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.241.198.78', 'US', NULL, NULL),
-(347, '2015-01-03', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.202', 'US', NULL, NULL),
-(348, '2015-01-03', 'http://www.domocracytech.com', 'AppleWebKit', 'Macintosh', '534.24', '', '54.198.122.232', 'US', NULL, NULL),
-(349, '2015-01-03', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.244', 'US', NULL, NULL),
-(350, '2015-01-03', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.97.117', 'JP', NULL, NULL),
-(351, '2015-01-03', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.245', 'US', NULL, NULL),
-(352, '2015-01-03', 'http://www.domocracytech.com', 'MSIE', 'Windows', '10.0', '', '157.55.252.30', 'US', NULL, NULL),
-(353, '2015-01-03', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.197.168.201', 'US', NULL, NULL),
-(354, '2015-01-03', 'http://www.domocracytech.com', 'Jakarta', 'Unknown', 'Unknown', '', '104.130.128.39', 'US', NULL, NULL),
-(355, '2015-01-03', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '108.61.135.178', 'US', NULL, NULL),
-(356, '2015-01-03', 'http://www.domocracytech.com', 'Chrome', 'Windows', '36.0.1985.125', '', '108.61.135.178', 'US', NULL, NULL),
-(357, '2015-01-03', 'http://m.facebook.com/', 'Chrome', 'Android', '39.0.2171.93', '', '37.29.253.68', 'ES', NULL, NULL),
-(358, '2015-01-04', 'http://l.facebook.com/l.php?u=http%3A%2F%2Fwww.domocracytech.com%2F&h=4AQGQPEg0AQGeSCSF4JRAg0V4ex6X1X64UOce3RjaS7RDlQ&enc=AZO1JYxdri4nT9gxZ11cEXgrg_KdpR_F0viXabADYnnNFx8IxfTLrhgyBiZ0xCamqQFZqv2hUurOUNp9zS6v0JPvGOmO0ylcuUJvVnRTBzWuoWmNqLy9pGPcL_rG7Ri1lHNur2hIN7Nh6QIUKBUCmXtpMCgNDH0VRPzfPXzmy8Y-Xg&s=1', 'Firefox', 'Windows', '34.0', '', '89.129.118.162', 'ES', NULL, NULL),
-(359, '2015-01-04', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.162.89.97', 'US', NULL, NULL),
-(360, '2015-01-04', 'http://m.facebook.com/', 'Chrome', 'Android', '30.0.0.0', '', '188.78.224.214', 'ES', NULL, NULL),
-(361, '2015-01-04', 'http://lm.facebook.com/l.php?u=http%3A%2F%2Fwww.domocracytech.com%2F&h=yAQG7qoGy&s=1', 'Opera', 'Android', '11.10', '', '83.38.5.159', 'ES', NULL, NULL),
-(362, '2015-01-04', 'http://m.facebook.com', 'AppleWebKit', 'iPhone', '537.51.2', '', '81.45.55.29', 'ES', NULL, NULL),
-(363, '2015-01-04', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '80.114.140.116', 'NL', NULL, NULL),
-(364, '2015-01-04', 'http://m.facebook.com/', 'Android Browser', 'Android', '4.0', '', '86.213.62.41', 'FR', NULL, NULL),
-(365, '2015-01-04', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '90.170.24.193', 'ES', NULL, NULL),
-(366, '2015-01-04', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '83.41.162.207', 'ES', NULL, NULL),
-(367, '2015-01-04', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '176.9.99.134', 'DE', NULL, NULL),
-(368, '2015-01-04', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '88.11.59.152', 'ES', NULL, NULL),
-(369, '2015-01-04', 'http://www.google.es/url?sa=t&rct=j&q=&esrc=s&source=web&cd=8&ved=0CFgQFjAH&url=http%3A%2F%2Fwww.domocracytech.com%2F&ei=B4epVLvWD8StUY77gMAL&usg=AFQjCNGYvdZ21CYUlLbhw4NhdkH7PKrecw&sig2=M_7N9kVMWDrT6L4idS6nVA&bvm=bv.82001339,d.d24', 'Firefox', 'Windows', '34.0', '', '95.22.22.227', 'ES', NULL, NULL),
-(370, '2015-01-04', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '176.9.111.170', 'DE', NULL, NULL),
-(371, '2015-01-04', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '176.9.40.107', 'DE', NULL, NULL),
-(372, '2015-01-04', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '58.248.197.171', 'CN', NULL, NULL),
-(373, '2015-01-04', 'http://t.co/LfhOU8YB0O', 'Chrome', 'Windows', '39.0.2171.95', '', '95.20.51.143', 'ES', NULL, NULL),
-(374, '2015-01-05', 'http://www.domocracytech.com', 'MSIE', 'Windows', '11.0', '', '97.97.159.193', 'US', NULL, NULL),
-(375, '2015-01-05', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '81.34.209.230', 'ES', NULL, NULL),
-(376, '2015-01-05', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0.2', '', '123.125.71.13', 'CN', NULL, NULL),
-(377, '2015-01-05', 'DOMOCRACYTECH.COM', 'Chrome', 'Windows', '34.0.1847.137', '', '108.61.193.222', 'US', NULL, NULL),
-(378, '2015-01-05', 'http://domocracytech.com/', 'MSIE', 'Windows', '6.0', '', '5.61.39.15', 'DE', NULL, NULL),
-(379, '2015-01-05', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.164', 'ES', NULL, NULL),
-(380, '2015-01-05', 'http://www.domocracytech.com', 'Chrome', 'Android', '39.0.2171.93', '', '31.4.195.20', 'ES', NULL, NULL),
-(381, '2015-01-05', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.195', 'US', NULL, NULL),
-(382, '2015-01-05', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.151.79', 'US', NULL, NULL),
-(383, '2015-01-05', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.241.198.78', 'US', NULL, NULL),
-(384, '2015-01-05', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.202', 'US', NULL, NULL),
-(386, '2015-01-05', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.222', 'US', NULL, NULL),
-(387, '2015-01-05', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.246', 'US', NULL, NULL),
-(388, '2015-01-05', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.243', 'US', NULL, NULL),
-(389, '2015-01-05', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.59', 'JP', NULL, NULL),
-(390, '2015-01-05', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '50.116.9.34', 'US', NULL, NULL),
-(391, '2015-01-05', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.187.165.195', 'FR', NULL, NULL),
-(392, '2015-01-05', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.172.231', 'JP', NULL, NULL),
-(393, '2015-01-05', 'http://www.domocracytech.com', 'Jakarta', 'Unknown', 'Unknown', '', '104.130.132.62', 'US', NULL, NULL),
-(394, '2015-01-05', 'http://t.co/LfhOU8YB0O', 'Chrome', 'Windows', '39.0.2171.95', '', '217.216.118.199', 'ES', NULL, NULL),
-(395, '2015-01-05', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.25.103.67', 'UA', NULL, NULL),
-(396, '2015-01-05', 'http://www.domocracytech.com', 'Chrome', 'Windows', '34.0.1847.116', '', '37.25.103.67', 'UA', NULL, NULL),
-(397, '2015-01-05', 'http://www.domocracytech.com', 'Chrome', 'Windows', '37.0.2049.0', '', '37.213.159.229', 'BY', NULL, NULL),
-(398, '2015-01-05', 'http://t.co/FkVMvQcUcm', 'AppleWebKit', 'iPhone', '600.1.4', '', '83.58.197.59', 'ES', NULL, NULL),
-(399, '2015-01-06', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '50.17.173.39', 'US', NULL, NULL),
-(400, '2015-01-06', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.216', 'US', NULL, NULL),
-(401, '2015-01-06', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.213', 'US', NULL, NULL),
-(402, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.242', 'US', NULL, NULL);
-INSERT INTO `wp_statistics_visitor` (`ID`, `last_counter`, `referred`, `agent`, `platform`, `version`, `UAString`, `ip`, `location`, `hits`, `honeypot`) VALUES
-(403, '2015-01-06', 'http://www.domocracytech.com', 'Chrome', 'Windows', '26.0.1410.64', '', '54.165.221.252', 'US', NULL, NULL),
-(404, '2015-01-06', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.152.130', 'US', NULL, NULL),
-(405, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.241.198.78', 'US', NULL, NULL),
-(406, '2015-01-06', 'http://www.domocracytech.com', 'python-requests', 'Unknown', '1.2.3', '', '54.246.137.243', 'IE', NULL, NULL),
-(407, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '23.96.208.137', 'US', NULL, NULL),
-(408, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.246', 'US', NULL, NULL),
-(409, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.241', 'US', NULL, NULL),
-(410, '2015-01-06', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.48', 'JP', NULL, NULL),
-(411, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.187.162.165', 'FR', NULL, NULL),
-(412, '2015-01-06', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.195', 'US', NULL, NULL),
-(413, '2015-01-06', 'http://www.domocracytech.com', 'AppleWebKit', 'Macintosh', '534.24', '', '54.198.122.232', 'US', NULL, NULL),
-(414, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '5.39.64.85', 'FR', NULL, NULL),
-(415, '2015-01-06', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.97.118', 'JP', NULL, NULL),
-(416, '2015-01-06', 'http://www.domocracytech.com', 'Jakarta', 'Unknown', 'Unknown', '', '23.253.252.101', 'US', NULL, NULL),
-(417, '2015-01-06', 'http://www.domocracytech.com', 'Safari', 'Macintosh', '8.0', '', '54.163.45.138', 'US', NULL, NULL),
-(418, '2015-01-06', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.197.168.201', 'US', NULL, NULL),
-(419, '2015-01-06', 'http://www.domocracytech.com', 'Lynx', 'Unknown', 'Unknown', '', '64.13.133.151', 'US', NULL, NULL),
-(420, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '178.33.236.26', 'FR', NULL, NULL),
-(421, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES', NULL, NULL),
-(422, '2015-01-06', 'http://t.co/7V5QU2sxNK', 'Chrome', 'Windows', '39.0.2171.95', '', '87.220.186.162', 'ES', NULL, NULL),
-(423, '2015-01-06', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '85.55.141.61', 'ES', NULL, NULL),
-(424, '2015-01-06', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.202', 'US', NULL, NULL),
-(425, '2015-01-06', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.212', 'US', NULL, NULL),
-(426, '2015-01-06', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.152.102', 'US', NULL, NULL),
-(427, '2015-01-06', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '83.51.74.250', 'ES', NULL, NULL),
-(428, '2015-01-06', 'http://www.domocracytech.com', 'Crowsnest', 'Unknown', '0.5', '', '54.238.238.39', 'JP', NULL, NULL),
-(429, '2015-01-06', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.42', 'JP', NULL, NULL),
-(430, '2015-01-06', 'http://www.domocracytech.com', 'curl', 'Unknown', '7.24.0', '', '54.146.19.24', 'US', NULL, NULL),
-(431, '2015-01-06', 'http://www.domocracytech.com', 'curl', 'Unknown', '7.24.0', '', '54.80.54.16', 'US', NULL, NULL),
-(432, '2015-01-06', 'http://www.domocracytech.com', 'Firefox', 'Windows', '3.0', '', '54.175.25.147', 'US', NULL, NULL),
-(433, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '178.63.95.132', 'DE', NULL, NULL),
-(434, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '192.81.133.229', 'US', NULL, NULL),
-(435, '2015-01-06', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '83.59.17.15', 'ES', NULL, NULL),
-(436, '2015-01-06', 'http://www.domocracytech.com', 'Jakarta', 'Unknown', 'Unknown', '', '104.130.135.200', 'US', NULL, NULL),
-(437, '2015-01-06', 'http://m.facebook.com/', 'Chrome', 'Android', '39.0.2171.93', '', '46.222.236.102', 'ES', NULL, NULL),
-(438, '2015-01-06', 'http://www.domocracytech.com', 'AppleWebKit', 'iPad', '600.1.4', '', '89.131.140.187', 'ES', NULL, NULL),
-(439, '2015-01-06', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.235.62.203', 'US', NULL, NULL),
-(440, '2015-01-06', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '23.22.238.254', 'US', NULL, NULL),
-(441, '2015-01-06', 'http://m.facebook.com', 'AppleWebKit', 'iPhone', '537.51.2', '', '2.137.253.199', 'ES', NULL, NULL),
-(442, '2015-01-06', 'http://www.domocracytech.com', 'MSIE', 'Windows', '10.0', '', '157.55.252.30', 'US', NULL, NULL),
-(443, '2015-01-06', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '89.129.118.162', 'ES', NULL, NULL),
-(444, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.244', 'US', NULL, NULL),
-(445, '2015-01-06', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.7', 'JP', NULL, NULL),
-(446, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.243', 'US', NULL, NULL),
-(447, '2015-01-06', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '81.35.72.196', 'ES', NULL, NULL),
-(448, '2015-01-06', 'http://www.domocracytech.com', 'Firefox', 'Windows', '3.0', '', '54.174.42.30', 'US', NULL, NULL),
-(449, '2015-01-06', 'http://www.domocracytech.com', 'Firefox', 'Windows', '33.0', '', '54.234.16.70', 'US', NULL, NULL),
-(450, '2015-01-06', 'http://api.twitter.com/1/statuses/show/552449832800247809.json', 'InAGist', 'Unknown', 'Unknown', '', '66.228.54.160', 'US', NULL, NULL),
-(451, '2015-01-06', 'http://www.domocracytech.com', 'Apache-HttpClient', 'Unknown', '4.2.2', '', '54.91.113.248', 'US', NULL, NULL),
-(452, '2015-01-06', 'http://www.domocracytech.com', 'AppleWebKit', 'Macintosh', '534.24', '', '54.91.113.248', 'US', NULL, NULL),
-(453, '2015-01-06', 'http://www.domocracytech.com', 'Safari', 'iPhone', '5.1', '', '54.91.113.248', 'US', NULL, NULL),
-(454, '2015-01-06', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.41', 'JP', NULL, NULL),
-(455, '2015-01-06', 'http://www.domocracytech.com', 'Crowsnest', 'Unknown', '0.5', '', '54.92.33.249', 'JP', NULL, NULL),
-(456, '2015-01-06', 'http://www.domocracytech.com', 'Apache-HttpClient', 'Unknown', '4.2.2', '', '54.166.16.188', 'US', NULL, NULL),
-(457, '2015-01-06', 'http://www.domocracytech.com', 'AppleWebKit', 'Macintosh', '534.24', '', '54.166.16.188', 'US', NULL, NULL),
-(458, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '69.164.217.210', 'US', NULL, NULL),
-(459, '2015-01-06', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '83.38.191.191', 'ES', NULL, NULL),
-(460, '2015-01-06', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '67.230.144.108', 'CA', NULL, NULL),
-(461, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '5.39.64.85', 'FR', NULL, NULL),
-(462, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '31.0.1650.63', '', '107.22.72.145', 'US', NULL, NULL),
-(463, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.241.198.78', 'US', NULL, NULL),
-(464, '2015-01-07', 'http://www.domocracytech.com', 'python-requests', 'Unknown', '1.2.3', '', '54.246.137.243', 'IE', NULL, NULL),
-(465, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '23.96.208.137', 'US', NULL, NULL),
-(466, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.243', 'US', NULL, NULL),
-(467, '2015-01-07', 'http://www.domocracytech.com', 'Safari', 'Linux', '537.21', '', '62.210.84.178', 'FR', NULL, NULL),
-(468, '2015-01-07', 'http://www.domocracytech.com', 'Safari', 'Macintosh', '6.0.1', '', '142.4.217.190', 'CA', NULL, NULL),
-(469, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.242', 'US', NULL, NULL),
-(470, '2015-01-07', 'http://rebelmouse.com/', 'Firefox', 'Unknown', '7.0.1', '', '54.82.75.42', 'US', NULL, NULL),
-(471, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.187.165.195', 'FR', NULL, NULL),
-(472, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '176.9.29.147', 'DE', NULL, NULL),
-(473, '2015-01-07', 'http://t.co/7V5QU2sxNK', 'Firefox', 'Windows', '34.0', '', '88.16.205.126', 'ES', NULL, NULL),
-(474, '2015-01-07', 'http://api.twitter.com/1/statuses/show/552630734104850432.json', 'InAGist', 'Unknown', 'Unknown', '', '66.228.54.132', 'US', NULL, NULL),
-(475, '2015-01-07', 'http://www.domocracytech.com', 'AppleWebKit', 'Macintosh', '534.24', '', '54.198.122.232', 'US', NULL, NULL),
-(476, '2015-01-07', 'http://rebelmouse.com/', 'Firefox', 'Unknown', '7.0.1', '', '184.73.147.107', 'US', NULL, NULL),
-(477, '2015-01-07', 'http://www.domocracytech.com', 'MSIE', 'Windows', '6.0', '', '192.99.8.19', 'CA', NULL, NULL),
-(478, '2015-01-07', 'http://www.domocracytech.com', 'MSIE', 'Windows', '9.0', '', '192.99.37.143', 'CA', NULL, NULL),
-(479, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '3.6.2', '', '37.187.140.154', 'FR', NULL, NULL),
-(480, '2015-01-07', 'http://www.domocracytech.com', 'newsme', 'Unknown', '1.0', '', '54.176.5.146', 'US', NULL, NULL),
-(481, '2015-01-07', 'http://t.co/FXSqISgn6m', 'Firefox', 'Macintosh', '34.0', '', '85.56.29.206', 'ES', NULL, NULL),
-(482, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.198.125.83', 'US', NULL, NULL),
-(483, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '35.0.1916.153', '', '54.193.212.129', 'US', NULL, NULL),
-(484, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.215.91.250', 'US', NULL, NULL),
-(485, '2015-01-07', 'http://www.domocracytech.com', 'Crowsnest', 'Unknown', '0.5', '', '54.95.144.99', 'JP', NULL, NULL),
-(486, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '81.200.27.2', 'RU', NULL, NULL),
-(487, '2015-01-07', 'http://www.domocracytech.com', 'Lynx', 'Unknown', 'Unknown', '', '64.13.133.149', 'US', NULL, NULL),
-(488, '2015-01-07', 'http://www.domocracytech.com', 'TweetedTimes', 'Unknown', 'Unknown', '', '81.200.27.2', 'RU', NULL, NULL),
-(489, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.234.145.80', 'US', NULL, NULL),
-(490, '2015-01-07', 'http://tweetedtimes.com/bbarran/videojuegos/rss.xml', 'Unknown', 'Unknown', 'Unknown', '', '54.205.41.23', 'US', NULL, NULL),
-(491, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.90.41.95', 'US', NULL, NULL),
-(492, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.89.61.205', 'US', NULL, NULL),
-(493, '2015-01-07', 'http://domocracytech.com/?author=1', 'Unknown', 'Unknown', 'Unknown', '', '37.130.226.90', 'GB', NULL, NULL),
-(494, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.193.185.31', 'US', NULL, NULL),
-(495, '2015-01-07', 'http://www.domocracytech.com', 'newsme', 'Unknown', '1.0', '', '50.18.91.166', 'US', NULL, NULL),
-(496, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '178.33.236.26', 'FR', NULL, NULL),
-(497, '2015-01-07', 'http://www.domocracytech.com', 'Lynx', 'Unknown', 'Unknown', '', '64.13.133.151', 'US', NULL, NULL),
-(498, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '26.0.1410.64', '', '54.165.221.252', 'US', NULL, NULL),
-(499, '2015-01-07', 'http://www.domocracytech.com', 'MSIE', 'Windows', '10.0', '', '23.96.208.78', 'US', NULL, NULL),
-(500, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.82.167.1', 'US', NULL, NULL),
-(501, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '22.0.1229.94', '', '142.4.217.190', 'CA', NULL, NULL),
-(502, '2015-01-07', 'http://www.domocracytech.com', 'MSIE', 'Windows', '10.0', '', '192.99.37.143', 'CA', NULL, NULL),
-(503, '2015-01-07', 'http://www.domocracytech.com', 'MSIE', 'Windows', '6.0', '', '192.99.16.54', 'CA', NULL, NULL),
-(504, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Windows', '15.0.1', '', '142.4.217.190', 'CA', NULL, NULL),
-(505, '2015-01-07', 'http://www.domocracytech.com', 'MSIE', 'Windows', '9.0', '', '192.99.10.110', 'CA', NULL, NULL),
-(506, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Windows', '15.0.1', '', '192.99.10.110', 'CA', NULL, NULL),
-(507, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Windows', '8.0', '', '167.114.1.197', 'CA', NULL, NULL),
-(508, '2015-01-07', 'http://www.domocracytech.com', 'MSIE', 'Windows', '9.0', '', '192.99.16.54', 'CA', NULL, NULL),
-(509, '2015-01-07', 'http://www.domocracytech.com', 'MSIE', 'Windows', '10.0', '', '142.4.217.190', 'CA', NULL, NULL),
-(510, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Windows', '8.0', '', '192.99.35.168', 'CA', NULL, NULL),
-(511, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Windows', '8.0', '', '192.99.8.16', 'CA', NULL, NULL),
-(512, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '22.0.1229.94', '', '192.99.46.86', 'CA', NULL, NULL),
-(513, '2015-01-07', 'http://www.domocracytech.com', 'Safari', 'Macintosh', '6.0.1', '', '192.99.37.143', 'CA', NULL, NULL),
-(514, '2015-01-07', 'http://domocracytech.com/', 'MSIE', 'Windows', '6.0', '', '5.61.39.15', 'DE', NULL, NULL),
-(515, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Windows', '15.0.1', '', '192.99.37.143', 'CA', NULL, NULL),
-(516, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '22.0.1229.94', '', '192.95.29.199', 'CA', NULL, NULL),
-(517, '2015-01-07', 'http://www.domocracytech.com', 'MSIE', 'Windows', '9.0', '', '192.99.8.19', 'CA', NULL, NULL),
-(518, '2015-01-07', 'http://rebelmouse.com/', 'Firefox', 'Unknown', '7.0.1', '', '54.80.216.153', 'US', NULL, NULL),
-(519, '2015-01-07', 'http://www.domocracytech.com/', 'MSIE', 'Windows', '6.0', '', '5.61.35.38', 'DE', NULL, NULL),
-(520, '2015-01-07', 'http://www.domocracytech.com', 'Safari', 'Macintosh', '6.0.1', '', '192.99.37.144', 'CA', NULL, NULL),
-(521, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Windows', '8.0', '', '192.99.13.116', 'CA', NULL, NULL),
-(522, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.241', 'US', NULL, NULL),
-(523, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '65.5.119.67', 'US', NULL, NULL),
-(524, '2015-01-07', 'http://www.domocracytech.com', 'AppleWebKit', 'Macintosh', '534.24', '', '54.91.113.248', 'US', NULL, NULL),
-(525, '2015-01-07', 'http://www.domocracytech.com', 'Apache-HttpClient', 'Unknown', '4.2.2', '', '54.166.16.188', 'US', NULL, NULL),
-(526, '2015-01-07', 'http://www.domocracytech.com', 'AppleWebKit', 'Macintosh', '534.24', '', '54.166.16.188', 'US', NULL, NULL),
-(527, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '85.136.0.32', 'ES', NULL, NULL),
-(528, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.151.71', 'US', NULL, NULL),
-(529, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.163', 'ES', NULL, NULL),
-(530, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.164', 'ES', NULL, NULL),
-(531, '2015-01-07', 'http://m.facebook.com', 'AppleWebKit', 'iPhone', '600.1.4', '', '90.173.89.23', 'ES', NULL, NULL),
-(532, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.144.26', 'US', NULL, NULL),
-(533, '2015-01-07', 'http://m.facebook.com', 'AppleWebKit', 'iPhone', '600.1.4', '', '90.170.189.136', 'ES', NULL, NULL),
-(534, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.151.224', 'US', NULL, NULL),
-(535, '2015-01-07', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.204', 'US', NULL, NULL),
-(536, '2015-01-07', 'http://www.domocracytech.com', 'AppEngine-Google', 'Unknown', 'Unknown', '', '107.178.200.7', 'US', NULL, NULL),
-(537, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.210', 'US', NULL, NULL),
-(538, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.216', 'US', NULL, NULL),
-(539, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '184.72.189.4', 'US', NULL, NULL),
-(540, '2015-01-07', 'http://l.facebook.com/l.php?u=http%3A%2F%2Fwww.domocracytech.com%2Fvideo-games-need-domocracy%2F&h=FAQHuYGSA&enc=AZP7o88VuPYOlJ0u0sxV0ZelMRw_k8vSIFId2QshHguwqvt0yKIAOzuXol2wIk8KH8-Ojbe8vCzHYi9hVmgE9QRaNcJfP0NRnU9mLStjbKE3Z34A6IO5FIPzpGTjZ8-SpZQtXBc1F9lC5Hy9ltiM9Wkz7k0HB8O2hp5XAOcVwj_R5Q&s=1', 'Firefox', 'Windows', '34.0', '', '79.156.226.215', 'ES', NULL, NULL),
-(541, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '91.117.13.144', 'ES', NULL, NULL),
-(542, '2015-01-07', 'http://m.facebook.com/', 'Android Browser', 'Android', '4.0', '', '46.26.58.87', 'ES', NULL, NULL),
-(543, '2015-01-07', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.202', 'US', NULL, NULL),
-(544, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.166.179.189', 'US', NULL, NULL),
-(545, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.151.198', 'US', NULL, NULL),
-(546, '2015-01-07', 'http://t.co/7V5QU2sxNK', 'Safari', 'Macintosh', '8.0', '', '85.136.70.221', 'ES', NULL, NULL),
-(547, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.246', 'US', NULL, NULL),
-(548, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '50.17.173.211', 'US', NULL, NULL),
-(549, '2015-01-07', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.97.97', 'JP', NULL, NULL),
-(550, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.187.162.165', 'FR', NULL, NULL),
-(551, '2015-01-07', 'http://www.domocracytech.com', 'Jakarta', 'Unknown', 'Unknown', '', '104.130.125.119', 'US', NULL, NULL),
-(552, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.151.203', 'US', NULL, NULL),
-(553, '2015-01-07', 'http://l.facebook.com/l.php?u=http%3A%2F%2Fwww.domocracytech.com%2Fvideo-games-need-domocracy%2F&h=vAQG59UMT&enc=AZMdNWYr-K5zXvX0LPKTOSAD6JAl-mOFHifAXBtiH8yr-cigH-7spOGcdkE3y998RPhZw8yfVJ07tzarml_5kKEKW6-c-pkn1oQmzOdXUxCsowk6C63ZFOFEgmljWIPlRgeN2rM7df26MkLpixmlnV6CP960cI89mY864OzzTwnYJQ&s=1', 'Firefox', 'Windows', '34.0', '', '83.49.9.175', 'ES', NULL, NULL),
-(554, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES', NULL, NULL),
-(555, '2015-01-07', 'http://t.co/7V5QU2sxNK', 'Firefox', 'Windows', '34.0', '', '62.57.30.22', 'ES', NULL, NULL),
-(556, '2015-01-07', 'http://www.domocracytech.com', 'peerindex', 'Unknown', 'Unknown', '', '54.194.43.109', 'IE', NULL, NULL),
-(557, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '83.38.191.191', 'ES', NULL, NULL),
-(558, '2015-01-07', 'https://www.google.es/', 'Safari', 'iPhone', '8.0', '', '90.170.24.145', 'ES', NULL, NULL),
-(559, '2015-01-08', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '89.99.216.235', 'NL', NULL, NULL),
-(560, '2015-01-08', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.25.103.67', 'UA', NULL, NULL),
-(561, '2015-01-08', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0.2', '', '180.76.6.21', 'CN', NULL, NULL),
-(562, '2015-01-08', 'http://www.domocracytech.com/wp-admin/ms-head.php', 'MSIE', 'Windows', '6.0', '', '5.61.39.15', 'DE', NULL, NULL),
-(563, '2015-01-08', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '32.0.1700.77', '', '54.176.56.176', 'US', NULL, NULL),
-(564, '2015-01-08', 'http://www.domocracytech.com', 'Lynx', 'Unknown', 'Unknown', '', '64.13.133.152', 'US', NULL, NULL),
-(565, '2015-01-08', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '85.136.0.32', 'ES', NULL, NULL),
-(566, '2015-01-08', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.163', 'ES', NULL, NULL),
-(567, '2015-01-08', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.164', 'ES', NULL, NULL),
-(568, '2015-01-08', 'https://www.google.es/', 'Safari', 'iPhone', '8.0', '', '31.4.192.40', 'ES', NULL, NULL),
-(569, '2015-01-08', 'http://www.domocracytech.com', 'Chrome', 'Android', '39.0.2171.93', '', '195.235.183.163', 'ES', NULL, NULL),
-(570, '2015-01-08', 'http://www.domocracytech.com', 'MSIE', 'Windows', '6.0', '', '78.85.175.131', 'RU', NULL, NULL),
-(571, '2015-01-08', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.204', 'US', NULL, NULL),
-(572, '2015-01-08', 'http://www.domocracytech.com', 'MSIE', 'Windows', '7.0', '', '199.19.249.196', 'US', NULL, NULL),
-(573, '2015-01-08', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '81.47.192.243', 'ES', NULL, NULL),
-(574, '2015-01-08', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.206', 'US', NULL, NULL),
-(575, '2015-01-08', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.241.198.78', 'US', NULL, NULL),
-(576, '2015-01-08', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.148.12', 'US', NULL, NULL),
-(577, '2015-01-08', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.50', 'JP', NULL, NULL),
-(578, '2015-01-08', 'http://www.domocracytech.com', 'AppEngine-Google', 'Unknown', 'Unknown', '', '107.178.200.14', 'US', NULL, NULL),
-(579, '2015-01-08', 'http://www.domocracytech.com', 'AppEngine-Google', 'Unknown', 'Unknown', '', '107.178.200.3', 'US', NULL, NULL),
-(580, '2015-01-08', 'http://www.domocracytech.com', 'Firefox', 'Windows', '27.0', '', '198.204.253.99', 'US', NULL, NULL),
-(581, '2015-01-08', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.210', 'US', NULL, NULL),
-(582, '2015-01-08', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.97.127', 'JP', NULL, NULL),
-(583, '2015-01-08', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '47.62.75.197', 'ES', NULL, NULL),
-(584, '2015-01-08', 'http://www.google.com/url?q=http%3A%2F%2Fwww.domocracytech.com%2F%23anclaKickstarter&sa=D&sntz=1&usg=AFQjCNELspFQJDzTEIuY5udPoKlXABqxgg', 'Chrome', 'Macintosh', '39.0.2171.95', '', '88.12.176.230', 'ES', NULL, NULL),
-(585, '2015-01-10', 'http://localhost/wp-admin/post.php?post=2&action=edit&message=1', 'Chrome', 'Windows', '39.0.2171.95', '', '::1', '000', 3, 0),
-(586, '2015-01-12', 'http://localhost', 'Chrome', 'Windows', '39.0.2171.95', '', '::1', '000', 13, 0);
+INSERT INTO `wp_statistics_visitor` (`ID`, `last_counter`, `referred`, `agent`, `platform`, `version`, `UAString`, `ip`, `location`) VALUES
+(1, '2014-12-23', 'http://www.domocracytech.com/wp-admin/plugins.php', 'Chrome', 'Windows', '39.0.2171.95', NULL, '195.235.183.165', '000'),
+(2, '2014-12-23', 'http://www.domocracytech.com', 'WordPress', 'http://www.domocracytech.com - Yoast', '3.9.1', '', '67.192.46.8', '000'),
+(3, '2014-12-23', 'http://www.domocracytech.com', 'WordPress', 'http://www.domocracytech.com - Yoast', '3.9.1', '', '67.192.46.14', '000'),
+(4, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '85.136.34.181', '000'),
+(5, '2014-12-23', 'https://www.facebook.com/', 'Firefox', 'Macintosh', '28.0', '', '23.20.222.187', '000'),
+(6, '2014-12-23', 'http://www.facebook.com/l.php?u=http%3A%2F%2Fwww.domocracytech.com%2F&h=1ujpfRkot', 'MSIE', 'Windows', '8.0', '', '192.241.193.129', '000'),
+(7, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '79.151.92.142', '000'),
+(8, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Android', '537.36', '', '201.144.174.27', '000'),
+(9, '2014-12-23', 'http://www.domocracytech.com', 'LinkedInBot', '(compatible; Mozilla/5.0; Jakarta Commons-HttpClient/3.1 +http://www.linkedin.com)', '1.0', '', '108.174.2.203', 'US'),
+(10, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '39.0.2171.95', '', '85.136.166.220', 'ES'),
+(11, '2014-12-23', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Android', '4.0', '', '81.60.37.119', 'ES'),
+(12, '2014-12-23', 'http://www.domocracytech.com', 'Firefox', 'Windows', '30.0', '', '194.2.200.6', 'FR'),
+(13, '2014-12-23', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Windows', '37.0.2062.120', '', '83.49.235.79', 'ES'),
+(14, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '62.151.68.23', 'ES'),
+(15, '2014-12-23', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.163', 'ES'),
+(16, '2014-12-23', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '85.136.147.249', 'ES'),
+(17, '2014-12-23', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Macintosh', '39.0.2171.95', '', '89.141.64.107', 'ES'),
+(18, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '39.0.2171.95', '', '23.227.160.112', 'US'),
+(19, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Android', '30.0.0.0', '', '31.4.240.183', 'ES'),
+(20, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.71', '', '71.107.249.56', 'US'),
+(21, '2014-12-23', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.205', 'US'),
+(22, '2014-12-23', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.203', 'US'),
+(23, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '87.221.56.146', 'ES'),
+(24, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '104.131.94.211', 'US'),
+(25, '2014-12-23', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '85.136.132.114', 'ES'),
+(26, '2014-12-23', 'http://www.domocracytech.com', 'AppEngine-Google', 'Unknown', 'Unknown', '', '107.178.200.4', 'US'),
+(27, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '37.0.2062.120', '', '5.9.48.162', 'DE'),
+(28, '2014-12-23', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '34.0', '', '79.156.23.114', 'ES'),
+(29, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.152.108', 'US'),
+(30, '2014-12-23', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.241.198.78', 'US'),
+(31, '2014-12-23', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '176.9.29.147', 'DE'),
+(32, '2014-12-23', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.187.162.165', 'FR'),
+(33, '2014-12-23', 'http://t.co/1rV0wE8XRa', 'Chrome', 'Macintosh', '39.0.2171.95', '', '85.136.69.142', 'ES'),
+(34, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '20.0.1132.57', '', '37.58.71.199', 'NL'),
+(35, '2014-12-23', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES'),
+(36, '2014-12-23', 'http://ow.ly/GlNB3', 'Firefox', 'Windows', '10.0.1', '', '50.28.48.158', 'US'),
+(37, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Android', '39.0.2171.93', '', '201.144.174.27', 'MX'),
+(38, '2014-12-23', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Windows', '39.0.2171.95', '', '85.56.103.210', 'ES'),
+(39, '2014-12-23', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.204', 'US'),
+(40, '2014-12-23', 'http://m.facebook.com/', 'Chrome', 'Android', '30.0.0.0', '', '85.62.233.162', 'ES'),
+(41, '2014-12-23', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '146.185.2.58', 'CH'),
+(42, '2014-12-23', 'http://www.domocracytech.com', 'Safari', 'iPad', '6.0', '', '90.170.24.193', 'ES'),
+(43, '2014-12-23', 'http://m.facebook.com/', 'Android Browser', 'Android', '4.0', '', '84.123.188.149', 'ES'),
+(44, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '5.8.190.118', 'ES'),
+(45, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '31.0.1650.63', '', '107.22.72.145', 'US'),
+(46, '2014-12-23', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '107.155.73.2', 'US'),
+(47, '2014-12-23', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.195', 'US'),
+(48, '2014-12-23', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.212', 'US'),
+(49, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '26.0.1410.64', '', '54.172.134.33', 'US'),
+(50, '2014-12-23', 'http://www.domocracytech.com', 'InAGist', 'Unknown', 'Unknown', '', '72.14.184.101', 'US'),
+(51, '2014-12-23', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.202', 'US'),
+(53, '2014-12-23', 'http://www.domocracytech.com', 'Firefox', 'Windows', '33.0', '', '54.234.16.70', 'US'),
+(54, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.152.150', 'US'),
+(55, '2014-12-23', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.161.52.156', 'US'),
+(56, '2014-12-23', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '24.98.207.45', 'US'),
+(57, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '37.0.2049.0', '', '192.95.29.199', 'CA'),
+(58, '2014-12-23', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '88.150.152.170', 'GB'),
+(59, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '37.0.2049.0', '', '192.99.35.168', 'CA'),
+(60, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '37.0.2049.0', '', '192.99.13.218', 'CA'),
+(61, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '37.0.2049.0', '', '192.99.46.86', 'CA'),
+(62, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '37.0.2049.0', '', '198.27.75.228', 'CA'),
+(63, '2014-12-23', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '23.96.208.137', 'US'),
+(64, '2014-12-23', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '88.8.170.51', 'ES'),
+(65, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '89.129.118.162', 'ES'),
+(66, '2014-12-23', 'http://www.domocracytech.com', 'AppEngine-Google', 'Unknown', 'Unknown', '', '107.178.200.11', 'US'),
+(67, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Android', '33.0.0.0', '', '85.51.81.126', 'ES'),
+(68, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Android', '39.0.2171.93', '', '85.51.81.126', 'ES'),
+(69, '2014-12-23', 'https://www.facebook.com/', 'Chrome', 'Linux', '40.0.2214.38', '', '85.136.241.220', 'ES'),
+(70, '2014-12-23', 'https://www.facebook.com/', 'Safari', 'Macintosh', '8.0.2', '', '87.220.183.168', 'ES'),
+(71, '2014-12-23', 'http://m.facebook.com', 'AppleWebKit', 'iPad', '600.1.4', '', '109.255.232.150', 'IE'),
+(72, '2014-12-23', 'http://t.co/1rV0wE8XRa', 'Chrome', 'Windows', '39.0.2171.95', '', '82.139.126.34', 'NL'),
+(73, '2014-12-23', 'http://t.co/cZwHPSdWXk', 'Firefox', 'Windows', '34.0', '', '80.31.180.97', 'ES'),
+(74, '2014-12-23', 'http://m.facebook.com/', 'Chrome', 'Android', '30.0.0.0', '', '31.4.198.190', 'ES'),
+(75, '2014-12-23', 'http://www.domocracytech.com', 'Chrome', 'Android', '28.0.1500.94', '', '31.4.198.190', 'ES'),
+(76, '2014-12-23', 'http://www.domocracytech.com', 'MSIE', 'Windows', '6.0', '', '54.187.135.151', 'US'),
+(77, '2014-12-24', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.59.34.187', 'FR'),
+(78, '2014-12-24', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES'),
+(79, '2014-12-24', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.162.89.97', 'US'),
+(80, '2014-12-24', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.147.22.60', 'US'),
+(81, '2014-12-24', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '88.8.170.51', 'ES'),
+(82, '2014-12-24', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '198.186.192.44', 'US'),
+(83, '2014-12-24', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '178.62.194.225', 'GB'),
+(84, '2014-12-24', 'http://www.domocracytech.com', 'Safari', 'iPhone', '7.0', '', '85.136.0.197', 'ES'),
+(85, '2014-12-24', 'http://www.domocracytech.com', 'Firefox', 'Linux', '33.0', '', '90.170.24.193', 'ES'),
+(86, '2014-12-24', 'http://www.domocracytech.com', 'Chrome', 'Android', '39.0.2171.93', '', '37.29.232.181', 'ES'),
+(87, '2014-12-24', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.206', 'US'),
+(88, '2014-12-24', 'http://www.domocracytech.com', 'MSIE', 'Windows', '6.0', '', '54.69.76.86', 'US'),
+(89, '2014-12-24', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.210', 'US'),
+(90, '2014-12-24', 'http://www.domocracytech.com/wp-admin/profile.php', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.163', 'ES'),
+(91, '2014-12-24', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.164', 'ES'),
+(92, '2014-12-24', 'http://www.domocracytech.com', 'Safari', 'Macintosh', '8.0.2', '', '85.136.38.210', 'ES'),
+(93, '2014-12-24', 'http://www.domocracytech.com', 'Safari', 'iPhone', '6.0', '', '213.143.48.194', 'ES'),
+(94, '2014-12-24', 'http://lm.facebook.com/lsr.php?u=http%3A%2F%2Fwww.domocracytech.com%2F&ext=1419419428&hash=AcktygsmUW6-n0qBafBz_D3Cta3OWxCXwLYDwhq9HyhQeg&_rdr', 'Chrome', 'Android', '39.0.2171.93', '', '81.44.192.25', 'ES'),
+(95, '2014-12-24', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '77.231.249.60', 'ES'),
+(96, '2014-12-24', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '83.59.23.107', 'ES'),
+(97, '2014-12-24', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.205', 'US'),
+(98, '2014-12-24', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.203', 'US'),
+(99, '2014-12-24', 'http://www.domocracytech.com/wp-admin/profile.php', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.165', 'ES'),
+(100, '2014-12-24', 'http://www.domocracytech.com', 'Safari', 'Macintosh', '7.1.2', '', '83.57.124.73', 'ES'),
+(101, '2014-12-24', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Linux', '37.0.2062.120', '', '122.179.62.252', 'IN'),
+(102, '2014-12-24', 'http://m.facebook.com', 'AppleWebKit', 'iPad', '600.1.4', '', '85.136.0.197', 'ES'),
+(103, '2014-12-24', 'http://t.co/cZwHPSdWXk', 'Safari', 'iPad', '7.0', '', '79.153.175.166', 'ES'),
+(104, '2014-12-24', 'http://m.facebook.com/', 'Chrome', 'Android', '30.0.0.0', '', '37.132.20.18', 'ES'),
+(105, '2014-12-24', 'http://www.domocracytech.com/', 'Safari', 'iPad', '7.0', '', '81.43.123.112', 'ES'),
+(106, '2014-12-24', 'http://m.facebook.com/', 'Chrome', 'Android', '30.0.0.0', '', '47.62.106.146', 'ES'),
+(107, '2014-12-24', 'http://www.domocracytech.com', 'AppEngine-Google', 'Unknown', 'Unknown', '', '107.178.200.15', 'US'),
+(108, '2014-12-24', 'http://m.facebook.com', 'AppleWebKit', 'iPad', '600.1.4', '', '87.220.171.250', 'ES'),
+(109, '2014-12-24', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '62.151.68.23', 'ES'),
+(110, '2014-12-24', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '83.52.25.63', 'ES'),
+(111, '2014-12-24', 'https://m.facebook.com', 'AppleWebKit', 'iPhone', '537.51.2', '', '67.68.31.111', 'CA'),
+(112, '2014-12-24', 'http://www.domocracytech.com', 'Safari', 'Macintosh', '8.0', '', '85.136.70.221', 'ES'),
+(113, '2014-12-24', 'http://domocracytech.com/', 'Chrome', 'Windows', '0.4.154.25', '', '5.9.53.251', 'DE'),
+(114, '2014-12-24', 'https://www.linkedin.com/', 'Chrome', 'Windows', '38.0.2125.104', '', '89.129.169.189', 'ES'),
+(115, '2014-12-24', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '85.136.146.23', 'ES'),
+(116, '2014-12-24', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.204', 'US'),
+(117, '2014-12-24', 'http://www.domocracytech.com', 'Chrome', 'Android', '39.0.2171.93', '', '213.143.61.106', 'ES'),
+(118, '2014-12-24', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '39.0.2171.95', '', '213.98.143.199', 'ES'),
+(119, '2014-12-25', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES'),
+(120, '2014-12-25', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '198.186.192.44', 'US'),
+(121, '2014-12-25', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '59.95.230.126', 'IN'),
+(122, '2014-12-25', 'http://www.domocracytech.com', 'Chrome', 'Android', '39.0.2171.93', '', '79.156.226.215', 'ES'),
+(123, '2014-12-25', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.213', 'US'),
+(124, '2014-12-25', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.216', 'US'),
+(125, '2014-12-25', 'http://t.co/cZwHPSdWXk', 'Safari', 'iPhone', '8.0', '', '188.87.99.169', 'ES'),
+(126, '2014-12-25', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '88.8.170.51', 'ES'),
+(127, '2014-12-25', 'http://www.domocracytech.com', 'Firefox', 'Windows', '36.0', '', '85.136.83.95', 'ES'),
+(128, '2014-12-25', 'http://m.facebook.com/', 'Android Browser', 'Android', '4.0', '', '88.22.107.137', 'ES'),
+(129, '2014-12-25', 'http://m.facebook.com/', 'Chrome', 'Android', '30.0.0.0', '', '89.131.140.187', 'ES'),
+(130, '2014-12-25', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.91.64.129', 'US'),
+(131, '2014-12-25', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '79.156.58.38', 'ES'),
+(132, '2014-12-25', 'http://www.domocracytech.com', 'Chrome', 'Android', '39.0.2171.93', '', '89.129.123.88', 'ES'),
+(133, '2014-12-25', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Macintosh', '39.0.2171.95', '', '217.216.1.196', 'ES'),
+(134, '2014-12-25', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '89.129.123.88', 'ES'),
+(135, '2014-12-25', 'http://www.domocracytech.com', 'Firefox', 'Windows', '18.0', '', '38.229.70.44', 'US'),
+(136, '2014-12-25', 'http://m.facebook.com/', 'Android Browser', 'Android', '4.0', '', '81.45.55.237', 'ES'),
+(137, '2014-12-25', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Android', '39.0.2171.93', '', '83.46.23.240', 'ES'),
+(138, '2014-12-26', 'http://domocracytech.us8.list-manage2.com/profile/post', 'Chrome', 'Windows', '39.0.2171.95', '', '83.46.23.240', 'ES'),
+(139, '2014-12-26', 'http://www.domocracytech.com', 'Firefox', 'Windows', '27.0', '', '10.9.71.2', '000'),
+(140, '2014-12-26', 'http://www.domocracytech.com/', 'Chrome', 'Macintosh', '13.0.782.215', '', '216.38.216.197', 'US'),
+(141, '2014-12-26', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES'),
+(142, '2014-12-26', 'http://m.facebook.com/', 'Chrome', 'Android', '30.0.0.0', '', '92.58.115.241', 'ES'),
+(143, '2014-12-26', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.205', 'US'),
+(144, '2014-12-26', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '198.186.192.44', 'US'),
+(145, '2014-12-26', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '88.1.185.50', 'ES'),
+(146, '2014-12-26', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.164', 'ES'),
+(147, '2014-12-26', 'http://www.domocracytech.com', 'Chrome', 'Android', '39.0.2171.93', '', '31.4.198.16', 'ES'),
+(148, '2014-12-26', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '37.132.20.225', 'ES'),
+(149, '2014-12-26', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '88.8.170.51', 'ES'),
+(150, '2014-12-26', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Windows', '39.0.2171.95', '', '79.150.148.103', 'ES'),
+(151, '2014-12-26', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '183.249.0.140', 'CN'),
+(152, '2014-12-26', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.213', 'US'),
+(153, '2014-12-27', 'http://www.domocracytech.com', 'Chrome', 'Windows', '40.0.2213.0', '', '190.176.129.249', 'AR'),
+(154, '2014-12-27', 'http://www.domocracytech.com', 'Firefox', 'Windows', '19.0', '', '109.201.154.145', 'NL'),
+(155, '2014-12-27', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES'),
+(156, '2014-12-27', 'http://www.domocracytech.com', 'IEMobile', 'Windows Phone', '11.0', '', '81.45.55.245', 'ES'),
+(157, '2014-12-27', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Windows', '39.0.2171.95', '', '77.71.138.87', 'MT'),
+(158, '2014-12-27', 'http://t.co/1rV0wE8XRa', 'Chrome', 'Windows', '39.0.2171.95', '', '83.45.129.167', 'ES'),
+(159, '2014-12-27', 'http://www.domocracytech.com', 'C-T', 'Unknown', 'Unknown', '', '212.33.255.53', 'RU'),
+(160, '2014-12-27', 'http://www.domocracytech.com', 'MSIE', 'Windows', '5.01', '', '212.33.255.53', 'RU'),
+(161, '2014-12-27', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '2.227.198.62', 'IT'),
+(162, '2014-12-27', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '38.99.82.225', 'US'),
+(163, '2014-12-27', 'http://www.domocracytech.com', 'Safari', 'Linux', '533.3', '', '38.99.82.225', 'US'),
+(164, '2014-12-28', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '38.99.82.224', 'US'),
+(165, '2014-12-28', 'http://www.domocracytech.com', 'Safari', 'Linux', '533.3', '', '38.99.82.224', 'US'),
+(166, '2014-12-28', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES'),
+(167, '2014-12-28', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '38.99.82.226', 'US'),
+(168, '2014-12-28', 'http://www.domocracytech.com', 'Safari', 'Linux', '533.3', '', '38.99.82.226', 'US'),
+(169, '2014-12-28', 'http://www.domocracytech.com', 'Chrome', 'Windows', '37.0.2062.120', '', '95.61.177.115', 'ES'),
+(170, '2014-12-28', 'http://www.domocracytech.com', 'Firefox', 'Windows', '19.0', '', '109.201.154.145', 'NL'),
+(171, '2014-12-28', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.216', 'US'),
+(172, '2014-12-28', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '88.0.5.35', 'ES'),
+(173, '2014-12-28', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '83.45.129.167', 'ES'),
+(174, '2014-12-28', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '90.170.24.193', 'ES'),
+(175, '2014-12-28', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '223.94.153.66', 'CN'),
+(176, '2014-12-29', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.46', 'JP'),
+(177, '2014-12-29', 'https://www.facebook.com/', 'MSIE', 'Windows', '10.0', '', '54.219.117.34', 'US'),
+(178, '2014-12-29', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '54.219.117.34', 'US'),
+(179, '2014-12-29', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.164', 'ES'),
+(180, '2014-12-29', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.163', 'ES'),
+(181, '2014-12-29', 'http://www.domocracytech.com', 'Firefox', 'Windows', '19.0', '', '109.201.154.145', 'NL'),
+(182, '2014-12-29', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES'),
+(183, '2014-12-29', 'https://www.google.com/', 'Chrome', 'Linux', '25.0.1364.97', '', '195.235.183.164', 'ES'),
+(184, '2014-12-29', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.213', 'US'),
+(185, '2014-12-30', 'http://www.domocracytech.com/blog/', 'Chrome', 'Windows', '40.0.2213.0', '', '190.176.129.249', 'AR'),
+(186, '2014-12-30', 'http://donaldprestonwriter.com', 'CATExplorador', 'Unknown', '1.0beta', '', '188.226.232.60', 'NL'),
+(187, '2014-12-30', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.163', 'ES'),
+(188, '2014-12-30', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.203', 'US'),
+(189, '2014-12-30', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0.2', '', '180.76.6.142', 'CN'),
+(190, '2014-12-30', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0.2', '', '180.76.6.57', 'CN'),
+(191, '2014-12-30', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.164', 'ES'),
+(192, '2014-12-30', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '83.37.151.127', 'ES'),
+(193, '2014-12-30', 'http://www.domocracytech.com', 'AppEngine-Google', 'Unknown', 'Unknown', '', '107.178.200.203', 'US'),
+(194, '2014-12-30', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES'),
+(195, '2014-12-30', 'http://www.domocracytech.com', 'IEMobile', 'Windows Phone', '11.0', '', '81.45.52.139', 'ES'),
+(196, '2014-12-30', 'http://www.domocracytech.com', 'MSIE', 'Windows', '7.0', '', '79.117.228.146', 'RO'),
+(197, '2014-12-30', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.204', 'US'),
+(198, '2014-12-30', 'http://www.domocracytech.com', 'MSIE', 'Windows', '7.0', '', '120.237.226.130', 'CN'),
+(199, '2014-12-30', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.205', 'US'),
+(200, '2014-12-30', 'http://www.domocracytech.com', 'MSIE', 'Windows', '7.0', '', '59.35.4.98', 'CN'),
+(201, '2014-12-30', 'http://www.domocracytech.com', 'AppEngine-Google', 'Unknown', 'Unknown', '', '107.178.200.201', 'US'),
+(202, '2014-12-30', 'http://www.domocracytech.com/admin/uploadify/uploadify.swf', 'MSIE', 'Windows', '6.0', '', '176.67.25.127', 'UA'),
+(205, '2014-12-30', 'http://www.domocracytech.com', 'MSIE', 'Windows', '7.0', '', '139.227.151.52', 'CN'),
+(206, '2014-12-30', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '188.76.181.237', 'ES'),
+(207, '2014-12-30', 'http://techpepper.org/home-automation-a-traves-del-videojuego/', 'Firefox', 'Linux', '33.0', '', '90.170.24.193', 'ES'),
+(208, '2014-12-30', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Windows', '39.0.2171.95', '', '205.211.248.33', 'HN'),
+(209, '2014-12-30', 'http://www.domocracytech.com/blog/', 'Chrome', 'Windows', '40.0.2213.0', '', '190.176.132.203', 'AR'),
+(210, '2014-12-31', 'http://www.domocracytech.com/blog/', 'Chrome', 'Windows', '40.0.2213.0', '', '190.176.143.240', 'AR'),
+(211, '2014-12-31', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '83.37.151.127', 'ES'),
+(212, '2014-12-31', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.151.239', 'US'),
+(213, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.241.198.78', 'US'),
+(214, '2014-12-31', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.222', 'US'),
+(215, '2014-12-31', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.97.99', 'JP'),
+(216, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '78.46.85.13', 'DE'),
+(217, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '23.96.208.137', 'US'),
+(218, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.207.243.172', 'US'),
+(219, '2014-12-31', 'http://www.domocracytech.com', 'Jakarta', 'Unknown', 'Unknown', '', '23.253.254.165', 'US'),
+(220, '2014-12-31', 'http://www.domocracytech.com', 'SMRF', 'Unknown', 'Unknown', '', '184.72.239.155', 'US'),
+(221, '2014-12-31', 'http://www.domocracytech.com', 'Safari', 'Linux', '537.21', '', '62.210.84.178', 'FR'),
+(222, '2014-12-31', 'http://www.domocracytech.com', 'Safari', 'Linux', '537.21', '', '195.154.209.237', 'FR'),
+(223, '2014-12-31', 'http://www.domocracytech.com', 'Firefox', 'Windows', '10.0.1', '', '50.28.48.158', 'US'),
+(224, '2014-12-31', 'http://www.domocracytech.com', 'Firefox', 'Windows', '10.0.1', '', '50.28.32.13', 'US'),
+(225, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '81.200.27.2', 'RU'),
+(226, '2014-12-31', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.216', 'US'),
+(227, '2014-12-31', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.210', 'US'),
+(228, '2014-12-31', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '79.148.141.188', 'ES'),
+(229, '2014-12-31', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.163', 'ES'),
+(230, '2014-12-31', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.203', 'US'),
+(231, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '218.107.22.69', 'CN'),
+(232, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '88.198.247.166', 'DE'),
+(233, '2014-12-31', 'http://www.domocracytech.com', 'MSIE', 'Windows', '5.01', '', '103.246.248.246', 'US'),
+(234, '2014-12-31', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '31.0.1650.63', '', '107.22.72.145', 'US'),
+(235, '2014-12-31', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.90.119.36', 'US'),
+(236, '2014-12-31', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.151.196', 'US'),
+(237, '2014-12-31', 'http://www.domocracytech.com', 'Safari', 'Macintosh', '8.0', '', '54.147.163.42', 'US'),
+(238, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.241', 'US'),
+(239, '2014-12-31', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.59', 'JP'),
+(240, '2014-12-31', 'http://www.domocracytech.com', 'curl', 'Unknown', '7.24.0', '', '54.146.19.24', 'US'),
+(241, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.245', 'US'),
+(242, '2014-12-31', 'http://www.domocracytech.com', 'Jakarta', 'Unknown', 'Unknown', '', '23.253.78.156', 'US'),
+(243, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '50.116.7.209', 'US'),
+(244, '2014-12-31', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.202', 'US'),
+(245, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES'),
+(246, '2014-12-31', 'http://www.domocracytech.com', 'IEMobile', 'Windows Phone', '11.0', '', '81.45.52.82', 'ES'),
+(247, '2014-12-31', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.149.128', 'US'),
+(248, '2014-12-31', 'http://api.twitter.com/1/statuses/show/550335807522099200.json', 'InAGist', 'Unknown', 'Unknown', '', '96.126.124.49', 'US'),
+(249, '2014-12-31', 'http://t.co/LfhOU8YB0O', 'Chrome', 'Windows', '39.0.2171.95', '', '83.58.198.198', 'ES'),
+(250, '2014-12-31', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.167.252.122', 'US'),
+(251, '2014-12-31', 'http://www.domocracytech.com', 'Crowsnest', 'Unknown', '0.5', '', '54.238.226.202', 'JP'),
+(252, '2014-12-31', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.242', 'US'),
+(253, '2014-12-31', 'http://www.domocracytech.com', 'Crowsnest', 'Unknown', '0.5', '', '54.92.33.255', 'JP'),
+(254, '2014-12-31', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '23.22.238.254', 'US'),
+(255, '2014-12-31', 'http://www.domocracytech.com/', 'MSIE', 'Windows', '6.0', '', '195.154.181.160', 'FR'),
+(256, '2014-12-31', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.160.180.38', 'US'),
+(257, '2014-12-31', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.234.227.202', 'US'),
+(258, '2015-01-01', 'http://www.domocracytech.com', 'Chrome', 'Android', '39.0.2171.93', '', '81.36.180.10', 'ES'),
+(259, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '46.105.109.159', 'FR'),
+(260, '2015-01-01', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '171.96.178.248', 'TH'),
+(261, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '94.23.251.171', 'FR'),
+(262, '2015-01-01', 'http://www.domocracytech.com', 'Firefox', 'Windows', '3.5.6', '', '78.85.84.244', 'RU'),
+(263, '2015-01-01', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.210', 'US'),
+(264, '2015-01-01', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.213', 'US'),
+(265, '2015-01-01', 'http://techpepper.org/home-automation-a-traves-del-videojuego/', 'Chrome', 'Linux', '38.0.2125.122', '', '190.203.182.21', 'VE'),
+(266, '2015-01-01', 'http://www.domocracytech.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '83.58.198.198', 'ES'),
+(267, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.241.198.78', 'US'),
+(268, '2015-01-01', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.152.151', 'US'),
+(269, '2015-01-01', 'http://www.domocracytech.com', 'HTMLParser', 'Unknown', '2.0', '', '184.169.191.72', 'US'),
+(270, '2015-01-01', 'http://www.domocracytech.com', 'Chrome', 'Windows', '26.0.1410.64', '', '54.165.221.252', 'US'),
+(271, '2015-01-01', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.202', 'US'),
+(272, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '23.96.208.137', 'US'),
+(273, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '5.39.64.85', 'FR'),
+(274, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.246', 'US'),
+(275, '2015-01-01', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.13', 'JP'),
+(276, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.245', 'US'),
+(277, '2015-01-01', 'http://www.domocracytech.com', 'Jakarta', 'Unknown', 'Unknown', '', '23.253.254.166', 'US'),
+(278, '2015-01-01', 'http://t.co/DoNi9ugpNi', 'Chrome', 'Android', '28.0.1500.94', '', '31.4.199.159', 'ES'),
+(279, '2015-01-01', 'http://api.twitter.com/1/statuses/show/550698153201377280.json', 'InAGist', 'Unknown', 'Unknown', '', '66.228.54.132', 'US'),
+(280, '2015-01-01', 'http://www.domocracytech.com', 'python-requests', 'Unknown', '1.2.3', '', '54.246.137.243', 'IE'),
+(281, '2015-01-01', 'http://www.domocracytech.com', 'LumiBot', 'Unknown', 'Unknown', '', '54.246.137.243', 'IE'),
+(282, '2015-01-01', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '30.0.1599.66', '', '54.246.137.243', 'IE'),
+(283, '2015-01-01', 'http://www.domocracytech.com', 'AppleWebKit', 'Macintosh', '534.24', '', '54.198.122.232', 'US'),
+(284, '2015-01-01', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.97.119', 'JP'),
+(285, '2015-01-01', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.162.6.244', 'US'),
+(286, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES'),
+(287, '2015-01-01', 'http://www.domocracytech.com', 'Kimengi', 'Unknown', 'nineconnections.com', '', '176.34.78.244', 'IE'),
+(288, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '46.137.37.234', 'IE'),
+(289, '2015-01-01', 'http://www.domocracytech.com', 'Twurly', 'Unknown', 'Unknown', '', '80.87.131.12', 'GB'),
+(290, '2015-01-01', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '35.0.1916.153', '', '54.176.128.153', 'US'),
+(291, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.145.131.1', 'US'),
+(292, '2015-01-01', 'http://www.domocracytech.com', 'jack', 'Unknown', 'Unknown', '', '23.20.144.48', 'US'),
+(293, '2015-01-01', 'http://www.domocracytech.com', 'Firefox', 'Windows', '3.0.2', '', '23.20.144.48', 'US'),
+(294, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '97.107.142.195', 'US'),
+(295, '2015-01-01', 'http://www.domocracytech.com', 'MSIE', 'Windows', '9.0', '', '148.251.246.203', 'DE'),
+(296, '2015-01-01', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '35.0.1916.153', '', '54.176.104.7', 'US'),
+(297, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '178.62.60.148', 'US'),
+(298, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '81.200.27.2', 'RU'),
+(299, '2015-01-01', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '178.33.236.26', 'FR'),
+(300, '2015-01-02', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '47.62.75.197', 'ES'),
+(301, '2015-01-02', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.146.24.118', 'US'),
+(302, '2015-01-02', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.222', 'US'),
+(303, '2015-01-02', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.151.196', 'US'),
+(304, '2015-01-02', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.241.198.78', 'US'),
+(305, '2015-01-02', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.80.107.182', 'US'),
+(306, '2015-01-02', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.241', 'US'),
+(307, '2015-01-02', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.54', 'JP'),
+(308, '2015-01-02', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.244', 'US'),
+(309, '2015-01-02', 'http://www.domocracytech.com', 'Jakarta', 'Unknown', 'Unknown', '', '23.253.254.163', 'US'),
+(310, '2015-01-02', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '50.116.7.209', 'US'),
+(311, '2015-01-02', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.82.167.1', 'US'),
+(312, '2015-01-02', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.198.11.47', 'US'),
+(313, '2015-01-02', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.204.112.36', 'US'),
+(314, '2015-01-02', 'http://www.domocracytech.com', 'Firefox', 'Windows', '3.0', '', '54.172.138.161', 'US'),
+(315, '2015-01-02', 'http://www.domocracytech.com', 'Firefox', 'Windows', '10.0.1', '', '50.28.51.253', 'US'),
+(316, '2015-01-02', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '144.76.78.196', 'DE'),
+(317, '2015-01-02', 'http://www.domocracytech.com', 'Firefox', 'Windows', '10.0.1', '', '50.28.48.158', 'US'),
+(318, '2015-01-02', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.187.165.195', 'FR'),
+(319, '2015-01-02', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.172.230', 'JP'),
+(320, '2015-01-02', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '81.200.27.2', 'RU'),
+(321, '2015-01-02', 'http://t.co/FkVMvQcUcm', 'Chrome', 'Android', '39.0.2171.93', '', '95.62.38.172', 'ES'),
+(322, '2015-01-02', 'http://www.domocracytech.com', 'SMRF', 'Unknown', 'Unknown', '', '184.72.239.155', 'US'),
+(323, '2015-01-02', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES'),
+(324, '2015-01-02', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '107.191.51.141', 'US'),
+(325, '2015-01-02', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '208.92.211.146', 'US'),
+(326, '2015-01-02', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Windows', '39.0.2171.95', '', '95.18.211.169', 'ES'),
+(327, '2015-01-02', 'http://www.domocracytech.com', 'MSIE', 'Windows', '6.0', '', '78.85.84.244', 'RU'),
+(328, '2015-01-02', 'http://www.domocracytech.com/wp-login.php', 'MSIE', 'Windows', '6.0', '', '195.154.181.160', 'FR'),
+(329, '2015-01-02', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.210', 'US'),
+(330, '2015-01-02', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.216', 'US'),
+(331, '2015-01-02', 'http://domocracytech.com/joomla', 'MSIE', 'Windows', '6.0', '', '188.24.174.148', 'RO'),
+(332, '2015-01-02', 'http://domocracytech.com/drupal', 'MSIE', 'Windows', '6.0', '', '90.58.17.114', 'FR'),
+(333, '2015-01-02', 'http://domocracytech.com/', 'MSIE', 'Windows', '6.0', '', '194.165.46.136', 'UA'),
+(334, '2015-01-02', 'http://domocracytech.com/blog', 'MSIE', 'Windows', '6.0', '', '190.234.114.69', 'PE'),
+(335, '2015-01-02', 'http://domocracytech.com/wp', 'MSIE', 'Windows', '6.0', '', '181.209.235.223', 'GT'),
+(336, '2015-01-02', 'http://domocracytech.com/wordpress', 'MSIE', 'Windows', '6.0', '', '176.219.146.164', 'TR'),
+(337, '2015-01-02', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.193.185.31', 'US'),
+(338, '2015-01-02', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '89.129.118.162', 'ES'),
+(339, '2015-01-03', 'http://domocracytech.com/wp-login.php', 'Unknown', 'Unknown', 'Unknown', '', '37.130.226.90', 'GB'),
+(340, '2015-01-03', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.162.89.97', 'US'),
+(341, '2015-01-03', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '189.197.229.138', 'MX'),
+(342, '2015-01-03', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '5.39.64.85', 'FR'),
+(343, '2015-01-03', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '128.178.156.91', 'CH'),
+(344, '2015-01-03', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.151.187', 'US'),
+(345, '2015-01-03', 'http://www.domocracytech.com', 'Ruby', 'Unknown', 'Unknown', '', '128.174.244.32', 'US'),
+(346, '2015-01-03', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.241.198.78', 'US'),
+(347, '2015-01-03', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.202', 'US'),
+(348, '2015-01-03', 'http://www.domocracytech.com', 'AppleWebKit', 'Macintosh', '534.24', '', '54.198.122.232', 'US'),
+(349, '2015-01-03', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.244', 'US'),
+(350, '2015-01-03', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.97.117', 'JP'),
+(351, '2015-01-03', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.245', 'US'),
+(352, '2015-01-03', 'http://www.domocracytech.com', 'MSIE', 'Windows', '10.0', '', '157.55.252.30', 'US'),
+(353, '2015-01-03', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.197.168.201', 'US'),
+(354, '2015-01-03', 'http://www.domocracytech.com', 'Jakarta', 'Unknown', 'Unknown', '', '104.130.128.39', 'US'),
+(355, '2015-01-03', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '108.61.135.178', 'US'),
+(356, '2015-01-03', 'http://www.domocracytech.com', 'Chrome', 'Windows', '36.0.1985.125', '', '108.61.135.178', 'US'),
+(357, '2015-01-03', 'http://m.facebook.com/', 'Chrome', 'Android', '39.0.2171.93', '', '37.29.253.68', 'ES'),
+(358, '2015-01-04', 'http://l.facebook.com/l.php?u=http%3A%2F%2Fwww.domocracytech.com%2F&h=4AQGQPEg0AQGeSCSF4JRAg0V4ex6X1X64UOce3RjaS7RDlQ&enc=AZO1JYxdri4nT9gxZ11cEXgrg_KdpR_F0viXabADYnnNFx8IxfTLrhgyBiZ0xCamqQFZqv2hUurOUNp9zS6v0JPvGOmO0ylcuUJvVnRTBzWuoWmNqLy9pGPcL_rG7Ri1lHNur2hIN7Nh6QIUKBUCmXtpMCgNDH0VRPzfPXzmy8Y-Xg&s=1', 'Firefox', 'Windows', '34.0', '', '89.129.118.162', 'ES'),
+(359, '2015-01-04', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.162.89.97', 'US'),
+(360, '2015-01-04', 'http://m.facebook.com/', 'Chrome', 'Android', '30.0.0.0', '', '188.78.224.214', 'ES'),
+(361, '2015-01-04', 'http://lm.facebook.com/l.php?u=http%3A%2F%2Fwww.domocracytech.com%2F&h=yAQG7qoGy&s=1', 'Opera', 'Android', '11.10', '', '83.38.5.159', 'ES'),
+(362, '2015-01-04', 'http://m.facebook.com', 'AppleWebKit', 'iPhone', '537.51.2', '', '81.45.55.29', 'ES'),
+(363, '2015-01-04', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '80.114.140.116', 'NL'),
+(364, '2015-01-04', 'http://m.facebook.com/', 'Android Browser', 'Android', '4.0', '', '86.213.62.41', 'FR'),
+(365, '2015-01-04', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '90.170.24.193', 'ES'),
+(366, '2015-01-04', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '83.41.162.207', 'ES'),
+(367, '2015-01-04', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '176.9.99.134', 'DE'),
+(368, '2015-01-04', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '88.11.59.152', 'ES'),
+(369, '2015-01-04', 'http://www.google.es/url?sa=t&rct=j&q=&esrc=s&source=web&cd=8&ved=0CFgQFjAH&url=http%3A%2F%2Fwww.domocracytech.com%2F&ei=B4epVLvWD8StUY77gMAL&usg=AFQjCNGYvdZ21CYUlLbhw4NhdkH7PKrecw&sig2=M_7N9kVMWDrT6L4idS6nVA&bvm=bv.82001339,d.d24', 'Firefox', 'Windows', '34.0', '', '95.22.22.227', 'ES'),
+(370, '2015-01-04', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '176.9.111.170', 'DE'),
+(371, '2015-01-04', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '176.9.40.107', 'DE'),
+(372, '2015-01-04', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '58.248.197.171', 'CN'),
+(373, '2015-01-04', 'http://t.co/LfhOU8YB0O', 'Chrome', 'Windows', '39.0.2171.95', '', '95.20.51.143', 'ES'),
+(374, '2015-01-05', 'http://www.domocracytech.com', 'MSIE', 'Windows', '11.0', '', '97.97.159.193', 'US'),
+(375, '2015-01-05', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '81.34.209.230', 'ES'),
+(376, '2015-01-05', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0.2', '', '123.125.71.13', 'CN'),
+(377, '2015-01-05', 'DOMOCRACYTECH.COM', 'Chrome', 'Windows', '34.0.1847.137', '', '108.61.193.222', 'US'),
+(378, '2015-01-05', 'http://domocracytech.com/', 'MSIE', 'Windows', '6.0', '', '5.61.39.15', 'DE'),
+(379, '2015-01-05', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.164', 'ES'),
+(380, '2015-01-05', 'http://www.domocracytech.com', 'Chrome', 'Android', '39.0.2171.93', '', '31.4.195.20', 'ES'),
+(381, '2015-01-05', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.195', 'US'),
+(382, '2015-01-05', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.151.79', 'US'),
+(383, '2015-01-05', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.241.198.78', 'US'),
+(384, '2015-01-05', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.202', 'US'),
+(386, '2015-01-05', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.222', 'US'),
+(387, '2015-01-05', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.246', 'US'),
+(388, '2015-01-05', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.243', 'US'),
+(389, '2015-01-05', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.59', 'JP'),
+(390, '2015-01-05', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '50.116.9.34', 'US'),
+(391, '2015-01-05', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.187.165.195', 'FR'),
+(392, '2015-01-05', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.172.231', 'JP'),
+(393, '2015-01-05', 'http://www.domocracytech.com', 'Jakarta', 'Unknown', 'Unknown', '', '104.130.132.62', 'US'),
+(394, '2015-01-05', 'http://t.co/LfhOU8YB0O', 'Chrome', 'Windows', '39.0.2171.95', '', '217.216.118.199', 'ES'),
+(395, '2015-01-05', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.25.103.67', 'UA'),
+(396, '2015-01-05', 'http://www.domocracytech.com', 'Chrome', 'Windows', '34.0.1847.116', '', '37.25.103.67', 'UA'),
+(397, '2015-01-05', 'http://www.domocracytech.com', 'Chrome', 'Windows', '37.0.2049.0', '', '37.213.159.229', 'BY'),
+(398, '2015-01-05', 'http://t.co/FkVMvQcUcm', 'AppleWebKit', 'iPhone', '600.1.4', '', '83.58.197.59', 'ES'),
+(399, '2015-01-06', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '50.17.173.39', 'US'),
+(400, '2015-01-06', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.216', 'US'),
+(401, '2015-01-06', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.213', 'US'),
+(402, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.242', 'US'),
+(403, '2015-01-06', 'http://www.domocracytech.com', 'Chrome', 'Windows', '26.0.1410.64', '', '54.165.221.252', 'US'),
+(404, '2015-01-06', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.152.130', 'US'),
+(405, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.241.198.78', 'US'),
+(406, '2015-01-06', 'http://www.domocracytech.com', 'python-requests', 'Unknown', '1.2.3', '', '54.246.137.243', 'IE'),
+(407, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '23.96.208.137', 'US'),
+(408, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.246', 'US'),
+(409, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.241', 'US'),
+(410, '2015-01-06', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.48', 'JP'),
+(411, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.187.162.165', 'FR'),
+(412, '2015-01-06', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.195', 'US'),
+(413, '2015-01-06', 'http://www.domocracytech.com', 'AppleWebKit', 'Macintosh', '534.24', '', '54.198.122.232', 'US'),
+(414, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '5.39.64.85', 'FR'),
+(415, '2015-01-06', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.97.118', 'JP'),
+(416, '2015-01-06', 'http://www.domocracytech.com', 'Jakarta', 'Unknown', 'Unknown', '', '23.253.252.101', 'US'),
+(417, '2015-01-06', 'http://www.domocracytech.com', 'Safari', 'Macintosh', '8.0', '', '54.163.45.138', 'US'),
+(418, '2015-01-06', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.197.168.201', 'US'),
+(419, '2015-01-06', 'http://www.domocracytech.com', 'Lynx', 'Unknown', 'Unknown', '', '64.13.133.151', 'US'),
+(420, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '178.33.236.26', 'FR'),
+(421, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES'),
+(422, '2015-01-06', 'http://t.co/7V5QU2sxNK', 'Chrome', 'Windows', '39.0.2171.95', '', '87.220.186.162', 'ES'),
+(423, '2015-01-06', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '85.55.141.61', 'ES'),
+(424, '2015-01-06', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.202', 'US'),
+(425, '2015-01-06', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.212', 'US'),
+(426, '2015-01-06', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.152.102', 'US'),
+(427, '2015-01-06', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '83.51.74.250', 'ES'),
+(428, '2015-01-06', 'http://www.domocracytech.com', 'Crowsnest', 'Unknown', '0.5', '', '54.238.238.39', 'JP'),
+(429, '2015-01-06', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.42', 'JP'),
+(430, '2015-01-06', 'http://www.domocracytech.com', 'curl', 'Unknown', '7.24.0', '', '54.146.19.24', 'US'),
+(431, '2015-01-06', 'http://www.domocracytech.com', 'curl', 'Unknown', '7.24.0', '', '54.80.54.16', 'US'),
+(432, '2015-01-06', 'http://www.domocracytech.com', 'Firefox', 'Windows', '3.0', '', '54.175.25.147', 'US'),
+(433, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '178.63.95.132', 'DE'),
+(434, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '192.81.133.229', 'US'),
+(435, '2015-01-06', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '83.59.17.15', 'ES'),
+(436, '2015-01-06', 'http://www.domocracytech.com', 'Jakarta', 'Unknown', 'Unknown', '', '104.130.135.200', 'US'),
+(437, '2015-01-06', 'http://m.facebook.com/', 'Chrome', 'Android', '39.0.2171.93', '', '46.222.236.102', 'ES'),
+(438, '2015-01-06', 'http://www.domocracytech.com', 'AppleWebKit', 'iPad', '600.1.4', '', '89.131.140.187', 'ES'),
+(439, '2015-01-06', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.235.62.203', 'US'),
+(440, '2015-01-06', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '23.22.238.254', 'US'),
+(441, '2015-01-06', 'http://m.facebook.com', 'AppleWebKit', 'iPhone', '537.51.2', '', '2.137.253.199', 'ES'),
+(442, '2015-01-06', 'http://www.domocracytech.com', 'MSIE', 'Windows', '10.0', '', '157.55.252.30', 'US'),
+(443, '2015-01-06', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '89.129.118.162', 'ES'),
+(444, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.244', 'US'),
+(445, '2015-01-06', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.7', 'JP'),
+(446, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.243', 'US');
+INSERT INTO `wp_statistics_visitor` (`ID`, `last_counter`, `referred`, `agent`, `platform`, `version`, `UAString`, `ip`, `location`) VALUES
+(447, '2015-01-06', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '81.35.72.196', 'ES'),
+(448, '2015-01-06', 'http://www.domocracytech.com', 'Firefox', 'Windows', '3.0', '', '54.174.42.30', 'US'),
+(449, '2015-01-06', 'http://www.domocracytech.com', 'Firefox', 'Windows', '33.0', '', '54.234.16.70', 'US'),
+(450, '2015-01-06', 'http://api.twitter.com/1/statuses/show/552449832800247809.json', 'InAGist', 'Unknown', 'Unknown', '', '66.228.54.160', 'US'),
+(451, '2015-01-06', 'http://www.domocracytech.com', 'Apache-HttpClient', 'Unknown', '4.2.2', '', '54.91.113.248', 'US'),
+(452, '2015-01-06', 'http://www.domocracytech.com', 'AppleWebKit', 'Macintosh', '534.24', '', '54.91.113.248', 'US'),
+(453, '2015-01-06', 'http://www.domocracytech.com', 'Safari', 'iPhone', '5.1', '', '54.91.113.248', 'US'),
+(454, '2015-01-06', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.41', 'JP'),
+(455, '2015-01-06', 'http://www.domocracytech.com', 'Crowsnest', 'Unknown', '0.5', '', '54.92.33.249', 'JP'),
+(456, '2015-01-06', 'http://www.domocracytech.com', 'Apache-HttpClient', 'Unknown', '4.2.2', '', '54.166.16.188', 'US'),
+(457, '2015-01-06', 'http://www.domocracytech.com', 'AppleWebKit', 'Macintosh', '534.24', '', '54.166.16.188', 'US'),
+(458, '2015-01-06', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '69.164.217.210', 'US'),
+(459, '2015-01-06', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '83.38.191.191', 'ES'),
+(460, '2015-01-06', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '67.230.144.108', 'CA'),
+(461, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '5.39.64.85', 'FR'),
+(462, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '31.0.1650.63', '', '107.22.72.145', 'US'),
+(463, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.241.198.78', 'US'),
+(464, '2015-01-07', 'http://www.domocracytech.com', 'python-requests', 'Unknown', '1.2.3', '', '54.246.137.243', 'IE'),
+(465, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '23.96.208.137', 'US'),
+(466, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.243', 'US'),
+(467, '2015-01-07', 'http://www.domocracytech.com', 'Safari', 'Linux', '537.21', '', '62.210.84.178', 'FR'),
+(468, '2015-01-07', 'http://www.domocracytech.com', 'Safari', 'Macintosh', '6.0.1', '', '142.4.217.190', 'CA'),
+(469, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.242', 'US'),
+(470, '2015-01-07', 'http://rebelmouse.com/', 'Firefox', 'Unknown', '7.0.1', '', '54.82.75.42', 'US'),
+(471, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.187.165.195', 'FR'),
+(472, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '176.9.29.147', 'DE'),
+(473, '2015-01-07', 'http://t.co/7V5QU2sxNK', 'Firefox', 'Windows', '34.0', '', '88.16.205.126', 'ES'),
+(474, '2015-01-07', 'http://api.twitter.com/1/statuses/show/552630734104850432.json', 'InAGist', 'Unknown', 'Unknown', '', '66.228.54.132', 'US'),
+(475, '2015-01-07', 'http://www.domocracytech.com', 'AppleWebKit', 'Macintosh', '534.24', '', '54.198.122.232', 'US'),
+(476, '2015-01-07', 'http://rebelmouse.com/', 'Firefox', 'Unknown', '7.0.1', '', '184.73.147.107', 'US'),
+(477, '2015-01-07', 'http://www.domocracytech.com', 'MSIE', 'Windows', '6.0', '', '192.99.8.19', 'CA'),
+(478, '2015-01-07', 'http://www.domocracytech.com', 'MSIE', 'Windows', '9.0', '', '192.99.37.143', 'CA'),
+(479, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '3.6.2', '', '37.187.140.154', 'FR'),
+(480, '2015-01-07', 'http://www.domocracytech.com', 'newsme', 'Unknown', '1.0', '', '54.176.5.146', 'US'),
+(481, '2015-01-07', 'http://t.co/FXSqISgn6m', 'Firefox', 'Macintosh', '34.0', '', '85.56.29.206', 'ES'),
+(482, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.198.125.83', 'US'),
+(483, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '35.0.1916.153', '', '54.193.212.129', 'US'),
+(484, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.215.91.250', 'US'),
+(485, '2015-01-07', 'http://www.domocracytech.com', 'Crowsnest', 'Unknown', '0.5', '', '54.95.144.99', 'JP'),
+(486, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '81.200.27.2', 'RU'),
+(487, '2015-01-07', 'http://www.domocracytech.com', 'Lynx', 'Unknown', 'Unknown', '', '64.13.133.149', 'US'),
+(488, '2015-01-07', 'http://www.domocracytech.com', 'TweetedTimes', 'Unknown', 'Unknown', '', '81.200.27.2', 'RU'),
+(489, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.234.145.80', 'US'),
+(490, '2015-01-07', 'http://tweetedtimes.com/bbarran/videojuegos/rss.xml', 'Unknown', 'Unknown', 'Unknown', '', '54.205.41.23', 'US'),
+(491, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.90.41.95', 'US'),
+(492, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.89.61.205', 'US'),
+(493, '2015-01-07', 'http://domocracytech.com/?author=1', 'Unknown', 'Unknown', 'Unknown', '', '37.130.226.90', 'GB'),
+(494, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.193.185.31', 'US'),
+(495, '2015-01-07', 'http://www.domocracytech.com', 'newsme', 'Unknown', '1.0', '', '50.18.91.166', 'US'),
+(496, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '178.33.236.26', 'FR'),
+(497, '2015-01-07', 'http://www.domocracytech.com', 'Lynx', 'Unknown', 'Unknown', '', '64.13.133.151', 'US'),
+(498, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '26.0.1410.64', '', '54.165.221.252', 'US'),
+(499, '2015-01-07', 'http://www.domocracytech.com', 'MSIE', 'Windows', '10.0', '', '23.96.208.78', 'US'),
+(500, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.82.167.1', 'US'),
+(501, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '22.0.1229.94', '', '142.4.217.190', 'CA'),
+(502, '2015-01-07', 'http://www.domocracytech.com', 'MSIE', 'Windows', '10.0', '', '192.99.37.143', 'CA'),
+(503, '2015-01-07', 'http://www.domocracytech.com', 'MSIE', 'Windows', '6.0', '', '192.99.16.54', 'CA'),
+(504, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Windows', '15.0.1', '', '142.4.217.190', 'CA'),
+(505, '2015-01-07', 'http://www.domocracytech.com', 'MSIE', 'Windows', '9.0', '', '192.99.10.110', 'CA'),
+(506, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Windows', '15.0.1', '', '192.99.10.110', 'CA'),
+(507, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Windows', '8.0', '', '167.114.1.197', 'CA'),
+(508, '2015-01-07', 'http://www.domocracytech.com', 'MSIE', 'Windows', '9.0', '', '192.99.16.54', 'CA'),
+(509, '2015-01-07', 'http://www.domocracytech.com', 'MSIE', 'Windows', '10.0', '', '142.4.217.190', 'CA'),
+(510, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Windows', '8.0', '', '192.99.35.168', 'CA'),
+(511, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Windows', '8.0', '', '192.99.8.16', 'CA'),
+(512, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '22.0.1229.94', '', '192.99.46.86', 'CA'),
+(513, '2015-01-07', 'http://www.domocracytech.com', 'Safari', 'Macintosh', '6.0.1', '', '192.99.37.143', 'CA'),
+(514, '2015-01-07', 'http://domocracytech.com/', 'MSIE', 'Windows', '6.0', '', '5.61.39.15', 'DE'),
+(515, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Windows', '15.0.1', '', '192.99.37.143', 'CA'),
+(516, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '22.0.1229.94', '', '192.95.29.199', 'CA'),
+(517, '2015-01-07', 'http://www.domocracytech.com', 'MSIE', 'Windows', '9.0', '', '192.99.8.19', 'CA'),
+(518, '2015-01-07', 'http://rebelmouse.com/', 'Firefox', 'Unknown', '7.0.1', '', '54.80.216.153', 'US'),
+(519, '2015-01-07', 'http://www.domocracytech.com/', 'MSIE', 'Windows', '6.0', '', '5.61.35.38', 'DE'),
+(520, '2015-01-07', 'http://www.domocracytech.com', 'Safari', 'Macintosh', '6.0.1', '', '192.99.37.144', 'CA'),
+(521, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Windows', '8.0', '', '192.99.13.116', 'CA'),
+(522, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.241', 'US'),
+(523, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '65.5.119.67', 'US'),
+(524, '2015-01-07', 'http://www.domocracytech.com', 'AppleWebKit', 'Macintosh', '534.24', '', '54.91.113.248', 'US'),
+(525, '2015-01-07', 'http://www.domocracytech.com', 'Apache-HttpClient', 'Unknown', '4.2.2', '', '54.166.16.188', 'US'),
+(526, '2015-01-07', 'http://www.domocracytech.com', 'AppleWebKit', 'Macintosh', '534.24', '', '54.166.16.188', 'US'),
+(527, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '85.136.0.32', 'ES'),
+(528, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.151.71', 'US'),
+(529, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.163', 'ES'),
+(530, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.164', 'ES'),
+(531, '2015-01-07', 'http://m.facebook.com', 'AppleWebKit', 'iPhone', '600.1.4', '', '90.173.89.23', 'ES'),
+(532, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.144.26', 'US'),
+(533, '2015-01-07', 'http://m.facebook.com', 'AppleWebKit', 'iPhone', '600.1.4', '', '90.170.189.136', 'ES'),
+(534, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.151.224', 'US'),
+(535, '2015-01-07', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.204', 'US'),
+(536, '2015-01-07', 'http://www.domocracytech.com', 'AppEngine-Google', 'Unknown', 'Unknown', '', '107.178.200.7', 'US'),
+(537, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.210', 'US'),
+(538, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.216', 'US'),
+(539, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '184.72.189.4', 'US'),
+(540, '2015-01-07', 'http://l.facebook.com/l.php?u=http%3A%2F%2Fwww.domocracytech.com%2Fvideo-games-need-domocracy%2F&h=FAQHuYGSA&enc=AZP7o88VuPYOlJ0u0sxV0ZelMRw_k8vSIFId2QshHguwqvt0yKIAOzuXol2wIk8KH8-Ojbe8vCzHYi9hVmgE9QRaNcJfP0NRnU9mLStjbKE3Z34A6IO5FIPzpGTjZ8-SpZQtXBc1F9lC5Hy9ltiM9Wkz7k0HB8O2hp5XAOcVwj_R5Q&s=1', 'Firefox', 'Windows', '34.0', '', '79.156.226.215', 'ES'),
+(541, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '91.117.13.144', 'ES'),
+(542, '2015-01-07', 'http://m.facebook.com/', 'Android Browser', 'Android', '4.0', '', '46.26.58.87', 'ES'),
+(543, '2015-01-07', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.202', 'US'),
+(544, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.166.179.189', 'US'),
+(545, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.151.198', 'US'),
+(546, '2015-01-07', 'http://t.co/7V5QU2sxNK', 'Safari', 'Macintosh', '8.0', '', '85.136.70.221', 'ES'),
+(547, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.246', 'US'),
+(548, '2015-01-07', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '50.17.173.211', 'US'),
+(549, '2015-01-07', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.97.97', 'JP'),
+(550, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.187.162.165', 'FR'),
+(551, '2015-01-07', 'http://www.domocracytech.com', 'Jakarta', 'Unknown', 'Unknown', '', '104.130.125.119', 'US'),
+(552, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.151.203', 'US'),
+(553, '2015-01-07', 'http://l.facebook.com/l.php?u=http%3A%2F%2Fwww.domocracytech.com%2Fvideo-games-need-domocracy%2F&h=vAQG59UMT&enc=AZMdNWYr-K5zXvX0LPKTOSAD6JAl-mOFHifAXBtiH8yr-cigH-7spOGcdkE3y998RPhZw8yfVJ07tzarml_5kKEKW6-c-pkn1oQmzOdXUxCsowk6C63ZFOFEgmljWIPlRgeN2rM7df26MkLpixmlnV6CP960cI89mY864OzzTwnYJQ&s=1', 'Firefox', 'Windows', '34.0', '', '83.49.9.175', 'ES'),
+(554, '2015-01-07', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES'),
+(555, '2015-01-07', 'http://t.co/7V5QU2sxNK', 'Firefox', 'Windows', '34.0', '', '62.57.30.22', 'ES'),
+(556, '2015-01-07', 'http://www.domocracytech.com', 'peerindex', 'Unknown', 'Unknown', '', '54.194.43.109', 'IE'),
+(557, '2015-01-07', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '83.38.191.191', 'ES'),
+(558, '2015-01-07', 'https://www.google.es/', 'Safari', 'iPhone', '8.0', '', '90.170.24.145', 'ES'),
+(559, '2015-01-08', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '89.99.216.235', 'NL'),
+(560, '2015-01-08', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.25.103.67', 'UA'),
+(561, '2015-01-08', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0.2', '', '180.76.6.21', 'CN'),
+(562, '2015-01-08', 'http://www.domocracytech.com/wp-admin/ms-head.php', 'MSIE', 'Windows', '6.0', '', '5.61.39.15', 'DE'),
+(563, '2015-01-08', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '32.0.1700.77', '', '54.176.56.176', 'US'),
+(564, '2015-01-08', 'http://www.domocracytech.com', 'Lynx', 'Unknown', 'Unknown', '', '64.13.133.152', 'US'),
+(565, '2015-01-08', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '85.136.0.32', 'ES'),
+(566, '2015-01-08', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.163', 'ES'),
+(567, '2015-01-08', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.164', 'ES'),
+(568, '2015-01-08', 'https://www.google.es/', 'Safari', 'iPhone', '8.0', '', '31.4.192.40', 'ES'),
+(569, '2015-01-08', 'http://www.domocracytech.com', 'Chrome', 'Android', '39.0.2171.93', '', '195.235.183.163', 'ES'),
+(570, '2015-01-08', 'http://www.domocracytech.com', 'MSIE', 'Windows', '6.0', '', '78.85.175.131', 'RU'),
+(571, '2015-01-08', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.204', 'US'),
+(572, '2015-01-08', 'http://www.domocracytech.com', 'MSIE', 'Windows', '7.0', '', '199.19.249.196', 'US'),
+(573, '2015-01-08', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '81.47.192.243', 'ES'),
+(574, '2015-01-08', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.206', 'US'),
+(575, '2015-01-08', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.241.198.78', 'US'),
+(576, '2015-01-08', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.148.12', 'US'),
+(577, '2015-01-08', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.50', 'JP'),
+(578, '2015-01-08', 'http://www.domocracytech.com', 'AppEngine-Google', 'Unknown', 'Unknown', '', '107.178.200.14', 'US'),
+(579, '2015-01-08', 'http://www.domocracytech.com', 'AppEngine-Google', 'Unknown', 'Unknown', '', '107.178.200.3', 'US'),
+(580, '2015-01-08', 'http://www.domocracytech.com', 'Firefox', 'Windows', '27.0', '', '198.204.253.99', 'US'),
+(581, '2015-01-08', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.210', 'US'),
+(582, '2015-01-08', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.97.127', 'JP'),
+(583, '2015-01-08', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '47.62.75.197', 'ES'),
+(584, '2015-01-08', 'http://www.google.com/url?q=http%3A%2F%2Fwww.domocracytech.com%2F%23anclaKickstarter&sa=D&sntz=1&usg=AFQjCNELspFQJDzTEIuY5udPoKlXABqxgg', 'Chrome', 'Macintosh', '39.0.2171.95', '', '88.12.176.230', 'ES'),
+(585, '2015-01-08', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '83.54.135.178', 'ES'),
+(586, '2015-01-08', 'http://www.domocracytech.com', 'AppEngine-Google', 'Unknown', 'Unknown', '', '107.178.200.11', 'US'),
+(587, '2015-01-08', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '85.136.157.113', 'ES'),
+(588, '2015-01-08', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '83.38.191.191', 'ES'),
+(589, '2015-01-08', 'http://m.facebook.com/', 'Chrome', 'Android', '30.0.0.0', '', '90.170.24.193', 'ES'),
+(590, '2015-01-08', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '85.55.141.61', 'ES'),
+(591, '2015-01-09', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '82.209.229.237', 'BY'),
+(592, '2015-01-09', 'http://www.domocracytech.com', 'Chrome', 'Windows', '34.0.1847.116', '', '82.209.229.237', 'BY'),
+(593, '2015-01-09', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '32.0.1700.77', '', '54.176.56.176', 'US'),
+(594, '2015-01-09', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '178.46.128.121', 'RU'),
+(595, '2015-01-09', 'http://www.domocracytech.com', 'Chrome', 'Windows', '34.0.1847.116', '', '178.46.128.121', 'RU'),
+(596, '2015-01-09', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '178.210.130.110', 'UA'),
+(597, '2015-01-09', 'http://www.domocracytech.com', 'Chrome', 'Windows', '34.0.1847.116', '', '178.210.130.110', 'UA'),
+(598, '2015-01-09', 'http://www.domocracy.es/', 'Firefox', 'Windows', '21.0', '', '81.47.192.243', 'ES'),
+(599, '2015-01-09', 'http://www.domocracy.es/', 'Chrome', 'Android', '39.0.2171.93', '', '83.61.211.225', 'ES'),
+(600, '2015-01-09', 'http://www.domocracytech.com', 'MSIE', 'Windows', '7.0', '', '199.19.249.196', 'US'),
+(601, '2015-01-09', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '81.47.192.243', 'ES'),
+(602, '2015-01-09', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.164', 'ES'),
+(603, '2015-01-09', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.203', 'US'),
+(604, '2015-01-09', 'http://www.domocracy.es/', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.163', 'ES'),
+(605, '2015-01-09', 'http://www.domocracytech.com', 'Crowsnest', 'Unknown', '0.5', '', '54.238.226.202', 'JP'),
+(606, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.161.106.59', 'US'),
+(607, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.161.74.161', 'US'),
+(608, '2015-01-09', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.165', 'ES'),
+(609, '2015-01-09', 'http://l.facebook.com/l.php?u=http%3A%2F%2Fwww.domocracytech.com%2Fvideo-games-need-domocracy%2F&h=vAQFG260i&enc=AZPVT7Lw6vdfDxaGS2Omh-IuD2iPGuFH-ZhvtRffFRNRKCd1dMHSlXvYoQs2K1WXwN-WP1rA0VouG28N_3DuKoKYWMQ3qzWCqDM9_RMzXbdKRA1kRXVWPiXcXXASiJWxBTFu9dKIbalNn_ROjJ5NBo6tP8fJ94N-TCiww3RKomH33Q&s=1', 'Firefox', 'Windows', '34.0', '', '85.251.43.243', 'ES'),
+(610, '2015-01-09', 'http://l.facebook.com/l.php?u=http%3A%2F%2Fwww.domocracytech.com%2F&h=AAQHvuLZuAQGHbJyPc1mqaHtTAxqcgVH9JLXxsi6r5sKajA&enc=AZPBy8DRVxBOJojuLpabLAqrMMh9kAwaAAhCmYIrrhK8Q2DQsx34orsgrswnNmcCAYI7bj_a5gcQXClHVIMaT7-fBBmV_lFpttYJx3-fY0_4_qW9P6Qn_kD_cnVPki304Q6fWu954GONmew9M_G3sm85D-hgtruvjG8Olo5jjmeN9g&s=1', 'Firefox', 'Windows', '34.0', '', '150.214.9.250', 'ES'),
+(611, '2015-01-09', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '188.76.158.125', 'ES'),
+(612, '2015-01-09', 'http://m.facebook.com/', 'Chrome', 'Android', '39.0.2171.93', '', '83.51.74.250', 'ES'),
+(613, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.83.138.126', 'US'),
+(614, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.162.6.244', 'US'),
+(615, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '5.226.27.102', 'ES'),
+(616, '2015-01-09', 'http://www.domocracytech.com', 'Chrome', 'Android', '33.0.0.0', '', '31.4.192.118', 'ES'),
+(617, '2015-01-09', 'http://l.facebook.com/l.php?u=http%3A%2F%2Fwww.domocracytech.com%2Fvideo-games-need-domocracy%2F&h=KAQEx9kQn&enc=AZP3J7pQRdVMFwh62oOMSaq4uKiILUs5pAWtheAcOz2dm03Ukx_O0XGrXp_p4VO03Y6i4qPTm7HwgdcTJaGy7NpZW3eh88vJL6FM1o9JAu11MFkqx-eHaaphvOLMAotfAuh1VgU_4gqaTUyfEFrQ1ufkli_t6sRVtvpzDj1kUGl58A&s=1', 'MSIE', 'Windows', '11.0', '', '85.136.246.172', 'ES'),
+(618, '2015-01-09', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '85.136.247.244', 'ES'),
+(619, '2015-01-09', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Macintosh', '39.0.2171.95', '', '95.22.124.207', 'ES'),
+(620, '2015-01-09', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '81.163.53.49', 'RU'),
+(621, '2015-01-09', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.5.120', 'US'),
+(622, '2015-01-09', 'http://www.domocracytech.com', 'AppEngine-Google', 'Unknown', 'Unknown', '', '107.178.200.4', 'US'),
+(623, '2015-01-09', 'http://l.facebook.com/l.php?u=http%3A%2F%2Fwww.domocracytech.com%2Fvideo-games-need-domocracy%2F&h=KAQHFcxfR&enc=AZPeB2W-zxVDeq2xVwuZp3ygfrADbjvUZDeMdzadYiY8vhUeg57ZuD9Nd3XGKqEm1hcJYzTv1lZaC09HjRmhnWmCb1FapiFqOvfSw9bA5edgIKwF1M-B-WM-zTMLxFD-pARNEky1XiH2FbEC1CB3JcCpwEyDZDgT0USHw99wL7ybhw&s=1', 'Firefox', 'Linux', '34.0', '', '188.78.86.172', 'ES'),
+(624, '2015-01-09', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '62.83.10.25', 'ES'),
+(625, '2015-01-09', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '95.16.110.31', 'ES'),
+(626, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.197.168.201', 'US'),
+(627, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.198.125.83', 'US'),
+(628, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.162.89.97', 'US'),
+(629, '2015-01-09', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.152.102', 'US'),
+(630, '2015-01-09', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '5.39.64.85', 'FR'),
+(631, '2015-01-09', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.241.198.78', 'US'),
+(632, '2015-01-09', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.212', 'US'),
+(633, '2015-01-09', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.195', 'US'),
+(634, '2015-01-09', 'http://www.domocracytech.com', 'MSIE', 'Windows', '10.0', '', '23.96.208.137', 'US'),
+(635, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Windows', '33.0', '', '54.234.16.70', 'US'),
+(636, '2015-01-09', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '31.0.1650.63', '', '107.22.72.145', 'US'),
+(637, '2015-01-09', 'http://www.domocracytech.com', 'Chrome', 'Windows', '26.0.1410.64', '', '54.165.221.252', 'US'),
+(638, '2015-01-09', 'http://www.domocracytech.com', 'python-requests', 'Unknown', '1.2.3', '', '54.246.137.243', 'IE'),
+(639, '2015-01-09', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.97.115', 'JP'),
+(640, '2015-01-09', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.246', 'US'),
+(641, '2015-01-09', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.245', 'US'),
+(642, '2015-01-09', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '23.239.23.47', 'US'),
+(643, '2015-01-09', 'http://www.domocracytech.com', 'Jakarta', 'Unknown', 'Unknown', '', '104.130.125.119', 'US'),
+(644, '2015-01-09', 'http://www.domocracytech.com', 'Safari', 'Linux', '537.21', '', '195.154.233.224', 'FR'),
+(645, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.81.155.94', 'US'),
+(646, '2015-01-09', 'http://www.domocracytech.com', 'Lynx', 'Unknown', 'Unknown', '', '64.13.133.151', 'US'),
+(647, '2015-01-09', 'http://www.domocracytech.com', 'Safari', 'Macintosh', '8.0', '', '54.163.45.138', 'US'),
+(648, '2015-01-09', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.97.116', 'JP'),
+(649, '2015-01-09', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.97.69', 'JP'),
+(650, '2015-01-09', 'http://www.domocracytech.com', 'Python-urllib', 'Unknown', '2.7', '', '37.16.72.137', 'FR'),
+(651, '2015-01-09', 'http://www.domocracytech.com', 'MSIE', 'Windows', '7.0', '', '111.17.162.40', 'CN'),
+(652, '2015-01-09', 'http://www.domocracytech.com', 'MSIE', 'Windows', '7.0', '', '218.16.63.101', 'CN'),
+(653, '2015-01-09', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.151.132', 'US'),
+(654, '2015-01-09', 'http://www.domocracytech.com', 'Chrome', 'Windows', '26.0.1410.64', '', '54.172.134.33', 'US'),
+(655, '2015-01-09', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.202', 'US'),
+(656, '2015-01-09', 'http://api.twitter.com/1/statuses/show/553594869420421120.json', 'InAGist', 'Unknown', 'Unknown', '', '72.14.185.64', 'US'),
+(657, '2015-01-09', 'http://www.facebook.com/l.php?u=http%3A%2F%2Fwww.domocracytech.com%2Fsmart-home%2F&h=aYaTMaN8D', 'MSIE', 'Windows', '8.0', '', '192.241.217.167', 'US'),
+(658, '2015-01-09', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.97.97', 'JP'),
+(659, '2015-01-09', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.243', 'US'),
+(660, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.145.16.173', 'US'),
+(661, '2015-01-09', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '144.76.94.110', 'DE'),
+(662, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '54.90.91.211', 'US'),
+(663, '2015-01-09', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '148.251.136.182', 'DE'),
+(664, '2015-01-09', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.187.162.184', 'FR'),
+(665, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '195.235.183.163', 'ES'),
+(666, '2015-01-09', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '78.46.34.151', 'DE'),
+(667, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.90.41.95', 'US'),
+(668, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.93.231', 'US'),
+(669, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.93.129', 'US'),
+(670, '2015-01-09', 'http://www.domocracytech.com', 'Jakarta', 'Unknown', 'Unknown', '', '104.130.124.76', 'US'),
+(671, '2015-01-09', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '176.9.29.147', 'DE'),
+(672, '2015-01-09', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.11', 'JP'),
+(673, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.81.249.189', 'US'),
+(674, '2015-01-09', 'http://www.domocracytech.com', 'MSIE', 'Windows', '7.0', '', '113.162.141.79', 'VN'),
+(675, '2015-01-09', 'http://t.co/cZwHPSdWXk', 'Chrome', 'Windows', '39.0.2171.95', '', '167.246.60.1', 'US'),
+(676, '2015-01-09', 'http://www.domocracytech.com', 'LinkedInBot', 'Unknown', '1.0', '', '108.174.2.205', 'US'),
+(677, '2015-01-09', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.97.84', 'JP'),
+(678, '2015-01-09', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.187.165.37', 'FR'),
+(679, '2015-01-09', 'http://www.domocracy.es/connect-arduino-raspberry-pi-using-serial-port/', 'Firefox', 'Linux', '34.0', '', '193.11.134.130', 'SE'),
+(680, '2015-01-09', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '79.150.92.106', 'ES'),
+(681, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.162.88.156', 'US'),
+(682, '2015-01-09', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '35.0.1916.153', '', '54.176.17.88', 'US'),
+(683, '2015-01-09', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '150.214.142.240', 'ES'),
+(684, '2015-01-09', 'http://t.co/LfhOU8YB0O', 'AppleWebKit', 'iPhone', '600.1.4', '', '83.51.163.100', 'ES'),
+(685, '2015-01-09', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.152.100', 'US'),
+(686, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.81.194.115', 'US'),
+(687, '2015-01-09', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.52', 'JP'),
+(688, '2015-01-09', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.244', 'US'),
+(689, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '90.170.24.193', 'ES'),
+(690, '2015-01-09', 'http://www.domocracytech.com', 'Crowsnest', 'Unknown', '0.5', '', '54.92.33.255', 'JP'),
+(691, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.210', 'US'),
+(692, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.213', 'US'),
+(693, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '174.129.185.83', 'US'),
+(694, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '23.22.237.114', 'US'),
+(695, '2015-01-09', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '107.20.48.28', 'US'),
+(696, '2015-01-09', 'http://www.domocracytech.com', 'Chrome', 'Android', '39.0.2171.93', '', '31.4.195.249', 'ES'),
+(697, '2015-01-09', 'http://www.domocracytech.com', 'AppEngine-Google', 'Unknown', 'Unknown', '', '107.178.200.0', 'US'),
+(698, '2015-01-09', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '178.33.236.26', 'FR'),
+(699, '2015-01-09', 'http://www.domocracytech.com', 'Apache-HttpClient', 'Unknown', '4.2.2', '', '54.198.122.232', 'US'),
+(700, '2015-01-09', 'http://www.domocracytech.com', 'AppleWebKit', 'Macintosh', '534.24', '', '54.198.122.232', 'US'),
+(701, '2015-01-09', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '35.0.1916.153', '', '54.176.137.163', 'US'),
+(702, '2015-01-09', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '46.105.109.159', 'FR'),
+(703, '2015-01-09', 'https://www.facebook.com/', 'Chrome', 'Windows', '35.0.1916.114', '', '217.216.121.82', 'ES'),
+(704, '2015-01-09', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '85.136.69.142', 'ES'),
+(705, '2015-01-10', 'http://www.domocracytech.com', 'Safari', 'iPad', '8.0', '', '197.228.193.19', 'ZA'),
+(706, '2015-01-10', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '81.200.27.2', 'RU'),
+(707, '2015-01-10', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '37.134.16.92', 'ES'),
+(708, '2015-01-10', 'http://m.facebook.com/', 'Chrome', 'Android', '37.0.0.0', '', '46.24.39.121', 'ES'),
+(709, '2015-01-10', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.161.106.59', 'US'),
+(710, '2015-01-10', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '34.0', '', '81.184.21.162', 'ES'),
+(711, '2015-01-10', 'http://www.domocracytech.com', 'Apache-HttpClient', 'Unknown', '4.2.2', '', '54.198.122.232', 'US'),
+(712, '2015-01-10', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '32.0.1700.77', '', '54.176.56.176', 'US'),
+(713, '2015-01-10', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '85.136.247.244', 'ES'),
+(714, '2015-01-10', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '62.83.255.147', 'ES'),
+(715, '2015-01-10', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '79.157.211.103', 'ES'),
+(716, '2015-01-10', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '87.220.167.63', 'ES'),
+(717, '2015-01-10', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '85.61.179.242', 'ES'),
+(718, '2015-01-10', 'http://l.facebook.com/l.php?u=http%3A%2F%2Fwww.domocracytech.com%2Fvideo-games-need-domocracy%2F&h=IAQFe41wBAQFjTxsSekplGwXdj01m8uUaxmqkv7qa5miocA&enc=AZNcpejVL7RpX4NyO-r6XdGlmi6FStLAD-QyuJeIvBRGbCfbdLKGStSkvRr89GiqJWweOiigbOTIBiqwg2iLTvlOyGtV9XU7PFdPlgVHbUihfhkcq3mEfu1oKOhR0R-48O4zlPlXjM1JdPohuK0sc7QuKRXqqz_5HBcLe8ixJVvyFA&s=1', 'Firefox', 'Windows', '34.0', '', '83.217.134.181', 'LU'),
+(719, '2015-01-10', 'http://www.domocracy.es/', 'Firefox', 'Windows', '34.0', '', '83.55.122.35', 'ES'),
+(720, '2015-01-10', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '85.136.69.193', 'ES'),
+(721, '2015-01-10', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '85.136.101.73', 'ES'),
+(722, '2015-01-10', 'http://www.domocracytech.com', 'Safari', 'iPad', '600.1.4', '', '78.68.175.251', 'SE'),
+(723, '2015-01-10', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '85.55.141.61', 'ES'),
+(724, '2015-01-10', 'http://www.domocracytech.com/wp-content/license.php', 'MSIE', 'Windows', '6.0', '', '5.61.39.15', 'DE'),
+(725, '2015-01-10', 'http://m.facebook.com/', 'Chrome', 'Android', '30.0.0.0', '', '95.63.90.192', 'ES'),
+(726, '2015-01-10', 'http://www.domocracytech.com/wp-includes/js/jcrop/jquery.Jcrop.php', 'MSIE', 'Windows', '6.0', '', '5.61.35.38', 'DE'),
+(727, '2015-01-10', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '184.147.59.30', 'CA'),
+(728, '2015-01-10', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.213', 'US'),
+(729, '2015-01-10', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.216', 'US'),
+(730, '2015-01-10', 'https://www.facebook.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '84.122.68.73', 'ES'),
+(731, '2015-01-10', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.187.165.37', 'FR'),
+(732, '2015-01-10', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.187.162.184', 'FR'),
+(733, '2015-01-11', 'http://www.domocracytech.com/wp-includes/class-wp-smtp-bar.php', 'MSIE', 'Windows', '6.0', '', '5.61.39.15', 'DE'),
+(734, '2015-01-11', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.160.180.38', 'US'),
+(735, '2015-01-11', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '32.0.1700.77', '', '54.176.56.176', 'US'),
+(736, '2015-01-11', 'http://www.domocracytech.com', 'Firefox', 'Windows', '3.5.2', '', '202.46.57.188', 'CN'),
+(737, '2015-01-11', 'http://www.domocracytech.com/wp-logins.php', 'MSIE', 'Windows', '6.0', '', '5.61.35.38', 'DE'),
+(738, '2015-01-11', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '34.0', '', '187.253.55.177', 'MX'),
+(739, '2015-01-11', 'http://www.domocracytech.com', 'Apache-HttpClient', 'Unknown', '4.2.2', '', '54.198.122.232', 'US'),
+(740, '2015-01-11', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '150.214.9.252', 'ES'),
+(741, '2015-01-11', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.161.74.161', 'US'),
+(742, '2015-01-11', 'http://lm.facebook.com/lsr.php?u=http%3A%2F%2Fwww.domocracytech.com%2Fvideo-games-need-domocracy%2F&ext=1420978837&hash=Acn5ZqfMAcx9YLM_JmqUWh9ZEZD7d7Q2zmUG2Avj_NoLBg&_rdr', 'MSIE', 'Windows', '11.0', '', '79.150.24.248', 'ES'),
+(743, '2015-01-11', 'https://www.linkedin.com/', 'Chrome', 'Windows', '39.0.2171.95', '', '81.44.193.152', 'ES'),
+(744, '2015-01-11', 'http://www.domocracy.es/connect-arduino-raspberry-pi-using-serial-port/', 'Firefox', 'Linux', '34.0', '', '82.73.167.104', 'NL'),
+(745, '2015-01-11', 'http://www.domocracytech.com', 'Firefox', 'Windows', '34.0', '', '85.55.141.61', 'ES'),
+(746, '2015-01-11', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0.2', '', '180.76.5.76', 'CN'),
+(747, '2015-01-11', 'http://www.domocracytech.com', 'MSIE', 'Windows', '7.0', '', '38.100.21.64', 'US'),
+(748, '2015-01-11', 'http://www.domocracytech.com', 'Firefox', 'Windows', '6.0', '', '66.249.81.210', 'US'),
+(749, '2015-01-12', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '88.0.163.64', 'ES'),
+(750, '2015-01-12', 'http://www.domocracy.es/', 'Chrome', 'Android', '39.0.2171.93', '', '83.58.198.238', 'ES'),
+(751, '2015-01-12', 'http://www.domocracytech.com', 'Safari', 'iPhone', '9537.53', '', '70.193.18.32', 'US'),
+(752, '2015-01-12', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.151.205', 'US'),
+(753, '2015-01-12', 'http://www.domocracytech.com', 'MetaURI', 'Unknown', 'Unknown', '', '23.29.122.222', 'US'),
+(754, '2015-01-12', 'http://www.domocracytech.com', 'python-requests', 'Unknown', '1.2.3', '', '54.246.137.243', 'IE'),
+(755, '2015-01-12', 'http://www.domocracytech.com', 'Chrome', 'Macintosh', '31.0.1650.63', '', '107.22.72.145', 'US'),
+(756, '2015-01-12', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.241.198.78', 'US'),
+(757, '2015-01-12', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.227.185.189', 'US'),
+(758, '2015-01-12', 'http://www.domocracytech.com', 'AppleWebKit', 'Macintosh', '534.24', '', '54.198.122.232', 'US'),
+(759, '2015-01-12', 'http://www.domocracytech.com', 'Jakarta', 'Unknown', 'Unknown', '', '23.253.78.156', 'US'),
+(760, '2015-01-12', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '5.39.64.85', 'FR'),
+(761, '2015-01-12', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.40', 'JP'),
+(762, '2015-01-12', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '192.81.133.229', 'US'),
+(763, '2015-01-12', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '176.9.28.106', 'DE'),
+(764, '2015-01-12', 'http://www.domocracytech.com', 'Chrome', 'Windows', '38.0.2125.111', '', '67.171.71.228', 'US'),
+(765, '2015-01-12', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '46.105.109.159', 'FR'),
+(766, '2015-01-12', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '37.59.33.191', 'FR'),
+(767, '2015-01-12', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '81.200.27.2', 'RU'),
+(768, '2015-01-12', 'http://www.domocracytech.com/wp-content/uploads/2009/01/topper.php', 'MSIE', 'Windows', '6.0', '', '5.61.35.38', 'DE'),
+(769, '2015-01-12', 'http://www.domocracy.es/', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.165', 'ES'),
+(770, '2015-01-12', 'http://www.domocracytech.com', 'Chrome', 'Windows', '31.0.1623.0', '', '17.142.151.236', 'US'),
+(771, '2015-01-12', 'http://api.twitter.com/1/statuses/show/554472968836112384.json', 'InAGist', 'Unknown', 'Unknown', '', '72.14.184.101', 'US'),
+(772, '2015-01-12', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.243', 'US'),
+(773, '2015-01-12', 'http://www.domocracytech.com', 'Safari', 'Macintosh', '8.0', '', '107.21.149.238', 'US'),
+(774, '2015-01-12', 'http://www.domocracytech.com', 'Crowsnest', 'Unknown', '0.5', '', '54.238.226.202', 'JP'),
+(775, '2015-01-12', 'http://domocracy.es/', 'Chrome', 'Windows', '32.0.1700.107', '', '83.61.240.217', 'ES'),
+(776, '2015-01-12', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '74.112.131.242', 'US'),
+(777, '2015-01-12', 'http://www.domocracytech.com', 'MSIE', 'Windows', '8.0', '', '150.70.173.45', 'JP'),
+(778, '2015-01-12', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '144.76.94.110', 'DE'),
+(779, '2015-01-12', 'http://www.domocracytech.com', 'MSIE', 'Windows', '10.0', '', '65.52.242.216', 'US'),
+(780, '2015-01-12', 'http://www.facebook.com/l.php?u=http%3A%2F%2Fwww.domocracytech.com%2Fsmart-home%2F&h=HDNNG7svN', 'MSIE', 'Windows', '8.0', '', '192.241.218.246', 'US'),
+(781, '2015-01-12', 'http://t.co/cZwHPSdWXk', 'Firefox', 'Windows', '34.0', '', '217.111.238.114', 'DE'),
+(782, '2015-01-12', 'http://www.domocracytech.com', 'Firefox', 'Windows', '10.0.1', '', '50.28.34.133', 'US'),
+(783, '2015-01-12', 'http://www.domocracytech.com', 'Firefox', 'Windows', '10.0.1', '', '50.28.48.158', 'US'),
+(784, '2015-01-12', 'http://www.domocracytech.com', 'Chrome', 'Windows', '39.0.2171.95', '', '195.235.183.164', 'ES'),
+(785, '2015-01-12', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.198.125.83', 'US'),
+(786, '2015-01-12', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.83.138.126', 'US'),
+(787, '2015-01-12', 'http://www.domocracytech.com', 'Firefox', 'Macintosh', '28.0', '', '54.81.155.94', 'US'),
+(788, '2015-01-12', 'http://l.facebook.com/l.php?u=http%3A%2F%2Fwww.domocracytech.com%2F&h=NAQGLzUZB&s=1', 'Firefox', 'Windows', '34.0', '', '195.235.183.164', 'ES'),
+(789, '2015-01-12', 'http://www.domocracy.es/connect-arduino-raspberry-pi-using-serial-port/', 'Safari', 'Macintosh', '8.0.2', '', '87.13.82.254', 'IT'),
+(790, '2015-01-12', 'http://www.domocracy.es/connect-arduino-raspberry-pi-using-serial-port/', 'Firefox', 'Windows', '34.0', '', '88.186.9.184', 'FR'),
+(791, '2015-01-12', 'http://l.facebook.com/l.php?u=http%3A%2F%2Fwww.domocracytech.com%2Fsmart-home%2F&h=7AQG7dvExAQFwh5sb2hE7pWBnWpT7v_6GUSSAFNpFNCOehA&enc=AZMZYX19x9Efr-54i3XxoQxwaF9RMktANy4c3bzFsupRGXQCb5UEcdrIkd_EOyhY6UKCFcr4T0gBTP6cobvin_zJFa-35Bk9aTnBr6BQPsQPQiM118gFsVeaJK8ecwduu9q1Qh8wM1KmIieqQ6fkP1lRH-Y-S5hZgHHgSvT69sMBcg&s=1', 'Firefox', 'Linux', '33.0', '', '150.214.9.252', 'ES'),
+(792, '2015-01-12', 'http://m.facebook.com/', 'Chrome', 'Android', '30.0.0.0', '', '195.235.183.163', 'ES'),
+(793, '2015-01-12', 'http://m.facebook.com/', 'Chrome', 'Android', '30.0.0.0', '', '66.87.116.138', 'US'),
+(794, '2015-01-12', 'http://www.domocracytech.com', 'Chrome', 'Android', '33.0.0.0', '', '99.120.122.204', 'US'),
+(795, '2015-01-12', 'http://www.domocracy.es/connect-arduino-raspberry-pi-using-serial-port/', 'Chrome', 'Windows', '39.0.2171.95', '', '83.59.189.65', 'ES'),
+(796, '2015-01-12', 'http://www.domocracytech.com', 'Unknown', 'Unknown', 'Unknown', '', '54.87.75.52', 'US');
 
 -- --------------------------------------------------------
 
@@ -2009,7 +2299,9 @@ INSERT INTO `wp_statistics_visitor` (`ID`, `last_counter`, `referred`, `agent`, 
 CREATE TABLE IF NOT EXISTS `wp_term_relationships` (
   `object_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `term_taxonomy_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  `term_order` int(11) NOT NULL DEFAULT '0'
+  `term_order` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`object_id`,`term_taxonomy_id`),
+  KEY `term_taxonomy_id` (`term_taxonomy_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -2056,20 +2348,23 @@ INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 --
 
 CREATE TABLE IF NOT EXISTS `wp_term_taxonomy` (
-`term_taxonomy_id` bigint(20) unsigned NOT NULL,
+  `term_taxonomy_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `term_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `taxonomy` varchar(32) NOT NULL DEFAULT '',
   `description` longtext NOT NULL,
   `parent` bigint(20) unsigned NOT NULL DEFAULT '0',
-  `count` bigint(20) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+  `count` bigint(20) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`term_taxonomy_id`),
+  UNIQUE KEY `term_id_taxonomy` (`term_id`,`taxonomy`),
+  KEY `taxonomy` (`taxonomy`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `wp_term_taxonomy`
 --
 
 INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `description`, `parent`, `count`) VALUES
-(1, 1, 'category', '', 0, 3),
+(1, 1, 'category', '', 0, 4),
 (2, 2, 'nav_menu', '', 0, 4),
 (3, 3, 'gn-genre', '', 0, 0),
 (4, 4, 'gn-genre', '', 0, 0),
@@ -2093,11 +2388,14 @@ INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 --
 
 CREATE TABLE IF NOT EXISTS `wp_terms` (
-`term_id` bigint(20) unsigned NOT NULL,
+  `term_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL DEFAULT '',
   `slug` varchar(200) NOT NULL DEFAULT '',
-  `term_group` bigint(10) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+  `term_group` bigint(10) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`term_id`),
+  KEY `name` (`name`),
+  KEY `slug` (`slug`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `wp_terms`
@@ -2128,11 +2426,14 @@ INSERT INTO `wp_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `wp_usermeta` (
-`umeta_id` bigint(20) unsigned NOT NULL,
+  `umeta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `meta_key` varchar(255) DEFAULT NULL,
-  `meta_value` longtext
-) ENGINE=InnoDB AUTO_INCREMENT=145 DEFAULT CHARSET=utf8;
+  `meta_value` longtext,
+  PRIMARY KEY (`umeta_id`),
+  KEY `user_id` (`user_id`),
+  KEY `meta_key` (`meta_key`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=146 ;
 
 --
 -- Dumping data for table `wp_usermeta`
@@ -2189,8 +2490,8 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (48, 3, 'show_admin_bar_front', 'true'),
 (49, 3, 'wp_capabilities', 'a:1:{s:6:"author";b:1;}'),
 (50, 3, 'wp_user_level', '2'),
-(51, 3, 'dismissed_wp_pointers', 'wp350_media,wp360_revisions,wp360_locks,wp390_widgets'),
-(52, 3, 'wp_dashboard_quick_press_last_post_id', '417'),
+(51, 3, 'dismissed_wp_pointers', 'wp350_media,wp360_revisions,wp360_locks,wp390_widgets,wp410_dfw'),
+(52, 3, 'wp_dashboard_quick_press_last_post_id', '503'),
 (53, 4, 'first_name', 'Adriana'),
 (54, 4, 'last_name', 'Tejana Cuadrado'),
 (55, 4, 'nickname', 'adritc'),
@@ -2206,8 +2507,8 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (65, 4, 'wp_dashboard_quick_press_last_post_id', '424'),
 (66, 2, 'wp_statistics', 'a:2:{s:13:"dashboard_set";s:5:"8.7.2";s:10:"editor_set";s:5:"8.6.3";}'),
 (67, 2, 'metaboxhidden_dashboard', 'a:11:{i:0;s:29:"wp-statistics-browsers-widget";i:1;s:30:"wp-statistics-countries-widget";i:2;s:28:"wp-statistics-hitsmap-widget";i:3;s:25:"wp-statistics-hits-widget";i:4;s:26:"wp-statistics-pages-widget";i:5;s:27:"wp-statistics-recent-widget";i:6;s:30:"wp-statistics-referring-widget";i:7;s:27:"wp-statistics-search-widget";i:8;s:28:"wp-statistics-summary-widget";i:9;s:26:"wp-statistics-words-widget";i:10;s:33:"wp-statistics-top-visitors-widget";}'),
-(68, 3, 'wp_statistics', 'a:2:{s:13:"dashboard_set";s:5:"8.6.3";s:10:"editor_set";s:5:"8.6.3";}'),
-(69, 3, 'metaboxhidden_dashboard', 'a:10:{i:0;s:29:"wp-statistics-browsers-widget";i:1;s:30:"wp-statistics-countries-widget";i:2;s:28:"wp-statistics-hitsmap-widget";i:3;s:25:"wp-statistics-hits-widget";i:4;s:26:"wp-statistics-pages-widget";i:5;s:27:"wp-statistics-recent-widget";i:6;s:30:"wp-statistics-referring-widget";i:7;s:27:"wp-statistics-search-widget";i:8;s:28:"wp-statistics-summary-widget";i:9;s:26:"wp-statistics-words-widget";}'),
+(68, 3, 'wp_statistics', 'a:2:{s:13:"dashboard_set";s:5:"8.7.2";s:10:"editor_set";s:5:"8.6.3";}'),
+(69, 3, 'metaboxhidden_dashboard', 'a:11:{i:0;s:29:"wp-statistics-browsers-widget";i:1;s:30:"wp-statistics-countries-widget";i:2;s:28:"wp-statistics-hitsmap-widget";i:3;s:25:"wp-statistics-hits-widget";i:4;s:26:"wp-statistics-pages-widget";i:5;s:27:"wp-statistics-recent-widget";i:6;s:30:"wp-statistics-referring-widget";i:7;s:27:"wp-statistics-search-widget";i:8;s:28:"wp-statistics-summary-widget";i:9;s:26:"wp-statistics-words-widget";i:10;s:33:"wp-statistics-top-visitors-widget";}'),
 (70, 3, 'metaboxhidden_post', 'a:1:{i:0;s:29:"wp_statistics_editor_meta_box";}'),
 (71, 3, 'metaboxhidden_page', 'a:1:{i:0;s:29:"wp_statistics_editor_meta_box";}'),
 (72, 1, 'wpseo_title', ''),
@@ -2291,7 +2592,7 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 --
 
 CREATE TABLE IF NOT EXISTS `wp_users` (
-`ID` bigint(20) unsigned NOT NULL,
+  `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user_login` varchar(60) NOT NULL DEFAULT '',
   `user_pass` varchar(64) NOT NULL DEFAULT '',
   `user_nicename` varchar(50) NOT NULL DEFAULT '',
@@ -2300,8 +2601,11 @@ CREATE TABLE IF NOT EXISTS `wp_users` (
   `user_registered` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `user_activation_key` varchar(60) NOT NULL DEFAULT '',
   `user_status` int(11) NOT NULL DEFAULT '0',
-  `display_name` varchar(250) NOT NULL DEFAULT ''
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+  `display_name` varchar(250) NOT NULL DEFAULT '',
+  PRIMARY KEY (`ID`),
+  KEY `user_login_key` (`user_login`),
+  KEY `user_nicename` (`user_nicename`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `wp_users`
@@ -2323,12 +2627,13 @@ INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_
 --
 
 CREATE TABLE IF NOT EXISTS `wp_xyz_ihs_short_code` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
   `content` longtext COLLATE utf8_unicode_ci NOT NULL,
   `short_code` varchar(2000) COLLATE utf8_unicode_ci NOT NULL,
-  `status` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `status` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `wp_xyz_ihs_short_code`
@@ -2342,202 +2647,6 @@ INSERT INTO `wp_xyz_ihs_short_code` (`id`, `title`, `content`, `short_code`, `st
 (5, 'irAnclaSuscribe', '<A HREF="#anclaSuscribe"></A>', '[xyz-ihs snippet="irAnclaSuscribe"]', 1),
 (6, 'anclaSuscribe', '<A NAME="anclaSuscribe"></A>', '[xyz-ihs snippet="anclaSuscribe"]', 1);
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `wp_commentmeta`
---
-ALTER TABLE `wp_commentmeta`
- ADD PRIMARY KEY (`meta_id`), ADD KEY `comment_id` (`comment_id`), ADD KEY `meta_key` (`meta_key`);
-
---
--- Indexes for table `wp_comments`
---
-ALTER TABLE `wp_comments`
- ADD PRIMARY KEY (`comment_ID`), ADD KEY `comment_post_ID` (`comment_post_ID`), ADD KEY `comment_approved_date_gmt` (`comment_approved`,`comment_date_gmt`), ADD KEY `comment_date_gmt` (`comment_date_gmt`), ADD KEY `comment_parent` (`comment_parent`), ADD KEY `comment_author_email` (`comment_author_email`(10));
-
---
--- Indexes for table `wp_links`
---
-ALTER TABLE `wp_links`
- ADD PRIMARY KEY (`link_id`), ADD KEY `link_visible` (`link_visible`);
-
---
--- Indexes for table `wp_options`
---
-ALTER TABLE `wp_options`
- ADD PRIMARY KEY (`option_id`), ADD UNIQUE KEY `option_name` (`option_name`);
-
---
--- Indexes for table `wp_postmeta`
---
-ALTER TABLE `wp_postmeta`
- ADD PRIMARY KEY (`meta_id`), ADD KEY `post_id` (`post_id`), ADD KEY `meta_key` (`meta_key`);
-
---
--- Indexes for table `wp_posts`
---
-ALTER TABLE `wp_posts`
- ADD PRIMARY KEY (`ID`), ADD KEY `post_name` (`post_name`), ADD KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`), ADD KEY `post_parent` (`post_parent`), ADD KEY `post_author` (`post_author`);
-
---
--- Indexes for table `wp_statistics_exclusions`
---
-ALTER TABLE `wp_statistics_exclusions`
- ADD PRIMARY KEY (`ID`), ADD KEY `date` (`date`), ADD KEY `reason` (`reason`);
-
---
--- Indexes for table `wp_statistics_historical`
---
-ALTER TABLE `wp_statistics_historical`
- ADD PRIMARY KEY (`ID`), ADD UNIQUE KEY `page_id` (`page_id`), ADD UNIQUE KEY `uri` (`uri`), ADD KEY `category` (`category`);
-
---
--- Indexes for table `wp_statistics_pages`
---
-ALTER TABLE `wp_statistics_pages`
- ADD UNIQUE KEY `date_2` (`date`,`uri`), ADD KEY `url` (`uri`), ADD KEY `date` (`date`), ADD KEY `id` (`id`);
-
---
--- Indexes for table `wp_statistics_useronline`
---
-ALTER TABLE `wp_statistics_useronline`
- ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `wp_statistics_visit`
---
-ALTER TABLE `wp_statistics_visit`
- ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `wp_statistics_visitor`
---
-ALTER TABLE `wp_statistics_visitor`
- ADD PRIMARY KEY (`ID`), ADD UNIQUE KEY `date_ip_agent` (`last_counter`,`ip`,`agent`(75),`platform`(75),`version`(75)), ADD KEY `agent` (`agent`), ADD KEY `platform` (`platform`), ADD KEY `version` (`version`), ADD KEY `location` (`location`);
-
---
--- Indexes for table `wp_term_relationships`
---
-ALTER TABLE `wp_term_relationships`
- ADD PRIMARY KEY (`object_id`,`term_taxonomy_id`), ADD KEY `term_taxonomy_id` (`term_taxonomy_id`);
-
---
--- Indexes for table `wp_term_taxonomy`
---
-ALTER TABLE `wp_term_taxonomy`
- ADD PRIMARY KEY (`term_taxonomy_id`), ADD UNIQUE KEY `term_id_taxonomy` (`term_id`,`taxonomy`), ADD KEY `taxonomy` (`taxonomy`);
-
---
--- Indexes for table `wp_terms`
---
-ALTER TABLE `wp_terms`
- ADD PRIMARY KEY (`term_id`), ADD KEY `name` (`name`), ADD KEY `slug` (`slug`);
-
---
--- Indexes for table `wp_usermeta`
---
-ALTER TABLE `wp_usermeta`
- ADD PRIMARY KEY (`umeta_id`), ADD KEY `user_id` (`user_id`), ADD KEY `meta_key` (`meta_key`);
-
---
--- Indexes for table `wp_users`
---
-ALTER TABLE `wp_users`
- ADD PRIMARY KEY (`ID`), ADD KEY `user_login_key` (`user_login`), ADD KEY `user_nicename` (`user_nicename`);
-
---
--- Indexes for table `wp_xyz_ihs_short_code`
---
-ALTER TABLE `wp_xyz_ihs_short_code`
- ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `wp_commentmeta`
---
-ALTER TABLE `wp_commentmeta`
-MODIFY `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `wp_comments`
---
-ALTER TABLE `wp_comments`
-MODIFY `comment_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `wp_links`
---
-ALTER TABLE `wp_links`
-MODIFY `link_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `wp_options`
---
-ALTER TABLE `wp_options`
-MODIFY `option_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2772;
---
--- AUTO_INCREMENT for table `wp_postmeta`
---
-ALTER TABLE `wp_postmeta`
-MODIFY `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=654;
---
--- AUTO_INCREMENT for table `wp_posts`
---
-ALTER TABLE `wp_posts`
-MODIFY `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=503;
---
--- AUTO_INCREMENT for table `wp_statistics_exclusions`
---
-ALTER TABLE `wp_statistics_exclusions`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `wp_statistics_historical`
---
-ALTER TABLE `wp_statistics_historical`
-MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `wp_statistics_useronline`
---
-ALTER TABLE `wp_statistics_useronline`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `wp_statistics_visit`
---
-ALTER TABLE `wp_statistics_visit`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
---
--- AUTO_INCREMENT for table `wp_statistics_visitor`
---
-ALTER TABLE `wp_statistics_visitor`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=587;
---
--- AUTO_INCREMENT for table `wp_term_taxonomy`
---
-ALTER TABLE `wp_term_taxonomy`
-MODIFY `term_taxonomy_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
---
--- AUTO_INCREMENT for table `wp_terms`
---
-ALTER TABLE `wp_terms`
-MODIFY `term_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
---
--- AUTO_INCREMENT for table `wp_usermeta`
---
-ALTER TABLE `wp_usermeta`
-MODIFY `umeta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=145;
---
--- AUTO_INCREMENT for table `wp_users`
---
-ALTER TABLE `wp_users`
-MODIFY `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT for table `wp_xyz_ihs_short_code`
---
-ALTER TABLE `wp_xyz_ihs_short_code`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
