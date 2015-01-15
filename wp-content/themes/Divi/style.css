@@ -3092,4 +3092,7 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
 
 /* Class defined to fit the main section height to desired height depending on the screen size*/
 .MainSectionFW 	{		padding-bottom:10vh;	
-						padding-top:30vh; 		}
+						padding-top:35vh; 		}
+
+.GreetingImageContainer	{	display:inline-block; 
+							margin:10px}
