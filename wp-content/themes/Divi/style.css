@@ -899,7 +899,7 @@ body.woocommerce div.product .woocommerce-tabs .panel, body.woocommerce #content
 	.et-fixed-header .et_mobile_menu { top: 41px; }
 	.et_mobile_menu li ul { visibility: visible !important; display: block !important; padding-left: 10px; }
 	.et_mobile_menu li li { padding-left: 5%;}
-	.et_mobile_menu li a { border-bottom: 1px solid rgba(0,0,0,0.03); color: #666; padding: 10px 5%; width: 90%; display: block; }
+	.et_mobile_menu li a { border-bottom: 1px solid rgba(0,0,0,0.03); color: #FFFFFF; padding: 10px 5%; width: 90%; display: block; }
 		.et_nav_text_color_light .et_mobile_menu li a { color: rgba( 255, 255, 255, 0.7 ); }
 	.et_mobile_menu .menu-item-has-children > a { font-weight: bold; background-color: rgba(0,0,0,0.03); }
 	.et_mobile_menu li .menu-item-has-children > a { background-color: transparent; }
