@@ -3095,4 +3095,7 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
 						padding-top:35vh; 		}
 
 .GreetingImageContainer	{	display:inline-block; 
-							margin:10px}
+							margin:10px	}
+							
+.ContactSection {	padding-bottom:5px;
+					padding-top:5px		}
