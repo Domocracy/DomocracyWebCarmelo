@@ -3099,3 +3099,6 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
 							
 .ContactSection {	padding-bottom:5px;
 					padding-top:5px		}
+					
+.PaddingB0T20	{	padding-bottom: 0px;
+					padding-top: 20px;		}
