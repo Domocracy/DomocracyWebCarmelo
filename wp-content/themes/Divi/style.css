@@ -3103,6 +3103,7 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
 .HandHubBg		{	background-image: url(http://localhost/wp-content/uploads/2014/04/handhub21.png);
 					background-size: contain;
 					background-position-x: inherit;
+					background-position-y: 0;
 }
 
 .MockupApp				{	width:55%;	}
