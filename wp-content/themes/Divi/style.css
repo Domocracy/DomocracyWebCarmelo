@@ -3106,8 +3106,10 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
 }
 
 .MockupApp				{	width:55%;	}
-.MockupAppDescription	{	width:100%;
-							}
+.MockupAppDescription	{	background-image: url(http://localhost/wp-content/uploads/2014/04/bgtext2.png);
+							background-size:100% 100%;
+							padding:15px;
+							padding-top:20px}
 
 .PaddingB0T20	{	padding-bottom: 0px;
 					padding-top: 20px;		}
