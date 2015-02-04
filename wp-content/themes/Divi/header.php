@@ -74,64 +74,6 @@
 <!-- If there is info about top header, get that info and start it's construction -->
 <!-- -------------------------------------------------------------------------------------------------------------- -->
 	<div id="top-header" class="<?php echo esc_attr( $secondary_nav_class ); ?>">
-		<div class="container clearfix">
-<!-- -------------------------------------------------------------------------------------------------------------- -->
-<!-- If there is contact info... -->
-<!-- -------------------------------------------------------------------------------------------------------------- -->
-		<?php if ( $et_contact_info_defined ) : ?>
-
-			<div id="et-info">
-			<?php if ( '' !== ( $et_phone_number = et_get_option( 'phone_number' ) ) ) : ?>
-				<span id="et-info-phone"><?php echo esc_html( $et_phone_number ); ?></span>
-			<?php endif; ?>
-
-			<?php if ( '' !== ( $et_email = et_get_option( 'header_email' ) ) ) : ?>
-				<span id="et-info-email"><?php echo esc_html( $et_email ); ?></span>
-			<?php endif; ?>
-
-			<?php
-			if ( true === $show_header_social_icons ) {
-				get_template_part( 'includes/social_icons', 'header' );
-			} ?>
-			</div> <!-- #et-info -->
-
-		<?php endif; // true === $et_contact_info_defined ?>
-<!-- -------------------------------------------------------------------------------------------------------------- -->
-<!-- Here is used the information about te secondary menu -->
-<!-- But (in Domocracy) we want to use this menu as part of the main header  so this fragment of code will be commented -->
-<!-- -------------------------------------------------------------------------------------------------------------- -->
-			<div id="et-secondary-menu">
-			<?php /**	---> Omitted
-				if ( ! $et_contact_info_defined && true === $show_header_social_icons ) {
-					get_template_part( 'includes/social_icons', 'header' );
-				} else if ( $et_contact_info_defined && true === $show_header_social_icons ) {
-					ob_start();
-
-					get_template_part( 'includes/social_icons', 'header' );
-
-					$duplicate_social_icons = ob_get_contents();
-
-					ob_end_clean();
-
-					printf(
-						'<div class="et_duplicate_social_icons">
-							%1$s
-						</div>',
-						$duplicate_social_icons
-					);
-				}
-
-				if ( '' !== $et_secondary_nav ) {
-					echo $et_secondary_nav;
-				}
-
-				et_show_cart_total();
-				<--- Omitted
-				*/
-			?>
-			</div> <!-- #et-secondary-menu -->
-
-		</div> <!-- .container -->
 	</div> <!-- #top-header -->
 <?php endif; // true ==== $et_top_info_defined ?>
 

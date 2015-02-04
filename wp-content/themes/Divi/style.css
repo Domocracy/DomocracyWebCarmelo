@@ -3100,5 +3100,16 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
 .ContactSection {	padding-bottom:5px;
 					padding-top:5px		}
 					
+.HandHubBg		{	background-image: url(http://localhost/wp-content/uploads/2014/04/handhub21.png);
+					background-size: contain;
+					background-position-x: inherit;
+}
+
+.MockupApp				{	width:55%;	}
+.MockupAppDescription	{	width:100%;
+							}
+
 .PaddingB0T20	{	padding-bottom: 0px;
 					padding-top: 20px;		}
+					
+					
